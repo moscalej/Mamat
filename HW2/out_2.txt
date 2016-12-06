@@ -1,0 +1,32 @@
+Airport status:
+Runway 10 international
+5 flights are waiting:
+Flight 12 I LHR E
+Flight 13 I CDG E
+Flight 14 I LHR E
+Flight 11 I LHR R
+Flight 15 I CDG R
+Runway 20 international
+5 flights are waiting:
+Flight 21 I LHR E
+Flight 23 I CDG E
+Flight 22 I LHR R
+Flight 24 I CDG R
+Flight 25 I LHR R
+
+Airport status:
+Runway 10 international
+5 flights are waiting:
+Flight 13 I CDG E
+Flight 12 I LHR E
+Flight 14 I LHR E
+Flight 15 I CDG R
+Flight 11 I LHR R
+Runway 20 international
+5 flights are waiting:
+Flight 23 I CDG E
+Flight 21 I LHR E
+Flight 24 I CDG R
+Flight 22 I LHR R
+Flight 25 I LHR R
+
