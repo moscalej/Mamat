@@ -1,0 +1,46 @@
+/* main.c */
+#include <stdio.h>
+#include <stdlib.h>
+#define NUM 5
+
+/* constants that define the type in the elements array */
+enum {INT_NUM=1,FLOAT_NUM,COMPLEX_NUM};
+
+void fill_array(void* elements[ ], int nums[ ]);
+
+main( ) {
+    /*array of pointers to various elements */
+    void* elements[NUM];
+    /* array to mark the type of each cell in elements */
+    int nums[NUM];
+    int i;
+
+    /* allocate elements and insert them into the array */
+    fill_array(elements, nums);
+    /* print the array */
+    for (i=0 ; i<NUM ; i++)
+    switch (nums[i]) {
+        case INT_NUM :
+            printf("%d\n", *((int*)elements[i]));
+            break;
+        case FLOAT_NUM:
+            printf("%f\n",*((float*)elements[i]));
+            break;
+        case COMPLEX_NUM :
+            print_complex((Complex*)elements[i]);
+        default : break;
+    }
+
+} /* End of Main( ) */
+    /* fill the array with some values */
+void fill_array(void* elements[ ], int nums[ ]) {
+     nums[0] = INT_NUM; /* the type is int */
+     /* allocate a space for int */
+     elements[0] = (int*) malloc(sizeof(int)); /* this becomes a pointer for to the malloc memory */
+     *((int*)elements[0]) = 5; /* assign int value wi asing 5 to the value of element 0*/
+     nums[1] = FLOAT_NUM; /* the type is float */
+     /* allocate a space for float */
+    elements[1] = (float*) malloc(sizeof(float));
+    *((float*)elements[1]) = 32.0; /*assign float value*/
+
+} /* end of fill_array */
