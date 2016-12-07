@@ -16,8 +16,7 @@ int main() {
     printf("> %s", szLine);
     pszName = strtok(szLine, delimiters);
     pszYear = strtok(NULL, delimiters);
-    if (pszName == NULL || pszYear == NULL)
-    {
+    if (pszName == NULL || pszYear == NULL) {
         fprintf(stderr, "Error: Not enough parameters\n");
     }
     year = atoi(pszYear);
