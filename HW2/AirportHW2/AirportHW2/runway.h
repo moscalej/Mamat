@@ -12,6 +12,7 @@ typedef struct Runway_Info {
 	RunwayNum Runway_Num;
 	RunwayType Runway_Type;
 	P_RunwayList RunwayList;
+	PFlightInfo head_flight;
 
 }RunwayInfo, *PRunwayInfo;
 

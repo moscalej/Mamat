@@ -1,5 +1,7 @@
-#ifndef EX2_H_
-#define EX2_H_
+/*/ex2.h//*/
+
+#ifndef _EX2_H_
+#define _EX2_H_
 
 typedef enum ftype_t {
 	DOMESTIC, INTERNATIONAL
@@ -11,6 +13,6 @@ typedef enum result_t {
 	FAILURE, SUCCESS
 } Result;
 
-//#define MAX_ID (100000)
+#define MAX_ID 100000
 
 #endif /* EX2_H_ */

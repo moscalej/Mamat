@@ -28,8 +28,8 @@ PRunwayInfo  createFlight(int Num, char Type) {
 //this funtion will reach the header from the runway and free all the flaight
 //on it in the a while loop
 void destroyRunway(PRunwayInfo runwayNumber) {
-	PRunwayInfo pointer_location_old;
-	PRunwayInfo pointer_location_new;
+	PFlightInfo pointer_location_old;
+	PFlightInfo pointer_location_new;
 	pointer_location_new = runwayNumber->head_flaight;
 	if (pointer_location_new != NULL ) {
 		while (true) {
@@ -44,4 +44,60 @@ void destroyRunway(PRunwayInfo runwayNumber) {
 	free(runwayNumber)
 }
 
-BOOL isFlightExists(PRunwayInfo, FlightNum)
+
+
+/*-- this look will go thrue the linked list os the planes search
+if the flight number exist on the list and if it does will return true 
+if it dosent will and reachs the end of the list and find a null pointer
+wich will return FALSE*/
+
+BOOL isFlightExists(PRunwayInfo runway_pointer, FlightNum flight_number) {
+	
+	PFlightInfo pointer_location_new;
+	pointer_location_new = runway_pointer->head_flaight;
+	if (pointer_location_new == NULL)
+	{
+		return FALSE;
+	}
+	while (true)
+	{
+		if (pointer_location_new->Flight_Num == flight_number) 
+		{
+			return TRUE;
+		}
+		else if (pointer_location_new -> headNext == NULL)
+		{
+			return FALSE;
+		}
+		pointer_location_new = pointer_location_new-> headNext ;
+	}
+}
+
+/*this funtion will run true the linked list and every time it rachs a new node
+will  add one to the counter*/
+int getFLightNum(PRunwayInfo runway_pointer)
+{
+	int counter = 0;
+	PFlightInfo pointer_location_new;
+	pointer_location_new = runway_pointer->head_flaight;
+	if (pointer_location_new == NULL)
+	{
+		return 0;
+	}
+	while (true)
+	{
+		counter++;
+		pointer_location_new = pointer_location_new->headNext;
+		if (pointer_location_new->headNext == NULL)
+		{
+			return counter;
+		}
+	}
+
+}
+
+
+Result addFlight(PRunwayInfo, PFlightInfo)
+{
+
+}

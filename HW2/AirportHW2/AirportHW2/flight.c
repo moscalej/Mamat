@@ -42,20 +42,29 @@ Result ValidInput() {
 }; */
 
 
-/*Creating a flight*/
+/*Creating a flight 
+this fly inteface will create parts of a data structure, will have the ability to
+invoque funtions that will delete or print the information */
+
+//the next funtions returns a pointer to the new object based on 
+//the structure of flight and insertes on the node info the 
+//requared fields
+
+//"the return type" funtion name ( values )
 PFlightInfo  createFlight(int Num, char Type, char Destination, char Emergency) {
-	PFlightInfo pElem;
+	PFlightInfo pElem;  //defines pELem as a pointer to a struc object for the maloc to create a memory
 	pElem = (PFlightInfo)malloc(sizeof(FlightInfo)); // Dyanmic memory allocation
-	
-	if (NULL == pElem) exit(-1); // Check to make sure legal memory was allocated
-	
+
+	if (NULL == pElem) {
+	 exit(-1); // Check to make sure legal memory was allocated
+ 	}
 	/* - Entering the flights information - */
 	pElem->Flight_Num = (FlightNum)Num;
 	pElem->Flight_Type = (FlightType)Type;
 	pElem->Flight_Destination = (FlightDestination)Destination;
 	pElem->Emergency = (BOOL)Emergency;
-	/* - - - - - - - - - - - - - - - - - - */
-
+	/* - - - - - - - -the link part - - - - - - - - - - */
+	pElem->headNext = NULL;
 	return pElem;
 };
 
@@ -67,7 +76,11 @@ void destroyFlight(PFlightInfo flight) {
 Result printFlight(PFlightInfo flight) {
 	if (flight == NULL) return FAILURE;
 	else // how to print properly??
-		printf("FLIGHT &d &d &d &d", flight->Flight_Num, flight->Flight_Type, flight->Flight_Destination, flight->Emergency);
+		printf("FLIGHT &d &d &d &d", flight->Flight_Num,
+									 flight->Flight_Type,
+									 flight->Flight_Destination,
+		 							 flight->Emergency
+		);
 	return SUCCESS;
 }
 /* ALSO ADD TO MAIN....
@@ -82,7 +95,3 @@ static int InternalFind(FlightNum Num) {
 }*/
 
 // Compiler issue
-/*
-void main() {
-	printf("Hello World");
-}*/
