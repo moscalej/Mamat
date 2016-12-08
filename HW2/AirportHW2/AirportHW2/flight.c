@@ -76,7 +76,7 @@ void destroyFlight(PFlightInfo flight) {
 Result printFlight(PFlightInfo flight) {
 	if (flight == NULL) return FAILURE;
 	else // how to print properly??
-		printf("FLIGHT &d &d &d &d", flight->Flight_Num,
+		printf("FLIGHT &d &d &d &d\n", flight->Flight_Num,
 									 flight->Flight_Type,
 									 flight->Flight_Destination,
 		 							 flight->Emergency
