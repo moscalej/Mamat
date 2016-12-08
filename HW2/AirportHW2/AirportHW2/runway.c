@@ -97,7 +97,51 @@ int getFLightNum(PRunwayInfo runway_pointer)
 }
 
 
-Result addFlight(PRunwayInfo, PFlightInfo)
+Result addFlight(PRunwayInfo runway_pointer, PFlightInfo new_flight_pointer)
 {
+	PFlightInfo pointer_location_new;
+	PFlightInfo pointer_location_old;
+	pointer_location_new = runway_pointer->head_flaight;   // this will save pointer location new as a pointer to the first fly
 
+	if (new_flight_pointer->Flight_Type == runway_pointer->Runway_Type)
+	{
+
+
+		/**/
+		if (pointer_location_new == NULL)
+		{
+			runway_pointer->head_flight = new_flight_pointer;
+			return SUCCESS;
+		}
+		/*want to check if the first fly is an emergency*/
+		if (pointer_location_new->Emergency == FALSE && new_flight_pointer->Emergency == TRUE)
+		{
+			runway_pointer->head_flight = new_flight_pointer;
+			new_flight_pointer->headNext = pointer_location_new;
+			return SUCCESS
+		}
+
+		while (true) // i am bit confuse with the pointers we have to check the well if we pass the adress or the think inside the adres
+		{
+			pointer_location_old = new_flight_pointer;
+			pointer_location_new = pointer_location_old->headNext;
+
+			if (pointer_location_new->Emergency == FALSE && new_flight_pointer->Emergency == TRUE)
+			{
+
+				pointer_location_old->headNext = new_flight_pointer;
+				new_flight_pointer->headNext = pointer_location_new;
+				return SUCCESS;
+			}
+			if (pointer_location_new->headNext == NULL)
+			{
+				pointer_location_new->headNext == new_flight_pointer;
+				return SUCCESS;
+			}
+		}
+	}
+	else
+	{
+		return FAILURE;
+	}
 }
