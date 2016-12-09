@@ -29,6 +29,8 @@ int Num_Of_Inputs(char input[]) {
 
 };
 
+
+
 //MAYBE MAKE A LEGAL INPUT FUNCTION?
 Result ValidInput() {
 	char Line[MAX_LINE_SIZE];
@@ -86,7 +88,7 @@ Result printFlight(PFlightInfo flight) {
 		 							 flight->Emergency
 		);
 	return SUCCESS;
-}
+};
 /* ALSO ADD TO MAIN....
 //A searching function to scan our linked lists (mostly an example. Will fix to use on linked lists)
 static int InternalFind(FlightNum Num) {

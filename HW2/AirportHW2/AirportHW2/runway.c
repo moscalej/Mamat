@@ -92,10 +92,15 @@ int getFLightNum(PRunwayInfo runway_pointer) {
 the flight wasn't added to any runway the function returns FAILURE
 (only if the types are not the same).*/
 Result addFlight(PRunwayInfo runway_pointer, PFlightInfo new_flight_pointer) {
+	/*Secury check if the pointers are what we need it*/
+	if (NULL == runway_pointer || NULL == new_flight_pointer)
+	{
+		return FAILURE;
+	}
 	PFlightInfo pointer_location_new;
 	PFlightInfo pointer_location_old;
 	pointer_location_new = runway_pointer->head_flight;   // this will save pointer location new as a pointer to the first fly
-
+	
 	if (new_flight_pointer->Flight_Type == runway_pointer->Runway_Type) {
 
 

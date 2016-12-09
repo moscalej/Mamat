@@ -13,15 +13,25 @@ typedef struct Airport_Info {
 
 }AirportInfo, *PAirportInfo;
 
+typedef struct good_and_bad
+{
+	PFlightInfo good_line;
+	PFlightInfo bad_line;
+}GoodAndBad, *PGoodAndBad;
+
+
 PAirportInfo Airporthead; //global variable
 
-Result addRunway(RunwayNum, RunwayType);
+/*this are funtions to help in other funtions*/
+PRunwayInfo findTheLane(FlightType /*, BOOL bool*/); //status<--- need debug
+PRunwayInfo findLaneByNumber(Runway_Num );//status<--- need debug
+PGoodAndBad removeBadFlights(PFlightInfo, FlightDestination);
 
-Result removeRunway(RunwayNum);
-
-Result addFlightToAirport(FlightNum, FlightType, BOOL); //Bool = emergency
-
-Result depoartFromRunway(RunwayNum);
-
-Result stormAlert
+/*funtions asked by the HW2*/
+Result addRunway(RunwayNum, RunwayType); //status<--- need debug
+Result removeRunway(RunwayNum); //status<--- need debug
+Result addFlightToAirport(FlightNum, FlightType, FlightDestination, BOOL);//status<--- need debug  //Bool = emergency
+Result depoartFromRunway(RunwayNum); //status<--- need debug
+Result stormAlert(FlightDestination[]);//status<--- not started
+void destroyAirport();// status<-- need debug
 #endif
