@@ -149,11 +149,14 @@
     <ClInclude Include="..\..\ex2.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="airport.h" />
     <ClInclude Include="flight.h" />
     <ClInclude Include="runway.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="airport.c" />
     <ClCompile Include="flight.c" />
+    <ClCompile Include="runway.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

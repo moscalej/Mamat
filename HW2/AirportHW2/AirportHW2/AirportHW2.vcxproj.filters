@@ -24,9 +24,18 @@
     <ClInclude Include="runway.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="airport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="flight.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="airport.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="runway.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,13 +1,7 @@
-﻿Build started 12/6/2016 7:58:39 PM.
-     1>Project "Z:\MAMAT\HW2\AirportHW2\AirportHW2\AirportHW2.vcxproj" on node 2 (ClCompile target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt flight.c
-         flight.c
-     1>z:\mamat\hw2\airporthw2\airporthw2\flight.c(46): warning C4029: declared formal parameter list different from definition
-     1>z:\mamat\hw2\airporthw2\airporthw2\flight.c(70): warning C4474: 'printf' : too many arguments passed for format string
-         z:\mamat\hw2\airporthw2\airporthw2\flight.c(70): note: placeholders and their parameters expect 0 variadic arguments, but 4 were provided
-     1>Done Building Project "Z:\MAMAT\HW2\AirportHW2\AirportHW2\AirportHW2.vcxproj" (ClCompile target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:01.32
+﻿  runway.c
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(130): warning C4553: '==': operator has no effect; did you intend '='?
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(182): warning C4101: 'pointer_location_temp': unreferenced local variable
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(202): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(202): note: placeholders and their parameters expect 0 variadic arguments, but 2 were provided
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(206): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(206): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided

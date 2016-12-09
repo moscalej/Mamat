@@ -9,11 +9,13 @@ typedef int RunwayNum;
 typedef char RunwayType;
 
 typedef struct Runway_Info {
+
 	/*-------this is the information part of the node---- */
 	RunwayNum Runway_Num;
 	RunwayType Runway_Type;
+
 	/*------this is the link part of the node------*/
-	P_RunwayList RunwayList;
+	struct Runway_Info* RunwayList;
 	PFlightInfo head_flight;
 
 }RunwayInfo, *PRunwayInfo;

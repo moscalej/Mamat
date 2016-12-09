@@ -51,7 +51,7 @@ invoque funtions that will delete or print the information */
 //requared fields
 
 //"the return type" funtion name ( values )
-PFlightInfo  createFlight(int Num, char Type, char Destination, char Emergency) {
+PFlightInfo  createFlight(int Num, char Type, char Destination[], char Emergency) {
 	PFlightInfo pElem;  //defines pELem as a pointer to a struc object for the maloc to create a memory
 	pElem = (PFlightInfo)malloc(sizeof(FlightInfo)); // Dyanmic memory allocation
 
@@ -61,7 +61,9 @@ PFlightInfo  createFlight(int Num, char Type, char Destination, char Emergency) 
 	/* - Entering the flights information - */
 	pElem->Flight_Num = (FlightNum)Num;
 	pElem->Flight_Type = (FlightType)Type;
-	pElem->Flight_Destination = (FlightDestination)Destination;
+	pElem->Flight_Destination[0] = (FlightDestination)Destination[0];
+	pElem->Flight_Destination[1] = (FlightDestination)Destination[1];
+	pElem->Flight_Destination[2] = (FlightDestination)Destination[2];
 	pElem->Emergency = (BOOL)Emergency;
 	/* - - - - - - - -the link part - - - - - - - - - - */
 	pElem->headNext = NULL;
@@ -76,9 +78,11 @@ void destroyFlight(PFlightInfo flight) {
 Result printFlight(PFlightInfo flight) {
 	if (flight == NULL) return FAILURE;
 	else // how to print properly??
-		printf("FLIGHT &d &d &d &d\n", flight->Flight_Num,
+		printf("FLIGHT &d &d &c&c&c &d\n", flight->Flight_Num,
 									 flight->Flight_Type,
-									 flight->Flight_Destination,
+									 flight->Flight_Destination[0],
+									 flight->Flight_Destination[1],
+									 flight->Flight_Destination[2],
 		 							 flight->Emergency
 		);
 	return SUCCESS;
