@@ -243,6 +243,7 @@ Result printRunway(PRunwayInfo runway_pointer)
 		}
 		result = printFlight(pointer_location_temp);
 		pointer_location_temp = pointer_location_temp->headNext;
+
 	}
 }
 
