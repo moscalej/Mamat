@@ -1,39 +1,39 @@
 ﻿  main.c
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(82): warning C4133: 'function': incompatible types - from 'char *' to 'FILE *'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(88): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(88): warning C4024: 'strcmp': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(92): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(92): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(95): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(99): warning C4047: 'function': 'RunwayType' differs in levels of indirection from 'char *'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(99): warning C4024: 'addRunway': different types for formal and actual parameter 2
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(104): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(104): warning C4024: 'strcmp': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(108): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(108): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(120): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(120): warning C4024: 'strcmp': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(126): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(126): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(130): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(131): warning C4047: '==': 'char *' differs in levels of indirection from 'int'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(131): warning C4047: 'function': 'char *' differs in levels of indirection from 'int'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(131): warning C4024: 'allCapsThree': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(132): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(135): warning C4047: 'function': 'char' differs in levels of indirection from 'char *'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(135): warning C4024: 'isI_or_D': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(135): warning C4047: 'function': 'FlightDestination' differs in levels of indirection from 'char *'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(135): warning C4024: 'addFlightToAirport': different types for formal and actual parameter 3
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(135): warning C4024: 'isE_or_R': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(142): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(142): warning C4024: 'strcmp': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(146): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(146): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(153): warning C4013: 'departFromRunway' undefined; assuming extern returning int
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(158): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(158): warning C4024: 'strcmp': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(160): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(160): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(169): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(169): warning C4024: 'strcmp': different types for formal and actual parameter 1
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(170): warning C4013: 'printAirport' undefined; assuming extern returning int
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(81): warning C4133: 'function': incompatible types - from 'char *' to 'FILE *'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(89): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(89): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(94): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(94): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(98): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(104): warning C4047: 'function': 'RunwayType' differs in levels of indirection from 'char *'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(104): warning C4024: 'addRunway': different types for formal and actual parameter 2
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(109): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(109): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(114): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(114): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(128): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(128): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(135): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(135): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(140): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(141): warning C4047: '==': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(141): warning C4047: 'function': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(141): warning C4024: 'allCapsThree': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(142): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(147): warning C4047: 'function': 'char' differs in levels of indirection from 'char *'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(147): warning C4024: 'isI_or_D': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(147): warning C4047: 'function': 'FlightDestination' differs in levels of indirection from 'char *'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(147): warning C4024: 'addFlightToAirport': different types for formal and actual parameter 3
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(147): warning C4024: 'isE_or_R': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(154): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(154): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(158): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(158): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(167): warning C4013: 'departFromRunway' undefined; assuming extern returning int
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(172): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(172): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(175): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(175): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(185): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(185): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(187): warning C4013: 'printAirport' undefined; assuming extern returning int

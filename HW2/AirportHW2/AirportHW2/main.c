@@ -6,7 +6,6 @@
 #include <assert.h>
 #include "airport.h"
 #define MAX_LINE_SIZE (256)
-#define _CRT_SECURE_NO_WARNINGS
 #define _CRTDBG_MAP_ALLOC
 #include <crtdbg.h>
 
@@ -79,36 +78,45 @@ int main(char* argv[])
 		printf("Error: Can't open %s\n", argv[1]);
 		exit(1);
 	}
-	while (fgets(szLine, MAX_LINE_SIZE, argv[0])) {
+	while (fgets(szLine, MAX_LINE_SIZE, argv[0]))
+	{
 		commandType = strtok(szLine, delimiters);
-		if (Command(commandType) == FAILURE) {
+		if (Command(commandType) == FAILURE) 
+		{
 			fprintf(stderr, "Command not found.\n");
 			continue;
 		}
-		else if (strcmp(*commandType, "Insert") == 0) { // We recieved an "Insert" command
+		else if (strcmp(*commandType, "Insert") == 0)
+		{ // We recieved an "Insert" command
 			first = strtok(szLine, delimiters);
 			second = strtok(szLine, delimiters);
 			runwayNumber = atoi(first);
-			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 3) {
+			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 3)
+			{
 				fprintf(stderr, "Insert failed: not enough parameters.\n");
 			}
-			else if ((runwayNumber > MAX_ID || runwayNumber < 1) || (second != 'I' || second != 'D')) {
+			else if ((runwayNumber > MAX_ID || runwayNumber < 1) || (second != 'I' || second != 'D')) 
+			{
 				printf("Insert execution failed.\n");
 			}
-			else {
+			else 
+			{
 				Result j = addRunway(runwayNumber, second);
 				if (j == FAILURE) printf("Insert execution failed.\n");
 				else continue;
 			}
 		}
-		else if (strcmp(*commandType, "Remove") == 0) { // We recieved a "Remove" command
+		else if (strcmp(*commandType, "Remove") == 0) 
+		{ // We recieved a "Remove" command
 			first = strtok(szLine, delimiters);
 			runwayNumber = atoi(first);
 
-			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 2) {
+			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 2) 
+			{
 				fprintf(stderr, "Remove failed: not enough parameters.\n");
 			}
-			else if (runwayNumber > MAX_ID || runwayNumber < 1) {
+			else if (runwayNumber > MAX_ID || runwayNumber < 1) 
+			{
 				fprintf(stderr, "Remove execution failed.\n");
 			}
 			else {
@@ -117,21 +125,25 @@ int main(char* argv[])
 				else continue;
 			}
 		}
-		else if (strcmp(*commandType, "Add") == 0) { // We recieved an "Add" command
+		else if (strcmp(*commandType, "Add") == 0) 
+		{ // We recieved an "Add" command
 			first = strtok(szLine, delimiters);
 			second = strtok(szLine, delimiters);
 			third = strtok(szLine, delimiters);
 			fourth = strtok(szLine, delimiters);
 			flightNumber = atoi(first);
-			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 5) {
+			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 5) 
+			{
 				fprintf(stderr, "Add failed: not enough parameters.\n");
 			}
 			else if ((flightNumber > MAX_ID || flightNumber < 1) ||
 				(second != 'I' || second != 'D') ||
 				allCapsThree(third == FAILURE) ||
 				(fourth != 'E' || fourth != 'R'))
+
 				fprintf(stderr, "Add execution failed.\n");
-			else {
+			else 
+			{
 				Result j = addFlightToAirport(flightNumber, isI_or_D(second), third, isE_or_R(fourth));
 				if (j == FAILURE) printf("Add execution failed.\n");
 				else continue;
@@ -143,21 +155,25 @@ int main(char* argv[])
 		{ // We recieved a "Depart" command
 			first = strtok(szLine, delimiters);
 			runwayNumber = atoi(first);
-			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 2) {
+			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 2) 
+			{
 				fprintf(stderr, "Depart failed: not enough parameters.\n");
 			}
 			else if (runwayNumber > MAX_ID || runwayNumber < 1) {
 				fprintf(stderr, "Depart execution failed.\n");
 			}
-			else {
+			else 
+			{
 				Result j = departFromRunway(runwayNumber);
 				if (j == FAILURE) printf("Depart execution failed.\n");
 				continue;
 			}
 		}
-		else if (strcmp(*commandType, "Storm") == 0) { // We recieved a "Storm" command
+		else if (strcmp(*commandType, "Storm") == 0) 
+		{ // We recieved a "Storm" command
 			first = strtok(szLine, delimiters);
-			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 2) {
+			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 2) 
+			{
 				fprintf(stderr, "Storm failed: not enough parameters.\n");
 			}
 			else if (allCapsThree(first) == FAILURE) {
@@ -166,7 +182,8 @@ int main(char* argv[])
 			else stormAlert(first);
 			continue;
 		}
-		else if (strcmp(*commandType, "Print") == 0) { // We recieved a "Print" command
+		else if (strcmp(*commandType, "Print") == 0) 
+		{ // We recieved a "Print" command
 			printAirport();
 			continue;
 		}
