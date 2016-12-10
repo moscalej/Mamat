@@ -1,4 +1,61 @@
-﻿  airport.c
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(218): warning C4028: formal parameter 2 different from declaration
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(246): warning C4172: returning address of local variable or temporary: awnser_0
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(267): warning C4172: returning address of local variable or temporary: awnser_0
+﻿  main.c
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(89): warning C4133: 'function': incompatible types - from 'char *' to 'FILE *'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(97): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(97): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(103): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(103): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(106): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(109): warning C4047: 'function': 'RunwayType' differs in levels of indirection from 'char *'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(109): warning C4024: 'addRunway': different types for formal and actual parameter 2
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(114): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(114): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(119): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(119): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(130): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(130): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(137): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(137): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(142): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(143): warning C4047: '==': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(143): warning C4047: 'function': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(143): warning C4024: 'allCapsThree': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(144): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(146): warning C4047: 'function': 'char' differs in levels of indirection from 'char *'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(146): warning C4024: 'isI_or_D': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(146): warning C4047: 'function': 'FlightDestination' differs in levels of indirection from 'char *'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(146): warning C4024: 'addFlightToAirport': different types for formal and actual parameter 3
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(146): warning C4024: 'isE_or_R': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(151): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(151): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(155): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(155): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(161): warning C4013: 'departFromRunway' undefined; assuming extern returning int
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(166): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(166): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(169): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(169): warning C4024: 'Number_of_Inputs': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(180): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(180): warning C4024: 'strcmp': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(182): warning C4013: 'printAirport' undefined; assuming extern returning int
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(81): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(91): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(99): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(100): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(116): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(132): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(133): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(134): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(135): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(153): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(168): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
