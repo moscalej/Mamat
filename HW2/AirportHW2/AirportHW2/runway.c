@@ -12,7 +12,7 @@ and with the node fild pointers to the next
 node*/
 PRunwayInfo createRunway(int Num, char Type) {
 	PRunwayInfo pElem;  //defines pElem as a pointer to a struct object for the malloc to create memory
-	pElem = (PRunwayInfo)malloc(sizeof(PRunwayInfo)); // Dyanmic memory allocation
+	pElem = (PRunwayInfo)malloc(sizeof(RunwayInfo)); // Dyanmic memory allocation
 
 	if (NULL == pElem) {
 		exit(-1); // Check to make sure legal memory was allocated

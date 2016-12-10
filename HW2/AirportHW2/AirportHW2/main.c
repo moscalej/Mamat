@@ -65,8 +65,13 @@ void main(char argc, char* argv[]) {
 	int inputCount;
 	int runwayNumber;
 	int flightNumber;
-
+	Result result;
 	FILE *fp;
+
+	
+	
+	Airporthead0.RunwayList = NULL;
+	Airporthead = &Airporthead0;
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	if (argc < 1)
@@ -81,22 +86,33 @@ void main(char argc, char* argv[]) {
 		printf("Error: Can't open %s\n", argv[1]);
 		exit(1);
 	}
-	while (fgets(szLine, sizeof szLine, fp)) {
+	while (fgets(szLine, sizeof szLine, fp))
+	{
 		//printf("***"); fprintf(stderr, &szLine); printf("***\n");
 		//fprintf(stderr, strtok(szLine, delimiters))
-		inputCount = Number_of_Inputs(szLine); printf("INPUT COUNT = %d\n", inputCount);
+		inputCount = Number_of_Inputs(szLine); 
+
+		printf("INPUT COUNT = %d\n", inputCount);
+
 		commandType = strtok(szLine, delimiters);
-		//printf("^^^"); fprintf(stderr, commandType); printf("^^^");
-		if (Command(commandType) == FAILURE) {
+		
+		if (Command(commandType) == FAILURE)
+		{
 			fprintf(stderr, "Command not found.\n");
 			continue;
 		}
-		else if (strcmp(commandType, "Insert") == 0) { // We recieved an "Insert" command
+
+
+		// We recieved an "Insert" command
+		else if (strcmp(commandType, "Insert") == 0) 
+		{ 
 			first = strtok(NULL, delimiters);
 			//printf("First"); fprintf(stderr, first); printf("$$$\n");
 			second = strtok(NULL, delimiters);
 			//fprintf(stderr, second);
 			//printf("!!!\n");
+
+
 			if (first == NULL || second == NULL) {
 				fprintf(stderr, "Insert failed: not enough parameters.\n");
 				continue;
@@ -106,18 +122,35 @@ void main(char argc, char* argv[]) {
 				fprintf(stderr, "Insert failed: not enough parameters.\n");
 				continue;
 			}
-			if (((runwayNumber > MAX_ID) || (runwayNumber < 1)) || ((second != 'I') && (second != 'D'))) {
-				printf("Insert execution failed.\n");
-				///printf("Second"); fprintf(stderr, second);
+
+			if (((runwayNumber > 1000) || (runwayNumber < 1)) || ((*second != (char)'I') && (*second != (char)'D'))) 
+			{
+				printf("Insert execution failed3.\n");
 				continue;
 			}
-			else {
-				Result j = addRunway(runwayNumber, second);
-				if (j == FAILURE) printf("Insert execution failed.\n");
-				else continue;
+
+
+
+			else 
+			{
+
+
+				result = addRunway(runwayNumber, *second);
+				if (result == FAILURE) 
+				{
+					printf("Insert execution failed.\n");
+				}
+				else
+				{
+					continue;
+				}
 			}
 		}
-		else if (strcmp(commandType, "Remove") == 0) { // We recieved a "Remove" command
+
+
+
+		else if (strcmp(commandType, "Remove") == 0) 
+		{ // We recieved a "Remove" command
 			first = strtok(NULL, delimiters);
 			runwayNumber = atoi(first);
 			if (first == NULL) {
@@ -154,14 +187,16 @@ void main(char argc, char* argv[]) {
 				continue;
 			}
 			else if ((flightNumber > MAX_ID || flightNumber < 1) ||
-				(second != 'I' || second != 'D') ||
-				allCapsThree(third == FAILURE) ||
-				(fourth != 'E' || fourth != 'R')) {
+				(*second != 'I' && *second != 'D') ||
+				(allCapsThree(third) == FAILURE) ||
+				(*fourth != 'E' && *fourth != 'R')) 
+			{
 				fprintf(stderr, "Add execution failed.\n");
 				continue;
 			}
-			else {
-				Result j = addFlightToAirport(flightNumber, isI_or_D(second), third, isE_or_R(fourth));
+			else
+			{
+				Result j = addFlightToAirport(flightNumber, isI_or_D(second), &third , isE_or_R(fourth));
 				if (j == FAILURE) printf("Add execution failed.\n");
 				else continue;
 			}

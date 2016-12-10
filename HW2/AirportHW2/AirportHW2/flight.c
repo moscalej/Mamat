@@ -19,9 +19,9 @@ PFlightInfo  createFlight(int Num, char Type, char Destination[], char Emergency
 	/* - Entering the flights information - */
 	pElem->Flight_Num = (FlightNum)Num;
 	pElem->Flight_Type = (FlightType)Type;
-	pElem->Flight_Destination[0] = (FlightDestination)Destination[0];
-	pElem->Flight_Destination[1] = (FlightDestination)Destination[1];
-	pElem->Flight_Destination[2] = (FlightDestination)Destination[2];
+	pElem->Flight_Destination[0] = (char) "H";//(FlightDestination)Destination[0];
+	pElem->Flight_Destination[1] = (char)"T";//(FlightDestination)Destination[1];
+	pElem->Flight_Destination[2] = (char)"L";//(FlightDestination)Destination[2];
 	pElem->Emergency = (BOOL)Emergency;
 	/* - - - - - - - -the link part - - - - - - - - - - */
 	pElem->headNext = NULL;

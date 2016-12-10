@@ -6,12 +6,14 @@
 
 typedef struct Airport_Info {
 	/*-------this is the information part of the node---- */
-	
+
 	/*------this is the link part of the node------*/
 	PRunwayInfo RunwayList;
-	
 
 }AirportInfo, *PAirportInfo;
+
+AirportInfo Airporthead0;
+PAirportInfo Airporthead;
 
 typedef struct good_and_bad
 {
@@ -20,7 +22,12 @@ typedef struct good_and_bad
 }GoodAndBad, *PGoodAndBad;
 
 
-PAirportInfo Airporthead; //global variable
+
+
+//global variable
+
+
+
 
 /*this are funtions to help in other funtions*/
 PRunwayInfo findTheLane(FlightType /*, BOOL bool*/); //status<--- need debug

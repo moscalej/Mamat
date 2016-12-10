@@ -1,0 +1,34 @@
+﻿  runway.c
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(135): warning C4553: '==': operator has no effect; did you intend '='?
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(187): warning C4101: 'pointer_location_temp': unreferenced local variable
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(207): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(207): note: placeholders and their parameters expect 0 variadic arguments, but 2 were provided
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(211): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\runway.c(211): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  main.c
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(23): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(190): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(191): warning C4047: '==': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(191): warning C4047: 'function': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(191): warning C4024: 'allCapsThree': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(192): warning C4047: '!=': 'char *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(197): warning C4047: 'function': 'char' differs in levels of indirection from 'char *'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(197): warning C4024: 'isI_or_D': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(197): warning C4047: 'function': 'FlightDestination' differs in levels of indirection from 'char *'
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(197): warning C4024: 'addFlightToAirport': different types for formal and actual parameter 3
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(197): warning C4024: 'isE_or_R': different types for formal and actual parameter 1
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(218): warning C4013: 'departFromRunway' undefined; assuming extern returning int
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(237): warning C4013: 'printAirport' undefined; assuming extern returning int
+  flight.c
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\flight.c(10): warning C4028: formal parameter 3 different from declaration
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\flight.c(40): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\flight.c(40): note: placeholders and their parameters expect 0 variadic arguments, but 6 were provided
+  airport.c
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(17): warning C4474: 'printf' : too many arguments passed for format string
+  c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(17): note: placeholders and their parameters expect 0 variadic arguments, but 2 were provided
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(224): warning C4028: formal parameter 2 different from declaration
+  Generating Code...
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(252): warning C4172: returning address of local variable or temporary: awnser_0
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(273): warning C4172: returning address of local variable or temporary: awnser_0
+  AirportHW2.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\mamat\Mamat\HW2\AirportHW2\x64\Debug\AirportHW2.exe
+  AirportHW2.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\mamat\Mamat\HW2\AirportHW2\x64\Debug\AirportHW2.pdb (Full PDB)

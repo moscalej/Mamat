@@ -6,9 +6,15 @@
 #include "airport.h"
 
 
+
+
+
+
+
 /**/
 Result addRunway(RunwayNum runway_number, RunwayType runway_type)
 {
+	printf("Inserti got here i read &d and &c.\n", runway_number, runway_type); //<---debug
 	PRunwayInfo runway_navagator;
 
 	if (Airporthead->RunwayList == NULL)
@@ -138,7 +144,8 @@ Result addFlightToAirport(int flight_number, FlightType flight_type, FlightDesti
 
 
 /*to be fill*/
-void printAirport() {
+void printAirport()
+{/*
 	PAirportInfo temp = Airporthead;
 	Result result;
 	printf("Airport status:\n");
@@ -149,7 +156,7 @@ void printAirport() {
 			temp->RunwayList = temp->RunwayList->RunwayList;
 		}
 		else break;
-	}
+	}*/
 };
 
 

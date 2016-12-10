@@ -11,6 +11,6 @@ typedef enum result_t {
 	FAILURE, SUCCESS
 } Result;
 
-#define MAX_ID 100000
+#define MAX_ID "100000"
 
 #endif /* EX2_H_ */
