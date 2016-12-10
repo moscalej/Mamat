@@ -62,6 +62,7 @@ Result removeRunway(RunwayNum runway_number)
 		{
 			runway_temp = runway_navagator->RunwayList;
 			runway_navagator->RunwayList = runway_navagator->RunwayList->RunwayList;
+			// return SUCCESS; ??
 
 		}
 	}
@@ -69,22 +70,31 @@ Result removeRunway(RunwayNum runway_number)
 
 
 
-/*This funtion will find for the lane fallowing the next comparations
-	1-if the lane is the type we are searching
-		2-if the number of flights is smallar from the minimal we found 
-		 we found so far
-			3-if the id is smallar than the minimal we found
-	after the three comparations if it find something will return a pointer
-	to the runway if not will return NULL*/
+/*This function will find the lane that meets these conditions
+1 - If the lane in the proper runway type we are looking for
+2 - If the number of flights on the runway list is smaller than the smallest
+runway list we've found so far.
+3 - If the runway number is smaller than the smallest runway number we found
+so far.
+After these comparing conditions, if the function finds a suitable spot it
+will return a pointer to correct runway. If not it will return NULL*/
 PRunwayInfo findTheLane(FlightType flight_type/*, BOOL bool*/) //not shure if we need emergency for this
 {
+	//RunwayInfo pointer_lane0;
 	PRunwayInfo pointer_lane;
-	PRunwayInfo pointer_lane_minumun;
-	int number_of_flights_old, number_of_flights_new;
 	pointer_lane = Airporthead->RunwayList;
-	number_of_flights_old = MAX_ID;
+	//pointer_lane = &pointer_lane0;
+
+	RunwayInfo pointer_lane_minumun0;
+	PRunwayInfo pointer_lane_minumun;
+	pointer_lane_minumun = &pointer_lane_minumun0;
 	pointer_lane_minumun->Runway_Num = MAX_ID;
+
 	BOOL did_it_change = FALSE;
+
+	int number_of_flights_old, number_of_flights_new;
+	number_of_flights_old = MAX_ID;
+	
 	while (TRUE)
 	{
 		if (pointer_lane->Runway_Type == flight_type)
@@ -130,17 +140,14 @@ Result addFlightToAirport(int flight_number, FlightType flight_type, FlightDesti
 
 /*to be fill*/
 void printAirport() {
-	printf("Airport status:\n");
-	int i = 1;
-	int numberOfRunways; // we need a function to count the number of runways
 	PAirportInfo temp = Airporthead;
 	Result result;
 	printf("Airport status:\n");
-	while (i < numberOfRunways) {
+	while (1) {
 		result = printRunway(temp->RunwayList);
+		if (result = FAILURE) break;
 		if (temp->RunwayList != NULL) {
 			temp->RunwayList = temp->RunwayList->RunwayList;
-			i++;
 		}
 		else break;
 	}
@@ -154,7 +161,7 @@ PRunwayInfo findLaneByNumber(runway_number)
 	lane_temp = Airporthead->RunwayList;
 	while (TRUE)
 	{
-		if (NULL==lane_temp)
+		if (NULL == lane_temp)
 		{
 			return NULL;
 		}
@@ -167,12 +174,14 @@ PRunwayInfo findLaneByNumber(runway_number)
 }
 
 
+
+
 /*find the lane pointer and use depart from runway.c*/
-Result depoartFromRunway(runway_number)
+Result departFromRunway(runway_number)
 {
 	PRunwayInfo lane_temp;
 	lane_temp = findLaneByNumber(runway_number);
-	if (lane_temp==NULL)
+	if (lane_temp == NULL)
 	{
 		return FAILURE;
 	}
@@ -199,6 +208,7 @@ void destroyAirport()
 }
 
 
+
 /*
 #####################	THIS FUNTION IS A SUBFUNTION USED IN STORM ALARM##################
 this funtion will sort the the line and return two PFLIGHTINFO pointer one with the planes
@@ -206,25 +216,34 @@ that maches the direction and the other with the planes that  dont
 the good line is the one that maches the adrres*/
 PGoodAndBad removeBadFlights(PFlightInfo start_pointer_0, FlightDestination destination[]) 
 {
-	PGoodAndBad awnser;
+	GoodAndBad awnser_0;
+	PGoodAndBad awnser_pointer;
+	awnser_pointer = &awnser_0;
+
 	PFlightInfo start_pointer;
+
 	PFlightInfo good_line0;
+	FlightInfo good_line;
+	good_line0 = &good_line;
 	PFlightInfo bad_line0;
+	FlightInfo bad_line;
+	bad_line0 = &bad_line;
 
 	start_pointer = start_pointer_0;
-
+	
 	good_line0->headNext = NULL;
 	bad_line0->headNext = NULL;
-
-	awnser->bad_line = bad_line0;
-	awnser->good_line = good_line0;
+	
+	awnser_0.bad_line = bad_line0;
+	awnser_0.good_line= good_line0;
+	
 
 
 	if (start_pointer == NULL)
 	{
-		awnser->bad_line = NULL;
-		awnser->good_line = NULL;
-		return awnser;
+		awnser_pointer->bad_line = NULL;
+		awnser_pointer->good_line = NULL;
+		return awnser_pointer;
 	}
 	while (TRUE)
 	{
@@ -243,9 +262,9 @@ PGoodAndBad removeBadFlights(PFlightInfo start_pointer_0, FlightDestination dest
 		start_pointer = start_pointer->headNext;
 		if (start_pointer == NULL)
 		{
-			awnser->bad_line = awnser->bad_line->headNext;
-			awnser->good_line = awnser->good_line->headNext;
-			return awnser;
+			awnser_pointer->bad_line = awnser_pointer->bad_line->headNext;
+			awnser_pointer->good_line = awnser_pointer->good_line->headNext;
+			return awnser_pointer;
 		}
 	}
 }
@@ -258,15 +277,20 @@ all the planes with  the definition will go
 then we will add all the flights back to the airport*/
 Result stormAlert(FlightDestination destination[])
 {
-	PGoodAndBad emergency_flights;
+	GoodAndBad emergency_flights;  //      <--- this will be the the statarting stone
+	PGoodAndBad emergency_flights_pointer;
+	emergency_flights_pointer = &emergency_flights;
+
+	RunwayInfo runway;			//      <--- this will be the the statarting stone
 	PRunwayInfo runway_pointer;
+	runway_pointer = &runway;
 	 
-	PFlightInfo emergency_flights_list_0;
+	FlightInfo emergency_flights_list_0;		//      <--- this will be the the statarting stone
 	PFlightInfo emergency_flights_list_pointer;
+	emergency_flights_list_pointer= &emergency_flights_list_0;
 
 	Result temp;
 
-	emergency_flights_list_0 = emergency_flights_list_pointer;
 	runway_pointer = Airporthead->RunwayList;
 
 
@@ -277,17 +301,19 @@ Result stormAlert(FlightDestination destination[])
 	/*this is the fech part of the funtion*/
 	while (TRUE)
 	{
-		emergency_flights = removeBadFlights(runway_pointer->head_flight, destination);
-		runway_pointer->head_flight = emergency_flights->bad_line;
-		emergency_flights_list_pointer->headNext = emergency_flights->good_line;
+		emergency_flights_pointer = removeBadFlights(runway_pointer->head_flight, destination);
+		runway_pointer->head_flight = emergency_flights_pointer->bad_line;
+		emergency_flights_list_pointer->headNext = emergency_flights_pointer->good_line;
+
 		while (TRUE)
 		{
-			if (emergency_flights_list_pointer->headNext == NULL)
+			temp = addFlight(runway_pointer, emergency_flights_pointer->good_line);
+			emergency_flights_pointer->good_line = emergency_flights_pointer->good_line->headNext;
+			if (NULL == emergency_flights_pointer)
 			{
 				break;
 			}
-			emergency_flights_list_pointer = emergency_flights_list_pointer->headNext;
-		}
+		}		
 		runway_pointer = runway_pointer->RunwayList;
 		if (runway_pointer == NULL)
 		{
@@ -296,23 +322,7 @@ Result stormAlert(FlightDestination destination[])
 	}
 
 
-	/*this will be the insertion part of the funtion*/
-	emergency_flights_list_0 = emergency_flights_list_0->headNext;
-	while (TRUE)
-	{
-		if (emergency_flights_list_0 == NULL) break;
 
-		temp = addFlightToAirport(emergency_flights_list_0->Flight_Num,
-			emergency_flights_list_0->Flight_Type,
-			emergency_flights_list_0->Flight_Destination,
-			emergency_flights_list_0->Emergency);
-
-		if (temp == FAILURE) return FAILURE;
-
-		emergency_flights_list_pointer = emergency_flights_list_0;
-		emergency_flights_list_0->headNext;
-		destroyFlight(emergency_flights_list_pointer);
-			}
 	return	SUCCESS;
 }
 

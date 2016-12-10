@@ -1,13 +1,4 @@
 ﻿  airport.c
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(208): warning C4028: formal parameter 2 different from declaration
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(260): warning C4028: formal parameter 1 different from declaration
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(280): warning C4047: 'function': 'FlightDestination *' differs in levels of indirection from 'FlightDestination'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(280): warning C4024: 'removeBadFlights': different types for formal and actual parameter 2
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(307): warning C4047: 'function': 'FlightDestination' differs in levels of indirection from 'FlightDestination [3]'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(307): warning C4024: 'addFlightToAirport': different types for formal and actual parameter 3
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(86): error C4700: uninitialized local variable 'pointer_lane_minumun' used
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(139): error C4700: uninitialized local variable 'numberOfRunways' used
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(269): error C4700: uninitialized local variable 'emergency_flights_list_pointer' used
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(216): error C4700: uninitialized local variable 'good_line0' used
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(217): error C4700: uninitialized local variable 'bad_line0' used
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(219): error C4700: uninitialized local variable 'awnser' used
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(218): warning C4028: formal parameter 2 different from declaration
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(246): warning C4172: returning address of local variable or temporary: awnser_0
+c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\airport.c(267): warning C4172: returning address of local variable or temporary: awnser_0
