@@ -102,7 +102,7 @@ PRunwayInfo findTheLane(FlightType flight_type/*, BOOL bool*/) //not shure if we
 	
 	while (TRUE)
 	{
-		if (pointer_lane->Runway_Type == flight_type)
+		if (isI_or_D(pointer_lane->Runway_Type) == flight_type)
 		{
 			number_of_flights_new = getFLightNum(pointer_lane);
 			if (number_of_flights_new <= number_of_flights_old)

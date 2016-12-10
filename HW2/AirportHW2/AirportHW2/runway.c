@@ -9,7 +9,9 @@
 /* This funtion creates a runway node with :
 in the information field the number and type
 and with the node fild pointers to the next
-node*/
+node
+$$$$$$$$$$$$$$$$$$$working#################*/
+
 PRunwayInfo createRunway(int Num, char Type) {
 	PRunwayInfo pElem;  //defines pElem as a pointer to a struct object for the malloc to create memory
 	pElem = (PRunwayInfo)malloc(sizeof(RunwayInfo)); // Dyanmic memory allocation
@@ -25,7 +27,7 @@ PRunwayInfo createRunway(int Num, char Type) {
 	pElem->head_flight = NULL;
 
 	return pElem;
-}
+} 
 
 
 /* This function finds the head flight of a runway
