@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -36,20 +37,19 @@ int Number_of_Inputs(char input[])
 	}
 	return count;
 }
-
-
-FlightType isI_or_D(char input) {
+FlightType isI_or_D(char input) 
+{
 	if (input == 'I') return INTERNATIONAL;
 	else return DOMESTIC;
 }
-
-BOOL isE_or_R(char input) {
+BOOL isE_or_R(char input)
+{
 	if (input == 'E') return TRUE;
 	else return FALSE;
 }
-
 // A function to check that our destination is of the correct format
-Result allCapsThree(char input[]) {
+Result allCapsThree(char input[]) 
+{
 	if (input[3] != '\0') return FAILURE;
 	else if ((input[0] <= 'Z' && input[0] >= 'A') &&
 		(input[1] <= 'Z' && input[1] >= 'A') &&
@@ -57,16 +57,15 @@ Result allCapsThree(char input[]) {
 	else return FAILURE;
 }
 
-
-
-int main(char* argv[]) {
+int main(char* argv[])
+{
 	char szLine[MAX_LINE_SIZE];
 	char* delimiters = " \t\n";
 	char* commandType;
 	char* first;
 	char* second;
-	char* third;//destination   only destination 
-	char* fourth;//emergency    only emergency
+	char* third;//destination only
+	char* fourth;//emergency only
 	int runwayNumber;
 	int flightNumber;
 	FILE *fp;
@@ -80,34 +79,29 @@ int main(char* argv[]) {
 		printf("Error: Can't open %s\n", argv[1]);
 		exit(1);
 	}
-
-	while (fgets(szLine, MAX_LINE_SIZE, argv[0]))
-	{
+	while (fgets(szLine, MAX_LINE_SIZE, argv[0])) {
 		commandType = strtok(szLine, delimiters);
-
 		if (Command(commandType) == FAILURE) {
 			fprintf(stderr, "Command not found.\n");
 			continue;
 		}
-		else if (strcmp(*commandType, "Insert") == 0)  ///<--insert comand
-		{
+		else if (strcmp(*commandType, "Insert") == 0) { // We recieved an "Insert" command
 			first = strtok(szLine, delimiters);
 			second = strtok(szLine, delimiters);
-			runwayNumber = atoi(first);   //<---runway number
-
+			runwayNumber = atoi(first);
 			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 3) {
 				fprintf(stderr, "Insert failed: not enough parameters.\n");
 			}
 			else if ((runwayNumber > MAX_ID || runwayNumber < 1) || (second != 'I' || second != 'D')) {
 				printf("Insert execution failed.\n");
 			}
-			else addRunway(runwayNumber, second);
-			continue;
+			else {
+				Result j = addRunway(runwayNumber, second);
+				if (j == FAILURE) printf("Insert execution failed.\n");
+				else continue;
+			}
 		}
-
-		/*remove comand*/
-		else if (strcmp(*commandType, "Remove") == 0) 
-		{
+		else if (strcmp(*commandType, "Remove") == 0) { // We recieved a "Remove" command
 			first = strtok(szLine, delimiters);
 			runwayNumber = atoi(first);
 
@@ -117,20 +111,19 @@ int main(char* argv[]) {
 			else if (runwayNumber > MAX_ID || runwayNumber < 1) {
 				fprintf(stderr, "Remove execution failed.\n");
 			}
-			else removeRunway(runwayNumber);
-			continue;
+			else {
+				Result j = removeRunway(runwayNumber);
+				if (j == FAILURE) printf("Remove execution failed.\n");
+				else continue;
+			}
 		}
-
-		/*add comand (flighnumber*/
-		else if (strcmp(*commandType, "Add") == 0) 
-		{
+		else if (strcmp(*commandType, "Add") == 0) { // We recieved an "Add" command
 			first = strtok(szLine, delimiters);
 			second = strtok(szLine, delimiters);
 			third = strtok(szLine, delimiters);
 			fourth = strtok(szLine, delimiters);
 			flightNumber = atoi(first);
-			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 5)
-			{
+			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 5) {
 				fprintf(stderr, "Add failed: not enough parameters.\n");
 			}
 			else if ((flightNumber > MAX_ID || flightNumber < 1) ||
@@ -138,13 +131,16 @@ int main(char* argv[]) {
 				allCapsThree(third == FAILURE) ||
 				(fourth != 'E' || fourth != 'R'))
 				fprintf(stderr, "Add execution failed.\n");
-			else addFlightToAirport(flightNumber, isI_or_D(second), third, isE_or_R(fourth));
-			continue;
+			else {
+				Result j = addFlightToAirport(flightNumber, isI_or_D(second), third, isE_or_R(fourth));
+				if (j == FAILURE) printf("Add execution failed.\n");
+				else continue;
+			}
 		}
 
-		/*depart condition*/
-		else if (strcmp(*commandType, "Depart") == 0) 
-		{
+
+		else if (strcmp(*commandType, "Depart") == 0)
+		{ // We recieved a "Depart" command
 			first = strtok(szLine, delimiters);
 			runwayNumber = atoi(first);
 			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 2) {
@@ -153,13 +149,13 @@ int main(char* argv[]) {
 			else if (runwayNumber > MAX_ID || runwayNumber < 1) {
 				fprintf(stderr, "Depart execution failed.\n");
 			}
-			else departFromRunway(runwayNumber);
-			continue;
+			else {
+				Result j = departFromRunway(runwayNumber);
+				if (j == FAILURE) printf("Depart execution failed.\n");
+				continue;
+			}
 		}
-
-		/*storm condition*/
-		else if (strcmp(*commandType, "Storm") == 0) 
-		{
+		else if (strcmp(*commandType, "Storm") == 0) { // We recieved a "Storm" command
 			first = strtok(szLine, delimiters);
 			if (Number_of_Inputs(szLine[MAX_LINE_SIZE]) < 2) {
 				fprintf(stderr, "Storm failed: not enough parameters.\n");
@@ -170,15 +166,12 @@ int main(char* argv[]) {
 			else stormAlert(first);
 			continue;
 		}
-
-		/*print condition*/
-		else if (strcmp(*commandType, "Print") == 0)
-		{
+		else if (strcmp(*commandType, "Print") == 0) { // We recieved a "Print" command
 			printAirport();
 			continue;
 		}
-		/*desctroy condition and only left option after the first check*/
-		else	destroyAirport();
+		else	destroyAirport(); // The only possible command left is Exit
 	}
 	return 0;
 }
+

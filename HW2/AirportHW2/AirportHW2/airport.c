@@ -62,8 +62,7 @@ Result removeRunway(RunwayNum runway_number)
 		{
 			runway_temp = runway_navagator->RunwayList;
 			runway_navagator->RunwayList = runway_navagator->RunwayList->RunwayList;
-			// return SUCCESS; ??
-
+			destroyRunway(runway_temp);
 		}
 	}
 };
