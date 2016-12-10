@@ -33,6 +33,7 @@ void destroyFlight(PFlightInfo flight) {
 	free(flight);
 };
 
+/**/
 Result printFlight(PFlightInfo flight) {
 	if (flight == NULL) return FAILURE;
 	else // how to print properly??
