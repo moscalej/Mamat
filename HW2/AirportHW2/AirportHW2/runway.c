@@ -134,7 +134,7 @@ Result addFlight(PRunwayInfo runway_pointer, PFlightInfo new_flight_pointer) {
 		line and add the flight if is an emergency if not, it will add in the end*/
 		while (1) { // i am bit confuse with the pointers we have to check the well if we pass the adress or the think inside the adres
 
-			pointer_location_old = new_flight_pointer;
+			pointer_location_old = pointer_location_new;
 
 			if (pointer_location_new->headNext == NULL)
 			{
@@ -149,7 +149,7 @@ Result addFlight(PRunwayInfo runway_pointer, PFlightInfo new_flight_pointer) {
 			if (pointer_location_new->Emergency == FALSE && new_flight_pointer->Emergency == TRUE)
 			{
 				pointer_location_old->headNext = new_flight_pointer;
-				new_flight_pointer->headNext = pointer_location_new->headNext;
+				new_flight_pointer->headNext = pointer_location_new;
 				return SUCCESS;
 			}
 

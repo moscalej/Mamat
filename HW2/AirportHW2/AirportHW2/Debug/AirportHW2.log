@@ -1,7 +1,2 @@
-﻿  main.c
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(192): warning C4047: 'function': 'FlightDestination' differs in levels of indirection from 'char **'
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(192): warning C4024: 'addFlightToAirport': different types for formal and actual parameter 3
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(218): warning C4013: 'departFromRunway' undefined; assuming extern returning int
-c:\users\kareen\desktop\homework\sofware systems\mamat\mamat\hw2\airporthw2\airporthw2\main.c(237): warning C4013: 'printAirport' undefined; assuming extern returning int
-  AirportHW2.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\mamat\Mamat\HW2\AirportHW2\Debug\AirportHW2.exe
+﻿  AirportHW2.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\mamat\Mamat\HW2\AirportHW2\Debug\AirportHW2.exe
   AirportHW2.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\mamat\Mamat\HW2\AirportHW2\Debug\AirportHW2.pdb (Full PDB)

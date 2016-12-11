@@ -165,6 +165,7 @@ void main(char argc, char* argv[]) {
 				else continue;
 			}
 		}
+
 		else if (strcmp(commandType, "Add") == 0) { // We recieved an "Add" command
 			first = strtok(NULL, delimiters);
 			second = strtok(NULL, delimiters);
@@ -240,6 +241,7 @@ void main(char argc, char* argv[]) {
 		}
 		else	destroyAirport(); // The only possible command left is Exit
 	}
+
 	fclose(fp);
 }
 
