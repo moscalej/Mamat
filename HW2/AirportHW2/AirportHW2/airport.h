@@ -30,8 +30,8 @@ typedef struct good_and_bad
 
 
 /*this are funtions to help in other funtions*/
-PRunwayInfo findTheLane(FlightType ,FlightNum/*, BOOL bool*/); //status<--- need debug
-PRunwayInfo findLaneByNumber(RunwayNum );//status<--- need debug
+PRunwayInfo findTheLane(FlightType, FlightNum/*, BOOL bool*/); //status<--- need debug
+PRunwayInfo findLaneByNumber(RunwayNum);//status<--- need debug
 PGoodAndBad removeBadFlights(PFlightInfo, FlightDestination);
 FlightType isI_or_D(char);
 BOOL isE_or_R(char);

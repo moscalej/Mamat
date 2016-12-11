@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <memory.h>
-//#include <assert.h>
 #include "runway.h"
 
 
@@ -27,7 +25,7 @@ PRunwayInfo createRunway(int Num, char Type) {
 	pElem->head_flight = NULL;
 
 	return pElem;
-} 
+}
 
 
 /* This function finds the head flight of a runway
@@ -77,7 +75,7 @@ int getFLightNum(PRunwayInfo runway_pointer, int flight_number) {
 	int counter = 0;
 	PFlightInfo pointer_location_new;
 	pointer_location_new = runway_pointer->head_flight;
-	
+
 	if (pointer_location_new == NULL) {
 		return 0;
 	}
@@ -112,7 +110,7 @@ Result addFlight(PRunwayInfo runway_pointer, PFlightInfo new_flight_pointer) {
 	PFlightInfo pointer_location_new;
 	PFlightInfo pointer_location_old;
 	pointer_location_new = runway_pointer->head_flight;   // this will save pointer location new as a pointer to the first fly
-	
+
 	if (new_flight_pointer->Flight_Type == isI_or_D(runway_pointer->Runway_Type))
 	{
 
@@ -135,12 +133,12 @@ Result addFlight(PRunwayInfo runway_pointer, PFlightInfo new_flight_pointer) {
 		/*this soupuse navage the linked list and check if all the emergency flights after until the first not mergency on the
 		line and add the flight if is an emergency if not, it will add in the end*/
 		while (1) { // i am bit confuse with the pointers we have to check the well if we pass the adress or the think inside the adres
-			
+
 			pointer_location_old = new_flight_pointer;
 
 			if (pointer_location_new->headNext == NULL)
 			{
-				
+
 				pointer_location_new->headNext = new_flight_pointer;
 
 				return SUCCESS;
@@ -148,17 +146,17 @@ Result addFlight(PRunwayInfo runway_pointer, PFlightInfo new_flight_pointer) {
 
 			pointer_location_new = pointer_location_new->headNext;
 
-			if (pointer_location_new->Emergency == FALSE && new_flight_pointer->Emergency == TRUE) 
+			if (pointer_location_new->Emergency == FALSE && new_flight_pointer->Emergency == TRUE)
 			{
 				pointer_location_old->headNext = new_flight_pointer;
 				new_flight_pointer->headNext = pointer_location_new->headNext;
 				return SUCCESS;
 			}
 
-			
 
-			
-			
+
+
+
 		}
 	}
 	else	return FAILURE;
@@ -209,7 +207,7 @@ Result removeFlight(PRunwayInfo runway_pointer, FlightNum flight_id) {
 Result depart(PRunwayInfo runway_pointer) {
 	PFlightInfo pointer_location_new;
 	PFlightInfo pointer_location_temp;
-	if (runway_pointer->head_flight = NULL) {
+	if (runway_pointer->head_flight == NULL) {
 		return FAILURE;
 	}
 	pointer_location_new = runway_pointer->head_flight->headNext;
@@ -224,15 +222,21 @@ Result depart(PRunwayInfo runway_pointer) {
 Result printRunway(PRunwayInfo runway_pointer) {
 
 	PFlightInfo pointer_location_temp;
+	if (runway_pointer == NULL) return FAILURE;
 	pointer_location_temp = runway_pointer->head_flight;
 	int number_of_planes;
 	Result result;
-	printf("Runway &d &d\n",
-		runway_pointer->Runway_Num,
-		runway_pointer->Runway_Type
-	);
+	if (runway_pointer->Runway_Type == 'I') {
+		printf("Runway %d international\n",
+			runway_pointer->Runway_Num,
+			runway_pointer->Runway_Type
+			);
+	}
+	else if (runway_pointer->Runway_Type == 'D') {
+		printf("Runway %d domestic\n",	runway_pointer->Runway_Num);
+	}
 	number_of_planes = getFLightNum(runway_pointer, MAX_ID);
-	printf("&d flights are waiting :\n", number_of_planes);
+	printf("%d flights are waiting :\n", number_of_planes);
 	while (1) {
 		if (pointer_location_temp == NULL) {
 			return SUCCESS;

@@ -61,8 +61,8 @@ void main(char argc, char* argv[]) {
 	Result result;
 	FILE *fp;
 
-	
-	
+
+
 	Airporthead0.RunwayList = NULL;
 	Airporthead = &Airporthead0;
 
@@ -83,12 +83,12 @@ void main(char argc, char* argv[]) {
 	{
 		//printf("***"); fprintf(stderr, &szLine); printf("***\n");
 		//fprintf(stderr, strtok(szLine, delimiters))
-		inputCount = Number_of_Inputs(szLine); 
+		inputCount = Number_of_Inputs(szLine);
 
-		printf("INPUT COUNT = %d\n", inputCount);
+		//printf("INPUT COUNT = %d\n", inputCount);
 
 		commandType = strtok(szLine, delimiters);
-		
+
 		if (Command(commandType) == FAILURE)
 		{
 			fprintf(stderr, "Command not found.\n");
@@ -97,8 +97,8 @@ void main(char argc, char* argv[]) {
 
 
 		// We recieved an "Insert" command
-		else if (strcmp(commandType, "Insert") == 0) 
-		{ 
+		else if (strcmp(commandType, "Insert") == 0)
+		{
 			first = strtok(NULL, delimiters);
 			//printf("First"); fprintf(stderr, first); printf("$$$\n");
 			second = strtok(NULL, delimiters);
@@ -116,22 +116,22 @@ void main(char argc, char* argv[]) {
 				continue;
 			}
 
-			if (((runwayNumber > 1000) || (runwayNumber < 1)) || ((*second != (char)'I') && (*second != (char)'D'))) 
+			if (((runwayNumber > 1000) || (runwayNumber < 1)) || ((*second != (char)'I') && (*second != (char)'D')))
 			{
-				printf("Insert execution failed3.\n");
+				fprintf(stderr, "Insert execution failed.\n");
 				continue;
 			}
 
 
 
-			else 
+			else
 			{
 
 
 				result = addRunway(runwayNumber, *second);
-				if (result == FAILURE) 
+				if (result == FAILURE)
 				{
-					printf("Insert execution failed.\n");
+					fprintf(stderr, "Insert execution failed.\n");
 				}
 				else
 				{
@@ -142,7 +142,7 @@ void main(char argc, char* argv[]) {
 
 
 
-		else if (strcmp(commandType, "Remove") == 0) 
+		else if (strcmp(commandType, "Remove") == 0)
 		{ // We recieved a "Remove" command
 			first = strtok(NULL, delimiters);
 			runwayNumber = atoi(first);
@@ -161,7 +161,7 @@ void main(char argc, char* argv[]) {
 			}
 			else {
 				Result j = removeRunway(runwayNumber);
-				if (j == FAILURE) printf("Remove execution failed.\n");
+				if (j == FAILURE) fprintf(stderr,"Remove execution failed.\n");
 				else continue;
 			}
 		}
@@ -182,41 +182,42 @@ void main(char argc, char* argv[]) {
 			else if ((flightNumber > MAX_ID || flightNumber < 1) ||
 				(*second != 'I' && *second != 'D') ||
 				(allCapsThree(third) == FAILURE) ||
-				(*fourth != 'E' && *fourth != 'R')) 
+				(*fourth != 'E' && *fourth != 'R'))
 			{
 				fprintf(stderr, "Add execution failed.\n");
 				continue;
 			}
 			else
 			{
-				Result j = addFlightToAirport(flightNumber, isI_or_D(*second), &third , isE_or_R(*fourth));
+				Result j = addFlightToAirport(flightNumber, isI_or_D(*second), third, isE_or_R(*fourth));
 				if (j == FAILURE)
 				{
-					printf("Add execution failed.\n");
+					fprintf(stderr, "Add execution failed.\n");
 				}
 				else continue;
 			}
 		}
 
-		else if (strcmp(commandType, "Depart") == 0) 
+		else if (strcmp(commandType, "Depart") == 0)
 		{ // We recieved a "Depart" command
 			first = strtok(NULL, delimiters);
-			runwayNumber = atoi(first);
 			if (first == NULL) {
 				fprintf(stderr, "Depart failed: not enough parameters.\n");
 				continue;
 			}
+			else runwayNumber = atoi(first);
 			if (inputCount < 2) {
 				fprintf(stderr, "Depart failed: not enough parameters.\n");
 				continue;
 			}
+
 			else if (runwayNumber > MAX_ID || runwayNumber < 1) {
 				fprintf(stderr, "Depart execution failed.\n");
 				continue;
 			}
 			else {
 				Result j = departFromRunway(runwayNumber);
-				if (j == FAILURE) printf("Depart execution failed.\n");
+				if (j == FAILURE) fprintf(stderr, "Depart execution failed.\n");
 				continue;
 			}
 		}
