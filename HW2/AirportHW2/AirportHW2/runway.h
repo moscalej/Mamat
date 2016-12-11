@@ -25,7 +25,9 @@ typedef struct _Runway_List* P_RunwayList;
 PRunwayInfo createRunway(RunwayNum, RunwayType);
 void destroyRunway(PRunwayInfo);
 BOOL isFlightExists(PRunwayInfo, FlightNum); // Need to check for FlightNum
-int getFLightNum(PRunwayInfo);
+
+int getFLightNum(PRunwayInfo,RunwayNum);
+
 Result addFlight(PRunwayInfo, PFlightInfo); // Need to add all flight information
 Result removeFlight(PRunwayInfo, FlightNum);
 Result depart(PRunwayInfo);

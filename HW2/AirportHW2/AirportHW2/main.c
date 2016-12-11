@@ -37,14 +37,7 @@ int Number_of_Inputs(char input[])
 	//printf("count is %d", count);
 	return count;
 }
-FlightType isI_or_D(char input) {
-	if (input == 'I') return INTERNATIONAL;
-	else return DOMESTIC;
-}
-BOOL isE_or_R(char input) {
-	if (input == 'E') return TRUE;
-	else return FALSE;
-}
+
 // A function to check that our destination is of the correct format
 Result allCapsThree(char input[]) {
 	if (input[3] != '\0') return FAILURE;
@@ -197,11 +190,16 @@ void main(char argc, char* argv[]) {
 			else
 			{
 				Result j = addFlightToAirport(flightNumber, isI_or_D(second), &third , isE_or_R(fourth));
-				if (j == FAILURE) printf("Add execution failed.\n");
+				if (j == FAILURE)
+				{
+					printf("Add execution failed.\n");
+				}
 				else continue;
 			}
 		}
-		else if (strcmp(commandType, "Depart") == 0) { // We recieved a "Depart" command
+
+		else if (strcmp(commandType, "Depart") == 0) 
+		{ // We recieved a "Depart" command
 			first = strtok(NULL, delimiters);
 			runwayNumber = atoi(first);
 			if (first == NULL) {

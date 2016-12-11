@@ -83,7 +83,7 @@ runway list we've found so far.
 so far.
 After these comparing conditions, if the function finds a suitable spot it
 will return a pointer to correct runway. If not it will return NULL*/
-PRunwayInfo findTheLane(FlightType flight_type/*, BOOL bool*/) //not shure if we need emergency for this
+PRunwayInfo findTheLane(FlightType flight_type,int flight_number/*, BOOL bool*/) //not shure if we need emergency for this
 {
 	//RunwayInfo pointer_lane0;
 	PRunwayInfo pointer_lane;
@@ -104,7 +104,11 @@ PRunwayInfo findTheLane(FlightType flight_type/*, BOOL bool*/) //not shure if we
 	{
 		if (isI_or_D(pointer_lane->Runway_Type) == flight_type)
 		{
-			number_of_flights_new = getFLightNum(pointer_lane);
+			number_of_flights_new = getFLightNum(pointer_lane, flight_number);
+			if (number_of_flights_new == (-1))
+			{
+				return NULL;
+			}
 			if (number_of_flights_new <= number_of_flights_old)
 			{
 				if (pointer_lane->Runway_Num <= pointer_lane_minumun->Runway_Num)
@@ -135,7 +139,11 @@ Result addFlightToAirport(int flight_number, FlightType flight_type, FlightDesti
 {
 	PFlightInfo new_flight;
 	PRunwayInfo runway_pointer;
-	runway_pointer = findTheLane(flight_type);
+	runway_pointer = findTheLane(flight_type, flight_number);
+	if (runway_pointer == NULL)
+	{
+		return FAILURE;
+	}
 	new_flight = createFlight(flight_number, flight_type, flight_destination, bool);
 	return addFlight(runway_pointer, new_flight);
 }
@@ -332,3 +340,11 @@ Result stormAlert(FlightDestination destination[])
 	return	SUCCESS;
 }
 
+FlightType isI_or_D(char input) {
+	if (input == 'I') return INTERNATIONAL;
+	else return DOMESTIC;
+}
+BOOL isE_or_R(char input) {
+	if (input == 'E') return TRUE;
+	else return FALSE;
+}
