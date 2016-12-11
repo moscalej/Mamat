@@ -189,7 +189,7 @@ void main(char argc, char* argv[]) {
 			}
 			else
 			{
-				Result j = addFlightToAirport(flightNumber, isI_or_D(second), &third , isE_or_R(fourth));
+				Result j = addFlightToAirport(flightNumber, isI_or_D(*second), &third , isE_or_R(*fourth));
 				if (j == FAILURE)
 				{
 					printf("Add execution failed.\n");

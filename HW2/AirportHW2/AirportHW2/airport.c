@@ -109,13 +109,13 @@ PRunwayInfo findTheLane(FlightType flight_type,int flight_number/*, BOOL bool*/)
 			{
 				return NULL;
 			}
-			if (number_of_flights_new <= number_of_flights_old)
+			if (number_of_flights_new < number_of_flights_old ||
+				((number_of_flights_new == number_of_flights_old) && ((pointer_lane->Runway_Num) < (pointer_lane_minumun->Runway_Num))))
 			{
-				if (pointer_lane->Runway_Num <= pointer_lane_minumun->Runway_Num)
-				{
-					pointer_lane_minumun = pointer_lane;
-					did_it_change = TRUE;
-				}
+
+				pointer_lane_minumun = pointer_lane;
+				did_it_change = TRUE;
+		
 				number_of_flights_old = number_of_flights_new;
 			}
 		}
