@@ -55,6 +55,7 @@ Result removeRunway(RunwayNum runway_number)
 	if (runway_navagator->Runway_Num == runway_number)
 	{
 		Airporthead->RunwayList = Airporthead->RunwayList->RunwayList;
+		runway_navagator->RunwayList = NULL;
 		destroyRunway(runway_navagator);
 		return SUCCESS;
 	}
@@ -68,10 +69,11 @@ Result removeRunway(RunwayNum runway_number)
 		{
 			runway_temp = runway_navagator->RunwayList;
 			runway_navagator->RunwayList = runway_navagator->RunwayList->RunwayList;
+			runway_temp->RunwayList = NULL;
 			destroyRunway(runway_temp);
 			return SUCCESS;
 		}
-		runway_navagator->RunwayList = runway_navagator->RunwayList->RunwayList;
+		runway_navagator = runway_navagator->RunwayList;
 	}
 };
 
@@ -194,7 +196,7 @@ PRunwayInfo findLaneByNumber(runway_number)
 		{
 			return lane_temp;
 		}
-		
+
 		lane_temp = lane_temp->RunwayList;
 	}
 }
@@ -278,13 +280,13 @@ PGoodAndBad removeBadFlights(PFlightInfo start_pointer_0, FlightDestination dest
 		{
 			good_line0->headNext = start_pointer;
 			good_line0 = good_line0->headNext;
-			
+
 		}
 		else
 		{
 			bad_line0->headNext = start_pointer;
 			bad_line0 = bad_line0->headNext;
-			
+
 		}
 		start_pointer = start_pointer->headNext;
 		if (start_pointer == NULL)
@@ -336,7 +338,7 @@ Result stormAlert(FlightDestination destination)
 		runway_pointer->head_flight = emergency_flights_pointer->bad_line;
 		navagator_pointer = emergency_flights_pointer->good_line;
 
-		
+
 
 		while (TRUE)
 		{
@@ -357,8 +359,8 @@ Result stormAlert(FlightDestination destination)
 
 			temp = addFlight(runway_pointer, emergency_flights_list_pointer);
 			if (temp == FAILURE) break;
-			
-			
+
+
 
 		}
 		runway_pointer = runway_pointer->RunwayList;

@@ -81,7 +81,7 @@ void main(char argc, char* argv[]) {
 	}
 	while (fgets(szLine, sizeof szLine, fp))
 	{
-		
+
 		inputCount = Number_of_Inputs(szLine);
 
 		commandType = strtok(szLine, delimiters);
@@ -157,7 +157,7 @@ void main(char argc, char* argv[]) {
 			}
 			else {
 				Result j = removeRunway(runwayNumber);
-				if (j == FAILURE) fprintf(stderr,"Remove execution failed.\n");
+				if (j == FAILURE) fprintf(stderr, "Remove execution failed.\n");
 				else continue;
 			}
 		}
@@ -168,11 +168,11 @@ void main(char argc, char* argv[]) {
 			second = strtok(NULL, delimiters);
 			third = strtok(NULL, delimiters);
 			fourth = strtok(NULL, delimiters);
-			flightNumber = atoi(first);
 			if (first == NULL || second == NULL || third == NULL || fourth == NULL) {
 				fprintf(stderr, "Add failed: not enough parameters.\n");
 				continue;
 			}
+			flightNumber = atoi(first);
 			if (inputCount < 5) {
 				fprintf(stderr, "Add failed: not enough parameters.\n");
 				continue;
@@ -222,7 +222,7 @@ void main(char argc, char* argv[]) {
 		}
 
 		/*storm Comand*/
-		else if (strcmp(commandType, "Storm") == 0) { 
+		else if (strcmp(commandType, "Storm") == 0) {
 			first = strtok(NULL, delimiters);
 			if (inputCount < 2) {
 				fprintf(stderr, "Storm failed: not enough parameters.\n");
@@ -237,14 +237,18 @@ void main(char argc, char* argv[]) {
 		}
 
 		/*this is the Print comand*/
-		else if (strcmp(commandType, "Print") == 0) 
-		{ 
+		else if (strcmp(commandType, "Print") == 0)
+		{
 			printAirport();
+			fprintf(stdout, "\n");
 			continue;
 		}
 
 		/* The only possible command left is Exit*/
-		else	destroyAirport(); //
+		else {
+			destroyAirport();
+			break;
+		}//
 	}
 
 	fclose(fp);

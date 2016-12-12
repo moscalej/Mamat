@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LocalDebuggerCommandArguments>"C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\mamat\Mamat\HW2\in_1.txt"</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>"C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\mamat\Mamat\HW2\AirportHW2\AirportHW2\Inputs\CheckRunwayDestroy" 1&gt;"C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\mamat\Mamat\HW2\AirportHW2\AirportHW2\Expected Outputs\CheckRunwayDestroy_Out1.txt"</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>
