@@ -1,0 +1,26 @@
+Insert
+Insert 1
+Insert 1 E
+Insert 2 I
+Insert 3 I
+Add 1 D HFA R
+Insert 1 D
+Insert 1 I
+Add 1 D HFA R
+Add 1 I JFK R
+Add 2 I JFK R
+Add 3 D ETH E
+Add 4 I CDG R
+Add 5 I ORD E
+Add 6 D HFA E
+Add 7 D eth E
+Add 0 D ETH E
+Print
+Depart
+Depart 5
+Depart 1
+Depart 2
+Remove 3
+Print
+Bye
+Exit

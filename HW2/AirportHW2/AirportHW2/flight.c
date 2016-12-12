@@ -15,7 +15,7 @@ PFlightInfo  createFlight(int Num, char Type, FlightDestination Destination, cha
 
 								 /* - Entering the flights information - */
 
-	
+
 	pElem->Flight_Num = (FlightNum)Num;
 	pElem->Flight_Type = (FlightType)Type;
 	for (int i = 0; i < 4; i++)
@@ -41,10 +41,7 @@ Result printFlight(PFlightInfo flight) {
 	else if (flight->Flight_Type == 1) temp = 'I';
 	if (flight->Emergency == TRUE) temp1 = 'E';
 	else if (flight->Emergency == FALSE) temp1 = 'R';
-	
+
 	fprintf(stdout, "Flight %d %c %s %c\n", flight->Flight_Num, temp, flight->Flight_Destination, temp1);
 	return SUCCESS;
 }
-
-
-

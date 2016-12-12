@@ -236,7 +236,7 @@ Result printRunway(PRunwayInfo runway_pointer) {
 		printf("Runway %d domestic\n",	runway_pointer->Runway_Num);
 	}
 	number_of_planes = getFLightNum(runway_pointer, MAX_ID);
-	printf("%d flights are waiting :\n", number_of_planes);
+	printf("%d flights are waiting:\n", number_of_planes);
 	while (1) {
 		if (pointer_location_temp == NULL) {
 			return SUCCESS;

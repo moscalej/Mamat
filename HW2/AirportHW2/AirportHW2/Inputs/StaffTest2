@@ -1,0 +1,16 @@
+Insert 10 I
+Insert 20 I
+Add 11 I LHR R
+Add 21 I LHR E
+Add 12 I LHR E
+Add 22 I LHR R
+Add 13 I CDG E
+Add 23 I CDG E
+Add 14 I LHR E
+Add 24 I CDG R
+Add 15 I CDG R
+Add 25 I LHR R
+Print
+Storm LHR
+Storm JFK
+Print
