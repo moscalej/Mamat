@@ -140,8 +140,7 @@ void main(char argc, char* argv[]) {
 			}
 		}
 
-
-
+		/*this is REMOVE Comand*/
 		else if (strcmp(commandType, "Remove") == 0)
 		{ // We recieved a "Remove" command
 			first = strtok(NULL, delimiters);
@@ -166,6 +165,7 @@ void main(char argc, char* argv[]) {
 			}
 		}
 
+		/*This is Add flight Comand*/
 		else if (strcmp(commandType, "Add") == 0) { // We recieved an "Add" command
 			first = strtok(NULL, delimiters);
 			second = strtok(NULL, delimiters);
@@ -199,6 +199,7 @@ void main(char argc, char* argv[]) {
 			}
 		}
 
+		/*this depart comand*/
 		else if (strcmp(commandType, "Depart") == 0)
 		{ // We recieved a "Depart" command
 			first = strtok(NULL, delimiters);
@@ -222,6 +223,8 @@ void main(char argc, char* argv[]) {
 				continue;
 			}
 		}
+
+		/*storm Comand*/
 		else if (strcmp(commandType, "Storm") == 0) { // We recieved a "Storm" command
 			first = strtok(NULL, delimiters);
 			if (inputCount < 2) {
@@ -235,7 +238,10 @@ void main(char argc, char* argv[]) {
 			else stormAlert(first);
 			continue;
 		}
-		else if (strcmp(commandType, "Print") == 0) { // We recieved a "Print" command
+
+		/*this is the Print comand*/
+		else if (strcmp(commandType, "Print") == 0) 
+		{ 
 			printAirport();
 			continue;
 		}

@@ -12,6 +12,7 @@ typedef struct Flight_Info {
 	FlightNum Flight_Num; //this have to be a unique number
 	FlightType Flight_Type; //can be 0 or 1 meaning domestic or inter
 	FlightDestination Flight_Destination; // it dosent soupose to be more than one letter?
+	char flight_destination_0[4];
 	BOOL Emergency;
 	//this will be conection part of the node
 	struct Flight_Info*  headNext;
