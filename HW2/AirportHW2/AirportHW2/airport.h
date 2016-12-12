@@ -1,8 +1,8 @@
 #pragma once
 #ifndef _AIRPORT_H_
 #define _AIRPORT_H_
-#include "ex2.h"
 #include "runway.h"
+#include "ex2.h"
 
 typedef struct Airport_Info {
 	/*-------this is the information part of the node---- */

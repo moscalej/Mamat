@@ -2,8 +2,9 @@
 
 #ifndef _RUNWAY_H_
 #define _RUNWAY_H_
-#include "ex2.h"
 #include "flight.h"
+#include "ex2.h"
+
 
 typedef int RunwayNum;
 typedef char RunwayType;
