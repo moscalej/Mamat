@@ -6,18 +6,24 @@
 #include "flight.h"
 
 /*Creating a flight*/
-PFlightInfo  createFlight(int Num, char Type, FlightDestination Destination, char Emergency) {
+PFlightInfo  createFlight(int Num, char Type, FlightDestination Destination, char Emergency) //pointer to a char what i want is to copy what is in that place to my char field
+{
 	PFlightInfo pElem;
 	pElem = (PFlightInfo)malloc(sizeof(FlightInfo)); // Dyanmic memory allocation
 
 	if (NULL == pElem) exit(-1); // Check to make sure legal memory was allocated
 
 								 /* - Entering the flights information - */
+
+	
 	pElem->Flight_Num = (FlightNum)Num;
 	pElem->Flight_Type = (FlightType)Type;
-	pElem->Flight_Destination = Destination;
+	for (int i = 0; i < 4; i++)
+	{
+		pElem->flight_destination_0[i] = *(Destination+i);
+	}
+	pElem->Flight_Destination = pElem->flight_destination_0;
 	pElem->Emergency = (BOOL)Emergency;
-	/* - - - - - - - - - - - - - - - - - - */
 	pElem->headNext = NULL;
 
 	return pElem;

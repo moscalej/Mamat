@@ -81,11 +81,8 @@ void main(char argc, char* argv[]) {
 	}
 	while (fgets(szLine, sizeof szLine, fp))
 	{
-		//printf("***"); fprintf(stderr, &szLine); printf("***\n");
-		//fprintf(stderr, strtok(szLine, delimiters))
+		
 		inputCount = Number_of_Inputs(szLine);
-
-		//printf("INPUT COUNT = %d\n", inputCount);
 
 		commandType = strtok(szLine, delimiters);
 
@@ -140,8 +137,7 @@ void main(char argc, char* argv[]) {
 			}
 		}
 
-
-
+		/*this is REMOVE Comand*/
 		else if (strcmp(commandType, "Remove") == 0)
 		{ // We recieved a "Remove" command
 			first = strtok(NULL, delimiters);
@@ -165,6 +161,8 @@ void main(char argc, char* argv[]) {
 				else continue;
 			}
 		}
+
+		/*This is Add flight Comand*/
 		else if (strcmp(commandType, "Add") == 0) { // We recieved an "Add" command
 			first = strtok(NULL, delimiters);
 			second = strtok(NULL, delimiters);
@@ -198,6 +196,7 @@ void main(char argc, char* argv[]) {
 			}
 		}
 
+		/*this depart comand*/
 		else if (strcmp(commandType, "Depart") == 0)
 		{ // We recieved a "Depart" command
 			first = strtok(NULL, delimiters);
@@ -221,7 +220,9 @@ void main(char argc, char* argv[]) {
 				continue;
 			}
 		}
-		else if (strcmp(commandType, "Storm") == 0) { // We recieved a "Storm" command
+
+		/*storm Comand*/
+		else if (strcmp(commandType, "Storm") == 0) { 
 			first = strtok(NULL, delimiters);
 			if (inputCount < 2) {
 				fprintf(stderr, "Storm failed: not enough parameters.\n");
@@ -234,12 +235,18 @@ void main(char argc, char* argv[]) {
 			else stormAlert(first);
 			continue;
 		}
-		else if (strcmp(commandType, "Print") == 0) { // We recieved a "Print" command
+
+		/*this is the Print comand*/
+		else if (strcmp(commandType, "Print") == 0) 
+		{ 
 			printAirport();
 			continue;
 		}
-		else	destroyAirport(); // The only possible command left is Exit
+
+		/* The only possible command left is Exit*/
+		else	destroyAirport(); //
 	}
+
 	fclose(fp);
 }
 
