@@ -375,11 +375,3 @@ Result stormAlert(FlightDestination destination)
 	return	SUCCESS;
 }
 
-FlightType isI_or_D(char input) {
-	if (input == 'I') return INTERNATIONAL;
-	else return DOMESTIC;
-}
-BOOL isE_or_R(char input) {
-	if (input == 'E') return TRUE;
-	else return FALSE;
-}

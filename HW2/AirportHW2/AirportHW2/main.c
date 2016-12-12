@@ -1,8 +1,8 @@
-#define _CRT_SECURE_NO_WARNINGS
+//#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <crtdbg.h>
+//#include <crtdbg.h>
 #include "airport.h"
 #define MAX_LINE_SIZE (256)
 
@@ -66,7 +66,7 @@ void main(char argc, char* argv[]) {
 	Airporthead0.RunwayList = NULL;
 	Airporthead = &Airporthead0;
 
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	if (argc < 1)
 	{
 		printf("Usage: %s <stack size> <file name>\n", argv[0]);
