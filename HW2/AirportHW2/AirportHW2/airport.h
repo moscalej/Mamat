@@ -33,14 +33,14 @@ typedef struct good_and_bad
 PRunwayInfo findTheLane(FlightType, FlightNum/*, BOOL bool*/); //status<--- need debug
 PRunwayInfo findLaneByNumber(RunwayNum);//status<--- need debug
 PGoodAndBad removeBadFlights(PFlightInfo, FlightDestination);
-FlightType isI_or_D(char);
-BOOL isE_or_R(char);
+
 
 /*funtions asked by the HW2*/
 Result addRunway(RunwayNum, RunwayType); //status<--- need debug
 Result removeRunway(RunwayNum); //status<--- need debug
 Result addFlightToAirport(FlightNum, FlightType, FlightDestination, BOOL);//status<--- need debug  //Bool = emergency
 Result depoartFromRunway(RunwayNum); //status<--- need debug
-Result stormAlert(FlightDestination[]);//status<--- not started
+
+Result stormAlert(FlightDestination);//status<--- not started
 void destroyAirport();// status<-- need debug
 #endif

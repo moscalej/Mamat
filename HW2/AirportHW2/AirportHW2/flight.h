@@ -21,7 +21,9 @@ typedef struct Flight_Info {
 
 typedef struct _Linked_List* P_Linked_List; //pointer to Linked_List_Element
 
-PFlightInfo createFlight(FlightNum, FlightType, FlightDestination[], BOOL);
+PFlightInfo createFlight(int, FlightType , char* , BOOL);
+FlightType isI_or_D(char);
+BOOL isE_or_R(char);
 void destroyFlight(PFlightInfo);
 Result printFlight(PFlightInfo);
 
