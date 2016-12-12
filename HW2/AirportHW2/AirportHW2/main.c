@@ -81,11 +81,8 @@ void main(char argc, char* argv[]) {
 	}
 	while (fgets(szLine, sizeof szLine, fp))
 	{
-		//printf("***"); fprintf(stderr, &szLine); printf("***\n");
-		//fprintf(stderr, strtok(szLine, delimiters))
+		
 		inputCount = Number_of_Inputs(szLine);
-
-		//printf("INPUT COUNT = %d\n", inputCount);
 
 		commandType = strtok(szLine, delimiters);
 
@@ -225,7 +222,7 @@ void main(char argc, char* argv[]) {
 		}
 
 		/*storm Comand*/
-		else if (strcmp(commandType, "Storm") == 0) { // We recieved a "Storm" command
+		else if (strcmp(commandType, "Storm") == 0) { 
 			first = strtok(NULL, delimiters);
 			if (inputCount < 2) {
 				fprintf(stderr, "Storm failed: not enough parameters.\n");
@@ -245,7 +242,9 @@ void main(char argc, char* argv[]) {
 			printAirport();
 			continue;
 		}
-		else	destroyAirport(); // The only possible command left is Exit
+
+		/* The only possible command left is Exit*/
+		else	destroyAirport(); //
 	}
 
 	fclose(fp);

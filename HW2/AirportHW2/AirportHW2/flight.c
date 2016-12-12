@@ -14,21 +14,16 @@ PFlightInfo  createFlight(int Num, char Type, FlightDestination Destination, cha
 	if (NULL == pElem) exit(-1); // Check to make sure legal memory was allocated
 
 								 /* - Entering the flights information - */
-	char prueba[6];
+
 	
 	pElem->Flight_Num = (FlightNum)Num;
 	pElem->Flight_Type = (FlightType)Type;
-	//strcpy(pElem->Flight_Destination, Destination);
 	for (int i = 0; i < 4; i++)
 	{
 		pElem->flight_destination_0[i] = *(Destination+i);
 	}
-	
 	pElem->Flight_Destination = pElem->flight_destination_0;
-	//strcpy(pElem->flight_destination_0, *(pElem->Flight_Destination));
-	//strcpy(prueba, "hola");
 	pElem->Emergency = (BOOL)Emergency;
-	/* - - - - - - - - - - - - - - - - - - */
 	pElem->headNext = NULL;
 
 	return pElem;

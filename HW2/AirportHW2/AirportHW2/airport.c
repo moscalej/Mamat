@@ -185,15 +185,16 @@ PRunwayInfo findLaneByNumber(runway_number)
 	lane_temp = Airporthead->RunwayList;
 	while (TRUE)
 	{
-		
-		if (runway_number == lane_temp->Runway_Num)
-		{
-			return lane_temp;
-		}
 		if (NULL == lane_temp)
 		{
 			return NULL;
 		}
+
+		if (runway_number == lane_temp->Runway_Num)
+		{
+			return lane_temp;
+		}
+		
 		lane_temp = lane_temp->RunwayList;
 	}
 }
