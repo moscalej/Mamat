@@ -1,8 +1,0 @@
-#!/bin/bash
-
-DIRECTORY=$1
-if [ ! -d "$DIRECTORY" ]; then
-	# Control will enter here if $DIRECTORY doesn't exist.
-	echo  Directory does not exists
-fi
-find $DIRECTORY/ -type f -perm -u+rx | wc -l
