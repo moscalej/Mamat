@@ -1,0 +1,75 @@
+Insert 1 I
+Insert 2 I
+Insert 4 D
+Insert 5 D
+Add 1 D HFA R
+Print
+Add 2 D HFA R
+Add 3 D HFA R
+Add 4 D HFA R
+Add 5 D HFA R
+Add 6 D HFA R
+Add 7 D HFA R
+Add 8 D HFA R
+Add 9 D HFA R
+Print
+Add 10 D HFA R
+Add 11 D HFA E
+Add 12 D HFA E
+Add 13 D HFA E
+Add 14 D HFA E
+Add 15 D HFA R
+Add 16 D HFA R
+Print
+Add 17 D HFA R
+Add 18 D HFA E
+Add 19 D HFA E
+Add 20 I HFA E
+Add 21 I HFA E
+Add 22 I HFA R
+Add 23 I HFA R
+Print
+Add 24 I ARK R
+Add 25 I LKD R
+Add 26 D FPD E
+Add 27 I GKL R
+Add 28 I MKL E
+Add 29 D TDA E
+Add 30 D FLD E
+Add 31 D ETH E
+Print
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Depart 1
+Print
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Depart 2
+Print
+Exit 
