@@ -2,7 +2,7 @@
 
 #Creating the executable (airport)
 airport: main.o airport.o runway.o flight.o
-	gcc  main.o airport.o runway.o flight.o -o airport
+	gcc -g -Wall -o airport  main.o airport.o runway.o flight.o
 #Creating object files
 
 main.o: main.c airport.h

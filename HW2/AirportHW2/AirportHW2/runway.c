@@ -169,7 +169,9 @@ Result addFlight(PRunwayInfo runway_pointer, PFlightInfo new_flight_pointer) {
 3-once we are working with only flight pointers will search
 on the linked list until find it and delete it or getting
 to the end of the list and return failure */
-Result removeFlight(PRunwayInfo runway_pointer, FlightNum flight_id) {
+Result removeFlight(PRunwayInfo runway_pointer, FlightNum flight_id)
+ {
+ 
 	PFlightInfo pointer_location_new;
 	PFlightInfo pointer_location_temp;
 	pointer_location_new = runway_pointer->head_flight;   // This saves pointer_location_new as a pointer to the first flight
@@ -181,7 +183,7 @@ Result removeFlight(PRunwayInfo runway_pointer, FlightNum flight_id) {
 	/*want to check if the first flight is the one to delete*/
 	if (pointer_location_new->Flight_Num == flight_id) {
 		runway_pointer->head_flight = pointer_location_new->headNext;
-		void destroyFlight(pointer_location_new);
+	  destroyFlight( pointer_location_new );
 		return SUCCESS;
 	}
 
@@ -206,7 +208,7 @@ Result removeFlight(PRunwayInfo runway_pointer, FlightNum flight_id) {
 (now empty) head of the runway list to the next pointer. */
 Result depart(PRunwayInfo runway_pointer) {
 	PFlightInfo pointer_location_new;
-	PFlightInfo pointer_location_temp;
+	
 	if (runway_pointer->head_flight == NULL) {
 		return FAILURE;
 	}
@@ -228,8 +230,7 @@ Result printRunway(PRunwayInfo runway_pointer) {
 	Result result;
 	if (runway_pointer->Runway_Type == 'I') {
 		printf("Runway %d international\n",
-			runway_pointer->Runway_Num,
-			runway_pointer->Runway_Type
+			runway_pointer->Runway_Num
 			);
 	}
 	else if (runway_pointer->Runway_Type == 'D') {
