@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <memory.h>
-#include <assert.h>
 #include "airport.h"
 
 
@@ -171,7 +169,7 @@ void printAirport(){
 		while (1)
 		{
 			result = printRunway(runwaypointer);
-			if (result = FAILURE) break;
+			if (result == FAILURE) break;
 			if (runwaypointer != NULL) {
 				runwaypointer = runwaypointer->RunwayList;
 			}

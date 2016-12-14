@@ -1,8 +1,7 @@
-//#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <crtdbg.h>
 #include "airport.h"
 #define MAX_LINE_SIZE (256)
 
@@ -47,7 +46,7 @@ Result allCapsThree(char input[]) {
 	else return FAILURE;
 }
 
-void main(char argc, char* argv[]) {
+int main(int argc, char* argv[]) {
 	char szLine[MAX_LINE_SIZE];
 	const char* delimiters = " \t\n\r\v\f";
 	char* commandType;
@@ -58,6 +57,7 @@ void main(char argc, char* argv[]) {
 	int inputCount;
 	int runwayNumber;
 	int flightNumber;
+  Result yolo;
 	Result result;
 	FILE *fp;
 
@@ -215,8 +215,8 @@ void main(char argc, char* argv[]) {
 				continue;
 			}
 			else {
-				Result j = departFromRunway(runwayNumber);
-				if (j == FAILURE) fprintf(stderr, "Depart execution failed.\n");
+				 yolo = departFromRunway(runwayNumber);
+				if (yolo == FAILURE) fprintf(stderr, "Depart execution failed.\n");
 				continue;
 			}
 		}
@@ -252,5 +252,6 @@ void main(char argc, char* argv[]) {
 	}
 
 	fclose(fp);
+ return 0;
 }
 

@@ -1,0 +1,23 @@
+#!/bin/bash
+ #checking the number of arguments
+
+if [[ $# -lt 2 ]]; then
+    echo Not enough parameters
+    exit 1
+ fi
+ 
+
+#checking that argument one is a directory
+if [[ ! -d "$1"  ]]; then
+    echo Directory does not exist
+    exit 2
+ fi
+  
+
+ #finding recursively all files that start with the letter that is
+ #given as argument $2
+find "$1" -type f -ls -name "[$2]*"  |wc -l
+
+
+
+

@@ -39,8 +39,9 @@ PGoodAndBad removeBadFlights(PFlightInfo, FlightDestination);
 Result addRunway(RunwayNum, RunwayType); //status<--- need debug
 Result removeRunway(RunwayNum); //status<--- need debug
 Result addFlightToAirport(FlightNum, FlightType, FlightDestination, BOOL);//status<--- need debug  //Bool = emergency
-Result depoartFromRunway(RunwayNum); //status<--- need debug
+Result departFromRunway(RunwayNum); //status<--- need debug
 
 Result stormAlert(FlightDestination);//status<--- not started
 void destroyAirport();// status<-- need debug
+void printAirport();
 #endif
