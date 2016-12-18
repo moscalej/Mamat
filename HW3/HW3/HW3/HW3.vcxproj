@@ -146,6 +146,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Code\graph.h" />
+    <ClInclude Include="..\..\Code\list.h" />
+    <ClInclude Include="..\..\Code\set.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Code\graph.c" />
+    <ClCompile Include="..\..\Code\list.c" />
+    <ClCompile Include="..\..\Code\main.c" />
+    <ClCompile Include="..\..\Code\set.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
