@@ -9,7 +9,7 @@ typedef struct node_iter
 {
 	//node field
 	struct node_iter* nextNode;
-
+	
 	//information field
 	PElem address;
 }*Pnode_iter, node_iter;
@@ -19,7 +19,7 @@ typedef struct List_
 {
 	//node field
 	Pnode_iter iterator;
-	// this line is for checking GITHUB
+
 	//information field
 	Pnode_iter head_element;
 	CLONE_FUNC copy_list_elem;
@@ -122,7 +122,7 @@ Result ListRemove(PList list_elem)// Head_Element should always be the input her
 	Pnode_iter temp_Iterator1;
 	Pnode_iter temp_Iterator2;
 	if (list_elem == NULL) return FAIL;
-	if (list_elem->iterator == NULL)
+	if (list_elem->iterator == NULL) 
 	{
 		return FAIL;
 	}
@@ -145,11 +145,11 @@ Result ListRemove(PList list_elem)// Head_Element should always be the input her
 	while (1)
 	{
 		if (temp_Iterator2->address != NULL) // Meaning the iterator is pointing here.
-		{
+		{			
 			if (temp_Iterator2->nextNode == NULL) // This means the iterator is at the end 
 			{									  // of the list, so we just point the one
 				temp_Iterator1->nextNode = NULL;  // before it to NULL!
-				free(temp_Iterator2->address);
+				free(temp_Iterator2->address); 
 				return SUCCESS;
 			}
 			else
@@ -170,8 +170,8 @@ Result ListRemove(PList list_elem)// Head_Element should always be the input her
 	}
 }
 
-void ListDestroy(PList list_elem)
-{
+void ListDestroy(PList list_elem) 
+{	
 	if (list_elem == NULL) return;
 
 	PList temp = list_elem;
