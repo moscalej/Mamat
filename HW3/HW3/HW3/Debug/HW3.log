@@ -1,0 +1,2 @@
+﻿  list.c
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\list.c(102): warning C4047: 'return': 'int' differs in levels of indirection from 'void *'

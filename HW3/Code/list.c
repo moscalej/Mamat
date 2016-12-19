@@ -8,7 +8,7 @@
 typedef struct node_iter
 {
 	//node field
-	Pnode_iter nextNode;
+	struct node_iter * nextNode;
 	//Pnode_iter headNode;
 	//information field
 	PElem address;
@@ -78,8 +78,8 @@ PElem ListGetFirst(PList list_elem)
 		list_elem->iterator = NULL;
 		return NULL;
 	}
-	list_elem->iterator = list_elem->head_element->address;
-	return list_elem->iterator;
+	list_elem->iterator = list_elem->head_element;
+	return list_elem->iterator->address;
 }
 
 // Moves the iterator to the next node in our linked list and returns a pointer
@@ -93,7 +93,7 @@ PElem ListGetNext(PList list_elem)
 	
 	list_elem->iterator = list_elem->iterator->nextNode;
 	
-	return list_elem->iterator;
+	return list_elem->iterator->address;
 }
 
 // A function that returns the size of our list.
@@ -105,14 +105,13 @@ int ListGetSize(PList list_elem)
 	int counter = 0;
 	while (1)
 	{
-		if (temp != NULL)
-		{
-			counter++;
-			temp = temp->nextNode;
-			continue;
+		if (temp == NULL)
+		{	
+			return counter;
 		}
-		else break;
+		temp = temp->nextNode;
+		counter++;
 	}
-	return counter;
+	
 }
-PList ListDestroy(){}
+//PList ListDestroy(){}
