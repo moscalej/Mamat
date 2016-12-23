@@ -230,9 +230,6 @@ void ListDestroy(PList list_elem)
 	free(list_elem->iterator);
 	free(list_elem);
 }
-<<<<<<< HEAD
-//PList ListDestroy(){}
-
 
 PElem clone(PElem element) 
 {
@@ -242,5 +239,4 @@ PElem clone(PElem element)
 
 
 }
-=======
->>>>>>> 0c94f66cb44f20f4984a7615c02ad2568ad18adc
+
