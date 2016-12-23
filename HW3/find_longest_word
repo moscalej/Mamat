@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Even though we are guaranteed that the file will be present in the directory
+# we will still check to make sure a file is present as an argument.
+if [[ $# -lt 1 ]]; then
+    echo Not enough parameters
+    exit 1
+ fi
+ 
+longestWord=0
+for word in `cat $1`
+do
+    length=${#word} # Gives us the length of the word.
+    if (( length > longestWord )) # Comparing to current longest word.
+    then
+        longestWord=$length
+        longword=$word
+    fi
+done
+printf 'The longest word is %s and its length is %d.\n' "$longword" "$longestWord"
