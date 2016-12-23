@@ -115,3 +115,13 @@ int ListGetSize(PList list_elem)
 	
 }
 //PList ListDestroy(){}
+
+
+PElem clone(PElem element) 
+{
+	
+	PElem new_element = (PElem)malloc(sizeof(element));
+	new_element = element;
+
+
+}

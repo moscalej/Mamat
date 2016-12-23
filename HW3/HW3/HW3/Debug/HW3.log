@@ -1,2 +1,36 @@
-﻿  list.c
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\list.c(102): warning C4047: 'return': 'int' differs in levels of indirection from 'void *'
+﻿  graph.c
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(30): error C2061: syntax error: identifier 'GraphAddVertex'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(30): error C2059: syntax error: ';'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(30): error C2059: syntax error: '<parameter-list>'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(31): error C2061: syntax error: identifier 'GraphAddEdge'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(31): error C2059: syntax error: ';'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(31): error C2059: syntax error: '<parameter-list>'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(34): error C2061: syntax error: identifier 'GraphFindShortestPath'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(34): error C2059: syntax error: ';'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(34): error C2059: syntax error: '<parameter-list>'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(39): error C2061: syntax error: identifier 'GraphVerticesStatus'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(39): error C2059: syntax error: ';'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(39): error C2059: syntax error: '<parameter-list>'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(40): error C2061: syntax error: identifier 'GraphEdgesStatus'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(40): error C2059: syntax error: ';'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(40): error C2059: syntax error: '<parameter-list>'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(19): error C2081: 'CLONE_FUNC': name in formal parameter list illegal
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(19): error C2081: 'DESTROY_FUNC': name in formal parameter list illegal
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(21): error C2081: 'PElem': name in formal parameter list illegal
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(22): error C2061: syntax error: identifier 'SetFindElement'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(22): error C2059: syntax error: ';'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(22): error C2059: syntax error: '<parameter-list>'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(23): error C2061: syntax error: identifier 'SetGetFirst'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(23): error C2059: syntax error: ';'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(23): error C2059: syntax error: '<parameter-list>'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(24): error C2061: syntax error: identifier 'SetGetNext'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(24): error C2059: syntax error: ';'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(24): error C2059: syntax error: '<parameter-list>'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(26): error C2081: 'PElem': name in formal parameter list illegal
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(28): warning C4047: '==': '_Vertex *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(79): warning C4047: 'function': 'int' differs in levels of indirection from 'Vertex *'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(79): warning C4024: 'SetAdd': different types for formal and actual parameter 2
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(85): warning C4047: '=': '_Vertex *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(86): warning C4047: '=': '_Vertex *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(94): warning C4047: 'function': 'int' differs in levels of indirection from 'Edge *'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(94): warning C4024: 'SetAdd': different types for formal and actual parameter 2
