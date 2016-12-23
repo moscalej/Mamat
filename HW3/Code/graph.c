@@ -4,9 +4,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "graph.h"
-#include "set.h"
 #include "list.h"
+#include "set.h"
+#include "graph.h"
+
+
 
 
 typedef struct _Graph 
@@ -24,6 +26,7 @@ typedef struct _Graph
   ###################################################################################################*/
 
 /*Here are the user funtions that will use to set our data base*/
+
 Bool edgeComp(PElem id_vertex, PElem edge1)
 {
 	Edge * tenp1;
@@ -49,6 +52,7 @@ Bool vertexComp(PElem id_vertex, PElem vertex)
 	}
 	return FALSE;
 }
+
 PElem cloneVertex(PElem vertexNumber) {
 	PVertex temp;
 	temp = (PVertex)vertexNumber;
@@ -67,6 +71,7 @@ PElem cloneEdge(PElem edge) {
 	new_edge->weight = temp->weight;
 	return new_edge;
 }
+
 PElem returnError(PElem set)
 {
 	free(set);
@@ -82,23 +87,23 @@ Bool checkAndAdd(PEdge Edge_to_be_review, int Vertex_Serial_num, PSet new_set_of
 	if (Edge_to_be_review->nodeA->serialNumber == Vertex_Serial_num)
 	{
 		Bool awnser = SetAdd(new_set_of_vertix, Edge_to_be_review->nodeB);
-		if (awnser == FAIL)
+		if (awnser == FALSE)
 		{
-			return FAIL;
+			return FALSE;
 		}
-		return SUCCESS;
+		return TRUE;
 	}
 	else if (Edge_to_be_review->nodeB->serialNumber == Vertex_Serial_num)
 	{
 		Bool awnser = SetAdd(new_set_of_vertix, Edge_to_be_review->nodeA);
-		if (awnser == FAIL)
+		if (awnser == FALSE)
 		{
-			return FAIL;
+			return FALSE;
 		}
-		return SUCCESS;
+		return TRUE;
 
 	}
-	return SUCCESS;
+	return TRUE;
 }
 //###################################################################################################
 
@@ -108,6 +113,7 @@ Bool checkAndAdd(PEdge Edge_to_be_review, int Vertex_Serial_num, PSet new_set_of
 /*##################################################################################################
 			PART 2 OF THE HOMEWORK
 ###################################################################################################*/
+
 PGraph GraphCreate()
 
 {
@@ -138,7 +144,7 @@ Bool GraphAddVertex(PGraph graph, int vertex_number)
 		return FALSE;
 	}
 	Bool anwser = SetAdd(graph->vertex, &new_element_vertex);
-	if (anwser == SUCCESS)
+	if (anwser == TRUE)
 	{
 		graph->number_of_vertex = graph->number_of_vertex + 1;
 	}
@@ -155,16 +161,16 @@ Bool GraphAddEdge(PGraph pGraph, int vertex1, int vertex2, int weight)
 		vertex2 > pGraph->number_of_vertex || 
 		vertex1 == vertex2)
 	{
-		return FAIL;
+		return FALSE;
 	}
 
 	identical_vertex.serialNumber = vertex1;
 	new_element_edge.nodeA = SetFindElement(pGraph->vertex, &identical_vertex);
-	if (new_element_edge.nodeA == NULL) return FAIL;
+	if (new_element_edge.nodeA == NULL) return FALSE;
 
 	identical_vertex.serialNumber = vertex2;
 	new_element_edge.nodeB = SetFindElement(pGraph->vertex, &identical_vertex);
-	if (new_element_edge.nodeB == NULL) return FAIL;
+	if (new_element_edge.nodeB == NULL) return FALSE;
 
 	new_element_edge.weight = weight;
 
@@ -182,17 +188,21 @@ PSet GraphNeighborVertices(PGraph graph, int number) //<-- new memory alocation 
 	
 	Edge edge_morf;
 	PEdge Pedge_morf;
-	*Pedge_morf = edge_morf;
+
+	edge_morf.nodeA = NULL;
+	edge_morf.nodeB = NULL;
+	edge_morf.weight = 0;
+	Pedge_morf = &edge_morf;
 
 	Bool check;
 
 	if (NULL == (Pedge_morf = SetGetFirst(graph->edge))) return returnError(new_set_of_vertix);
 	
-	if (FAIL == (check = checkAndAdd(Pedge_morf, number, new_set_of_vertix))) return returnError(new_set_of_vertix);
+	if (FALSE == (check = checkAndAdd(Pedge_morf, number, new_set_of_vertix))) return returnError(new_set_of_vertix);
 	while (TRUE)
 	{
 		if (NULL == (Pedge_morf = SetGetNext(graph->edge))) return new_set_of_vertix;
-		if (FAIL == (check = checkAndAdd(Pedge_morf, number, new_set_of_vertix))) return returnError(new_set_of_vertix);
+		if (FALSE == (check = checkAndAdd(Pedge_morf, number, new_set_of_vertix))) return returnError(new_set_of_vertix);
 	}
 }
 

@@ -117,7 +117,7 @@ int ListGetSize(PList list_elem)
 	}
 	return counter;
 }
-
+/*
 Result ListRemove(PList list_elem)// Head_Element should always be the input here 
 								  // so we start from beginning of the list! (I think)
 {
@@ -173,7 +173,7 @@ Result ListRemove(PList list_elem)// Head_Element should always be the input her
 		}
 	}
 }
-
+*/
 Result ListRemove(PList list_elem)
 {	
 	if (list_elem == NULL) return FAIL;
