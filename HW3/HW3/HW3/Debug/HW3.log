@@ -1,19 +1,4 @@
 ﻿  graph.c
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(30): error C2061: syntax error: identifier 'GraphAddVertex'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(30): error C2059: syntax error: ';'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(30): error C2059: syntax error: '<parameter-list>'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(31): error C2061: syntax error: identifier 'GraphAddEdge'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(31): error C2059: syntax error: ';'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(31): error C2059: syntax error: '<parameter-list>'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(34): error C2061: syntax error: identifier 'GraphFindShortestPath'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(34): error C2059: syntax error: ';'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(34): error C2059: syntax error: '<parameter-list>'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(39): error C2061: syntax error: identifier 'GraphVerticesStatus'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(39): error C2059: syntax error: ';'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(39): error C2059: syntax error: '<parameter-list>'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(40): error C2061: syntax error: identifier 'GraphEdgesStatus'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(40): error C2059: syntax error: ';'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.h(40): error C2059: syntax error: '<parameter-list>'
 c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(19): error C2081: 'CLONE_FUNC': name in formal parameter list illegal
 c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(19): error C2081: 'DESTROY_FUNC': name in formal parameter list illegal
 c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(21): error C2081: 'PElem': name in formal parameter list illegal
@@ -27,10 +12,30 @@ c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(24)
 c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(24): error C2059: syntax error: ';'
 c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(24): error C2059: syntax error: '<parameter-list>'
 c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\set.h(26): error C2081: 'PElem': name in formal parameter list illegal
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(28): warning C4047: '==': '_Vertex *' differs in levels of indirection from 'int'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(79): warning C4047: 'function': 'int' differs in levels of indirection from 'Vertex *'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(79): warning C4024: 'SetAdd': different types for formal and actual parameter 2
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(85): warning C4047: '=': '_Vertex *' differs in levels of indirection from 'int'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(86): warning C4047: '=': '_Vertex *' differs in levels of indirection from 'int'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(94): warning C4047: 'function': 'int' differs in levels of indirection from 'Edge *'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(94): warning C4024: 'SetAdd': different types for formal and actual parameter 2
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(84): warning C4047: 'function': 'int' differs in levels of indirection from '_Vertex *'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(84): warning C4024: 'SetAdd': different types for formal and actual parameter 2
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(93): warning C4047: 'function': 'int' differs in levels of indirection from '_Vertex *'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(93): warning C4024: 'SetAdd': different types for formal and actual parameter 2
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(118): warning C4047: 'function': 'int' differs in levels of indirection from 'PElem (__cdecl *)(PElem)'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(118): warning C4024: 'SetCreate': different types for formal and actual parameter 2
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(118): warning C4047: 'function': 'int' differs in levels of indirection from 'void (__cdecl *)(PElem)'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(118): warning C4024: 'SetCreate': different types for formal and actual parameter 3
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(122): warning C4047: 'function': 'int' differs in levels of indirection from 'PElem (__cdecl *)(PElem)'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(122): warning C4024: 'SetCreate': different types for formal and actual parameter 2
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(122): warning C4047: 'function': 'int' differs in levels of indirection from 'void (__cdecl *)(PElem)'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(122): warning C4024: 'SetCreate': different types for formal and actual parameter 3
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(147): warning C4047: 'function': 'int' differs in levels of indirection from 'Vertex *'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(147): warning C4024: 'SetAdd': different types for formal and actual parameter 2
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(169): warning C4013: 'SetFindElement' undefined; assuming extern returning int
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(169): warning C4047: '=': '_Vertex *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(173): warning C4047: '=': '_Vertex *' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(180): warning C4047: 'function': 'int' differs in levels of indirection from 'Edge *'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(180): warning C4024: 'SetAdd': different types for formal and actual parameter 2
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(187): warning C4047: 'function': 'int' differs in levels of indirection from 'PElem (__cdecl *)(PElem)'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(187): warning C4024: 'SetCreate': different types for formal and actual parameter 2
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(187): warning C4047: 'function': 'int' differs in levels of indirection from 'void (__cdecl *)(PElem)'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(187): warning C4024: 'SetCreate': different types for formal and actual parameter 3
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(196): warning C4013: 'SetGetFirst' undefined; assuming extern returning int
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(196): warning C4047: '=': 'PEdge' differs in levels of indirection from 'int'
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(201): warning C4013: 'SetGetNext' undefined; assuming extern returning int
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(201): warning C4047: '=': 'PEdge' differs in levels of indirection from 'int'

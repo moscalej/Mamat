@@ -117,7 +117,7 @@ int ListGetSize(PList list_elem)
 	}
 	return counter;
 }
-/*
+
 Result ListRemove(PList list_elem)// Head_Element should always be the input here 
 								  // so we start from beginning of the list! (I think)
 {
@@ -172,7 +172,7 @@ Result ListRemove(PList list_elem)// Head_Element should always be the input her
 			continue;
 		}
 	}
-}*/
+}
 
 Result ListRemove(PList list_elem)
 {	
@@ -230,7 +230,7 @@ void ListDestroy(PList list_elem)
 	free(list_elem->iterator);
 	free(list_elem);
 }
-<<<<<<< HEAD
+
 //PList ListDestroy(){}
 
 
@@ -242,5 +242,4 @@ PElem clone(PElem element)
 
 
 }
-=======
->>>>>>> 0c94f66cb44f20f4984a7615c02ad2568ad18adc
+

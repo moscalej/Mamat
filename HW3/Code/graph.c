@@ -12,52 +12,114 @@
 typedef struct _Graph 
 {
 	int number_of_vertex;
-	PSet vertex ;
-	PSet edge;
-	
-	
+
+	struct _Set * vertex ;
+	struct _Set * edge;
 
 }Graph, *PGraph;
 
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			THIS FUNTIONS ARE USE TO MANAGE THE .H FUNTIONS
+  ###################################################################################################*/
+
+/*Here are the user funtions that will use to set our data base*/
 Bool edgeComp(PElem id_vertex, PElem edge1)
 {
 	Edge * tenp1;
-	int  tenp2;
+	Edge * tenp2;
 	tenp1 = (Edge*)edge1;
-	tenp2 = (int)id_vertex;
-	if (tenp1->nodeA==tenp2 || tenp1->nodeB ==tenp2)
+	tenp2 = (Edge*)id_vertex;
+	if ((tenp1->nodeA == tenp2->nodeA && tenp1->nodeB == tenp2->nodeB)||
+		(tenp1->nodeB == tenp2->nodeA && tenp1->nodeA == tenp2->nodeB))
 	{
 		return TRUE;
 	}
 	return FALSE;
 }
-
 Bool vertexComp(PElem id_vertex, PElem vertex)
 {
 	Vertex * tenp1;
-	int  tenp2;
+	Vertex * tenp2;
 	tenp1 = (Vertex*)vertex;
-	tenp2 = (int)id_vertex;
-	if (tenp1->serialNumber == tenp2)
+	tenp2 = (Vertex*)id_vertex;
+	if (tenp1->serialNumber == tenp2->serialNumber)
 	{
 		return TRUE;
 	}
 	return FALSE;
 }
+PElem cloneVertex(PElem vertexNumber) {
+	PVertex temp;
+	temp = (PVertex)vertexNumber;
+	Vertex * vertexpointer = (Vertex *)malloc(sizeof(Vertex));
+	vertexpointer->serialNumber = temp->serialNumber;
 
-/*
+	return vertexpointer;
+
+}
+PElem cloneEdge(PElem edge) {
+	Edge * temp;
+	temp = (Edge*)edge;
+	Edge * new_edge = (Edge*)malloc(sizeof(Edge));
+	new_edge->nodeA = temp->nodeA;
+	new_edge->nodeB = temp->nodeB;
+	new_edge->weight = temp->weight;
+	return new_edge;
+}
+PElem returnError(PElem set)
+{
+	free(set);
+	return NULL;
+}
+void freefunc(PElem elem) {
+	free(elem);
+}
+/*this is a helper funtion that will check if one of the eges have the node we are loking for
+if it does it will add the pointer to the new set*/
+Bool checkAndAdd(PEdge Edge_to_be_review, int Vertex_Serial_num, PSet new_set_of_vertix)
+{
+	if (Edge_to_be_review->nodeA->serialNumber == Vertex_Serial_num)
+	{
+		Bool awnser = SetAdd(new_set_of_vertix, Edge_to_be_review->nodeB);
+		if (awnser == FAIL)
+		{
+			return FAIL;
+		}
+		return SUCCESS;
+	}
+	else if (Edge_to_be_review->nodeB->serialNumber == Vertex_Serial_num)
+	{
+		Bool awnser = SetAdd(new_set_of_vertix, Edge_to_be_review->nodeA);
+		if (awnser == FAIL)
+		{
+			return FAIL;
+		}
+		return SUCCESS;
+
+	}
+	return SUCCESS;
+}
+//###################################################################################################
+
+
+
+
+/*##################################################################################################
+			PART 2 OF THE HOMEWORK
+###################################################################################################*/
 PGraph GraphCreate()
 
 {
-	
 	PGraph graph = (PGraph)malloc(sizeof(Graph));
-	graph->vertex = SetCreate(vertexComp, CLONE_FUNC, free);
-	graph->edge	= SetCreate(edgeComp, CLONE_FUNC, free);
-	
+	if (graph == NULL) return returnError(graph);
+
+	if (NULL == (graph->vertex = SetCreate(vertexComp, cloneVertex, freefunc))) return returnError(graph);
+	if (NULL == (graph->vertex = SetCreate(edgeComp, cloneEdge, freefunc))) return returnError(graph);
+
 	graph->number_of_vertex = 0;
 	return graph;
 }
-*/
 
 void GraphDestroy(PGraph graph)
 {
@@ -75,66 +137,92 @@ Bool GraphAddVertex(PGraph graph, int vertex_number)
 	{
 		return FALSE;
 	}
-	
-	return  SetAdd(graph->vertex, &new_element_vertex);
+	Bool anwser = SetAdd(graph->vertex, &new_element_vertex);
+	if (anwser == SUCCESS)
+	{
+		graph->number_of_vertex = graph->number_of_vertex + 1;
+	}
+
+	return  anwser;
 }
 
 Bool GraphAddEdge(PGraph pGraph, int vertex1, int vertex2, int weight)
 {
+	Vertex identical_vertex;
 	Edge  new_element_edge;
-	new_element_edge.nodeA = vertex1;
-	new_element_edge.nodeB = vertex2;
+
+	if (vertex1 > pGraph->number_of_vertex ||
+		vertex2 > pGraph->number_of_vertex || 
+		vertex1 == vertex2)
+	{
+		return FAIL;
+	}
+
+	identical_vertex.serialNumber = vertex1;
+	new_element_edge.nodeA = SetFindElement(pGraph->vertex, &identical_vertex);
+	if (new_element_edge.nodeA == NULL) return FAIL;
+
+	identical_vertex.serialNumber = vertex2;
+	new_element_edge.nodeB = SetFindElement(pGraph->vertex, &identical_vertex);
+	if (new_element_edge.nodeB == NULL) return FAIL;
+
 	new_element_edge.weight = weight;
 
-	if (vertex1 > pGraph->number_of_vertex || vertex2 > pGraph->number_of_vertex || vertex1 == vertex2)
-	{
-		return FALSE;
-	}
+	
 
 	return  SetAdd(pGraph->edge, &new_element_edge);
 	
 }
-/*
+
 PSet GraphNeighborVertices(PGraph graph, int number) //<-- new memory alocation need to check for relese
 {
 	PSet new_set_of_vertix;
-	Edge vertix_mover;
-	PVertex vertix_mover_pointer;
+	new_set_of_vertix = SetCreate(edgeComp, cloneEdge, freefunc);
+	if (new_set_of_vertix == NULL) returnError(new_set_of_vertix);
 	
+	Edge edge_morf;
+	PEdge Pedge_morf;
+	*Pedge_morf = edge_morf;
 
-	new_set_of_vertix = SetCreate(edgeComp, CLONE_FUNC, DESTROY_FUNC);
+	Bool check;
+
+	if (NULL == (Pedge_morf = SetGetFirst(graph->edge))) return returnError(new_set_of_vertix);
+	
+	if (FAIL == (check = checkAndAdd(Pedge_morf, number, new_set_of_vertix))) return returnError(new_set_of_vertix);
 	while (TRUE)
 	{
-		graph->vertex->
+		if (NULL == (Pedge_morf = SetGetNext(graph->edge))) return new_set_of_vertix;
+		if (FAIL == (check = checkAndAdd(Pedge_morf, number, new_set_of_vertix))) return returnError(new_set_of_vertix);
 	}
-
-
-	return PSet();
-}
-*/
-Bool GraphFindShortestPath(PGraph pGraph, int source, int * dist, int * prev)
-{
-	return TRUE;
 }
 
-int GraphGetNumberOfEdges(PGraph somethin)
+int GraphGetNumberOfEdges(PGraph graph)
 {
-	return 0;
+	return SetGetSize(graph->edge);
 }
 
 int GraphGetNumberOfVertices(PGraph something)
 {
-	return 0;
+	return something->number_of_vertex;
+	//return SetGetSize(something->vertex);
 }
+
+PSet GraphVerticesStatus(PGraph graph)
+{
+	return graph->vertex;
+}
+
+PSet GraphEdgesStatus(PGraph graph)
+{
+	return graph->edge;
+}
+
+/*########################################################################################
+		PART 3 OF THE HOME WORK
+##########################################################################################*/
 /*
-PSet GraphVerticesStatus(PGraph)
+Bool GraphFindShortestPath(PGraph pGraph, int source, int * dist, int * prev)
 {
-	return PSet();
+return TRUE;
 }
-
-PSet GraphEdgesStatus(PGraph)
-{
-	return PSet();
-}
-
 */
