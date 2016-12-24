@@ -27,6 +27,11 @@ typedef struct _Graph
 
 /*Here are the user funtions that will use to set our data base*/
 
+PElem returnError(PElem set)
+{
+	free(set);
+	return NULL;
+}
 Bool edgeComp(PElem id_vertex, PElem edge1)
 {
 	Edge * tenp1;
@@ -57,6 +62,7 @@ PElem cloneVertex(PElem vertexNumber) {
 	PVertex temp;
 	temp = (PVertex)vertexNumber;
 	Vertex * vertexpointer = (Vertex *)malloc(sizeof(Vertex));
+	if (NULL == vertexpointer) return  returnError(vertexpointer);
 	vertexpointer->serialNumber = temp->serialNumber;
 
 	return vertexpointer;
@@ -66,17 +72,13 @@ PElem cloneEdge(PElem edge) {
 	Edge * temp;
 	temp = (Edge*)edge;
 	Edge * new_edge = (Edge*)malloc(sizeof(Edge));
+	if (NULL == new_edge) return  returnError(new_edge);
 	new_edge->nodeA = temp->nodeA;
 	new_edge->nodeB = temp->nodeB;
 	new_edge->weight = temp->weight;
 	return new_edge;
 }
 
-PElem returnError(PElem set)
-{
-	free(set);
-	return NULL;
-}
 void freefunc(PElem elem) {
 	free(elem);
 }
@@ -230,9 +232,144 @@ PSet GraphEdgesStatus(PGraph graph)
 /*########################################################################################
 		PART 3 OF THE HOME WORK
 ##########################################################################################*/
-/*
-Bool GraphFindShortestPath(PGraph pGraph, int source, int * dist, int * prev)
+typedef struct _Dijkstr
 {
+	int Vertex_id;
+	int min_dist_source;
+	int Prev_vertex;
+
+}Dijkstr, *PDijkstr;
+Bool compDijk(PElem first,PElem second)
+{
+	PDijkstr temp1;
+	PDijkstr temp2;
+	temp1 = (PDijkstr)first;
+	temp2 = (PDijkstr)second;
+
+	return (temp1->Vertex_id == temp2->Vertex_id);
+}
+PElem cloneDijk(PElem integer)
+{
+	PDijkstr temp1;
+	PDijkstr temp2;
+	temp1 = (PDijkstr)integer;
+	
+	
+	temp2 = (PDijkstr)malloc(sizeof(Dijkstr));
+	if (NULL == temp2) return  returnError(temp2);
+	temp2->min_dist_source = temp1->min_dist_source;
+	temp2->Prev_vertex = temp1->Prev_vertex;
+	temp2->Vertex_id = temp1->Vertex_id;
+
+	return temp2;
+
+}
+void destrucDijk(PElem integer)
+{
+	free(integer);
+}
+Bool FreeMen(PElem one, PElem two)
+{
+	free(one);
+	free(two);
+	return FALSE;
+}
+PDijkstr findMinDistanceVertex( PSet set)
+{
+	PDijkstr current_min;
+	PDijkstr temp;
+	temp = SetGetFirst(set);
+	current_min = temp;
+	
+	while (NULL != (temp = SetGetNext(set)))
+	{
+		if (temp->min_dist_source == -1) continue;
+		if (current_min->min_dist_source > temp->min_dist_source) 
+		{
+			current_min = temp;
+		}
+	}
+	return current_min;
+}
+
+
+Bool GraphFindShortestPath(PGraph pGraph, int source, int * dist, int * prev) //this will probably use malloc need to che memory
+{
+
+	//basic checks
+	if (pGraph == NULL || source > (pGraph->number_of_vertex) ||NULL == dist || NULL == prev)
+	{
+		return FALSE;
+	}
+
+
+	PSet unvisit_nodes;
+	PSet visit_nodes;
+	PVertex temp_vertex;
+	Dijkstr temp_dij_elem;
+	PDijkstr U_element;
+	PDijkstr V_element;
+	PDijkstr pointer_temp_dij;
+	pointer_temp_dij = &temp_dij_elem;
+
+
+	if (NULL == (unvisit_nodes = SetCreate(compDijk, cloneDijk, destrucDijk)))
+	{
+		free(unvisit_nodes);
+		return FALSE;
+	}
+	if (NULL == (visit_nodes = SetCreate(compDijk, cloneDijk, destrucDijk)))
+	{
+		free(unvisit_nodes);
+		free(visit_nodes);
+		return FALSE;
+	}
+
+	
+		
+
+		temp_vertex = SetGetFirst(pGraph->vertex);
+		pointer_temp_dij->Vertex_id = temp_vertex->serialNumber;
+		pointer_temp_dij->min_dist_source = -1;
+		pointer_temp_dij->Prev_vertex = -1;
+		if (FALSE == SetAdd(unvisit_nodes, pointer_temp_dij)) return FreeMen(unvisit_nodes, visit_nodes);
+
+		for (size_t i = 1; i < SetGetSize(pGraph->vertex); i++)
+		{
+			if (NULL == (temp_vertex = SetGetNext(pGraph->vertex))) break;
+			pointer_temp_dij->Vertex_id = temp_vertex->serialNumber;
+			pointer_temp_dij->min_dist_source = -1;
+			pointer_temp_dij->Prev_vertex = -1;
+			if (FALSE == SetAdd(unvisit_nodes, pointer_temp_dij)) return FreeMen(unvisit_nodes, visit_nodes);
+		}
+
+		temp_dij_elem.Vertex_id = source;
+		pointer_temp_dij = SetFindElement(unvisit_nodes, &temp_dij_elem);
+		pointer_temp_dij->min_dist_source = 0;
+		pointer_temp_dij->Prev_vertex = 0;
+	
+	Bool awser;
+	while (NULL != (SetGetFirst(unvisit_nodes)))
+	{
+
+
+		U_element = findMinDistanceVertex(unvisit_nodes);
+		
+		if (FALSE == (awser = SetRemoveElement(unvisit_nodes, U_element)))  return FreeMen(unvisit_nodes, visit_nodes);
+
+
+	}
+	//seting up the lists
+	for (int i = 0; i < pGraph->number_of_vertex; i++)
+	{
+		dist[i] = -1; //flag to infinity
+		prev[i] = -1; //flag to undefine
+	}
+	dist[source] = 0;
+	prev[source] = 0;
+	
+
+
 return TRUE;
 }
-*/
+

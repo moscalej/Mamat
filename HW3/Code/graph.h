@@ -24,7 +24,7 @@ typedef struct _Edge
 
 typedef struct _Vertex* PVertex;
 typedef struct _Edge* PEdge;
-/*
+
 PGraph GraphCreate();
 void GraphDestroy(PGraph);
 Bool GraphAddVertex(PGraph, int);
@@ -37,5 +37,5 @@ int GraphGetNumberOfVertices(PGraph);
 
 PSet GraphVerticesStatus(PGraph);
 PSet GraphEdgesStatus(PGraph);
-*/
+
 #endif /* GRAPH_H_ */

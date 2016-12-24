@@ -1,1 +1,3 @@
 ﻿  graph.c
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(337): warning C4018: '<': signed/unsigned mismatch
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\graph.c(311): warning C4101: 'V_element': unreferenced local variable
