@@ -29,8 +29,8 @@ typedef struct _Graph
 
 PElem returnError(PElem set)
 {
+	
 	SetDestroy(set);
-	free(set);
 	return NULL;
 }
 Bool edgeComp(PElem id_vertex, PElem edge1)
@@ -125,9 +125,17 @@ PGraph GraphCreate()
 	PGraph graph = (PGraph)malloc(sizeof(Graph));
 	if (graph == NULL) return returnError(graph);
 
-	if (NULL == (graph->vertex = (PVertex)SetCreate(vertexComp, cloneVertex, freefunc))) return returnError(graph);
-	if (NULL == (graph->edge = (PEdge)SetCreate(edgeComp, cloneEdge, freefunc))) return returnError(graph);
+	if (NULL == (graph->vertex = (PVertex)SetCreate(vertexComp, cloneVertex, freefunc)))
+	{
+		free(graph);
+		return NULL;
+	}
+	if (NULL == (graph->edge = (PEdge)SetCreate(edgeComp, cloneEdge, freefunc))) {
 
+		SetDestroy(graph->vertex);
+		returnError(graph);
+		return;
+	}
 	graph->number_of_vertex = 0;
 	return graph;
 }
@@ -276,13 +284,10 @@ void destrucDijk(PElem integer)
 {
 	free(integer);
 }
-
 Bool FreeMen(PElem one, PElem two)
 {
 	SetDestroy(one);
 	SetDestroy(two);
-	free(one);
-	free(two);
 	return FALSE;
 }
 PDijkstr findMinDistanceVertex( PSet set)
@@ -321,14 +326,14 @@ PEdge find_dijk_edge(PSet edge_set, PVertex vertex1, PVertex vertex2)
 int Djisk_get_weith(PGraph graph, int Current_vertex, int neighbor)
 {
 	PEdge temp_evaluate;
-	Vertex vertx1,vertex2;
+	Vertex vertx1, vertex2;
 	PVertex temp1, temp2;
 
 	vertx1.serialNumber = Current_vertex;
 	vertex2.serialNumber = neighbor;
-	
-	temp1 = (PVertex)SetFindElement(graph->vertex,&vertx1);
-	temp2 = (PVertex)SetFindElement(graph->vertex,&vertex2);
+
+	temp1 = (PVertex)SetFindElement(graph->vertex, &vertx1);
+	temp2 = (PVertex)SetFindElement(graph->vertex, &vertex2);
 
 	temp_evaluate = find_dijk_edge(graph->edge, temp1, temp2);
 	if (temp_evaluate == NULL) return (-2); // just for debuginf and cheking that all is working this means that didnt find that edge
@@ -336,7 +341,6 @@ int Djisk_get_weith(PGraph graph, int Current_vertex, int neighbor)
 	return temp_evaluate->weight;
 
 }
-
 Bool update_min_distance(PDijkstr U_elem, PGraph graph, PSet unvisit_nodes)
 {
 	// we will working with alocate memory we hace to be carefull
@@ -367,7 +371,7 @@ Bool update_min_distance(PDijkstr U_elem, PGraph graph, PSet unvisit_nodes)
 		}
 		if (NULL == (temp_vertex = (PVertex)SetGetNext(neigbors_of_u)))
 		{
-			free(neigbors_of_u); ///<-- we free the memory here
+			SetDestroy(neigbors_of_u); ///<-- we free the memory here
 			return TRUE;
 		}
 	}
@@ -379,6 +383,22 @@ void set_dijks_ele(PDijkstr elem, int serialNumber, int distance, int source)
 	elem->min_dist_source = distance;
 	elem->Prev_vertex = source;
 }
+Result copy_dist_prev(int* dist, int* prev, PSet visit_nodes)
+{
+	if (dist == NULL || prev == NULL || visit_nodes == NULL) return FALSE;
+	PDijkstr temp;
+	int i = 1;
+	temp = SetGetFirst(visit_nodes);
+	dist[0] = temp->min_dist_source;
+	prev[0] = temp->Prev_vertex;
+	while (NULL != (temp = SetGetNext(visit_nodes)))
+	{
+		dist[i] = temp->min_dist_source;
+		prev[i] = temp->Prev_vertex;
+	}
+	return TRUE;
+}
+
 
 Bool GraphFindShortestPath(PGraph pGraph, int source, int * dist, int * prev) //this will probably use malloc need to che memory
 {
@@ -409,28 +429,28 @@ Bool GraphFindShortestPath(PGraph pGraph, int source, int * dist, int * prev) //
 	}
 	if (NULL == (visit_nodes = SetCreate(compDijk, cloneDijk, destrucDijk)))
 	{
-		free(unvisit_nodes);
+		SetDestroy(unvisit_nodes);
 		free(visit_nodes);
 		return FALSE;
 	}
 
-		temp_vertex = SetGetFirst(pGraph->vertex);
+	temp_vertex = SetGetFirst(pGraph->vertex);
+	set_dijks_ele(pointer_temp_dij, temp_vertex->serialNumber, (-1), (-1));
+
+	if (FALSE == SetAdd(unvisit_nodes, pointer_temp_dij)) return FreeMen(unvisit_nodes, visit_nodes);
+
+	for (size_t i = 1; i < SetGetSize(pGraph->vertex); i++)
+	{
+		if (NULL == (temp_vertex = SetGetNext(pGraph->vertex))) break;
 		set_dijks_ele(pointer_temp_dij, temp_vertex->serialNumber, (-1), (-1));
-
 		if (FALSE == SetAdd(unvisit_nodes, pointer_temp_dij)) return FreeMen(unvisit_nodes, visit_nodes);
+	}
 
-		for (size_t i = 1; i < SetGetSize(pGraph->vertex); i++)
-		{
-			if (NULL == (temp_vertex = SetGetNext(pGraph->vertex))) break;
-			set_dijks_ele(pointer_temp_dij, temp_vertex->serialNumber, (-1), (-1));
-			if (FALSE == SetAdd(unvisit_nodes, pointer_temp_dij)) return FreeMen(unvisit_nodes, visit_nodes);
-		}
+	temp_dij_elem.Vertex_id = source;
+	pointer_temp_dij = SetFindElement(unvisit_nodes, &temp_dij_elem);
 
-		temp_dij_elem.Vertex_id = source;
-		pointer_temp_dij = SetFindElement(unvisit_nodes, &temp_dij_elem);
-
-		pointer_temp_dij->min_dist_source = 0;
-		pointer_temp_dij->Prev_vertex = 0;
+	pointer_temp_dij->min_dist_source = 0;
+	pointer_temp_dij->Prev_vertex = 0;
 	
 	
 	while (NULL != (SetGetFirst(unvisit_nodes)))
@@ -441,14 +461,8 @@ Bool GraphFindShortestPath(PGraph pGraph, int source, int * dist, int * prev) //
 		if (FALSE == (awser = SetAdd(visit_nodes,U_element))) return FreeMen(unvisit_nodes, visit_nodes);
 		if (FALSE == (awser = SetRemoveElement(unvisit_nodes, U_element)))  return FreeMen(unvisit_nodes, visit_nodes);	
 	}
-	//funtion yaron (   )
-	
-
-	SetDestroy(unvisit_nodes);
-	SetDestroy(visit_nodes);
-
-	free(unvisit_nodes);
-	free(unvisit_nodes);
+	if (FALSE == (awser =copy_dist_prev(dist,prev,visit_nodes))) return FreeMen(unvisit_nodes, visit_nodes);
+	awser = FreeMen(unvisit_nodes, visit_nodes);
 return TRUE;
 }
 
