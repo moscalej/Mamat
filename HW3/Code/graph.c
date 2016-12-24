@@ -29,6 +29,7 @@ typedef struct _Graph
 
 PElem returnError(PElem set)
 {
+	
 	SetDestroy(set);
 	return NULL;
 }
@@ -82,8 +83,10 @@ PElem cloneEdge(PElem edge) {
 void freefunc(PElem elem) {
 	free(elem);
 }
-/*this is a helper function that will check if one of the edges has the node we are looking for
-if it does it will add the pointer to the new set*/
+
+/*this is a helper funtion that will check if one of the eges have the node we are loking for
+if it does it will add the pointer to the new set
+*/
 Bool checkAndAdd(PEdge Edge_to_be_review, int Vertex_Serial_num, PSet new_set_of_vertix)
 {
 	if (Edge_to_be_review->nodeA->serialNumber == Vertex_Serial_num)
@@ -133,7 +136,6 @@ PGraph GraphCreate()
 		returnError(graph);
 		return;
 	}
-
 	graph->number_of_vertex = 0;
 	return graph;
 }
@@ -193,7 +195,7 @@ Bool GraphAddEdge(PGraph pGraph, int vertex1, int vertex2, int weight)
 
 PSet GraphNeighborVertices(PGraph graph, int number) //<-- new memory alocation need to check for relese
 {
-	if (number > graph->number_of_vertex - 1) return NULL;
+	if (number > (graph->number_of_vertex) - 1) return NULL;
 	PSet new_set_of_vertix;
 	new_set_of_vertix = SetCreate(edgeComp, cloneEdge, freefunc);
 	if (new_set_of_vertix == NULL) returnError(new_set_of_vertix);
@@ -242,6 +244,8 @@ PSet GraphEdgesStatus(PGraph graph)
 /*########################################################################################
 		PART 3 OF THE HOME WORK
 ##########################################################################################*/
+
+
 typedef struct _Dijkstr
 {
 	int Vertex_id;
@@ -249,6 +253,8 @@ typedef struct _Dijkstr
 	int Prev_vertex;
 
 }Dijkstr, *PDijkstr;
+
+
 Bool compDijk(PElem first,PElem second)
 {
 	PDijkstr temp1;
