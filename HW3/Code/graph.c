@@ -58,7 +58,6 @@ Bool vertexComp(PElem id_vertex, PElem vertex)
 	}
 	return FALSE;
 }
-
 PElem cloneVertex(PElem vertexNumber) {
 	PVertex temp;
 	temp = (PVertex)vertexNumber;
@@ -79,11 +78,9 @@ PElem cloneEdge(PElem edge) {
 	new_edge->weight = temp->weight;
 	return new_edge;
 }
-
 void freefunc(PElem elem) {
 	free(elem);
 }
-
 /*this is a helper funtion that will check if one of the eges have the node we are loking for
 if it does it will add the pointer to the new set
 */
