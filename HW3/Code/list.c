@@ -117,63 +117,8 @@ int ListGetSize(PList list_elem)
 	}
 	return counter;
 }
-/*
-Result ListRemove(PList list_elem)// Head_Element should always be the input here 
-								  // so we start from beginning of the list! (I think)
-{
-	Pnode_iter temp_Iterator1;
-	Pnode_iter temp_Iterator2;
-	if (list_elem == NULL) return FAIL;
-	if (list_elem->iterator == NULL)
-	{
-		return FAIL;
-	}
-	// Checking if there is only one node in the list and it doesn't have a correct address.
-	if (list_elem->iterator->nextNode == NULL && list_elem->iterator->address == NULL)
-	{
-		return FAIL;
-	}
 
-	if (list_elem->iterator->address != NULL)
-	{
-		list_elem->iterator->address = NULL;
-		return SUCCESS;
-	}
-	// We will use two pointers (one right before the other) so that when the first
-	// pointer hits the iterator address, we have the location of the node before 
-	// it, to attach to the next node in the iterator.
-	temp_Iterator1 = list_elem->iterator;
-	temp_Iterator2 = list_elem->iterator->nextNode;
-	while (1)
-	{
-		if (temp_Iterator2->address != NULL) // Meaning the iterator is pointing here.
-		{
-			if (temp_Iterator2->nextNode == NULL) // This means the iterator is at the end 
-			{									  // of the list, so we just point the one
-				temp_Iterator1->nextNode = NULL;  // before it to NULL!
-				//free(temp_Iterator2->address);
-				temp_Iterator2->address = NULL;
-				return SUCCESS;
-			}
-			else
-			{
-				temp_Iterator1->nextNode = temp_Iterator2->nextNode;
-				//free(temp_Iterator2->address);
-				temp_Iterator2->address = NULL;
-				return SUCCESS;
-			}
-		}
-		else
-		{
-			// The iterator wasn't found so we move to the next iterator node
-			// to see if has an address.
-			temp_Iterator2->nextNode = temp_Iterator2->nextNode->nextNode;
-			temp_Iterator1->nextNode = temp_Iterator1->nextNode->nextNode;
-			continue;
-		}
-	}
-}
-*/
+
 Result ListRemove(PList list_elem)
 {	
 	if (list_elem == NULL) return FAIL;

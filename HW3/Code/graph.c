@@ -388,24 +388,7 @@ void set_dijks_ele(PDijkstr elem, int serialNumber, int distance, int source)
 	elem->Prev_vertex = source;
 }
 
-/*Result copy_dist_prev(int* dist, int* prev, PSet visit_nodes)
-{
-	if (dist == NULL || prev == NULL || visit_nodes == NULL) return FAIL;
-	PDijkstr temp;
-	int i = 1;
-	temp = SetGetFirst(visit_nodes);
-	dist[0] = temp->min_dist_source;
-	prev[0] = temp->Prev_vertex;
-	while (NULL != (temp = SetGetNext(visit_nodes)))
-	{
-		dist[i] = temp->min_dist_source;
-		prev[i] = temp->Prev_vertex;
-//		printf("%d %d\n", dist[i], prev[i]);
-		i++;
-	}
-	return TRUE;
-}
-*/
+
 
 Result copy_dist_prev(int* dist, int* prev, PSet visit_nodes)
 {
