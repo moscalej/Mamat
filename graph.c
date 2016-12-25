@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 
@@ -84,7 +83,7 @@ PElem cloneEdge(PElem edge) {
 
 void freefunc(PElem elem) {
 	free(elem);
-
+	
 }
 
 /*this is a helper funtion that will check if one of the eges have the node we are loking for
@@ -362,9 +361,9 @@ Bool update_min_distance(PDijkstr U_elem, PGraph graph, PSet unvisit_nodes)
 	}
 	if (NULL == (temp_vertex = (PVertex)SetGetFirst(neigbors_of_u)))
 	{
-
+	
 		SetDestroy(neigbors_of_u);
-
+		
 		return TRUE;
 	}
 	while (TRUE)
@@ -474,7 +473,7 @@ Bool GraphFindShortestPath(PGraph pGraph, int source, int* dist, int* prev) //th
 
 		pointer_temp_dij->min_dist_source = 0;
 		pointer_temp_dij->Prev_vertex = source;
-
+	
 	while (NULL != (SetGetFirst(unvisit_nodes)))
 	{
 
