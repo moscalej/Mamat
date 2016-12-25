@@ -82,6 +82,7 @@ PElem cloneEdge(PElem edge) {
 
 void freefunc(PElem elem) {
 	free(elem);
+	elem = NULL;
 }
 
 /*this is a helper funtion that will check if one of the eges have the node we are loking for
@@ -125,16 +126,16 @@ PGraph GraphCreate()
 	PGraph graph = (PGraph)malloc(sizeof(Graph));
 	if (graph == NULL) return returnError(graph);
 
-	if (NULL == (graph->vertex = (PVertex)SetCreate(vertexComp, cloneVertex, freefunc)))
+	if (NULL == (graph->vertex = (PSet)SetCreate(vertexComp, cloneVertex, freefunc)))
 	{
 		free(graph);
 		return NULL;
 	}
-	if (NULL == (graph->edge = (PEdge)SetCreate(edgeComp, cloneEdge, freefunc))) {
+	if (NULL == (graph->edge = (PSet)SetCreate(edgeComp, cloneEdge, freefunc))) {
 
 		SetDestroy(graph->vertex);
 		returnError(graph);
-		return;
+		return NULL;
 	}
 	graph->number_of_vertex = 0;
 	return graph;
@@ -169,7 +170,10 @@ Bool GraphAddEdge(PGraph pGraph, int vertex1, int vertex2, int weight)
 {
 	Vertex identical_vertex;
 	Edge  new_element_edge;
-
+	if (weight <0 || weight>10)
+	{
+		return FALSE;
+	}
 	if (vertex1 > pGraph->number_of_vertex ||
 		vertex2 > pGraph->number_of_vertex || 
 		vertex1 == vertex2)
@@ -309,7 +313,7 @@ PDijkstr findMinDistanceVertex( PSet set)
 }
 
 /*this will be use by Djisk_get_weith*/
-PEdge find_dijk_edge(PSet edge_set, PVertex vertex1, PVertex vertex2) 
+PEdge find_dijk_edge(PSet edge_set, PVertex vertex1, PVertex vertex2)
 {
 	PEdge comp_edge;
 	comp_edge = (PEdge)SetGetFirst(edge_set);
@@ -322,7 +326,7 @@ PEdge find_dijk_edge(PSet edge_set, PVertex vertex1, PVertex vertex2)
 		}
 		if (NULL == (comp_edge = (PEdge)SetGetNext(edge_set))) return NULL;
 	}
-} 
+}
 int Djisk_get_weith(PGraph graph, int Current_vertex, int neighbor)
 {
 	PEdge temp_evaluate;
@@ -348,13 +352,13 @@ Bool update_min_distance(PDijkstr U_elem, PGraph graph, PSet unvisit_nodes)
 	PVertex temp_vertex;
 	Dijkstr temp_neig;
 	PDijkstr neib_elem_in_unv;
-	
-	
+
+
 	int distance_u_v;
 	int new_ditance;
 
 	if (NULL == (neigbors_of_u = GraphNeighborVertices(graph, U_elem->Vertex_id))) return FreeMen(neigbors_of_u, NULL);
-	if (NULL == (temp_vertex=(PVertex)SetGetFirst(neigbors_of_u))) return FreeMen(neigbors_of_u, NULL);
+	if (NULL == (temp_vertex = (PVertex)SetGetFirst(neigbors_of_u))) return FreeMen(neigbors_of_u, NULL);
 	while (TRUE)
 	{
 		temp_neig.Vertex_id = temp_vertex->serialNumber;
@@ -383,28 +387,31 @@ void set_dijks_ele(PDijkstr elem, int serialNumber, int distance, int source)
 	elem->min_dist_source = distance;
 	elem->Prev_vertex = source;
 }
+
+
+
 Result copy_dist_prev(int* dist, int* prev, PSet visit_nodes)
 {
-	if (dist == NULL || prev == NULL || visit_nodes == NULL) return FALSE;
+	if (dist == NULL || prev == NULL || visit_nodes == NULL) return FAIL;
 	PDijkstr temp;
-	int i = 1;
 	temp = SetGetFirst(visit_nodes);
-	dist[0] = temp->min_dist_source;
-	prev[0] = temp->Prev_vertex;
+	dist[temp->Vertex_id] = temp->min_dist_source;
+	prev[temp->Vertex_id] = temp->Prev_vertex;
 	while (NULL != (temp = SetGetNext(visit_nodes)))
 	{
-		dist[i] = temp->min_dist_source;
-		prev[i] = temp->Prev_vertex;
+		dist[temp->Vertex_id] = temp->min_dist_source;
+		prev[temp->Vertex_id] = temp->Prev_vertex;
+
 	}
+
 	return TRUE;
 }
 
-
-Bool GraphFindShortestPath(PGraph pGraph, int source, int * dist, int * prev) //this will probably use malloc need to che memory
+Bool GraphFindShortestPath(PGraph pGraph, int source, int* dist, int* prev) //this will probably use malloc need to che memory
 {
 
 	//basic checks
-	if (pGraph == NULL || source > (pGraph->number_of_vertex) ||NULL == dist || NULL == prev)
+	if (pGraph == NULL || source > (pGraph->number_of_vertex) || source < 0 ||NULL == dist || NULL == prev)
 	{
 		return FALSE;
 	}
@@ -413,11 +420,10 @@ Bool GraphFindShortestPath(PGraph pGraph, int source, int * dist, int * prev) //
 	PSet unvisit_nodes;
 	PSet visit_nodes;
 	Bool awser;
-	
+
 	PVertex temp_vertex;
 	Dijkstr temp_dij_elem;
 	PDijkstr U_element;
-	PDijkstr V_element;
 	PDijkstr pointer_temp_dij;
 	pointer_temp_dij = &temp_dij_elem;
 
@@ -434,35 +440,43 @@ Bool GraphFindShortestPath(PGraph pGraph, int source, int * dist, int * prev) //
 		return FALSE;
 	}
 
-	temp_vertex = SetGetFirst(pGraph->vertex);
-	set_dijks_ele(pointer_temp_dij, temp_vertex->serialNumber, (-1), (-1));
-
-	if (FALSE == SetAdd(unvisit_nodes, pointer_temp_dij)) return FreeMen(unvisit_nodes, visit_nodes);
-
-	for (size_t i = 1; i < SetGetSize(pGraph->vertex); i++)
-	{
-		if (NULL == (temp_vertex = SetGetNext(pGraph->vertex))) break;
-		set_dijks_ele(pointer_temp_dij, temp_vertex->serialNumber, (-1), (-1));
-		if (FALSE == SetAdd(unvisit_nodes, pointer_temp_dij)) return FreeMen(unvisit_nodes, visit_nodes);
-	}
-
-	temp_dij_elem.Vertex_id = source;
-	pointer_temp_dij = SetFindElement(unvisit_nodes, &temp_dij_elem);
-
-	pointer_temp_dij->min_dist_source = 0;
-	pointer_temp_dij->Prev_vertex = 0;
 	
+		
+
+		temp_vertex = SetGetFirst(pGraph->vertex);
+		set_dijks_ele(pointer_temp_dij, temp_vertex->serialNumber, INT_MAX, INT_MAX);
+
+		if (FALSE == SetAdd(unvisit_nodes, pointer_temp_dij)) return FreeMen(unvisit_nodes, visit_nodes);
+
+		while (TRUE)
+		{
+			if (NULL == (temp_vertex = SetGetNext(pGraph->vertex))) break;
+			set_dijks_ele(pointer_temp_dij, temp_vertex->serialNumber, INT_MAX, INT_MAX);
+
+
+			if (FALSE == SetAdd(unvisit_nodes, pointer_temp_dij)) return FreeMen(unvisit_nodes, visit_nodes);
+		}
+
+		temp_dij_elem.Vertex_id = source;
+		pointer_temp_dij = SetFindElement(unvisit_nodes, &temp_dij_elem);
+		pointer_temp_dij->min_dist_source = 0;
+		pointer_temp_dij->Prev_vertex = 0;
 	
 	while (NULL != (SetGetFirst(unvisit_nodes)))
 	{
+
+
 		U_element = findMinDistanceVertex(unvisit_nodes);
-		
 		if (FALSE == (awser = update_min_distance(U_element, pGraph, unvisit_nodes)))  return FreeMen(unvisit_nodes, visit_nodes);
-		if (FALSE == (awser = SetAdd(visit_nodes,U_element))) return FreeMen(unvisit_nodes, visit_nodes);
-		if (FALSE == (awser = SetRemoveElement(unvisit_nodes, U_element)))  return FreeMen(unvisit_nodes, visit_nodes);	
+		if (FALSE == (awser = SetAdd(visit_nodes, U_element))) return FreeMen(unvisit_nodes, visit_nodes);
+		if (FALSE == (awser = SetRemoveElement(unvisit_nodes, U_element)))  return FreeMen(unvisit_nodes, visit_nodes);
+
+
 	}
-	if (FALSE == (awser =copy_dist_prev(dist,prev,visit_nodes))) return FreeMen(unvisit_nodes, visit_nodes);
+	if (FALSE == (awser = copy_dist_prev(dist, prev, visit_nodes))) return FreeMen(unvisit_nodes, visit_nodes);
 	awser = FreeMen(unvisit_nodes, visit_nodes);
+
+
 return TRUE;
 }
 

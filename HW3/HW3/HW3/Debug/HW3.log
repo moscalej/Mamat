@@ -1,16 +1,3 @@
-﻿  main.c
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\main.c(159): warning C4013: 'GraphFindShortestPath' undefined; assuming extern returning int
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\main.c(43): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\main.c(59): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\main.c(75): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\main.c(76): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\main.c(77): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\main.c(95): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw3\code\main.c(139): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+﻿  graph.c
+  HW3.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\Github\Mamat\HW3\HW3\Debug\HW3.exe
+  HW3.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\Github\Mamat\HW3\HW3\Debug\HW3.pdb (Full PDB)
