@@ -178,68 +178,54 @@ Result ListRemove(PList list_elem)
 {	
 	if (list_elem == NULL) return FAIL;
 	if (list_elem->head_element == NULL) return FAIL;
+	/*why do we do this checks?*/
 	if (list_elem->iterator == NULL) return FAIL;
 	if (list_elem->iterator->address == NULL) return FAIL;
-	if (list_elem->head_element->nextNode == NULL)// Checking if there is only one node in the list.
+
+	
+	Pnode_iter temp1 ;
+	Pnode_iter temp2;
+	/*this checks and removes the item if the item is the first one on the list*/
+	if (list_elem->iterator == list_elem->head_element)
 	{
-		if (list_elem->head_element->address != list_elem->iterator->address) return FAIL;
-		else
+		temp1 = list_elem->iterator;
+		list_elem->iterator = NULL;
+		list_elem->head_element = temp1->nextNode;
+		list_elem->free_list_elem(temp1->address);
+		free(temp1);
+		return SUCCESS;
+	}
+	temp1 = list_elem->head_element;
+	while (SUCCESS)
+	{
+		temp2 = temp1->nextNode;
+		if (list_elem->iterator == temp2 )
 		{
-			list_elem->head_element->address = NULL;
-			list_elem->iterator->address = NULL;
+			temp1->nextNode = temp2->nextNode;
+			list_elem->free_list_elem(temp2->address);
+			free(temp2);
 			return SUCCESS;
 		}
-	}
-	Pnode_iter temp1 = list_elem->head_element; // Is now head element
-	while (1)
-	{
-		if (temp1 == NULL || temp1->address == NULL) return FAIL;
-		if (temp1->address == list_elem->iterator->address)
-		{
-			if (temp1->nextNode == NULL)
-			{
-				temp1->address = NULL;
-				list_elem->iterator->address = NULL;
-				list_elem->head_element = temp1;
-				return SUCCESS;
-			}
-			else
-			{
-				temp1->address = NULL;
-				temp1 = temp1->nextNode;
-				list_elem->iterator->address = NULL;
-				list_elem->head_element = temp1;
-				return SUCCESS;
-			}
-		}
-		temp1 = temp1->nextNode;
+		if (NULL == temp2) return FAIL;
 	}
 }
 
 void ListDestroy(PList list_elem)
 {
 	if (list_elem == NULL) return;
-
-	PList temp = list_elem;
-	while (temp->head_element != NULL)
+	Pnode_iter temp;
+	
+	while ( NULL != (temp = list_elem->head_element))
 	{
-		temp->head_element = temp->head_element->nextNode;
-		list_elem->free_list_elem(list_elem->head_element);
-		list_elem->head_element = temp->head_element;
+		list_elem->head_element = temp->nextNode;
+		list_elem->free_list_elem(temp->address);
+		
 	}
+	
 	free(list_elem->iterator);
 	free(list_elem);
 }
 
-//PList ListDestroy(){}
 
 
-PElem clone(PElem element) 
-{
-	
-	PElem new_element = (PElem)malloc(sizeof(element));
-	new_element = element;
-
-
-}
 
