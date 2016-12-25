@@ -5,10 +5,10 @@
 //#define MAX_SIZE (256)
 
 // This will be the structure of our iterator
-typedef struct node_iter
+typedef struct _node_iter
 {
 	//node field
-	struct node_iter* nextNode;
+	struct _node_iter* nextNode;
 
 	//information field
 	PElem address;
@@ -107,13 +107,9 @@ int ListGetSize(PList list_elem)
 	int counter = 0;
 	while (1)
 	{
-		if (temp != NULL)
-		{
-			counter++;
-			temp = temp->nextNode;
-			continue;
-		}
-		else break;
+		if (temp == NULL) break;	
+		counter++;
+		temp = temp->nextNode;
 	}
 	return counter;
 }
@@ -128,12 +124,31 @@ Result ListRemove(PList list_elem)
 	if (list_elem->iterator->address == NULL) return FAIL;
 
 	
+<<<<<<< HEAD
+	Pnode_iter temp1;
+=======
 	Pnode_iter temp1 ;
+>>>>>>> origin/master
 	Pnode_iter temp2;
 	/*this checks and removes the item if the item is the first one on the list*/
 	if (list_elem->iterator == list_elem->head_element)
 	{
 		temp1 = list_elem->iterator;
+<<<<<<< HEAD
+		
+		list_elem->head_element = temp1->nextNode;
+		list_elem->free_list_elem(temp1->address);
+		free(temp1);
+		list_elem->iterator = NULL;
+		return SUCCESS;
+	}
+
+	temp1 = list_elem->head_element;
+	temp2 = temp1;
+	while (1)
+	{
+
+=======
 		list_elem->iterator = NULL;
 		list_elem->head_element = temp1->nextNode;
 		list_elem->free_list_elem(temp1->address);
@@ -143,16 +158,30 @@ Result ListRemove(PList list_elem)
 	temp1 = list_elem->head_element;
 	while (SUCCESS)
 	{
+>>>>>>> origin/master
 		temp2 = temp1->nextNode;
 		if (list_elem->iterator == temp2 )
 		{
 			temp1->nextNode = temp2->nextNode;
+<<<<<<< HEAD
+			temp2->nextNode = NULL;
+			list_elem->free_list_elem(temp2->address);
+			list_elem->iterator = NULL;
+			
+			free(temp2);
+			return SUCCESS;
+		}
+		if (NULL == temp2) break;
+		temp1 = temp2;
+=======
 			list_elem->free_list_elem(temp2->address);
 			free(temp2);
 			return SUCCESS;
 		}
 		if (NULL == temp2) return FAIL;
+>>>>>>> origin/master
 	}
+	return FAIL;
 }
 
 void ListDestroy(PList list_elem)
@@ -160,6 +189,18 @@ void ListDestroy(PList list_elem)
 	if (list_elem == NULL) return;
 	Pnode_iter temp;
 	
+<<<<<<< HEAD
+	while ( NULL != list_elem->head_element)
+	{
+		temp = list_elem->head_element;
+		list_elem->head_element = list_elem->head_element->nextNode;
+		list_elem->free_list_elem(temp->address);
+		
+		free(temp);
+	}
+	
+
+=======
 	while ( NULL != (temp = list_elem->head_element))
 	{
 		list_elem->head_element = temp->nextNode;
@@ -168,6 +209,7 @@ void ListDestroy(PList list_elem)
 	}
 	
 	free(list_elem->iterator);
+>>>>>>> origin/master
 	free(list_elem);
 }
 
