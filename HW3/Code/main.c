@@ -1,4 +1,9 @@
-
+/*
+* main.cpp
+*
+*  Created on: 22 αιεπ 2016
+*      Author: Shirel_local
+*/
 #define _CRT_SECURE_NO_WARNINGS
 #include "list.h"
 #include "set.h"
@@ -119,7 +124,7 @@ int main(char argc, char* argv[]) {
 			int size = SetGetSize(neighbors);
 			if (size != 0)
 			{
-				int* neighbors_serial = (int*)malloc(size * sizeof(int));
+				int* neighbors_serial = (int*)malloc(size*sizeof(int));
 				if (neighbors_serial == NULL)
 				{
 					SetDestroy(neighbors);
@@ -236,3 +241,4 @@ int main(char argc, char* argv[]) {
 	fclose(fp);
 	return 0;
 }
+
