@@ -1,0 +1,9 @@
+Shortest Path Results:
+The shortest path from source 0     to 0     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 1     costs: 5     and the previous vertex is: 2    
+The shortest path from source 0     to 2     costs: 2     and the previous vertex is: 0    
+The shortest path from source 0     to 3     costs: 2     and the previous vertex is: 4    
+The shortest path from source 0     to 4     costs: 2     and the previous vertex is: 2    
+The shortest path from source 0     to 5     costs: 4     and the previous vertex is: 6    
+The shortest path from source 0     to 6     costs: 3     and the previous vertex is: 0    
+The shortest path from source 0     to 7     costs: 1     and the previous vertex is: 0    

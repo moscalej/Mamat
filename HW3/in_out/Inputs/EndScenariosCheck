@@ -1,0 +1,57 @@
+create_graph
+print_graph
+add_vertex -1
+add_vertex 1
+add_vertex 0
+get_neighbors 0
+find_shortest_path 0
+print_graph
+add_vertex 1
+find_shortest_path 1
+find_shortest_path 0
+add_edge 2 -1 1
+add_edge 2 -1 1
+add_edge 0 2 1
+add_edge -1 -1 1
+add_edge 0 0 1
+add_edge 0 0 -1
+add_edge 0 0 11
+add_edge 0 0 10000000000000000
+add_edge 0 0 -1000000000000000
+add_edge 0 1 -1
+add_edge 0 1 11
+add_edge 0 1 100000000000000000
+add_edge 0 1 -1000000000000000
+add_edge 0 1 1
+add_edge 1 0 2
+add_edge 0 1 2
+get_neighbors 0
+get_neighbors 1
+find_shortest_path 1
+find_shortest_path 0
+print_graph
+add_vertex -1
+add_vertex 1
+add_vertex 0
+get_neighbors 0
+find_shortest_path 0
+print_graph
+add_vertex 1
+find_shortest_path 1
+find_shortest_path 0
+add_edge 0 0 -1
+add_edge 0 0 11
+add_edge 0 0 10000000000000000
+add_edge 0 0 -1000000000000000
+add_edge 0 1 -1
+add_edge 0 1 11
+add_edge 0 1 100000000000000000
+add_edge 0 1 -1000000000000000
+add_edge 0 1 1
+add_edge 1 0 2
+add_edge 0 1 2
+get_neighbors 0
+get_neighbors 1
+find_shortest_path 1
+find_shortest_path 0
+exit

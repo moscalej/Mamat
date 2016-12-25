@@ -1,0 +1,55 @@
+Graph vertices:
+Graph edges:
+The neighbors of vertex 0 are:
+Shortest Path Results:
+The shortest path from source 0     to 0     costs: 0     and the previous vertex is: 0    
+Graph vertices:
+0
+Graph edges:
+Shortest Path Results:
+The shortest path from source 1     to 0     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 1     to 1     costs: 0     and the previous vertex is: 1    
+Shortest Path Results:
+The shortest path from source 0     to 0     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 1     costs: 2147483647 and the previous vertex is: -1   
+The neighbors of vertex 0 are:
+1
+The neighbors of vertex 1 are:
+0
+Shortest Path Results:
+The shortest path from source 1     to 0     costs: 1     and the previous vertex is: 1    
+The shortest path from source 1     to 1     costs: 0     and the previous vertex is: 1    
+Shortest Path Results:
+The shortest path from source 0     to 0     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 1     costs: 1     and the previous vertex is: 0    
+Graph vertices:
+1
+0
+Graph edges:
+0-1
+The neighbors of vertex 0 are:
+1
+Shortest Path Results:
+The shortest path from source 0     to 0     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 1     costs: 1     and the previous vertex is: 0    
+Graph vertices:
+1
+0
+Graph edges:
+0-1
+Shortest Path Results:
+The shortest path from source 1     to 0     costs: 1     and the previous vertex is: 1    
+The shortest path from source 1     to 1     costs: 0     and the previous vertex is: 1    
+Shortest Path Results:
+The shortest path from source 0     to 0     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 1     costs: 1     and the previous vertex is: 0    
+The neighbors of vertex 0 are:
+1
+The neighbors of vertex 1 are:
+0
+Shortest Path Results:
+The shortest path from source 1     to 0     costs: 1     and the previous vertex is: 1    
+The shortest path from source 1     to 1     costs: 0     and the previous vertex is: 1    
+Shortest Path Results:
+The shortest path from source 0     to 0     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 1     costs: 1     and the previous vertex is: 0    

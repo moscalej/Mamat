@@ -1,0 +1,132 @@
+create_graph
+print_graph
+add_vertex 0
+add_vertex 150000
+add_vertex 1
+add_vertex 2
+add_vertex 3
+add_vertex 4
+add_vertex 5
+add_vertex 6
+add_vertex 7
+add_vertex 8
+add_vertex 9
+add_vertex 10
+add_vertex 11
+add_vertex 12
+add_vertex 13
+add_vertex 14
+add_vertex 15
+add_vertex 16
+add_vertex 17
+add_vertex 18
+add_vertex 19
+add_vertex 20
+add_vertex 21
+add_vertex 22
+add_vertex 23
+add_vertex 24
+add_vertex 25
+add_vertex 26
+add_vertex 27
+add_vertex 28
+add_vertex 29
+add_vertex 30
+add_vertex 31
+add_vertex 32
+print_graph
+add_edge 10 0 1
+add_edge 10 1 1
+add_edge 10 2 1
+add_edge 10 3 1
+add_edge 10 4 1
+add_edge 10 5 11
+add_edge 10 6 1
+add_edge 10 7 1
+add_edge 10 8 1
+add_edge 10 9 1
+add_edge 11 10 2
+add_edge 12 11 2
+add_edge 13 12 2
+add_edge 14 13 2
+add_edge 15 14 2
+add_edge 16 15 2
+add_edge 17 16 2
+add_edge 18 17 2
+add_edge 19 18 2
+add_edge 20 19 2
+add_edge 21 20 2
+add_edge 22 21 2
+add_edge 23 22 2
+add_edge 24 23 2
+add_edge 25 24 2
+add_edge 26 25 2
+add_edge 27 26 2
+add_edge 28 27 2
+add_edge 29 28 2
+add_edge 30 29 2
+add_edge 31 30 2
+add_edge 32 31 2
+add_edge 33 32 2
+add_edge 1 32 501
+add_edge 0 15 500
+add_edge 1 16 5222
+add_edge 2 17 5222
+add_edge 3 18 5222
+add_edge 4 19 5222
+add_edge 5 20 5222
+add_edge 6 21 5222
+add_edge 7 22 5222
+add_edge 8 23 5222
+add_edge 9 24 5222
+add_edge 10 25 50
+add_edge 11 26 50
+add_edge 12 27 50
+add_edge 13 28 50
+add_edge 14 29 50
+add_edge 15 30 50
+add_edge 16 31 50
+add_edge 17 32 50
+print_graph
+get_neighbors 32
+get_neighbors 10
+get_neighbors 1
+find_shortest_path -1000000000000
+find_shortest_path 1000000000
+find_shortest_path -1
+find_shortest_path 0
+find_shortest_path 1
+find_shortest_path 2
+find_shortest_path 3
+find_shortest_path 4
+find_shortest_path 6
+find_shortest_path 7
+find_shortest_path 8
+find_shortest_path 9
+find_shortest_path 10
+find_shortest_path 11
+find_shortest_path 12
+find_shortest_path 13
+find_shortest_path 14
+find_shortest_path 15
+find_shortest_path 16
+find_shortest_path 17
+find_shortest_path 18
+find_shortest_path 19
+find_shortest_path 20
+find_shortest_path 21
+find_shortest_path 22
+find_shortest_path 23
+find_shortest_path 24
+find_shortest_path 25
+find_shortest_path 26
+find_shortest_path 27
+find_shortest_path 28
+find_shortest_path 29
+find_shortest_path 30
+find_shortest_path 31
+find_shortest_path 32
+find_shortest_path 33
+find_shortest_path 34
+find_shortest_path 35
+exit

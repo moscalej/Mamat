@@ -1,0 +1,26 @@
+Shortest Path Results:
+The shortest path from source 3     to 0     costs: 3     and the previous vertex is: 5    
+The shortest path from source 3     to 1     costs: 3     and the previous vertex is: 3    
+The shortest path from source 3     to 2     costs: 2     and the previous vertex is: 6    
+The shortest path from source 3     to 3     costs: 0     and the previous vertex is: 3    
+The shortest path from source 3     to 4     costs: 0     and the previous vertex is: 3    
+The shortest path from source 3     to 5     costs: 2     and the previous vertex is: 4    
+The shortest path from source 3     to 6     costs: 1     and the previous vertex is: 7    
+The shortest path from source 3     to 7     costs: 1     and the previous vertex is: 3    
+The shortest path from source 3     to 8     costs: 4     and the previous vertex is: 7    
+The shortest path from source 3     to 9     costs: 5     and the previous vertex is: 3    
+The shortest path from source 3     to 10    costs: 0     and the previous vertex is: 4    
+The shortest path from source 3     to 11    costs: 0     and the previous vertex is: 10   
+Shortest Path Results:
+The shortest path from source 8     to 0     costs: 6     and the previous vertex is: 7    
+The shortest path from source 8     to 1     costs: 7     and the previous vertex is: 3    
+The shortest path from source 8     to 2     costs: 4     and the previous vertex is: 6    
+The shortest path from source 8     to 3     costs: 4     and the previous vertex is: 7    
+The shortest path from source 8     to 4     costs: 4     and the previous vertex is: 3    
+The shortest path from source 8     to 5     costs: 5     and the previous vertex is: 6    
+The shortest path from source 8     to 6     costs: 3     and the previous vertex is: 7    
+The shortest path from source 8     to 7     costs: 3     and the previous vertex is: 8    
+The shortest path from source 8     to 8     costs: 0     and the previous vertex is: 8    
+The shortest path from source 8     to 9     costs: 3     and the previous vertex is: 8    
+The shortest path from source 8     to 10    costs: 4     and the previous vertex is: 4    
+The shortest path from source 8     to 11    costs: 4     and the previous vertex is: 10   

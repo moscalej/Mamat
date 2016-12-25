@@ -1,0 +1,1206 @@
+Graph vertices:
+Graph edges:
+Graph vertices:
+32
+31
+30
+29
+28
+27
+26
+25
+24
+23
+22
+21
+20
+19
+18
+17
+16
+15
+14
+13
+12
+11
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+Graph edges:
+Graph vertices:
+32
+31
+30
+29
+28
+27
+26
+25
+24
+23
+22
+21
+20
+19
+18
+17
+16
+15
+14
+13
+12
+11
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+Graph edges:
+31-32
+30-31
+29-30
+28-29
+27-28
+26-27
+25-26
+24-25
+23-24
+22-23
+21-22
+20-21
+19-20
+18-19
+17-18
+16-17
+15-16
+14-15
+13-14
+12-13
+11-12
+10-11
+9-10
+8-10
+7-10
+6-10
+4-10
+3-10
+2-10
+1-10
+0-10
+The neighbors of vertex 32 are:
+31
+The neighbors of vertex 10 are:
+0
+1
+2
+3
+4
+6
+7
+8
+9
+11
+The neighbors of vertex 1 are:
+10
+Shortest Path Results:
+The shortest path from source 0     to 0     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 1     costs: 2     and the previous vertex is: 10   
+The shortest path from source 0     to 2     costs: 2     and the previous vertex is: 10   
+The shortest path from source 0     to 3     costs: 2     and the previous vertex is: 10   
+The shortest path from source 0     to 4     costs: 2     and the previous vertex is: 10   
+The shortest path from source 0     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 6     costs: 2     and the previous vertex is: 10   
+The shortest path from source 0     to 7     costs: 2     and the previous vertex is: 10   
+The shortest path from source 0     to 8     costs: 2     and the previous vertex is: 10   
+The shortest path from source 0     to 9     costs: 2     and the previous vertex is: 10   
+The shortest path from source 0     to 10    costs: 1     and the previous vertex is: 0    
+The shortest path from source 0     to 11    costs: 3     and the previous vertex is: 10   
+The shortest path from source 0     to 12    costs: 5     and the previous vertex is: 11   
+The shortest path from source 0     to 13    costs: 7     and the previous vertex is: 12   
+The shortest path from source 0     to 14    costs: 9     and the previous vertex is: 13   
+The shortest path from source 0     to 15    costs: 11    and the previous vertex is: 14   
+The shortest path from source 0     to 16    costs: 13    and the previous vertex is: 15   
+The shortest path from source 0     to 17    costs: 15    and the previous vertex is: 16   
+The shortest path from source 0     to 18    costs: 17    and the previous vertex is: 17   
+The shortest path from source 0     to 19    costs: 19    and the previous vertex is: 18   
+The shortest path from source 0     to 20    costs: 21    and the previous vertex is: 19   
+The shortest path from source 0     to 21    costs: 23    and the previous vertex is: 20   
+The shortest path from source 0     to 22    costs: 25    and the previous vertex is: 21   
+The shortest path from source 0     to 23    costs: 27    and the previous vertex is: 22   
+The shortest path from source 0     to 24    costs: 29    and the previous vertex is: 23   
+The shortest path from source 0     to 25    costs: 31    and the previous vertex is: 24   
+The shortest path from source 0     to 26    costs: 33    and the previous vertex is: 25   
+The shortest path from source 0     to 27    costs: 35    and the previous vertex is: 26   
+The shortest path from source 0     to 28    costs: 37    and the previous vertex is: 27   
+The shortest path from source 0     to 29    costs: 39    and the previous vertex is: 28   
+The shortest path from source 0     to 30    costs: 41    and the previous vertex is: 29   
+The shortest path from source 0     to 31    costs: 43    and the previous vertex is: 30   
+The shortest path from source 0     to 32    costs: 45    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 1     to 0     costs: 2     and the previous vertex is: 10   
+The shortest path from source 1     to 1     costs: 0     and the previous vertex is: 1    
+The shortest path from source 1     to 2     costs: 2     and the previous vertex is: 10   
+The shortest path from source 1     to 3     costs: 2     and the previous vertex is: 10   
+The shortest path from source 1     to 4     costs: 2     and the previous vertex is: 10   
+The shortest path from source 1     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 1     to 6     costs: 2     and the previous vertex is: 10   
+The shortest path from source 1     to 7     costs: 2     and the previous vertex is: 10   
+The shortest path from source 1     to 8     costs: 2     and the previous vertex is: 10   
+The shortest path from source 1     to 9     costs: 2     and the previous vertex is: 10   
+The shortest path from source 1     to 10    costs: 1     and the previous vertex is: 1    
+The shortest path from source 1     to 11    costs: 3     and the previous vertex is: 10   
+The shortest path from source 1     to 12    costs: 5     and the previous vertex is: 11   
+The shortest path from source 1     to 13    costs: 7     and the previous vertex is: 12   
+The shortest path from source 1     to 14    costs: 9     and the previous vertex is: 13   
+The shortest path from source 1     to 15    costs: 11    and the previous vertex is: 14   
+The shortest path from source 1     to 16    costs: 13    and the previous vertex is: 15   
+The shortest path from source 1     to 17    costs: 15    and the previous vertex is: 16   
+The shortest path from source 1     to 18    costs: 17    and the previous vertex is: 17   
+The shortest path from source 1     to 19    costs: 19    and the previous vertex is: 18   
+The shortest path from source 1     to 20    costs: 21    and the previous vertex is: 19   
+The shortest path from source 1     to 21    costs: 23    and the previous vertex is: 20   
+The shortest path from source 1     to 22    costs: 25    and the previous vertex is: 21   
+The shortest path from source 1     to 23    costs: 27    and the previous vertex is: 22   
+The shortest path from source 1     to 24    costs: 29    and the previous vertex is: 23   
+The shortest path from source 1     to 25    costs: 31    and the previous vertex is: 24   
+The shortest path from source 1     to 26    costs: 33    and the previous vertex is: 25   
+The shortest path from source 1     to 27    costs: 35    and the previous vertex is: 26   
+The shortest path from source 1     to 28    costs: 37    and the previous vertex is: 27   
+The shortest path from source 1     to 29    costs: 39    and the previous vertex is: 28   
+The shortest path from source 1     to 30    costs: 41    and the previous vertex is: 29   
+The shortest path from source 1     to 31    costs: 43    and the previous vertex is: 30   
+The shortest path from source 1     to 32    costs: 45    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 2     to 0     costs: 2     and the previous vertex is: 10   
+The shortest path from source 2     to 1     costs: 2     and the previous vertex is: 10   
+The shortest path from source 2     to 2     costs: 0     and the previous vertex is: 2    
+The shortest path from source 2     to 3     costs: 2     and the previous vertex is: 10   
+The shortest path from source 2     to 4     costs: 2     and the previous vertex is: 10   
+The shortest path from source 2     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 2     to 6     costs: 2     and the previous vertex is: 10   
+The shortest path from source 2     to 7     costs: 2     and the previous vertex is: 10   
+The shortest path from source 2     to 8     costs: 2     and the previous vertex is: 10   
+The shortest path from source 2     to 9     costs: 2     and the previous vertex is: 10   
+The shortest path from source 2     to 10    costs: 1     and the previous vertex is: 2    
+The shortest path from source 2     to 11    costs: 3     and the previous vertex is: 10   
+The shortest path from source 2     to 12    costs: 5     and the previous vertex is: 11   
+The shortest path from source 2     to 13    costs: 7     and the previous vertex is: 12   
+The shortest path from source 2     to 14    costs: 9     and the previous vertex is: 13   
+The shortest path from source 2     to 15    costs: 11    and the previous vertex is: 14   
+The shortest path from source 2     to 16    costs: 13    and the previous vertex is: 15   
+The shortest path from source 2     to 17    costs: 15    and the previous vertex is: 16   
+The shortest path from source 2     to 18    costs: 17    and the previous vertex is: 17   
+The shortest path from source 2     to 19    costs: 19    and the previous vertex is: 18   
+The shortest path from source 2     to 20    costs: 21    and the previous vertex is: 19   
+The shortest path from source 2     to 21    costs: 23    and the previous vertex is: 20   
+The shortest path from source 2     to 22    costs: 25    and the previous vertex is: 21   
+The shortest path from source 2     to 23    costs: 27    and the previous vertex is: 22   
+The shortest path from source 2     to 24    costs: 29    and the previous vertex is: 23   
+The shortest path from source 2     to 25    costs: 31    and the previous vertex is: 24   
+The shortest path from source 2     to 26    costs: 33    and the previous vertex is: 25   
+The shortest path from source 2     to 27    costs: 35    and the previous vertex is: 26   
+The shortest path from source 2     to 28    costs: 37    and the previous vertex is: 27   
+The shortest path from source 2     to 29    costs: 39    and the previous vertex is: 28   
+The shortest path from source 2     to 30    costs: 41    and the previous vertex is: 29   
+The shortest path from source 2     to 31    costs: 43    and the previous vertex is: 30   
+The shortest path from source 2     to 32    costs: 45    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 3     to 0     costs: 2     and the previous vertex is: 10   
+The shortest path from source 3     to 1     costs: 2     and the previous vertex is: 10   
+The shortest path from source 3     to 2     costs: 2     and the previous vertex is: 10   
+The shortest path from source 3     to 3     costs: 0     and the previous vertex is: 3    
+The shortest path from source 3     to 4     costs: 2     and the previous vertex is: 10   
+The shortest path from source 3     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 3     to 6     costs: 2     and the previous vertex is: 10   
+The shortest path from source 3     to 7     costs: 2     and the previous vertex is: 10   
+The shortest path from source 3     to 8     costs: 2     and the previous vertex is: 10   
+The shortest path from source 3     to 9     costs: 2     and the previous vertex is: 10   
+The shortest path from source 3     to 10    costs: 1     and the previous vertex is: 3    
+The shortest path from source 3     to 11    costs: 3     and the previous vertex is: 10   
+The shortest path from source 3     to 12    costs: 5     and the previous vertex is: 11   
+The shortest path from source 3     to 13    costs: 7     and the previous vertex is: 12   
+The shortest path from source 3     to 14    costs: 9     and the previous vertex is: 13   
+The shortest path from source 3     to 15    costs: 11    and the previous vertex is: 14   
+The shortest path from source 3     to 16    costs: 13    and the previous vertex is: 15   
+The shortest path from source 3     to 17    costs: 15    and the previous vertex is: 16   
+The shortest path from source 3     to 18    costs: 17    and the previous vertex is: 17   
+The shortest path from source 3     to 19    costs: 19    and the previous vertex is: 18   
+The shortest path from source 3     to 20    costs: 21    and the previous vertex is: 19   
+The shortest path from source 3     to 21    costs: 23    and the previous vertex is: 20   
+The shortest path from source 3     to 22    costs: 25    and the previous vertex is: 21   
+The shortest path from source 3     to 23    costs: 27    and the previous vertex is: 22   
+The shortest path from source 3     to 24    costs: 29    and the previous vertex is: 23   
+The shortest path from source 3     to 25    costs: 31    and the previous vertex is: 24   
+The shortest path from source 3     to 26    costs: 33    and the previous vertex is: 25   
+The shortest path from source 3     to 27    costs: 35    and the previous vertex is: 26   
+The shortest path from source 3     to 28    costs: 37    and the previous vertex is: 27   
+The shortest path from source 3     to 29    costs: 39    and the previous vertex is: 28   
+The shortest path from source 3     to 30    costs: 41    and the previous vertex is: 29   
+The shortest path from source 3     to 31    costs: 43    and the previous vertex is: 30   
+The shortest path from source 3     to 32    costs: 45    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 4     to 0     costs: 2     and the previous vertex is: 10   
+The shortest path from source 4     to 1     costs: 2     and the previous vertex is: 10   
+The shortest path from source 4     to 2     costs: 2     and the previous vertex is: 10   
+The shortest path from source 4     to 3     costs: 2     and the previous vertex is: 10   
+The shortest path from source 4     to 4     costs: 0     and the previous vertex is: 4    
+The shortest path from source 4     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 4     to 6     costs: 2     and the previous vertex is: 10   
+The shortest path from source 4     to 7     costs: 2     and the previous vertex is: 10   
+The shortest path from source 4     to 8     costs: 2     and the previous vertex is: 10   
+The shortest path from source 4     to 9     costs: 2     and the previous vertex is: 10   
+The shortest path from source 4     to 10    costs: 1     and the previous vertex is: 4    
+The shortest path from source 4     to 11    costs: 3     and the previous vertex is: 10   
+The shortest path from source 4     to 12    costs: 5     and the previous vertex is: 11   
+The shortest path from source 4     to 13    costs: 7     and the previous vertex is: 12   
+The shortest path from source 4     to 14    costs: 9     and the previous vertex is: 13   
+The shortest path from source 4     to 15    costs: 11    and the previous vertex is: 14   
+The shortest path from source 4     to 16    costs: 13    and the previous vertex is: 15   
+The shortest path from source 4     to 17    costs: 15    and the previous vertex is: 16   
+The shortest path from source 4     to 18    costs: 17    and the previous vertex is: 17   
+The shortest path from source 4     to 19    costs: 19    and the previous vertex is: 18   
+The shortest path from source 4     to 20    costs: 21    and the previous vertex is: 19   
+The shortest path from source 4     to 21    costs: 23    and the previous vertex is: 20   
+The shortest path from source 4     to 22    costs: 25    and the previous vertex is: 21   
+The shortest path from source 4     to 23    costs: 27    and the previous vertex is: 22   
+The shortest path from source 4     to 24    costs: 29    and the previous vertex is: 23   
+The shortest path from source 4     to 25    costs: 31    and the previous vertex is: 24   
+The shortest path from source 4     to 26    costs: 33    and the previous vertex is: 25   
+The shortest path from source 4     to 27    costs: 35    and the previous vertex is: 26   
+The shortest path from source 4     to 28    costs: 37    and the previous vertex is: 27   
+The shortest path from source 4     to 29    costs: 39    and the previous vertex is: 28   
+The shortest path from source 4     to 30    costs: 41    and the previous vertex is: 29   
+The shortest path from source 4     to 31    costs: 43    and the previous vertex is: 30   
+The shortest path from source 4     to 32    costs: 45    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 6     to 0     costs: 2     and the previous vertex is: 10   
+The shortest path from source 6     to 1     costs: 2     and the previous vertex is: 10   
+The shortest path from source 6     to 2     costs: 2     and the previous vertex is: 10   
+The shortest path from source 6     to 3     costs: 2     and the previous vertex is: 10   
+The shortest path from source 6     to 4     costs: 2     and the previous vertex is: 10   
+The shortest path from source 6     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 6     costs: 0     and the previous vertex is: 6    
+The shortest path from source 6     to 7     costs: 2     and the previous vertex is: 10   
+The shortest path from source 6     to 8     costs: 2     and the previous vertex is: 10   
+The shortest path from source 6     to 9     costs: 2     and the previous vertex is: 10   
+The shortest path from source 6     to 10    costs: 1     and the previous vertex is: 6    
+The shortest path from source 6     to 11    costs: 3     and the previous vertex is: 10   
+The shortest path from source 6     to 12    costs: 5     and the previous vertex is: 11   
+The shortest path from source 6     to 13    costs: 7     and the previous vertex is: 12   
+The shortest path from source 6     to 14    costs: 9     and the previous vertex is: 13   
+The shortest path from source 6     to 15    costs: 11    and the previous vertex is: 14   
+The shortest path from source 6     to 16    costs: 13    and the previous vertex is: 15   
+The shortest path from source 6     to 17    costs: 15    and the previous vertex is: 16   
+The shortest path from source 6     to 18    costs: 17    and the previous vertex is: 17   
+The shortest path from source 6     to 19    costs: 19    and the previous vertex is: 18   
+The shortest path from source 6     to 20    costs: 21    and the previous vertex is: 19   
+The shortest path from source 6     to 21    costs: 23    and the previous vertex is: 20   
+The shortest path from source 6     to 22    costs: 25    and the previous vertex is: 21   
+The shortest path from source 6     to 23    costs: 27    and the previous vertex is: 22   
+The shortest path from source 6     to 24    costs: 29    and the previous vertex is: 23   
+The shortest path from source 6     to 25    costs: 31    and the previous vertex is: 24   
+The shortest path from source 6     to 26    costs: 33    and the previous vertex is: 25   
+The shortest path from source 6     to 27    costs: 35    and the previous vertex is: 26   
+The shortest path from source 6     to 28    costs: 37    and the previous vertex is: 27   
+The shortest path from source 6     to 29    costs: 39    and the previous vertex is: 28   
+The shortest path from source 6     to 30    costs: 41    and the previous vertex is: 29   
+The shortest path from source 6     to 31    costs: 43    and the previous vertex is: 30   
+The shortest path from source 6     to 32    costs: 45    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 7     to 0     costs: 2     and the previous vertex is: 10   
+The shortest path from source 7     to 1     costs: 2     and the previous vertex is: 10   
+The shortest path from source 7     to 2     costs: 2     and the previous vertex is: 10   
+The shortest path from source 7     to 3     costs: 2     and the previous vertex is: 10   
+The shortest path from source 7     to 4     costs: 2     and the previous vertex is: 10   
+The shortest path from source 7     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 7     to 6     costs: 2     and the previous vertex is: 10   
+The shortest path from source 7     to 7     costs: 0     and the previous vertex is: 7    
+The shortest path from source 7     to 8     costs: 2     and the previous vertex is: 10   
+The shortest path from source 7     to 9     costs: 2     and the previous vertex is: 10   
+The shortest path from source 7     to 10    costs: 1     and the previous vertex is: 7    
+The shortest path from source 7     to 11    costs: 3     and the previous vertex is: 10   
+The shortest path from source 7     to 12    costs: 5     and the previous vertex is: 11   
+The shortest path from source 7     to 13    costs: 7     and the previous vertex is: 12   
+The shortest path from source 7     to 14    costs: 9     and the previous vertex is: 13   
+The shortest path from source 7     to 15    costs: 11    and the previous vertex is: 14   
+The shortest path from source 7     to 16    costs: 13    and the previous vertex is: 15   
+The shortest path from source 7     to 17    costs: 15    and the previous vertex is: 16   
+The shortest path from source 7     to 18    costs: 17    and the previous vertex is: 17   
+The shortest path from source 7     to 19    costs: 19    and the previous vertex is: 18   
+The shortest path from source 7     to 20    costs: 21    and the previous vertex is: 19   
+The shortest path from source 7     to 21    costs: 23    and the previous vertex is: 20   
+The shortest path from source 7     to 22    costs: 25    and the previous vertex is: 21   
+The shortest path from source 7     to 23    costs: 27    and the previous vertex is: 22   
+The shortest path from source 7     to 24    costs: 29    and the previous vertex is: 23   
+The shortest path from source 7     to 25    costs: 31    and the previous vertex is: 24   
+The shortest path from source 7     to 26    costs: 33    and the previous vertex is: 25   
+The shortest path from source 7     to 27    costs: 35    and the previous vertex is: 26   
+The shortest path from source 7     to 28    costs: 37    and the previous vertex is: 27   
+The shortest path from source 7     to 29    costs: 39    and the previous vertex is: 28   
+The shortest path from source 7     to 30    costs: 41    and the previous vertex is: 29   
+The shortest path from source 7     to 31    costs: 43    and the previous vertex is: 30   
+The shortest path from source 7     to 32    costs: 45    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 8     to 0     costs: 2     and the previous vertex is: 10   
+The shortest path from source 8     to 1     costs: 2     and the previous vertex is: 10   
+The shortest path from source 8     to 2     costs: 2     and the previous vertex is: 10   
+The shortest path from source 8     to 3     costs: 2     and the previous vertex is: 10   
+The shortest path from source 8     to 4     costs: 2     and the previous vertex is: 10   
+The shortest path from source 8     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 8     to 6     costs: 2     and the previous vertex is: 10   
+The shortest path from source 8     to 7     costs: 2     and the previous vertex is: 10   
+The shortest path from source 8     to 8     costs: 0     and the previous vertex is: 8    
+The shortest path from source 8     to 9     costs: 2     and the previous vertex is: 10   
+The shortest path from source 8     to 10    costs: 1     and the previous vertex is: 8    
+The shortest path from source 8     to 11    costs: 3     and the previous vertex is: 10   
+The shortest path from source 8     to 12    costs: 5     and the previous vertex is: 11   
+The shortest path from source 8     to 13    costs: 7     and the previous vertex is: 12   
+The shortest path from source 8     to 14    costs: 9     and the previous vertex is: 13   
+The shortest path from source 8     to 15    costs: 11    and the previous vertex is: 14   
+The shortest path from source 8     to 16    costs: 13    and the previous vertex is: 15   
+The shortest path from source 8     to 17    costs: 15    and the previous vertex is: 16   
+The shortest path from source 8     to 18    costs: 17    and the previous vertex is: 17   
+The shortest path from source 8     to 19    costs: 19    and the previous vertex is: 18   
+The shortest path from source 8     to 20    costs: 21    and the previous vertex is: 19   
+The shortest path from source 8     to 21    costs: 23    and the previous vertex is: 20   
+The shortest path from source 8     to 22    costs: 25    and the previous vertex is: 21   
+The shortest path from source 8     to 23    costs: 27    and the previous vertex is: 22   
+The shortest path from source 8     to 24    costs: 29    and the previous vertex is: 23   
+The shortest path from source 8     to 25    costs: 31    and the previous vertex is: 24   
+The shortest path from source 8     to 26    costs: 33    and the previous vertex is: 25   
+The shortest path from source 8     to 27    costs: 35    and the previous vertex is: 26   
+The shortest path from source 8     to 28    costs: 37    and the previous vertex is: 27   
+The shortest path from source 8     to 29    costs: 39    and the previous vertex is: 28   
+The shortest path from source 8     to 30    costs: 41    and the previous vertex is: 29   
+The shortest path from source 8     to 31    costs: 43    and the previous vertex is: 30   
+The shortest path from source 8     to 32    costs: 45    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 9     to 0     costs: 2     and the previous vertex is: 10   
+The shortest path from source 9     to 1     costs: 2     and the previous vertex is: 10   
+The shortest path from source 9     to 2     costs: 2     and the previous vertex is: 10   
+The shortest path from source 9     to 3     costs: 2     and the previous vertex is: 10   
+The shortest path from source 9     to 4     costs: 2     and the previous vertex is: 10   
+The shortest path from source 9     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 9     to 6     costs: 2     and the previous vertex is: 10   
+The shortest path from source 9     to 7     costs: 2     and the previous vertex is: 10   
+The shortest path from source 9     to 8     costs: 2     and the previous vertex is: 10   
+The shortest path from source 9     to 9     costs: 0     and the previous vertex is: 9    
+The shortest path from source 9     to 10    costs: 1     and the previous vertex is: 9    
+The shortest path from source 9     to 11    costs: 3     and the previous vertex is: 10   
+The shortest path from source 9     to 12    costs: 5     and the previous vertex is: 11   
+The shortest path from source 9     to 13    costs: 7     and the previous vertex is: 12   
+The shortest path from source 9     to 14    costs: 9     and the previous vertex is: 13   
+The shortest path from source 9     to 15    costs: 11    and the previous vertex is: 14   
+The shortest path from source 9     to 16    costs: 13    and the previous vertex is: 15   
+The shortest path from source 9     to 17    costs: 15    and the previous vertex is: 16   
+The shortest path from source 9     to 18    costs: 17    and the previous vertex is: 17   
+The shortest path from source 9     to 19    costs: 19    and the previous vertex is: 18   
+The shortest path from source 9     to 20    costs: 21    and the previous vertex is: 19   
+The shortest path from source 9     to 21    costs: 23    and the previous vertex is: 20   
+The shortest path from source 9     to 22    costs: 25    and the previous vertex is: 21   
+The shortest path from source 9     to 23    costs: 27    and the previous vertex is: 22   
+The shortest path from source 9     to 24    costs: 29    and the previous vertex is: 23   
+The shortest path from source 9     to 25    costs: 31    and the previous vertex is: 24   
+The shortest path from source 9     to 26    costs: 33    and the previous vertex is: 25   
+The shortest path from source 9     to 27    costs: 35    and the previous vertex is: 26   
+The shortest path from source 9     to 28    costs: 37    and the previous vertex is: 27   
+The shortest path from source 9     to 29    costs: 39    and the previous vertex is: 28   
+The shortest path from source 9     to 30    costs: 41    and the previous vertex is: 29   
+The shortest path from source 9     to 31    costs: 43    and the previous vertex is: 30   
+The shortest path from source 9     to 32    costs: 45    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 10    to 0     costs: 1     and the previous vertex is: 10   
+The shortest path from source 10    to 1     costs: 1     and the previous vertex is: 10   
+The shortest path from source 10    to 2     costs: 1     and the previous vertex is: 10   
+The shortest path from source 10    to 3     costs: 1     and the previous vertex is: 10   
+The shortest path from source 10    to 4     costs: 1     and the previous vertex is: 10   
+The shortest path from source 10    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 10    to 6     costs: 1     and the previous vertex is: 10   
+The shortest path from source 10    to 7     costs: 1     and the previous vertex is: 10   
+The shortest path from source 10    to 8     costs: 1     and the previous vertex is: 10   
+The shortest path from source 10    to 9     costs: 1     and the previous vertex is: 10   
+The shortest path from source 10    to 10    costs: 0     and the previous vertex is: 10   
+The shortest path from source 10    to 11    costs: 2     and the previous vertex is: 10   
+The shortest path from source 10    to 12    costs: 4     and the previous vertex is: 11   
+The shortest path from source 10    to 13    costs: 6     and the previous vertex is: 12   
+The shortest path from source 10    to 14    costs: 8     and the previous vertex is: 13   
+The shortest path from source 10    to 15    costs: 10    and the previous vertex is: 14   
+The shortest path from source 10    to 16    costs: 12    and the previous vertex is: 15   
+The shortest path from source 10    to 17    costs: 14    and the previous vertex is: 16   
+The shortest path from source 10    to 18    costs: 16    and the previous vertex is: 17   
+The shortest path from source 10    to 19    costs: 18    and the previous vertex is: 18   
+The shortest path from source 10    to 20    costs: 20    and the previous vertex is: 19   
+The shortest path from source 10    to 21    costs: 22    and the previous vertex is: 20   
+The shortest path from source 10    to 22    costs: 24    and the previous vertex is: 21   
+The shortest path from source 10    to 23    costs: 26    and the previous vertex is: 22   
+The shortest path from source 10    to 24    costs: 28    and the previous vertex is: 23   
+The shortest path from source 10    to 25    costs: 30    and the previous vertex is: 24   
+The shortest path from source 10    to 26    costs: 32    and the previous vertex is: 25   
+The shortest path from source 10    to 27    costs: 34    and the previous vertex is: 26   
+The shortest path from source 10    to 28    costs: 36    and the previous vertex is: 27   
+The shortest path from source 10    to 29    costs: 38    and the previous vertex is: 28   
+The shortest path from source 10    to 30    costs: 40    and the previous vertex is: 29   
+The shortest path from source 10    to 31    costs: 42    and the previous vertex is: 30   
+The shortest path from source 10    to 32    costs: 44    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 11    to 0     costs: 3     and the previous vertex is: 10   
+The shortest path from source 11    to 1     costs: 3     and the previous vertex is: 10   
+The shortest path from source 11    to 2     costs: 3     and the previous vertex is: 10   
+The shortest path from source 11    to 3     costs: 3     and the previous vertex is: 10   
+The shortest path from source 11    to 4     costs: 3     and the previous vertex is: 10   
+The shortest path from source 11    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 11    to 6     costs: 3     and the previous vertex is: 10   
+The shortest path from source 11    to 7     costs: 3     and the previous vertex is: 10   
+The shortest path from source 11    to 8     costs: 3     and the previous vertex is: 10   
+The shortest path from source 11    to 9     costs: 3     and the previous vertex is: 10   
+The shortest path from source 11    to 10    costs: 2     and the previous vertex is: 11   
+The shortest path from source 11    to 11    costs: 0     and the previous vertex is: 11   
+The shortest path from source 11    to 12    costs: 2     and the previous vertex is: 11   
+The shortest path from source 11    to 13    costs: 4     and the previous vertex is: 12   
+The shortest path from source 11    to 14    costs: 6     and the previous vertex is: 13   
+The shortest path from source 11    to 15    costs: 8     and the previous vertex is: 14   
+The shortest path from source 11    to 16    costs: 10    and the previous vertex is: 15   
+The shortest path from source 11    to 17    costs: 12    and the previous vertex is: 16   
+The shortest path from source 11    to 18    costs: 14    and the previous vertex is: 17   
+The shortest path from source 11    to 19    costs: 16    and the previous vertex is: 18   
+The shortest path from source 11    to 20    costs: 18    and the previous vertex is: 19   
+The shortest path from source 11    to 21    costs: 20    and the previous vertex is: 20   
+The shortest path from source 11    to 22    costs: 22    and the previous vertex is: 21   
+The shortest path from source 11    to 23    costs: 24    and the previous vertex is: 22   
+The shortest path from source 11    to 24    costs: 26    and the previous vertex is: 23   
+The shortest path from source 11    to 25    costs: 28    and the previous vertex is: 24   
+The shortest path from source 11    to 26    costs: 30    and the previous vertex is: 25   
+The shortest path from source 11    to 27    costs: 32    and the previous vertex is: 26   
+The shortest path from source 11    to 28    costs: 34    and the previous vertex is: 27   
+The shortest path from source 11    to 29    costs: 36    and the previous vertex is: 28   
+The shortest path from source 11    to 30    costs: 38    and the previous vertex is: 29   
+The shortest path from source 11    to 31    costs: 40    and the previous vertex is: 30   
+The shortest path from source 11    to 32    costs: 42    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 12    to 0     costs: 5     and the previous vertex is: 10   
+The shortest path from source 12    to 1     costs: 5     and the previous vertex is: 10   
+The shortest path from source 12    to 2     costs: 5     and the previous vertex is: 10   
+The shortest path from source 12    to 3     costs: 5     and the previous vertex is: 10   
+The shortest path from source 12    to 4     costs: 5     and the previous vertex is: 10   
+The shortest path from source 12    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 12    to 6     costs: 5     and the previous vertex is: 10   
+The shortest path from source 12    to 7     costs: 5     and the previous vertex is: 10   
+The shortest path from source 12    to 8     costs: 5     and the previous vertex is: 10   
+The shortest path from source 12    to 9     costs: 5     and the previous vertex is: 10   
+The shortest path from source 12    to 10    costs: 4     and the previous vertex is: 11   
+The shortest path from source 12    to 11    costs: 2     and the previous vertex is: 12   
+The shortest path from source 12    to 12    costs: 0     and the previous vertex is: 12   
+The shortest path from source 12    to 13    costs: 2     and the previous vertex is: 12   
+The shortest path from source 12    to 14    costs: 4     and the previous vertex is: 13   
+The shortest path from source 12    to 15    costs: 6     and the previous vertex is: 14   
+The shortest path from source 12    to 16    costs: 8     and the previous vertex is: 15   
+The shortest path from source 12    to 17    costs: 10    and the previous vertex is: 16   
+The shortest path from source 12    to 18    costs: 12    and the previous vertex is: 17   
+The shortest path from source 12    to 19    costs: 14    and the previous vertex is: 18   
+The shortest path from source 12    to 20    costs: 16    and the previous vertex is: 19   
+The shortest path from source 12    to 21    costs: 18    and the previous vertex is: 20   
+The shortest path from source 12    to 22    costs: 20    and the previous vertex is: 21   
+The shortest path from source 12    to 23    costs: 22    and the previous vertex is: 22   
+The shortest path from source 12    to 24    costs: 24    and the previous vertex is: 23   
+The shortest path from source 12    to 25    costs: 26    and the previous vertex is: 24   
+The shortest path from source 12    to 26    costs: 28    and the previous vertex is: 25   
+The shortest path from source 12    to 27    costs: 30    and the previous vertex is: 26   
+The shortest path from source 12    to 28    costs: 32    and the previous vertex is: 27   
+The shortest path from source 12    to 29    costs: 34    and the previous vertex is: 28   
+The shortest path from source 12    to 30    costs: 36    and the previous vertex is: 29   
+The shortest path from source 12    to 31    costs: 38    and the previous vertex is: 30   
+The shortest path from source 12    to 32    costs: 40    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 13    to 0     costs: 7     and the previous vertex is: 10   
+The shortest path from source 13    to 1     costs: 7     and the previous vertex is: 10   
+The shortest path from source 13    to 2     costs: 7     and the previous vertex is: 10   
+The shortest path from source 13    to 3     costs: 7     and the previous vertex is: 10   
+The shortest path from source 13    to 4     costs: 7     and the previous vertex is: 10   
+The shortest path from source 13    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 13    to 6     costs: 7     and the previous vertex is: 10   
+The shortest path from source 13    to 7     costs: 7     and the previous vertex is: 10   
+The shortest path from source 13    to 8     costs: 7     and the previous vertex is: 10   
+The shortest path from source 13    to 9     costs: 7     and the previous vertex is: 10   
+The shortest path from source 13    to 10    costs: 6     and the previous vertex is: 11   
+The shortest path from source 13    to 11    costs: 4     and the previous vertex is: 12   
+The shortest path from source 13    to 12    costs: 2     and the previous vertex is: 13   
+The shortest path from source 13    to 13    costs: 0     and the previous vertex is: 13   
+The shortest path from source 13    to 14    costs: 2     and the previous vertex is: 13   
+The shortest path from source 13    to 15    costs: 4     and the previous vertex is: 14   
+The shortest path from source 13    to 16    costs: 6     and the previous vertex is: 15   
+The shortest path from source 13    to 17    costs: 8     and the previous vertex is: 16   
+The shortest path from source 13    to 18    costs: 10    and the previous vertex is: 17   
+The shortest path from source 13    to 19    costs: 12    and the previous vertex is: 18   
+The shortest path from source 13    to 20    costs: 14    and the previous vertex is: 19   
+The shortest path from source 13    to 21    costs: 16    and the previous vertex is: 20   
+The shortest path from source 13    to 22    costs: 18    and the previous vertex is: 21   
+The shortest path from source 13    to 23    costs: 20    and the previous vertex is: 22   
+The shortest path from source 13    to 24    costs: 22    and the previous vertex is: 23   
+The shortest path from source 13    to 25    costs: 24    and the previous vertex is: 24   
+The shortest path from source 13    to 26    costs: 26    and the previous vertex is: 25   
+The shortest path from source 13    to 27    costs: 28    and the previous vertex is: 26   
+The shortest path from source 13    to 28    costs: 30    and the previous vertex is: 27   
+The shortest path from source 13    to 29    costs: 32    and the previous vertex is: 28   
+The shortest path from source 13    to 30    costs: 34    and the previous vertex is: 29   
+The shortest path from source 13    to 31    costs: 36    and the previous vertex is: 30   
+The shortest path from source 13    to 32    costs: 38    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 14    to 0     costs: 9     and the previous vertex is: 10   
+The shortest path from source 14    to 1     costs: 9     and the previous vertex is: 10   
+The shortest path from source 14    to 2     costs: 9     and the previous vertex is: 10   
+The shortest path from source 14    to 3     costs: 9     and the previous vertex is: 10   
+The shortest path from source 14    to 4     costs: 9     and the previous vertex is: 10   
+The shortest path from source 14    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 14    to 6     costs: 9     and the previous vertex is: 10   
+The shortest path from source 14    to 7     costs: 9     and the previous vertex is: 10   
+The shortest path from source 14    to 8     costs: 9     and the previous vertex is: 10   
+The shortest path from source 14    to 9     costs: 9     and the previous vertex is: 10   
+The shortest path from source 14    to 10    costs: 8     and the previous vertex is: 11   
+The shortest path from source 14    to 11    costs: 6     and the previous vertex is: 12   
+The shortest path from source 14    to 12    costs: 4     and the previous vertex is: 13   
+The shortest path from source 14    to 13    costs: 2     and the previous vertex is: 14   
+The shortest path from source 14    to 14    costs: 0     and the previous vertex is: 14   
+The shortest path from source 14    to 15    costs: 2     and the previous vertex is: 14   
+The shortest path from source 14    to 16    costs: 4     and the previous vertex is: 15   
+The shortest path from source 14    to 17    costs: 6     and the previous vertex is: 16   
+The shortest path from source 14    to 18    costs: 8     and the previous vertex is: 17   
+The shortest path from source 14    to 19    costs: 10    and the previous vertex is: 18   
+The shortest path from source 14    to 20    costs: 12    and the previous vertex is: 19   
+The shortest path from source 14    to 21    costs: 14    and the previous vertex is: 20   
+The shortest path from source 14    to 22    costs: 16    and the previous vertex is: 21   
+The shortest path from source 14    to 23    costs: 18    and the previous vertex is: 22   
+The shortest path from source 14    to 24    costs: 20    and the previous vertex is: 23   
+The shortest path from source 14    to 25    costs: 22    and the previous vertex is: 24   
+The shortest path from source 14    to 26    costs: 24    and the previous vertex is: 25   
+The shortest path from source 14    to 27    costs: 26    and the previous vertex is: 26   
+The shortest path from source 14    to 28    costs: 28    and the previous vertex is: 27   
+The shortest path from source 14    to 29    costs: 30    and the previous vertex is: 28   
+The shortest path from source 14    to 30    costs: 32    and the previous vertex is: 29   
+The shortest path from source 14    to 31    costs: 34    and the previous vertex is: 30   
+The shortest path from source 14    to 32    costs: 36    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 15    to 0     costs: 11    and the previous vertex is: 10   
+The shortest path from source 15    to 1     costs: 11    and the previous vertex is: 10   
+The shortest path from source 15    to 2     costs: 11    and the previous vertex is: 10   
+The shortest path from source 15    to 3     costs: 11    and the previous vertex is: 10   
+The shortest path from source 15    to 4     costs: 11    and the previous vertex is: 10   
+The shortest path from source 15    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 15    to 6     costs: 11    and the previous vertex is: 10   
+The shortest path from source 15    to 7     costs: 11    and the previous vertex is: 10   
+The shortest path from source 15    to 8     costs: 11    and the previous vertex is: 10   
+The shortest path from source 15    to 9     costs: 11    and the previous vertex is: 10   
+The shortest path from source 15    to 10    costs: 10    and the previous vertex is: 11   
+The shortest path from source 15    to 11    costs: 8     and the previous vertex is: 12   
+The shortest path from source 15    to 12    costs: 6     and the previous vertex is: 13   
+The shortest path from source 15    to 13    costs: 4     and the previous vertex is: 14   
+The shortest path from source 15    to 14    costs: 2     and the previous vertex is: 15   
+The shortest path from source 15    to 15    costs: 0     and the previous vertex is: 15   
+The shortest path from source 15    to 16    costs: 2     and the previous vertex is: 15   
+The shortest path from source 15    to 17    costs: 4     and the previous vertex is: 16   
+The shortest path from source 15    to 18    costs: 6     and the previous vertex is: 17   
+The shortest path from source 15    to 19    costs: 8     and the previous vertex is: 18   
+The shortest path from source 15    to 20    costs: 10    and the previous vertex is: 19   
+The shortest path from source 15    to 21    costs: 12    and the previous vertex is: 20   
+The shortest path from source 15    to 22    costs: 14    and the previous vertex is: 21   
+The shortest path from source 15    to 23    costs: 16    and the previous vertex is: 22   
+The shortest path from source 15    to 24    costs: 18    and the previous vertex is: 23   
+The shortest path from source 15    to 25    costs: 20    and the previous vertex is: 24   
+The shortest path from source 15    to 26    costs: 22    and the previous vertex is: 25   
+The shortest path from source 15    to 27    costs: 24    and the previous vertex is: 26   
+The shortest path from source 15    to 28    costs: 26    and the previous vertex is: 27   
+The shortest path from source 15    to 29    costs: 28    and the previous vertex is: 28   
+The shortest path from source 15    to 30    costs: 30    and the previous vertex is: 29   
+The shortest path from source 15    to 31    costs: 32    and the previous vertex is: 30   
+The shortest path from source 15    to 32    costs: 34    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 16    to 0     costs: 13    and the previous vertex is: 10   
+The shortest path from source 16    to 1     costs: 13    and the previous vertex is: 10   
+The shortest path from source 16    to 2     costs: 13    and the previous vertex is: 10   
+The shortest path from source 16    to 3     costs: 13    and the previous vertex is: 10   
+The shortest path from source 16    to 4     costs: 13    and the previous vertex is: 10   
+The shortest path from source 16    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 16    to 6     costs: 13    and the previous vertex is: 10   
+The shortest path from source 16    to 7     costs: 13    and the previous vertex is: 10   
+The shortest path from source 16    to 8     costs: 13    and the previous vertex is: 10   
+The shortest path from source 16    to 9     costs: 13    and the previous vertex is: 10   
+The shortest path from source 16    to 10    costs: 12    and the previous vertex is: 11   
+The shortest path from source 16    to 11    costs: 10    and the previous vertex is: 12   
+The shortest path from source 16    to 12    costs: 8     and the previous vertex is: 13   
+The shortest path from source 16    to 13    costs: 6     and the previous vertex is: 14   
+The shortest path from source 16    to 14    costs: 4     and the previous vertex is: 15   
+The shortest path from source 16    to 15    costs: 2     and the previous vertex is: 16   
+The shortest path from source 16    to 16    costs: 0     and the previous vertex is: 16   
+The shortest path from source 16    to 17    costs: 2     and the previous vertex is: 16   
+The shortest path from source 16    to 18    costs: 4     and the previous vertex is: 17   
+The shortest path from source 16    to 19    costs: 6     and the previous vertex is: 18   
+The shortest path from source 16    to 20    costs: 8     and the previous vertex is: 19   
+The shortest path from source 16    to 21    costs: 10    and the previous vertex is: 20   
+The shortest path from source 16    to 22    costs: 12    and the previous vertex is: 21   
+The shortest path from source 16    to 23    costs: 14    and the previous vertex is: 22   
+The shortest path from source 16    to 24    costs: 16    and the previous vertex is: 23   
+The shortest path from source 16    to 25    costs: 18    and the previous vertex is: 24   
+The shortest path from source 16    to 26    costs: 20    and the previous vertex is: 25   
+The shortest path from source 16    to 27    costs: 22    and the previous vertex is: 26   
+The shortest path from source 16    to 28    costs: 24    and the previous vertex is: 27   
+The shortest path from source 16    to 29    costs: 26    and the previous vertex is: 28   
+The shortest path from source 16    to 30    costs: 28    and the previous vertex is: 29   
+The shortest path from source 16    to 31    costs: 30    and the previous vertex is: 30   
+The shortest path from source 16    to 32    costs: 32    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 17    to 0     costs: 15    and the previous vertex is: 10   
+The shortest path from source 17    to 1     costs: 15    and the previous vertex is: 10   
+The shortest path from source 17    to 2     costs: 15    and the previous vertex is: 10   
+The shortest path from source 17    to 3     costs: 15    and the previous vertex is: 10   
+The shortest path from source 17    to 4     costs: 15    and the previous vertex is: 10   
+The shortest path from source 17    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 17    to 6     costs: 15    and the previous vertex is: 10   
+The shortest path from source 17    to 7     costs: 15    and the previous vertex is: 10   
+The shortest path from source 17    to 8     costs: 15    and the previous vertex is: 10   
+The shortest path from source 17    to 9     costs: 15    and the previous vertex is: 10   
+The shortest path from source 17    to 10    costs: 14    and the previous vertex is: 11   
+The shortest path from source 17    to 11    costs: 12    and the previous vertex is: 12   
+The shortest path from source 17    to 12    costs: 10    and the previous vertex is: 13   
+The shortest path from source 17    to 13    costs: 8     and the previous vertex is: 14   
+The shortest path from source 17    to 14    costs: 6     and the previous vertex is: 15   
+The shortest path from source 17    to 15    costs: 4     and the previous vertex is: 16   
+The shortest path from source 17    to 16    costs: 2     and the previous vertex is: 17   
+The shortest path from source 17    to 17    costs: 0     and the previous vertex is: 17   
+The shortest path from source 17    to 18    costs: 2     and the previous vertex is: 17   
+The shortest path from source 17    to 19    costs: 4     and the previous vertex is: 18   
+The shortest path from source 17    to 20    costs: 6     and the previous vertex is: 19   
+The shortest path from source 17    to 21    costs: 8     and the previous vertex is: 20   
+The shortest path from source 17    to 22    costs: 10    and the previous vertex is: 21   
+The shortest path from source 17    to 23    costs: 12    and the previous vertex is: 22   
+The shortest path from source 17    to 24    costs: 14    and the previous vertex is: 23   
+The shortest path from source 17    to 25    costs: 16    and the previous vertex is: 24   
+The shortest path from source 17    to 26    costs: 18    and the previous vertex is: 25   
+The shortest path from source 17    to 27    costs: 20    and the previous vertex is: 26   
+The shortest path from source 17    to 28    costs: 22    and the previous vertex is: 27   
+The shortest path from source 17    to 29    costs: 24    and the previous vertex is: 28   
+The shortest path from source 17    to 30    costs: 26    and the previous vertex is: 29   
+The shortest path from source 17    to 31    costs: 28    and the previous vertex is: 30   
+The shortest path from source 17    to 32    costs: 30    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 18    to 0     costs: 17    and the previous vertex is: 10   
+The shortest path from source 18    to 1     costs: 17    and the previous vertex is: 10   
+The shortest path from source 18    to 2     costs: 17    and the previous vertex is: 10   
+The shortest path from source 18    to 3     costs: 17    and the previous vertex is: 10   
+The shortest path from source 18    to 4     costs: 17    and the previous vertex is: 10   
+The shortest path from source 18    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 18    to 6     costs: 17    and the previous vertex is: 10   
+The shortest path from source 18    to 7     costs: 17    and the previous vertex is: 10   
+The shortest path from source 18    to 8     costs: 17    and the previous vertex is: 10   
+The shortest path from source 18    to 9     costs: 17    and the previous vertex is: 10   
+The shortest path from source 18    to 10    costs: 16    and the previous vertex is: 11   
+The shortest path from source 18    to 11    costs: 14    and the previous vertex is: 12   
+The shortest path from source 18    to 12    costs: 12    and the previous vertex is: 13   
+The shortest path from source 18    to 13    costs: 10    and the previous vertex is: 14   
+The shortest path from source 18    to 14    costs: 8     and the previous vertex is: 15   
+The shortest path from source 18    to 15    costs: 6     and the previous vertex is: 16   
+The shortest path from source 18    to 16    costs: 4     and the previous vertex is: 17   
+The shortest path from source 18    to 17    costs: 2     and the previous vertex is: 18   
+The shortest path from source 18    to 18    costs: 0     and the previous vertex is: 18   
+The shortest path from source 18    to 19    costs: 2     and the previous vertex is: 18   
+The shortest path from source 18    to 20    costs: 4     and the previous vertex is: 19   
+The shortest path from source 18    to 21    costs: 6     and the previous vertex is: 20   
+The shortest path from source 18    to 22    costs: 8     and the previous vertex is: 21   
+The shortest path from source 18    to 23    costs: 10    and the previous vertex is: 22   
+The shortest path from source 18    to 24    costs: 12    and the previous vertex is: 23   
+The shortest path from source 18    to 25    costs: 14    and the previous vertex is: 24   
+The shortest path from source 18    to 26    costs: 16    and the previous vertex is: 25   
+The shortest path from source 18    to 27    costs: 18    and the previous vertex is: 26   
+The shortest path from source 18    to 28    costs: 20    and the previous vertex is: 27   
+The shortest path from source 18    to 29    costs: 22    and the previous vertex is: 28   
+The shortest path from source 18    to 30    costs: 24    and the previous vertex is: 29   
+The shortest path from source 18    to 31    costs: 26    and the previous vertex is: 30   
+The shortest path from source 18    to 32    costs: 28    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 19    to 0     costs: 19    and the previous vertex is: 10   
+The shortest path from source 19    to 1     costs: 19    and the previous vertex is: 10   
+The shortest path from source 19    to 2     costs: 19    and the previous vertex is: 10   
+The shortest path from source 19    to 3     costs: 19    and the previous vertex is: 10   
+The shortest path from source 19    to 4     costs: 19    and the previous vertex is: 10   
+The shortest path from source 19    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 19    to 6     costs: 19    and the previous vertex is: 10   
+The shortest path from source 19    to 7     costs: 19    and the previous vertex is: 10   
+The shortest path from source 19    to 8     costs: 19    and the previous vertex is: 10   
+The shortest path from source 19    to 9     costs: 19    and the previous vertex is: 10   
+The shortest path from source 19    to 10    costs: 18    and the previous vertex is: 11   
+The shortest path from source 19    to 11    costs: 16    and the previous vertex is: 12   
+The shortest path from source 19    to 12    costs: 14    and the previous vertex is: 13   
+The shortest path from source 19    to 13    costs: 12    and the previous vertex is: 14   
+The shortest path from source 19    to 14    costs: 10    and the previous vertex is: 15   
+The shortest path from source 19    to 15    costs: 8     and the previous vertex is: 16   
+The shortest path from source 19    to 16    costs: 6     and the previous vertex is: 17   
+The shortest path from source 19    to 17    costs: 4     and the previous vertex is: 18   
+The shortest path from source 19    to 18    costs: 2     and the previous vertex is: 19   
+The shortest path from source 19    to 19    costs: 0     and the previous vertex is: 19   
+The shortest path from source 19    to 20    costs: 2     and the previous vertex is: 19   
+The shortest path from source 19    to 21    costs: 4     and the previous vertex is: 20   
+The shortest path from source 19    to 22    costs: 6     and the previous vertex is: 21   
+The shortest path from source 19    to 23    costs: 8     and the previous vertex is: 22   
+The shortest path from source 19    to 24    costs: 10    and the previous vertex is: 23   
+The shortest path from source 19    to 25    costs: 12    and the previous vertex is: 24   
+The shortest path from source 19    to 26    costs: 14    and the previous vertex is: 25   
+The shortest path from source 19    to 27    costs: 16    and the previous vertex is: 26   
+The shortest path from source 19    to 28    costs: 18    and the previous vertex is: 27   
+The shortest path from source 19    to 29    costs: 20    and the previous vertex is: 28   
+The shortest path from source 19    to 30    costs: 22    and the previous vertex is: 29   
+The shortest path from source 19    to 31    costs: 24    and the previous vertex is: 30   
+The shortest path from source 19    to 32    costs: 26    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 20    to 0     costs: 21    and the previous vertex is: 10   
+The shortest path from source 20    to 1     costs: 21    and the previous vertex is: 10   
+The shortest path from source 20    to 2     costs: 21    and the previous vertex is: 10   
+The shortest path from source 20    to 3     costs: 21    and the previous vertex is: 10   
+The shortest path from source 20    to 4     costs: 21    and the previous vertex is: 10   
+The shortest path from source 20    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 20    to 6     costs: 21    and the previous vertex is: 10   
+The shortest path from source 20    to 7     costs: 21    and the previous vertex is: 10   
+The shortest path from source 20    to 8     costs: 21    and the previous vertex is: 10   
+The shortest path from source 20    to 9     costs: 21    and the previous vertex is: 10   
+The shortest path from source 20    to 10    costs: 20    and the previous vertex is: 11   
+The shortest path from source 20    to 11    costs: 18    and the previous vertex is: 12   
+The shortest path from source 20    to 12    costs: 16    and the previous vertex is: 13   
+The shortest path from source 20    to 13    costs: 14    and the previous vertex is: 14   
+The shortest path from source 20    to 14    costs: 12    and the previous vertex is: 15   
+The shortest path from source 20    to 15    costs: 10    and the previous vertex is: 16   
+The shortest path from source 20    to 16    costs: 8     and the previous vertex is: 17   
+The shortest path from source 20    to 17    costs: 6     and the previous vertex is: 18   
+The shortest path from source 20    to 18    costs: 4     and the previous vertex is: 19   
+The shortest path from source 20    to 19    costs: 2     and the previous vertex is: 20   
+The shortest path from source 20    to 20    costs: 0     and the previous vertex is: 20   
+The shortest path from source 20    to 21    costs: 2     and the previous vertex is: 20   
+The shortest path from source 20    to 22    costs: 4     and the previous vertex is: 21   
+The shortest path from source 20    to 23    costs: 6     and the previous vertex is: 22   
+The shortest path from source 20    to 24    costs: 8     and the previous vertex is: 23   
+The shortest path from source 20    to 25    costs: 10    and the previous vertex is: 24   
+The shortest path from source 20    to 26    costs: 12    and the previous vertex is: 25   
+The shortest path from source 20    to 27    costs: 14    and the previous vertex is: 26   
+The shortest path from source 20    to 28    costs: 16    and the previous vertex is: 27   
+The shortest path from source 20    to 29    costs: 18    and the previous vertex is: 28   
+The shortest path from source 20    to 30    costs: 20    and the previous vertex is: 29   
+The shortest path from source 20    to 31    costs: 22    and the previous vertex is: 30   
+The shortest path from source 20    to 32    costs: 24    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 21    to 0     costs: 23    and the previous vertex is: 10   
+The shortest path from source 21    to 1     costs: 23    and the previous vertex is: 10   
+The shortest path from source 21    to 2     costs: 23    and the previous vertex is: 10   
+The shortest path from source 21    to 3     costs: 23    and the previous vertex is: 10   
+The shortest path from source 21    to 4     costs: 23    and the previous vertex is: 10   
+The shortest path from source 21    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 21    to 6     costs: 23    and the previous vertex is: 10   
+The shortest path from source 21    to 7     costs: 23    and the previous vertex is: 10   
+The shortest path from source 21    to 8     costs: 23    and the previous vertex is: 10   
+The shortest path from source 21    to 9     costs: 23    and the previous vertex is: 10   
+The shortest path from source 21    to 10    costs: 22    and the previous vertex is: 11   
+The shortest path from source 21    to 11    costs: 20    and the previous vertex is: 12   
+The shortest path from source 21    to 12    costs: 18    and the previous vertex is: 13   
+The shortest path from source 21    to 13    costs: 16    and the previous vertex is: 14   
+The shortest path from source 21    to 14    costs: 14    and the previous vertex is: 15   
+The shortest path from source 21    to 15    costs: 12    and the previous vertex is: 16   
+The shortest path from source 21    to 16    costs: 10    and the previous vertex is: 17   
+The shortest path from source 21    to 17    costs: 8     and the previous vertex is: 18   
+The shortest path from source 21    to 18    costs: 6     and the previous vertex is: 19   
+The shortest path from source 21    to 19    costs: 4     and the previous vertex is: 20   
+The shortest path from source 21    to 20    costs: 2     and the previous vertex is: 21   
+The shortest path from source 21    to 21    costs: 0     and the previous vertex is: 21   
+The shortest path from source 21    to 22    costs: 2     and the previous vertex is: 21   
+The shortest path from source 21    to 23    costs: 4     and the previous vertex is: 22   
+The shortest path from source 21    to 24    costs: 6     and the previous vertex is: 23   
+The shortest path from source 21    to 25    costs: 8     and the previous vertex is: 24   
+The shortest path from source 21    to 26    costs: 10    and the previous vertex is: 25   
+The shortest path from source 21    to 27    costs: 12    and the previous vertex is: 26   
+The shortest path from source 21    to 28    costs: 14    and the previous vertex is: 27   
+The shortest path from source 21    to 29    costs: 16    and the previous vertex is: 28   
+The shortest path from source 21    to 30    costs: 18    and the previous vertex is: 29   
+The shortest path from source 21    to 31    costs: 20    and the previous vertex is: 30   
+The shortest path from source 21    to 32    costs: 22    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 22    to 0     costs: 25    and the previous vertex is: 10   
+The shortest path from source 22    to 1     costs: 25    and the previous vertex is: 10   
+The shortest path from source 22    to 2     costs: 25    and the previous vertex is: 10   
+The shortest path from source 22    to 3     costs: 25    and the previous vertex is: 10   
+The shortest path from source 22    to 4     costs: 25    and the previous vertex is: 10   
+The shortest path from source 22    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 22    to 6     costs: 25    and the previous vertex is: 10   
+The shortest path from source 22    to 7     costs: 25    and the previous vertex is: 10   
+The shortest path from source 22    to 8     costs: 25    and the previous vertex is: 10   
+The shortest path from source 22    to 9     costs: 25    and the previous vertex is: 10   
+The shortest path from source 22    to 10    costs: 24    and the previous vertex is: 11   
+The shortest path from source 22    to 11    costs: 22    and the previous vertex is: 12   
+The shortest path from source 22    to 12    costs: 20    and the previous vertex is: 13   
+The shortest path from source 22    to 13    costs: 18    and the previous vertex is: 14   
+The shortest path from source 22    to 14    costs: 16    and the previous vertex is: 15   
+The shortest path from source 22    to 15    costs: 14    and the previous vertex is: 16   
+The shortest path from source 22    to 16    costs: 12    and the previous vertex is: 17   
+The shortest path from source 22    to 17    costs: 10    and the previous vertex is: 18   
+The shortest path from source 22    to 18    costs: 8     and the previous vertex is: 19   
+The shortest path from source 22    to 19    costs: 6     and the previous vertex is: 20   
+The shortest path from source 22    to 20    costs: 4     and the previous vertex is: 21   
+The shortest path from source 22    to 21    costs: 2     and the previous vertex is: 22   
+The shortest path from source 22    to 22    costs: 0     and the previous vertex is: 22   
+The shortest path from source 22    to 23    costs: 2     and the previous vertex is: 22   
+The shortest path from source 22    to 24    costs: 4     and the previous vertex is: 23   
+The shortest path from source 22    to 25    costs: 6     and the previous vertex is: 24   
+The shortest path from source 22    to 26    costs: 8     and the previous vertex is: 25   
+The shortest path from source 22    to 27    costs: 10    and the previous vertex is: 26   
+The shortest path from source 22    to 28    costs: 12    and the previous vertex is: 27   
+The shortest path from source 22    to 29    costs: 14    and the previous vertex is: 28   
+The shortest path from source 22    to 30    costs: 16    and the previous vertex is: 29   
+The shortest path from source 22    to 31    costs: 18    and the previous vertex is: 30   
+The shortest path from source 22    to 32    costs: 20    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 23    to 0     costs: 27    and the previous vertex is: 10   
+The shortest path from source 23    to 1     costs: 27    and the previous vertex is: 10   
+The shortest path from source 23    to 2     costs: 27    and the previous vertex is: 10   
+The shortest path from source 23    to 3     costs: 27    and the previous vertex is: 10   
+The shortest path from source 23    to 4     costs: 27    and the previous vertex is: 10   
+The shortest path from source 23    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 23    to 6     costs: 27    and the previous vertex is: 10   
+The shortest path from source 23    to 7     costs: 27    and the previous vertex is: 10   
+The shortest path from source 23    to 8     costs: 27    and the previous vertex is: 10   
+The shortest path from source 23    to 9     costs: 27    and the previous vertex is: 10   
+The shortest path from source 23    to 10    costs: 26    and the previous vertex is: 11   
+The shortest path from source 23    to 11    costs: 24    and the previous vertex is: 12   
+The shortest path from source 23    to 12    costs: 22    and the previous vertex is: 13   
+The shortest path from source 23    to 13    costs: 20    and the previous vertex is: 14   
+The shortest path from source 23    to 14    costs: 18    and the previous vertex is: 15   
+The shortest path from source 23    to 15    costs: 16    and the previous vertex is: 16   
+The shortest path from source 23    to 16    costs: 14    and the previous vertex is: 17   
+The shortest path from source 23    to 17    costs: 12    and the previous vertex is: 18   
+The shortest path from source 23    to 18    costs: 10    and the previous vertex is: 19   
+The shortest path from source 23    to 19    costs: 8     and the previous vertex is: 20   
+The shortest path from source 23    to 20    costs: 6     and the previous vertex is: 21   
+The shortest path from source 23    to 21    costs: 4     and the previous vertex is: 22   
+The shortest path from source 23    to 22    costs: 2     and the previous vertex is: 23   
+The shortest path from source 23    to 23    costs: 0     and the previous vertex is: 23   
+The shortest path from source 23    to 24    costs: 2     and the previous vertex is: 23   
+The shortest path from source 23    to 25    costs: 4     and the previous vertex is: 24   
+The shortest path from source 23    to 26    costs: 6     and the previous vertex is: 25   
+The shortest path from source 23    to 27    costs: 8     and the previous vertex is: 26   
+The shortest path from source 23    to 28    costs: 10    and the previous vertex is: 27   
+The shortest path from source 23    to 29    costs: 12    and the previous vertex is: 28   
+The shortest path from source 23    to 30    costs: 14    and the previous vertex is: 29   
+The shortest path from source 23    to 31    costs: 16    and the previous vertex is: 30   
+The shortest path from source 23    to 32    costs: 18    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 24    to 0     costs: 29    and the previous vertex is: 10   
+The shortest path from source 24    to 1     costs: 29    and the previous vertex is: 10   
+The shortest path from source 24    to 2     costs: 29    and the previous vertex is: 10   
+The shortest path from source 24    to 3     costs: 29    and the previous vertex is: 10   
+The shortest path from source 24    to 4     costs: 29    and the previous vertex is: 10   
+The shortest path from source 24    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 24    to 6     costs: 29    and the previous vertex is: 10   
+The shortest path from source 24    to 7     costs: 29    and the previous vertex is: 10   
+The shortest path from source 24    to 8     costs: 29    and the previous vertex is: 10   
+The shortest path from source 24    to 9     costs: 29    and the previous vertex is: 10   
+The shortest path from source 24    to 10    costs: 28    and the previous vertex is: 11   
+The shortest path from source 24    to 11    costs: 26    and the previous vertex is: 12   
+The shortest path from source 24    to 12    costs: 24    and the previous vertex is: 13   
+The shortest path from source 24    to 13    costs: 22    and the previous vertex is: 14   
+The shortest path from source 24    to 14    costs: 20    and the previous vertex is: 15   
+The shortest path from source 24    to 15    costs: 18    and the previous vertex is: 16   
+The shortest path from source 24    to 16    costs: 16    and the previous vertex is: 17   
+The shortest path from source 24    to 17    costs: 14    and the previous vertex is: 18   
+The shortest path from source 24    to 18    costs: 12    and the previous vertex is: 19   
+The shortest path from source 24    to 19    costs: 10    and the previous vertex is: 20   
+The shortest path from source 24    to 20    costs: 8     and the previous vertex is: 21   
+The shortest path from source 24    to 21    costs: 6     and the previous vertex is: 22   
+The shortest path from source 24    to 22    costs: 4     and the previous vertex is: 23   
+The shortest path from source 24    to 23    costs: 2     and the previous vertex is: 24   
+The shortest path from source 24    to 24    costs: 0     and the previous vertex is: 24   
+The shortest path from source 24    to 25    costs: 2     and the previous vertex is: 24   
+The shortest path from source 24    to 26    costs: 4     and the previous vertex is: 25   
+The shortest path from source 24    to 27    costs: 6     and the previous vertex is: 26   
+The shortest path from source 24    to 28    costs: 8     and the previous vertex is: 27   
+The shortest path from source 24    to 29    costs: 10    and the previous vertex is: 28   
+The shortest path from source 24    to 30    costs: 12    and the previous vertex is: 29   
+The shortest path from source 24    to 31    costs: 14    and the previous vertex is: 30   
+The shortest path from source 24    to 32    costs: 16    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 25    to 0     costs: 31    and the previous vertex is: 10   
+The shortest path from source 25    to 1     costs: 31    and the previous vertex is: 10   
+The shortest path from source 25    to 2     costs: 31    and the previous vertex is: 10   
+The shortest path from source 25    to 3     costs: 31    and the previous vertex is: 10   
+The shortest path from source 25    to 4     costs: 31    and the previous vertex is: 10   
+The shortest path from source 25    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 25    to 6     costs: 31    and the previous vertex is: 10   
+The shortest path from source 25    to 7     costs: 31    and the previous vertex is: 10   
+The shortest path from source 25    to 8     costs: 31    and the previous vertex is: 10   
+The shortest path from source 25    to 9     costs: 31    and the previous vertex is: 10   
+The shortest path from source 25    to 10    costs: 30    and the previous vertex is: 11   
+The shortest path from source 25    to 11    costs: 28    and the previous vertex is: 12   
+The shortest path from source 25    to 12    costs: 26    and the previous vertex is: 13   
+The shortest path from source 25    to 13    costs: 24    and the previous vertex is: 14   
+The shortest path from source 25    to 14    costs: 22    and the previous vertex is: 15   
+The shortest path from source 25    to 15    costs: 20    and the previous vertex is: 16   
+The shortest path from source 25    to 16    costs: 18    and the previous vertex is: 17   
+The shortest path from source 25    to 17    costs: 16    and the previous vertex is: 18   
+The shortest path from source 25    to 18    costs: 14    and the previous vertex is: 19   
+The shortest path from source 25    to 19    costs: 12    and the previous vertex is: 20   
+The shortest path from source 25    to 20    costs: 10    and the previous vertex is: 21   
+The shortest path from source 25    to 21    costs: 8     and the previous vertex is: 22   
+The shortest path from source 25    to 22    costs: 6     and the previous vertex is: 23   
+The shortest path from source 25    to 23    costs: 4     and the previous vertex is: 24   
+The shortest path from source 25    to 24    costs: 2     and the previous vertex is: 25   
+The shortest path from source 25    to 25    costs: 0     and the previous vertex is: 25   
+The shortest path from source 25    to 26    costs: 2     and the previous vertex is: 25   
+The shortest path from source 25    to 27    costs: 4     and the previous vertex is: 26   
+The shortest path from source 25    to 28    costs: 6     and the previous vertex is: 27   
+The shortest path from source 25    to 29    costs: 8     and the previous vertex is: 28   
+The shortest path from source 25    to 30    costs: 10    and the previous vertex is: 29   
+The shortest path from source 25    to 31    costs: 12    and the previous vertex is: 30   
+The shortest path from source 25    to 32    costs: 14    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 26    to 0     costs: 33    and the previous vertex is: 10   
+The shortest path from source 26    to 1     costs: 33    and the previous vertex is: 10   
+The shortest path from source 26    to 2     costs: 33    and the previous vertex is: 10   
+The shortest path from source 26    to 3     costs: 33    and the previous vertex is: 10   
+The shortest path from source 26    to 4     costs: 33    and the previous vertex is: 10   
+The shortest path from source 26    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 26    to 6     costs: 33    and the previous vertex is: 10   
+The shortest path from source 26    to 7     costs: 33    and the previous vertex is: 10   
+The shortest path from source 26    to 8     costs: 33    and the previous vertex is: 10   
+The shortest path from source 26    to 9     costs: 33    and the previous vertex is: 10   
+The shortest path from source 26    to 10    costs: 32    and the previous vertex is: 11   
+The shortest path from source 26    to 11    costs: 30    and the previous vertex is: 12   
+The shortest path from source 26    to 12    costs: 28    and the previous vertex is: 13   
+The shortest path from source 26    to 13    costs: 26    and the previous vertex is: 14   
+The shortest path from source 26    to 14    costs: 24    and the previous vertex is: 15   
+The shortest path from source 26    to 15    costs: 22    and the previous vertex is: 16   
+The shortest path from source 26    to 16    costs: 20    and the previous vertex is: 17   
+The shortest path from source 26    to 17    costs: 18    and the previous vertex is: 18   
+The shortest path from source 26    to 18    costs: 16    and the previous vertex is: 19   
+The shortest path from source 26    to 19    costs: 14    and the previous vertex is: 20   
+The shortest path from source 26    to 20    costs: 12    and the previous vertex is: 21   
+The shortest path from source 26    to 21    costs: 10    and the previous vertex is: 22   
+The shortest path from source 26    to 22    costs: 8     and the previous vertex is: 23   
+The shortest path from source 26    to 23    costs: 6     and the previous vertex is: 24   
+The shortest path from source 26    to 24    costs: 4     and the previous vertex is: 25   
+The shortest path from source 26    to 25    costs: 2     and the previous vertex is: 26   
+The shortest path from source 26    to 26    costs: 0     and the previous vertex is: 26   
+The shortest path from source 26    to 27    costs: 2     and the previous vertex is: 26   
+The shortest path from source 26    to 28    costs: 4     and the previous vertex is: 27   
+The shortest path from source 26    to 29    costs: 6     and the previous vertex is: 28   
+The shortest path from source 26    to 30    costs: 8     and the previous vertex is: 29   
+The shortest path from source 26    to 31    costs: 10    and the previous vertex is: 30   
+The shortest path from source 26    to 32    costs: 12    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 27    to 0     costs: 35    and the previous vertex is: 10   
+The shortest path from source 27    to 1     costs: 35    and the previous vertex is: 10   
+The shortest path from source 27    to 2     costs: 35    and the previous vertex is: 10   
+The shortest path from source 27    to 3     costs: 35    and the previous vertex is: 10   
+The shortest path from source 27    to 4     costs: 35    and the previous vertex is: 10   
+The shortest path from source 27    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 27    to 6     costs: 35    and the previous vertex is: 10   
+The shortest path from source 27    to 7     costs: 35    and the previous vertex is: 10   
+The shortest path from source 27    to 8     costs: 35    and the previous vertex is: 10   
+The shortest path from source 27    to 9     costs: 35    and the previous vertex is: 10   
+The shortest path from source 27    to 10    costs: 34    and the previous vertex is: 11   
+The shortest path from source 27    to 11    costs: 32    and the previous vertex is: 12   
+The shortest path from source 27    to 12    costs: 30    and the previous vertex is: 13   
+The shortest path from source 27    to 13    costs: 28    and the previous vertex is: 14   
+The shortest path from source 27    to 14    costs: 26    and the previous vertex is: 15   
+The shortest path from source 27    to 15    costs: 24    and the previous vertex is: 16   
+The shortest path from source 27    to 16    costs: 22    and the previous vertex is: 17   
+The shortest path from source 27    to 17    costs: 20    and the previous vertex is: 18   
+The shortest path from source 27    to 18    costs: 18    and the previous vertex is: 19   
+The shortest path from source 27    to 19    costs: 16    and the previous vertex is: 20   
+The shortest path from source 27    to 20    costs: 14    and the previous vertex is: 21   
+The shortest path from source 27    to 21    costs: 12    and the previous vertex is: 22   
+The shortest path from source 27    to 22    costs: 10    and the previous vertex is: 23   
+The shortest path from source 27    to 23    costs: 8     and the previous vertex is: 24   
+The shortest path from source 27    to 24    costs: 6     and the previous vertex is: 25   
+The shortest path from source 27    to 25    costs: 4     and the previous vertex is: 26   
+The shortest path from source 27    to 26    costs: 2     and the previous vertex is: 27   
+The shortest path from source 27    to 27    costs: 0     and the previous vertex is: 27   
+The shortest path from source 27    to 28    costs: 2     and the previous vertex is: 27   
+The shortest path from source 27    to 29    costs: 4     and the previous vertex is: 28   
+The shortest path from source 27    to 30    costs: 6     and the previous vertex is: 29   
+The shortest path from source 27    to 31    costs: 8     and the previous vertex is: 30   
+The shortest path from source 27    to 32    costs: 10    and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 28    to 0     costs: 37    and the previous vertex is: 10   
+The shortest path from source 28    to 1     costs: 37    and the previous vertex is: 10   
+The shortest path from source 28    to 2     costs: 37    and the previous vertex is: 10   
+The shortest path from source 28    to 3     costs: 37    and the previous vertex is: 10   
+The shortest path from source 28    to 4     costs: 37    and the previous vertex is: 10   
+The shortest path from source 28    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 28    to 6     costs: 37    and the previous vertex is: 10   
+The shortest path from source 28    to 7     costs: 37    and the previous vertex is: 10   
+The shortest path from source 28    to 8     costs: 37    and the previous vertex is: 10   
+The shortest path from source 28    to 9     costs: 37    and the previous vertex is: 10   
+The shortest path from source 28    to 10    costs: 36    and the previous vertex is: 11   
+The shortest path from source 28    to 11    costs: 34    and the previous vertex is: 12   
+The shortest path from source 28    to 12    costs: 32    and the previous vertex is: 13   
+The shortest path from source 28    to 13    costs: 30    and the previous vertex is: 14   
+The shortest path from source 28    to 14    costs: 28    and the previous vertex is: 15   
+The shortest path from source 28    to 15    costs: 26    and the previous vertex is: 16   
+The shortest path from source 28    to 16    costs: 24    and the previous vertex is: 17   
+The shortest path from source 28    to 17    costs: 22    and the previous vertex is: 18   
+The shortest path from source 28    to 18    costs: 20    and the previous vertex is: 19   
+The shortest path from source 28    to 19    costs: 18    and the previous vertex is: 20   
+The shortest path from source 28    to 20    costs: 16    and the previous vertex is: 21   
+The shortest path from source 28    to 21    costs: 14    and the previous vertex is: 22   
+The shortest path from source 28    to 22    costs: 12    and the previous vertex is: 23   
+The shortest path from source 28    to 23    costs: 10    and the previous vertex is: 24   
+The shortest path from source 28    to 24    costs: 8     and the previous vertex is: 25   
+The shortest path from source 28    to 25    costs: 6     and the previous vertex is: 26   
+The shortest path from source 28    to 26    costs: 4     and the previous vertex is: 27   
+The shortest path from source 28    to 27    costs: 2     and the previous vertex is: 28   
+The shortest path from source 28    to 28    costs: 0     and the previous vertex is: 28   
+The shortest path from source 28    to 29    costs: 2     and the previous vertex is: 28   
+The shortest path from source 28    to 30    costs: 4     and the previous vertex is: 29   
+The shortest path from source 28    to 31    costs: 6     and the previous vertex is: 30   
+The shortest path from source 28    to 32    costs: 8     and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 29    to 0     costs: 39    and the previous vertex is: 10   
+The shortest path from source 29    to 1     costs: 39    and the previous vertex is: 10   
+The shortest path from source 29    to 2     costs: 39    and the previous vertex is: 10   
+The shortest path from source 29    to 3     costs: 39    and the previous vertex is: 10   
+The shortest path from source 29    to 4     costs: 39    and the previous vertex is: 10   
+The shortest path from source 29    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 29    to 6     costs: 39    and the previous vertex is: 10   
+The shortest path from source 29    to 7     costs: 39    and the previous vertex is: 10   
+The shortest path from source 29    to 8     costs: 39    and the previous vertex is: 10   
+The shortest path from source 29    to 9     costs: 39    and the previous vertex is: 10   
+The shortest path from source 29    to 10    costs: 38    and the previous vertex is: 11   
+The shortest path from source 29    to 11    costs: 36    and the previous vertex is: 12   
+The shortest path from source 29    to 12    costs: 34    and the previous vertex is: 13   
+The shortest path from source 29    to 13    costs: 32    and the previous vertex is: 14   
+The shortest path from source 29    to 14    costs: 30    and the previous vertex is: 15   
+The shortest path from source 29    to 15    costs: 28    and the previous vertex is: 16   
+The shortest path from source 29    to 16    costs: 26    and the previous vertex is: 17   
+The shortest path from source 29    to 17    costs: 24    and the previous vertex is: 18   
+The shortest path from source 29    to 18    costs: 22    and the previous vertex is: 19   
+The shortest path from source 29    to 19    costs: 20    and the previous vertex is: 20   
+The shortest path from source 29    to 20    costs: 18    and the previous vertex is: 21   
+The shortest path from source 29    to 21    costs: 16    and the previous vertex is: 22   
+The shortest path from source 29    to 22    costs: 14    and the previous vertex is: 23   
+The shortest path from source 29    to 23    costs: 12    and the previous vertex is: 24   
+The shortest path from source 29    to 24    costs: 10    and the previous vertex is: 25   
+The shortest path from source 29    to 25    costs: 8     and the previous vertex is: 26   
+The shortest path from source 29    to 26    costs: 6     and the previous vertex is: 27   
+The shortest path from source 29    to 27    costs: 4     and the previous vertex is: 28   
+The shortest path from source 29    to 28    costs: 2     and the previous vertex is: 29   
+The shortest path from source 29    to 29    costs: 0     and the previous vertex is: 29   
+The shortest path from source 29    to 30    costs: 2     and the previous vertex is: 29   
+The shortest path from source 29    to 31    costs: 4     and the previous vertex is: 30   
+The shortest path from source 29    to 32    costs: 6     and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 30    to 0     costs: 41    and the previous vertex is: 10   
+The shortest path from source 30    to 1     costs: 41    and the previous vertex is: 10   
+The shortest path from source 30    to 2     costs: 41    and the previous vertex is: 10   
+The shortest path from source 30    to 3     costs: 41    and the previous vertex is: 10   
+The shortest path from source 30    to 4     costs: 41    and the previous vertex is: 10   
+The shortest path from source 30    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 30    to 6     costs: 41    and the previous vertex is: 10   
+The shortest path from source 30    to 7     costs: 41    and the previous vertex is: 10   
+The shortest path from source 30    to 8     costs: 41    and the previous vertex is: 10   
+The shortest path from source 30    to 9     costs: 41    and the previous vertex is: 10   
+The shortest path from source 30    to 10    costs: 40    and the previous vertex is: 11   
+The shortest path from source 30    to 11    costs: 38    and the previous vertex is: 12   
+The shortest path from source 30    to 12    costs: 36    and the previous vertex is: 13   
+The shortest path from source 30    to 13    costs: 34    and the previous vertex is: 14   
+The shortest path from source 30    to 14    costs: 32    and the previous vertex is: 15   
+The shortest path from source 30    to 15    costs: 30    and the previous vertex is: 16   
+The shortest path from source 30    to 16    costs: 28    and the previous vertex is: 17   
+The shortest path from source 30    to 17    costs: 26    and the previous vertex is: 18   
+The shortest path from source 30    to 18    costs: 24    and the previous vertex is: 19   
+The shortest path from source 30    to 19    costs: 22    and the previous vertex is: 20   
+The shortest path from source 30    to 20    costs: 20    and the previous vertex is: 21   
+The shortest path from source 30    to 21    costs: 18    and the previous vertex is: 22   
+The shortest path from source 30    to 22    costs: 16    and the previous vertex is: 23   
+The shortest path from source 30    to 23    costs: 14    and the previous vertex is: 24   
+The shortest path from source 30    to 24    costs: 12    and the previous vertex is: 25   
+The shortest path from source 30    to 25    costs: 10    and the previous vertex is: 26   
+The shortest path from source 30    to 26    costs: 8     and the previous vertex is: 27   
+The shortest path from source 30    to 27    costs: 6     and the previous vertex is: 28   
+The shortest path from source 30    to 28    costs: 4     and the previous vertex is: 29   
+The shortest path from source 30    to 29    costs: 2     and the previous vertex is: 30   
+The shortest path from source 30    to 30    costs: 0     and the previous vertex is: 30   
+The shortest path from source 30    to 31    costs: 2     and the previous vertex is: 30   
+The shortest path from source 30    to 32    costs: 4     and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 31    to 0     costs: 43    and the previous vertex is: 10   
+The shortest path from source 31    to 1     costs: 43    and the previous vertex is: 10   
+The shortest path from source 31    to 2     costs: 43    and the previous vertex is: 10   
+The shortest path from source 31    to 3     costs: 43    and the previous vertex is: 10   
+The shortest path from source 31    to 4     costs: 43    and the previous vertex is: 10   
+The shortest path from source 31    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 31    to 6     costs: 43    and the previous vertex is: 10   
+The shortest path from source 31    to 7     costs: 43    and the previous vertex is: 10   
+The shortest path from source 31    to 8     costs: 43    and the previous vertex is: 10   
+The shortest path from source 31    to 9     costs: 43    and the previous vertex is: 10   
+The shortest path from source 31    to 10    costs: 42    and the previous vertex is: 11   
+The shortest path from source 31    to 11    costs: 40    and the previous vertex is: 12   
+The shortest path from source 31    to 12    costs: 38    and the previous vertex is: 13   
+The shortest path from source 31    to 13    costs: 36    and the previous vertex is: 14   
+The shortest path from source 31    to 14    costs: 34    and the previous vertex is: 15   
+The shortest path from source 31    to 15    costs: 32    and the previous vertex is: 16   
+The shortest path from source 31    to 16    costs: 30    and the previous vertex is: 17   
+The shortest path from source 31    to 17    costs: 28    and the previous vertex is: 18   
+The shortest path from source 31    to 18    costs: 26    and the previous vertex is: 19   
+The shortest path from source 31    to 19    costs: 24    and the previous vertex is: 20   
+The shortest path from source 31    to 20    costs: 22    and the previous vertex is: 21   
+The shortest path from source 31    to 21    costs: 20    and the previous vertex is: 22   
+The shortest path from source 31    to 22    costs: 18    and the previous vertex is: 23   
+The shortest path from source 31    to 23    costs: 16    and the previous vertex is: 24   
+The shortest path from source 31    to 24    costs: 14    and the previous vertex is: 25   
+The shortest path from source 31    to 25    costs: 12    and the previous vertex is: 26   
+The shortest path from source 31    to 26    costs: 10    and the previous vertex is: 27   
+The shortest path from source 31    to 27    costs: 8     and the previous vertex is: 28   
+The shortest path from source 31    to 28    costs: 6     and the previous vertex is: 29   
+The shortest path from source 31    to 29    costs: 4     and the previous vertex is: 30   
+The shortest path from source 31    to 30    costs: 2     and the previous vertex is: 31   
+The shortest path from source 31    to 31    costs: 0     and the previous vertex is: 31   
+The shortest path from source 31    to 32    costs: 2     and the previous vertex is: 31   
+Shortest Path Results:
+The shortest path from source 32    to 0     costs: 45    and the previous vertex is: 10   
+The shortest path from source 32    to 1     costs: 45    and the previous vertex is: 10   
+The shortest path from source 32    to 2     costs: 45    and the previous vertex is: 10   
+The shortest path from source 32    to 3     costs: 45    and the previous vertex is: 10   
+The shortest path from source 32    to 4     costs: 45    and the previous vertex is: 10   
+The shortest path from source 32    to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 32    to 6     costs: 45    and the previous vertex is: 10   
+The shortest path from source 32    to 7     costs: 45    and the previous vertex is: 10   
+The shortest path from source 32    to 8     costs: 45    and the previous vertex is: 10   
+The shortest path from source 32    to 9     costs: 45    and the previous vertex is: 10   
+The shortest path from source 32    to 10    costs: 44    and the previous vertex is: 11   
+The shortest path from source 32    to 11    costs: 42    and the previous vertex is: 12   
+The shortest path from source 32    to 12    costs: 40    and the previous vertex is: 13   
+The shortest path from source 32    to 13    costs: 38    and the previous vertex is: 14   
+The shortest path from source 32    to 14    costs: 36    and the previous vertex is: 15   
+The shortest path from source 32    to 15    costs: 34    and the previous vertex is: 16   
+The shortest path from source 32    to 16    costs: 32    and the previous vertex is: 17   
+The shortest path from source 32    to 17    costs: 30    and the previous vertex is: 18   
+The shortest path from source 32    to 18    costs: 28    and the previous vertex is: 19   
+The shortest path from source 32    to 19    costs: 26    and the previous vertex is: 20   
+The shortest path from source 32    to 20    costs: 24    and the previous vertex is: 21   
+The shortest path from source 32    to 21    costs: 22    and the previous vertex is: 22   
+The shortest path from source 32    to 22    costs: 20    and the previous vertex is: 23   
+The shortest path from source 32    to 23    costs: 18    and the previous vertex is: 24   
+The shortest path from source 32    to 24    costs: 16    and the previous vertex is: 25   
+The shortest path from source 32    to 25    costs: 14    and the previous vertex is: 26   
+The shortest path from source 32    to 26    costs: 12    and the previous vertex is: 27   
+The shortest path from source 32    to 27    costs: 10    and the previous vertex is: 28   
+The shortest path from source 32    to 28    costs: 8     and the previous vertex is: 29   
+The shortest path from source 32    to 29    costs: 6     and the previous vertex is: 30   
+The shortest path from source 32    to 30    costs: 4     and the previous vertex is: 31   
+The shortest path from source 32    to 31    costs: 2     and the previous vertex is: 32   
+The shortest path from source 32    to 32    costs: 0     and the previous vertex is: 32   

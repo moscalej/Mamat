@@ -1,0 +1,105 @@
+Graph vertices:
+6
+5
+4
+3
+2
+1
+0
+Graph edges:
+Shortest Path Results:
+The shortest path from source 0     to 0     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 1     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 2     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 3     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 4     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 6     costs: 2147483647 and the previous vertex is: -1   
+Shortest Path Results:
+The shortest path from source 6     to 0     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 1     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 2     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 3     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 4     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 6     costs: 0     and the previous vertex is: 6    
+Graph vertices:
+6
+5
+4
+3
+2
+1
+0
+Graph edges:
+0-1
+Shortest Path Results:
+The shortest path from source 0     to 0     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 1     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 2     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 3     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 4     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 6     costs: 2147483647 and the previous vertex is: -1   
+Shortest Path Results:
+The shortest path from source 1     to 0     costs: 0     and the previous vertex is: 1    
+The shortest path from source 1     to 1     costs: 0     and the previous vertex is: 1    
+The shortest path from source 1     to 2     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 1     to 3     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 1     to 4     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 1     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 1     to 6     costs: 2147483647 and the previous vertex is: -1   
+Shortest Path Results:
+The shortest path from source 6     to 0     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 1     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 2     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 3     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 4     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 6     costs: 0     and the previous vertex is: 6    
+Graph vertices:
+6
+5
+4
+3
+2
+1
+0
+Graph edges:
+0-6
+0-1
+Shortest Path Results:
+The shortest path from source 0     to 0     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 1     costs: 0     and the previous vertex is: 0    
+The shortest path from source 0     to 2     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 3     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 4     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 0     to 6     costs: 10    and the previous vertex is: 0    
+Shortest Path Results:
+The shortest path from source 1     to 0     costs: 0     and the previous vertex is: 1    
+The shortest path from source 1     to 1     costs: 0     and the previous vertex is: 1    
+The shortest path from source 1     to 2     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 1     to 3     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 1     to 4     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 1     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 1     to 6     costs: 10    and the previous vertex is: 0    
+Shortest Path Results:
+The shortest path from source 6     to 0     costs: 10    and the previous vertex is: 6    
+The shortest path from source 6     to 1     costs: 10    and the previous vertex is: 0    
+The shortest path from source 6     to 2     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 3     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 4     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 5     costs: 2147483647 and the previous vertex is: -1   
+The shortest path from source 6     to 6     costs: 0     and the previous vertex is: 6    
+Graph vertices:
+6
+5
+4
+3
+2
+1
+0
+Graph edges:
+0-6
+0-1

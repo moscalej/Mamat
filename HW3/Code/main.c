@@ -1,10 +1,5 @@
-/*
- * main.cpp
- *
- *  Created on: 22 αιεπ 2016
- *      Author: Shirel_local
- */
 
+#define _CRT_SECURE_NO_WARNINGS
 #include "list.h"
 #include "set.h"
 #include "graph.h"
@@ -14,16 +9,16 @@
 
 #define MAX_LINE_SIZE (256)
 
-int comp (const void * elem1, const void * elem2)
+int comp(const void * elem1, const void * elem2)
 {
-    int f = *((int*)elem1);
-    int s = *((int*)elem2);
-    if (f > s) return  1;
-    if (f < s) return -1;
-    return 0;
+	int f = *((int*)elem1);
+	int s = *((int*)elem2);
+	if (f > s) return  1;
+	if (f < s) return -1;
+	return 0;
 }
 
-int main() {
+int main(char argc, char* argv[]) {
 	char szLine[MAX_LINE_SIZE];
 	char* delimiters = " \t\n";
 	char* command;
@@ -39,43 +34,58 @@ int main() {
 	PVertex pVertex = NULL;
 	PEdge pEdge = NULL;
 
-	while (fgets(szLine, MAX_LINE_SIZE, stdin)) {
+	FILE *fp;
+
+	if (argc < 1)
+	{
+		printf("Usage: %s <stack size> <file name>\n", argv[0]);
+		exit(1);
+	}
+
+	fp = fopen(argv[1], "r");
+	if (fp == NULL)
+	{
+		printf("Error: Can't open %s\n", argv[1]);
+		exit(1);
+	}
+
+	while (fgets(szLine, MAX_LINE_SIZE, fp)) {
 		command = strtok(szLine, delimiters);
-		if(command == NULL)
+		if (command == NULL)
 		{
 			continue;
 		}
-		if(strcmp(command,"create_graph") == 0)
+		if (strcmp(command, "create_graph") == 0)
 		{
 			pGraph = GraphCreate();
-			if(pGraph == NULL)
+			if (pGraph == NULL)
 			{
 				fprintf(stderr, "create_graph execution failed.\n");
 				continue;
 			}
 		}
-		else if(strcmp(command,"add_vertex") == 0)
+		else if (strcmp(command, "add_vertex") == 0)
 		{
 			arg1 = strtok(NULL, delimiters);
-			if(arg1 == NULL)
+			if (arg1 == NULL)
 			{
 				fprintf(stderr, "add_vertex failed: not enough parameters.\n");
 				continue;
 			}
 			vertex1 = atoi(arg1);
-			res = GraphAddVertex(pGraph,vertex1);
-			if(res == FALSE)
+			res = GraphAddVertex(pGraph, vertex1);
+			if (res == FALSE)
 			{
 				fprintf(stderr, "add_vertex execution failed.\n");
 				continue;
 			}
 		}
-		else if(strcmp(command,"add_edge") == 0)
+		else if (strcmp(command, "add_edge") == 0)
 		{
 			arg1 = strtok(NULL, delimiters);
 			arg2 = strtok(NULL, delimiters);
 			arg3 = strtok(NULL, delimiters);
-			if(arg1 == NULL || arg2 == NULL || arg3 == NULL)
+			if (arg1 == NULL || arg2 == NULL || arg3 == NULL)
 			{
 				fprintf(stderr, "add_vertex failed: not enough parameters.\n");
 				continue;
@@ -83,34 +93,34 @@ int main() {
 			vertex1 = atoi(arg1);
 			vertex2 = atoi(arg2);
 			weight = atoi(arg3);
-			res = GraphAddEdge(pGraph,vertex1,vertex2,weight);
-			if(res == FALSE)
+			res = GraphAddEdge(pGraph, vertex1, vertex2, weight);
+			if (res == FALSE)
 			{
 				fprintf(stderr, "add_edge execution failed.\n");
 				continue;
 			}
 		}
-		else if(strcmp(command,"get_neighbors") == 0)
+		else if (strcmp(command, "get_neighbors") == 0)
 		{
 			arg1 = strtok(NULL, delimiters);
-			if(arg1 == NULL)
+			if (arg1 == NULL)
 			{
 				fprintf(stderr, "get_neighbors failed: not enough parameters.\n");
 				continue;
 			}
 			vertex1 = atoi(arg1);
-			PSet neighbors = GraphNeighborVertices(pGraph,vertex1);
-			if(neighbors == NULL)
+			PSet neighbors = GraphNeighborVertices(pGraph, vertex1);
+			if (neighbors == NULL)
 			{
 				fprintf(stderr, "get_neighbors execution failed.\n");
 				continue;
 			}
 			printf("The neighbors of vertex %d are:\n", vertex1);
 			int size = SetGetSize(neighbors);
-			if( size != 0 )
+			if (size != 0)
 			{
-				int* neighbors_serial = (int*)malloc(size*sizeof(int));
-				if(neighbors_serial == NULL)
+				int* neighbors_serial = (int*)malloc(size * sizeof(int));
+				if (neighbors_serial == NULL)
 				{
 					SetDestroy(neighbors);
 					fprintf(stderr, "memory allocation failed.\n");
@@ -118,46 +128,46 @@ int main() {
 				}
 				pVertex = (PVertex)SetGetFirst(neighbors);
 				int i = 0;
-				while(pVertex)
+				while (pVertex)
 				{
 					neighbors_serial[i] = pVertex->serialNumber;
 					//printf("%d\n",pVertex->serialNumber);
 					pVertex = SetGetNext(neighbors);
 					i++;
 				}
-				qsort (neighbors_serial, size, sizeof(*neighbors_serial), comp);
-				for(i=0; i<size; i++)
+				qsort(neighbors_serial, size, sizeof(*neighbors_serial), comp);
+				for (i = 0; i<size; i++)
 				{
-					printf("%d\n",neighbors_serial[i]);
+					printf("%d\n", neighbors_serial[i]);
 				}
 				free(neighbors_serial);
 			}
 			SetDestroy(neighbors);
 		}
-		else if(strcmp(command,"find_shortest_path") == 0)
+		else if (strcmp(command, "find_shortest_path") == 0)
 		{
 			arg1 = strtok(NULL, delimiters);
-			if(arg1 == NULL)
+			if (arg1 == NULL)
 			{
 				fprintf(stderr, "find_shortest_path failed: not enough parameters.\n");
 				continue;
 			}
 			vertex1 = atoi(arg1);
 			int* dist = (int*)malloc(sizeof(int)*GraphGetNumberOfVertices(pGraph));
-			if(dist == NULL)
+			if (dist == NULL)
 			{
 				fprintf(stderr, "find_shortest_path execution failed.\n");
 				continue;
 			}
 			int* prev = (int*)malloc(sizeof(int)*GraphGetNumberOfVertices(pGraph));
-			if(prev == NULL)
+			if (prev == NULL)
 			{
 				free(dist);
 				fprintf(stderr, "find_shortest_path execution failed.\n");
 				continue;
 			}
-			res = GraphFindShortestPath(pGraph,vertex1,dist,prev);
-			if(res == FALSE)
+			res = GraphFindShortestPath(pGraph, vertex1, dist, prev);
+			if (res == FALSE)
 			{
 				free(dist);
 				free(prev);
@@ -165,9 +175,9 @@ int main() {
 				continue;
 			}
 			printf("Shortest Path Results:\n");
-			for(i=0; i < GraphGetNumberOfVertices(pGraph); i++)
+			for (i = 0; i < GraphGetNumberOfVertices(pGraph); i++)
 			{
-				printf("The shortest path from source %-5d to %-5d costs: %-5d and the previous vertex is: %-5d\n", vertex1, i, dist[i],prev[i]);
+				printf("The shortest path from source %-5d to %-5d costs: %-5d and the previous vertex is: %-5d\n", vertex1, i, dist[i], prev[i]);
 			}
 
 			free(dist);
@@ -176,44 +186,44 @@ int main() {
 			pVertex = (PVertex)SetGetFirst(neighbors,dist,prev);
 			while(pVertex)
 			{
-				printf("%d\n",pVertex->serialNumber);
-				SetGetNext(neighbors);
+			printf("%d\n",pVertex->serialNumber);
+			SetGetNext(neighbors);
 			}
 			SetDestroy(neighbors);
 			*/
 		}
-		else if(strcmp(command,"print_graph") == 0)
+		else if (strcmp(command, "print_graph") == 0)
 		{
 			PSet vertices = GraphVerticesStatus(pGraph);
-			if(vertices == NULL)
+			if (vertices == NULL)
 			{
 				fprintf(stderr, "print_graph execution failed.\n");
 				continue;
 			}
 			PSet edges = GraphEdgesStatus(pGraph);
-			if(edges == NULL)
+			if (edges == NULL)
 			{
 				fprintf(stderr, "print_graph execution failed.\n");
 				continue;
 			}
 			printf("Graph vertices:\n");
 			pVertex = SetGetFirst(vertices);
-			while(pVertex)
+			while (pVertex)
 			{
-				printf("%d\n",pVertex->serialNumber);
+				printf("%d\n", pVertex->serialNumber);
 				pVertex = SetGetNext(vertices);
 			}
 			printf("Graph edges:\n");
 			pEdge = SetGetFirst(edges);
-			while(pEdge)
+			while (pEdge)
 			{
 				int nodeAnum = pEdge->nodeA->serialNumber;
 				int nodeBnum = pEdge->nodeB->serialNumber;
-				printf("%d-%d\n",nodeAnum < nodeBnum ? nodeAnum : nodeBnum ,nodeAnum >= nodeBnum ? nodeAnum : nodeBnum);
+				printf("%d-%d\n", nodeAnum < nodeBnum ? nodeAnum : nodeBnum, nodeAnum >= nodeBnum ? nodeAnum : nodeBnum);
 				pEdge = SetGetNext(edges);
 			}
 		}
-		else if(strcmp(command,"exit") == 0)
+		else if (strcmp(command, "exit") == 0)
 		{
 			break;
 		}
@@ -223,6 +233,6 @@ int main() {
 		}
 	}
 	GraphDestroy(pGraph);
+	fclose(fp);
 	return 0;
 }
-
