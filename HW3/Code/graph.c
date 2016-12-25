@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <limits.h>
 #include "list.h"
 #include "set.h"
 #include "graph.h"
@@ -18,7 +19,7 @@ typedef struct _Graph
 	struct _Set * vertex ;
 	struct _Set * edge;
 
-}Graph, *PGraph;
+}Graph;
 
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -319,8 +320,8 @@ PEdge find_dijk_edge(PSet edge_set, PVertex vertex1, PVertex vertex2)
 	comp_edge = (PEdge)SetGetFirst(edge_set);
 	while (TRUE)
 	{
-		if (comp_edge->nodeA == vertex1 && comp_edge->nodeB == vertex2 ||
-			comp_edge->nodeB == vertex1 && comp_edge->nodeA == vertex2)
+		if (((comp_edge->nodeA == vertex1) && (comp_edge->nodeB == vertex2)) ||
+			((comp_edge->nodeB == vertex1 )&& (comp_edge->nodeA == vertex2)))
 		{
 			return comp_edge;
 		}

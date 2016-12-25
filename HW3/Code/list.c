@@ -25,7 +25,7 @@ typedef struct List_
 	CLONE_FUNC copy_list_elem;
 	DESTROY_FUNC free_list_elem;
 
-}List_, *PList;
+}List_;
 
 PList ListCreate(CLONE_FUNC copy_list_elem, DESTROY_FUNC free_list_elem)
 {

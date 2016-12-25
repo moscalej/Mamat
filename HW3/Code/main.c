@@ -4,7 +4,7 @@
  *  Created on: 22 αιεπ 2016
  *      Author: Shirel_local
  */
-#define _CRT_SECURE_NO_WARNINGS
+
 #include "list.h"
 #include "set.h"
 #include "graph.h"
@@ -23,7 +23,7 @@ int comp (const void * elem1, const void * elem2)
     return 0;
 }
 
-int main(char argc, char* argv[]) {
+int main() {
 	char szLine[MAX_LINE_SIZE];
 	char* delimiters = " \t\n";
 	char* command;
@@ -39,22 +39,7 @@ int main(char argc, char* argv[]) {
 	PVertex pVertex = NULL;
 	PEdge pEdge = NULL;
 
-	FILE *fp;
-
-	if (argc < 1)
-	{
-		printf("Usage: %s <stack size> <file name>\n", argv[0]);
-		exit(1);
-	}
-
-	fp = fopen(argv[1], "r");
-	if (fp == NULL)
-	{
-		printf("Error: Can't open %s\n", argv[1]);
-		exit(1);
-	} 
-
-	while (fgets(szLine, MAX_LINE_SIZE, fp)) {
+	while (fgets(szLine, MAX_LINE_SIZE, stdin)) {
 		command = strtok(szLine, delimiters);
 		if(command == NULL)
 		{
@@ -238,7 +223,6 @@ int main(char argc, char* argv[]) {
 		}
 	}
 	GraphDestroy(pGraph);
-	fclose(fp);
 	return 0;
 }
 
