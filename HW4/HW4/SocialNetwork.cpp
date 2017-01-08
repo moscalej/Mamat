@@ -31,7 +31,8 @@ void SocialNetwork::FindUser(string partialName)
 	}
 }
 
-
-
-
-
+SocialNetwork::SocialNetwork(string name, string password)
+{
+	name_ = name;
+	password_ = password;
+}

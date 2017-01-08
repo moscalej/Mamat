@@ -6,12 +6,11 @@ Follower::Follower(string name, string email, string password)
 {
 	name_ = name;
 	email_ = email;
-	password_ = password_;
+	password_ = password;
 }
 
 string Follower::GetName() const
 {
-
 	return name_;
 }
 
@@ -33,10 +32,8 @@ bool Follower::ShowFriendRequests()
 	if (0 == this->FriendRequests.getSize()) {
 		return false;
 	}
-	FriendType curRequest = FriendRequests.getHead(); //need to check if this copy a new value or asinge the value to cur request
+	FriendType * curRequest = FriendRequests.getHead(); //need to check if this copy a new value or asinge the value to cur request
 
-
-	cout << curRequest.GetName() << endl;
 	int i = 0;
 	int max = FriendRequests.getSize();
 	bool result;
@@ -57,10 +54,9 @@ bool Follower::ShowFriendList()
 	if (0 == this->FriendList.getSize()) {
 		return false;
 	}
-	FriendType curFriend = FriendList.getHead(); //need to check if this copy a new value or asinge the value to cur request
+	FriendType * curFriend = FriendList.getHead(); //need to check if this copy a new value or asinge the value to cur request
 
 
-	cout << curFriend.GetName() << endl;
 	int i = 0;
 	int max = FriendList.getSize();
 	bool result;
@@ -75,24 +71,24 @@ bool Follower::ShowFriendList()
 	}
 	return true;
 
-	return false;
+	
 }
 
 Result Follower::AddFriendRequest(string name, string email)
 {
-	FriendType temp(name, email, Friend, pending);
+	FriendType temp(name, email);
 	return this->FriendRequests.addHead(temp);
 }
 
-Result Follower::AgryFriendRequest(string email)
+Result Follower::AcceptFriendRequest(string email)
 {
 	if (0 == FriendRequests.getSize()) return FAILURE;
-	FriendType temp = FriendRequests.getHead();
+	FriendType * temp = FriendRequests.getHead();
 	while(true)
 	{
-		if (temp.GetEmail == email)
+		if (temp->GetEmail == email)
 		{
-			FriendType newfriend(temp.GetName, temp.GetEmail, Friend, friends);
+			FriendType newfriend(temp->GetName(), temp->GetEmail());
 			this->FriendList.addHead(newfriend);
 			this->FriendRequests.removeElem();
 			return SUCCESS;
@@ -109,10 +105,10 @@ Result Follower::AgryFriendRequest(string email)
 Result Follower::RemoveFriend(string email)
 {
 	if (0 == FriendList.getSize()) return FAILURE;
-	FriendType temp = FriendList.getHead();
+	FriendType * temp = FriendList.getHead();
 	while (true)
 	{
-		if (temp.GetEmail == email)
+		if (temp->GetEmail == email)
 		{
 			this->FriendList.removeElem();
 			return SUCCESS;
@@ -142,10 +138,10 @@ void Follower::ReadMessage(int number)
 	this->imbox_.ReadMessage(number);
 }
 
-void Follower::SendMessage(string email, string subject, string content)
+Message Follower::SendMessage(string email, string subject, string content)
 {
 	Message newmessage(email, subject, content);
-	this->outbox_.addHead(newmessage);
+	return newmessage;
 }
 
 int Follower::NumberUnreadMessage()
@@ -153,12 +149,11 @@ int Follower::NumberUnreadMessage()
 	return this->imbox_.UnreadSize();
 }
 
-FriendType::FriendType(string name, string email, RelationType Type, RelentionStatus status)
+FriendType::FriendType(string name, string email)
 {
 	this->name_ = name;
 	this->email_ = email;
-	this->Type_ = Type;
-	this->status_ = status;	
+		
 }
 
 string FriendType::GetName() const
@@ -170,25 +165,3 @@ string FriendType::GetEmail() const
 {
 	return this->email_;
 }
-
-RelationType FriendType::GetType() const
-{
-	return this->Type_;
-}
-
-RelentionStatus FriendType::GetStatus() const
-{
-	return this->status_;
-}
-
-void FriendType::ChangeType(RelationType type)
-{
-	this->Type_ = type;
-}
-
-void FriendType::ChangeStatus(RelentionStatus status)
-{
-	this->status_ = status;
-}
-
-

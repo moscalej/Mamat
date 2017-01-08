@@ -2,6 +2,7 @@
 #define _SOCIALNETWORK_H
 
 #include "defs.H"
+#include "Follower.h"
 #include <string>
 using namespace std;
 
@@ -40,7 +41,11 @@ public:
 	// General actions
 	void FindUser(string partialName);
 private:
-    // To do
+	string name_;
+	string password_;
+	LinkedList<Follower> follower_user_;
+	LinkedList<Leader> leader_user_;
+	
 };
 
 #endif

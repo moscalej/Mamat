@@ -5,27 +5,22 @@
 #include <iostream>
 #include "Lists.h"
 #include "Message.h"
-//#include <string>
+#include <string>
 
 using namespace std;
+
 
 class FriendType
 {
 private:
 	string name_;
 	string email_;
-	RelationType Type_;
-	RelentionStatus status_;
+
 public:
 
-	FriendType(string name, string email, RelationType Type, RelentionStatus status);
+	FriendType(string name, string email);
 	string GetName() const;
 	string GetEmail() const;
-	RelationType GetType() const;
-	RelentionStatus GetStatus() const;
-
-	void ChangeType(RelationType type);
-	void ChangeStatus(RelentionStatus status);
 
 };
 
@@ -44,14 +39,14 @@ public:
 	bool ShowFriendRequests();
 	bool ShowFriendList();
 	Result AddFriendRequest(string name, string email);
-	Result AgryFriendRequest(string email);
+	Result AcceptFriendRequest(string email);
 	Result RemoveFriend(string email);
 	int NumFriendRequest();
 
 	/*message handling funtions*/
 	void ShowMessages();
 	void ReadMessage(int number);///
-	void SendMessage(string email, string subject, string content);
+	Message SendMessage(string email, string subject, string content); ////need to check
 	int NumberUnreadMessage();
 
 	
@@ -65,7 +60,7 @@ private:
 	LinkedList<FriendType> FriendList;
 	LinkedList<FriendType> FriendRequests;
 	MessageBox imbox_;
-	LinkedList<Message> outbox_;
+	
 
 };
 

@@ -30,11 +30,11 @@
 #define CREATE_FOLLOWER_FAIL "User already exists"
 
 // ShowFriendRequests (On success put this line in a loop. the variable "i" starts from 0)
-#define SHOW_FRIEND_REQUESTS_SUCCESS i + 1 << ") " << curRequest.GetName()<< ": " << curRequest.GetEmail()
+#define SHOW_FRIEND_REQUESTS_SUCCESS i + 1 << ") " << curRequest->GetName()<< ": " << curRequest->GetEmail()
 #define SHOW_FRIEND_REQUESTS_FAIL "Not logged in"
 
 // ShowFriendList (On success put this line in a loop. the variable "i" starts from 0)
-#define SHOW_FRIEND_LIST_SUCCESS i + 1 << ") " << curFriend.GetName() << ": " << curFriend.GetEmail()
+#define SHOW_FRIEND_LIST_SUCCESS i + 1 << ") " << curFriend->GetName() << ": " << curFriend->GetEmail()
 #define SHOW_FRIEND_LIST_FAIL "Not logged in"
 
 // SendFriendRequest
@@ -69,8 +69,7 @@
 enum Result {FAILURE, SUCCESS};
 
 // So we can easily track who is sending information.
-typedef enum RelationType {Friend, Follower, Leader};
-typedef enum RelentionStatus { friends, pending, following };
+
 
 // This is a template for a list ELEMENT which will be used as a helper
 // to navigate the lists.

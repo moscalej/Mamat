@@ -3,14 +3,14 @@
 
 // Method for getting the list head
 template <class T>
-T& LinkedList<T>::getHead()
+T* LinkedList<T>::getHead()
 {
 	if (head == NULL)
 	{
 		return NULL;
 	}
 	currLocation = head;
-	return head->data;
+	return &(head->data);
 }
 
 template<class T>
@@ -136,7 +136,7 @@ int LinkedList<T>::getSize()
 
 // Method for getting the data that is found in the linked list.
 template <class T>
-T& LinkedList<T>::getData()
+T* LinkedList<T>::getData()
 {
-	return currLocation->data;
+	return &(currLocation->data);
 }

@@ -55,18 +55,18 @@ int MessageBox::UnreadSize()
 
 void MessageBox::Print()
 {
-	Message temp = messageList.getHead();
+	Message * temp = messageList.getHead();
 	if (this->messageListSize == 0)
 	{
 		return;
 	}
-	temp.Read();
+	temp->Read();
 	for (int i = 1; i < messageListSize; i++)
 	{
 		messageList.getNext();
 		temp = this->messageList.getData();
 
-		temp.Read();
+		temp->Read();
 		
 	}
 	this->readSize = this->messageListSize;// We have read the entire list.
@@ -76,17 +76,17 @@ void MessageBox::Print()
 Result MessageBox::ReadMessage(int messageNum)
 {
 	if (messageNum > messageListSize || messageNum < 0) return FAILURE;
-	Message temp = messageList.getHead();
+	Message * temp = messageList.getHead();
 	for (int i = 1; i < messageNum; i++)
 	{
 		messageList.getNext();
 	}
 	temp = messageList.getData();
-	if (temp.isRead() == false)// Message has not been read before
+	if (temp->isRead() == false)// Message has not been read before
 	{
 		readSize++;// Increase number of read messages.
 	}
-	temp.Read();
+	temp->Read();
 	
 	return SUCCESS;
 }

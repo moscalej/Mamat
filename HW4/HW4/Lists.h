@@ -30,8 +30,8 @@ public:
 	Result addHead(T newHead);
 	Result removeElem();
 	Result getNext();
-	T& getHead();
-	T& getData();
+	T* getHead();
+	T* getData();
 	int getSize();
 };
 // Add underscore to private*****************************************
