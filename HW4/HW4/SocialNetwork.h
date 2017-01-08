@@ -3,6 +3,7 @@
 
 #include "defs.H"
 #include "Follower.h"
+#include "Leader.h"
 #include <string>
 using namespace std;
 
@@ -10,7 +11,8 @@ using namespace std;
 class SocialNetwork {
 public:
 	SocialNetwork(string name, string password);
-	~SocialNetwork();
+	~SocialNetwork(); //<su much memory to reaease
+
 
 	void AdminLogin(string password);
 	void Login(string email, string password);
@@ -32,7 +34,7 @@ public:
 	void AcceptFriendRequest(string friendEmail);
 	void RemoveFriend(string friendEmail);
 
-	void ShowMessageList();
+	void ShowMessageList(); //<-- need to check if it works as we want
 	void ReadMessage(int messageNum);
 	void SendMessage(string email, string subject, string content);
 
@@ -41,10 +43,15 @@ public:
 	// General actions
 	void FindUser(string partialName);
 private:
+	
+	Follower * SearchByEmailFollower(string email);
+	Leader * SearchByEmailLeader(string email);
 	string name_;
 	string password_;
 	LinkedList<Follower> follower_user_;
 	LinkedList<Leader> leader_user_;
+	Current_state user_loged_on_;
+	Follower * activeFollower;
 	
 };
 

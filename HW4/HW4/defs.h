@@ -6,7 +6,7 @@
 #define ADMIN_LOGIN_FAIL "Failed to login as admin"
 
 // Login
-#define LOGIN_SUCCESS "Hi, " << activeFollower->GetName() << ". Welcome to " << name_ << endl << "Notifications: " << activeFollower->NumUnreadMessages() << " unread messages, " << activeFollower->NumFriendRequests() << " friend requests."
+#define LOGIN_SUCCESS "Hi, " << activeFollower->GetName() << ". Welcome to " << name_ << endl << "Notifications: " << activeFollower->NumberUnreadMessage() << " unread messages, " << activeFollower->NumFriendRequest() << " friend requests."
 #define LOGIN_FAIL "User name or password incorrect"
 
 // Logout
@@ -39,7 +39,7 @@
 
 // SendFriendRequest
 #define SEND_FRIEND_REQUEST_SUCCESS "Request Sent"
-#define SEND_FRIEND_REQUEST_FAIL "Not logged in ,or user does not exist, or cannot befriend self, or already friends"
+#define SEND_FRIEND_REQUEST_FAIL "Not logged in ,or user does not exist, or cannot befriend self, or already friends" //check for this two options
 
 // AcceptFriendRequest
 #define ACCEPT_FRIEND_REQUEST_SUCCESS "Request accepted"
@@ -84,5 +84,6 @@ public:
 		data = Ndata;
 	}
 };
+typedef enum Current_state {ADMIN,FOLOOW,LEAD,OFFLINE};
 
 #endif

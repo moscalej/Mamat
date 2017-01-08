@@ -1,3 +1,7 @@
-﻿  Follower.cpp
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\follower.cpp(43): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\follower.cpp(66): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)
+﻿  SocialNetwork.cpp
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\defs.h(87): warning C4091: 'typedef ': ignored on left of 'Current_state' when no variable is declared
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\socialnetwork.cpp(60): warning C4101: 'awser': unreferenced local variable
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\socialnetwork.cpp(102): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\socialnetwork.cpp(121): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\socialnetwork.cpp(329): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\socialnetwork.cpp(352): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)

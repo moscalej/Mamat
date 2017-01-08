@@ -1,6 +1,8 @@
 #include <iostream>
-#include <string>
+
 #include "Follower.H"
+
+
 
 Follower::Follower(string name, string email, string password)
 {

@@ -1,11 +1,12 @@
 #ifndef _FOLLOWER_H_
 #define _FOLLOWER_H_
 
-#include "defs.H"
 #include <iostream>
+#include <string>
+#include "defs.H"
 #include "Lists.h"
 #include "Message.h"
-#include <string>
+
 
 using namespace std;
 
@@ -29,6 +30,8 @@ public:
 
 class Follower {
 public:
+	Follower() {}
+
 	Follower(string name, string email, string password);
 	~Follower() {
 	}
@@ -38,7 +41,7 @@ public:
 	bool isPassword(string password) const;
 	bool ShowFriendRequests();
 	bool ShowFriendList();
-	Result AddFriendRequest(string name, string email);
+	Result AddFriendRequest(string name, string email); // <--- important to check that cant befriend self or already friends
 	Result AcceptFriendRequest(string email);
 	Result RemoveFriend(string email);
 	int NumFriendRequest();
@@ -49,11 +52,8 @@ public:
 	Message SendMessage(string email, string subject, string content); ////need to check
 	int NumberUnreadMessage();
 
-	
+protected:
 
-	// To do
-private:
-    // To do
 	string name_;
 	string email_;
 	string password_;
