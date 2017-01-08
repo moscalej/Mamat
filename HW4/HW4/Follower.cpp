@@ -86,7 +86,7 @@ Result Follower::AcceptFriendRequest(string email)
 	FriendType * temp = FriendRequests.getHead();
 	while(true)
 	{
-		if (temp->GetEmail == email)
+		if (temp->GetEmail() == email)
 		{
 			FriendType newfriend(temp->GetName(), temp->GetEmail());
 			this->FriendList.addHead(newfriend);
@@ -108,7 +108,7 @@ Result Follower::RemoveFriend(string email)
 	FriendType * temp = FriendList.getHead();
 	while (true)
 	{
-		if (temp->GetEmail == email)
+		if (temp->GetEmail() == email)
 		{
 			this->FriendList.removeElem();
 			return SUCCESS;

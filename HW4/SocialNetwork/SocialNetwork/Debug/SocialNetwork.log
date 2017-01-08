@@ -1,1 +1,3 @@
-﻿  Lists.cpp
+﻿  Follower.cpp
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\follower.cpp(43): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\follower.cpp(66): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)
