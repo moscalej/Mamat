@@ -1,0 +1,5 @@
+﻿  Follower.cpp
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\defs.h(72): warning C4091: 'typedef ': ignored on left of 'RelationType' when no variable is declared
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\defs.h(73): warning C4091: 'typedef ': ignored on left of 'RelentionStatus' when no variable is declared
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\follower.cpp(46): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\follower.cpp(70): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)
