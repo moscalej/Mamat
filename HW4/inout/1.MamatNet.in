@@ -1,0 +1,51 @@
+AdminLogin 1234
+CreateLeader LeaderA leader@technion bla
+CreateFollower FollowerA follower@technion blabla
+CreateFollower FollowerB follower2@technion blabla2
+CreateFollower FollowerC follower3@technion blabla3
+DeleteUser follower3@technion
+Logout
+AdminLogin bad
+Login bla bla
+Logout
+CreateLeader bla bla bla
+DeleteUser sdf
+BroadcastMessage
+fail
+fail broadcasting
+CreateFollower FollowerB follower2@technion blabla2
+ShowFriendRequests
+ShowFriendList
+SendFriendRequest sd
+AcceptFriendRequest sdf
+RemoveFriend sdf
+ShowMessageList
+ReadMessage 5
+SendMessage
+bla
+fail
+fail sending
+Follow sad
+Login follower@technion blabla
+SendFriendRequest leader@technion
+Follow leader@technion
+Login follower2@technion blabla2
+SendFriendRequest leader@technion
+Login leader@technion bla
+ShowFriendRequests
+AcceptFriendRequest follower@technion
+AcceptFriendRequest follower2@technion
+ShowFriendList
+BroadcastMessage
+test1
+test111
+SendMessage
+follower@technion
+hi
+hi there
+RemoveFriend follower2@technion
+Login follower@technion blabla
+ShowMessageList
+ReadMessage 1
+FindUser Follower
+

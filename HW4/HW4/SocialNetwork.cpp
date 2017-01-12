@@ -294,8 +294,9 @@ void SocialNetwork::BroadcastMessage(string subject, string content)
 
 void SocialNetwork::CreateFollower(string name, string email, string password)
 {
-	if ((this->user_loged_on_ != LEAD) || (FOLOOW != this->user_loged_on_))
+	if (this->user_loged_on_ == OFFLINE)
 	{
+		cout << CREATE_FOLLOWER_FAIL << endl;
 		return;
 	}
 	Follower newUser(name, email, password);
@@ -524,13 +525,13 @@ Follower * SocialNetwork::SearchByEmailFollower(string email)
 		{
 			return User;
 		}
-		}
+
 		if (FAILURE == (result = follower_user_.getNext()))
 		{
 			return NULL;
 		}
 		User = follower_user_.getData();
-	
+	}
 }
 
 Leader * SocialNetwork::SearchByEmailLeader(string email)
@@ -547,10 +548,11 @@ Leader * SocialNetwork::SearchByEmailLeader(string email)
 			{
 				return User;
 			}
-		}
-		if (FAILURE == (result = leader_user_.getNext()))
-		{
-			return NULL;
+
+			if (FAILURE == (result = leader_user_.getNext()))
+			{
+				return NULL;
+			}
 		}
 		User = leader_user_.getData();
 

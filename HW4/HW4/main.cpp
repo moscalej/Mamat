@@ -1,9 +1,11 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "SocialNetwork.H"
 #include <iostream>
 #include <vector>
 #include <string>
 #include <sstream>
 
+#define MAX_LINE_SIZE (256)
 using namespace std;
 
 
@@ -30,15 +32,24 @@ vector<string> tokenize(string line, const char* delim) {
 	return tokens;
 }
 
-int main() {
+int main(int argc, char* argv[]) {
 
 	SocialNetwork SocNetwork("MamatNet", "1234");
 	const char* delims = " \t\n";
 	vector<string> tokens;
-	string line, subject, content, email;
+	string subject, content, email;
+	FILE *fp;
+	char line[MAX_LINE_SIZE];
 
-	while (!cin.eof()) {
-		getline(cin, line);
+	fp = fopen(argv[1], "r");
+	if (fp == NULL)
+	{
+		printf("Error: Can't open %s\n", argv[1]);
+		exit(1);
+	}
+
+	while (fgets(line, sizeof line, fp)) {
+		//getline(fp, line);
 		tokens = tokenize(line, delims);
 		if (tokens.size() == 0) {
 			continue;
@@ -71,9 +82,9 @@ int main() {
 
 		if (tokens[0] == "BroadcastMessage") {
 			cout << "Subject: ";
-			getline(cin, subject);
+			fgets(line, sizeof line, fp);
 			cout << "Content: ";
-			getline(cin, content);
+			fgets(line, sizeof line, fp);
 			SocNetwork.BroadcastMessage(subject, content);
 			continue;
 		}
@@ -120,11 +131,11 @@ int main() {
 
 		if (tokens[0] == "SendMessage") {
 			cout << "Email: ";
-			getline(cin, email);
+			fgets(line, sizeof line, fp);
 			cout << "Subject: ";
-			getline(cin, subject);
+			fgets(line, sizeof line, fp);
 			cout << "Content: ";
-			getline(cin, content);
+			fgets(line, sizeof line, fp);
 			SocNetwork.SendMessage(email, subject, content);
 			continue;
 		}

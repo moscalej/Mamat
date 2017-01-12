@@ -1,0 +1,54 @@
+Hi, Administrator. Welcome to MamatNet
+Leader successfully created
+Follower successfully created
+Follower successfully created
+Follower successfully created
+User deleted
+Goodbye
+Failed to login as admin
+User name or password incorrect
+Not logged in
+Not logged in as admin or user already exists
+Not logged in as admin or user does not exists
+Subject: Content: Not logged in or not leader
+User already exists
+Not logged in
+Not logged in
+Not logged in ,or user does not exist, or cannot befriend self, or already friends
+Not logged in or no such request
+Not logged in or no such friend
+Not logged in
+Not logged in or invalid message number
+Email: Subject: Content: Not logged in or no such friend
+Not logged in, or no such leader, or already following
+Hi, FollowerA. Welcome to MamatNet
+Notifications: 0 unread messages, 0 friend requests.
+Request Sent
+Added as follower
+Hi, FollowerB. Welcome to MamatNet
+Notifications: 0 unread messages, 0 friend requests.
+Request Sent
+Hi, LeaderA. Welcome to MamatNet
+Notifications: 0 unread messages, 2 friend requests.
+1) FollowerB: follower2@technion
+2) FollowerA: follower@technion
+Request accepted
+Request accepted
+1) FollowerB: follower2@technion
+2) FollowerA: follower@technion
+Subject: Content: Messages sent to all followers
+Email: Subject: Content: Message sent
+Friend removed
+Hi, FollowerA. Welcome to MamatNet
+Notifications: 2 unread messages, 0 friend requests.
+1) (Unread) From: leader@technion
+Subject: hi
+2) (Unread) From: leader@technion
+Subject: test1
+From: leader@technion
+Subject: hi
+Content: hi there
+Followers:
+1) FollowerB: follower2@technion
+2) FollowerA: follower@technion
+Leaders:
