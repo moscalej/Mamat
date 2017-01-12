@@ -8,20 +8,23 @@
 #include "Message.h"
 
 
+
 using namespace std;
 
 
 class FriendType
 {
-private:
-	string name_;
-	string email_;
 
 public:
-
+	FriendType() {}
 	FriendType(string name, string email);
 	string GetName() const;
 	string GetEmail() const;
+
+private:
+
+	string name_;
+	string email_;
 
 };
 
@@ -50,18 +53,22 @@ public:
 	void ShowMessages();
 	void ReadMessage(int number);///
 	Message SendMessage(string email, string subject, string content); ////need to check
+	void addNewMessage(Message newMessage);
 	int NumberUnreadMessage();
 
+	/*this funtion will return the emails from their friend from 1 to the number of friends
+		 if there is an error will return null (sitrng is a pointer)*/
+	string ShowFriendMail(int Friend_number);
+	int NumberOfFriends() const;
 protected:
 
 	string name_;
 	string email_;
 	string password_;
+	int friends_number_;
 	LinkedList<FriendType> FriendList;
 	LinkedList<FriendType> FriendRequests;
 	MessageBox imbox_;
-	
-
 };
 
 

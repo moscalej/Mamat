@@ -6,23 +6,20 @@
 class Leader : public Follower
 {
 public:
+	Leader() {}
 	Leader(string name, string email, string password);
 	~Leader();
-
+	Result AddFollower(string name, string email);
+	Result RemoveFollower(string email);
+	int NumberOfFolowwers() const;
+	LinkedList<FriendType> SendBrodcast() const;
+	
 private:
-
+	LinkedList<FriendType> Followers_of_user;
+	
+	int NumberFolloers_;
 };
 
-Leader::Leader(string name, string email, string password)
-{
-	this->email_ = email;
-	this->password_ = password;
-	this->name_ = name;
-}
-
-Leader::~Leader()
-{
-}
 
 
 

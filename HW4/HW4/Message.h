@@ -1,25 +1,27 @@
 #ifndef _MESSAGE_H_
 #define _MESSAGE_H_
-// change .H &&&&&&&&&&&&&&&&&&&&&&
+#include <iostream>
+#include <string>
 #include "defs.h"
 #include "Lists.h"
-#include <string>
+
 
 using namespace std;
 
 class Message {
 public:
+	Message();
     Message(string source, string subject, string content);
     void Display(int num) const;
     void Read();
 	bool isRead();
+	bool operator==(const string& b) { return true; };
 private:
     string source_;
 	string subject_;
     string content_;
     bool   read_;
 };
-
 
 
 class MessageBox
@@ -39,4 +41,6 @@ private:
 	int readSize;
 	int messageListSize;
 };
+
+
 #endif

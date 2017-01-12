@@ -54,7 +54,7 @@
 #define SHOW_MESSAGE_LIST_FAIL "Not logged in"
 
 // ReadMessage
-#define READ_MESSAGE_SUCCESS curMessage->Read(); // Use without cout
+#define READ_MESSAGE_SUCCESS temp->Read(); // Use without cout
 #define READ_MESSAGE_FAIL "Not logged in or invalid message number"
 
 // SendMessage
@@ -76,6 +76,7 @@ enum Result {FAILURE, SUCCESS};
 template <class T>
 class listElem {
 public:
+	listElem() {};
 	T data;
 	listElem<T>* next;
 

@@ -10,8 +10,9 @@ using namespace std;
 
 class SocialNetwork {
 public:
+	SocialNetwork(){}
 	SocialNetwork(string name, string password);
-	~SocialNetwork(); //<su much memory to reaease
+	~SocialNetwork() {} //<su much memory to reaease
 
 
 	void AdminLogin(string password);
@@ -52,6 +53,7 @@ private:
 	LinkedList<Leader> leader_user_;
 	Current_state user_loged_on_;
 	Follower * activeFollower;
+	Leader * activeLeader_;
 	
 };
 

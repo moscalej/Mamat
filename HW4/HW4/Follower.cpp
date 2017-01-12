@@ -2,13 +2,14 @@
 
 #include "Follower.H"
 
-
+using namespace std;
 
 Follower::Follower(string name, string email, string password)
 {
 	name_ = name;
 	email_ = email;
 	password_ = password;
+	friends_number_ = 0;
 }
 
 string Follower::GetName() const
@@ -25,6 +26,9 @@ bool Follower::isPassword(string password) const
 {
 	return (password_ == password ? true : false);
 }
+
+
+
 /*this funtion will check the list with friend request and print then
 	if there is no friend request will do nothing
 	if there is friend request will print then in order from newest to the last
@@ -91,7 +95,8 @@ Result Follower::AcceptFriendRequest(string email)
 		if (temp->GetEmail() == email)
 		{
 			FriendType newfriend(temp->GetName(), temp->GetEmail());
-			this->FriendList.addHead(newfriend);
+			this->FriendList.addHead(newfriend);// need to check if already friends
+			this->friends_number_ = this->friends_number_++;
 			this->FriendRequests.removeElem();
 			return SUCCESS;
 		}
@@ -113,6 +118,7 @@ Result Follower::RemoveFriend(string email)
 		if (temp->GetEmail() == email)
 		{
 			this->FriendList.removeElem();
+			this->friends_number_ = this->friends_number_ - 1;
 			return SUCCESS;
 		}
 		if (FAILURE == (this->FriendList.getNext()))
@@ -146,9 +152,35 @@ Message Follower::SendMessage(string email, string subject, string content)
 	return newmessage;
 }
 
+void Follower::addNewMessage(Message newMessage)
+{
+	this->imbox_.Add(newMessage);
+	
+}
+
 int Follower::NumberUnreadMessage()
 {
 	return this->imbox_.UnreadSize();
+}
+
+string Follower::ShowFriendMail(int Friend_number) 
+{
+	int temp = NumberOfFriends();
+	string gs;
+	FriendType * Momentary_firend = this->FriendList.getHead();
+	if (temp == 0 || Friend_number > temp) return NULL;
+	for (size_t i = 1; i < friends_number_; i++)
+	{
+		this->FriendList.getNext();
+	}
+	Momentary_firend = this->FriendList.getData();
+
+	return this->email_;
+}
+
+int Follower::NumberOfFriends() const
+{
+	return this->friends_number_;
 }
 
 FriendType::FriendType(string name, string email)
