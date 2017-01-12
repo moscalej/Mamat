@@ -42,6 +42,8 @@ public:
     string GetName() const;
 	string GetEmail() const;
 	bool isPassword(string password) const;
+
+
 	bool ShowFriendRequests();
 	bool ShowFriendList();
 	Result AddFriendRequest(string name, string email); // <--- important to check that cant befriend self or already friends
@@ -60,14 +62,19 @@ public:
 		 if there is an error will return null (sitrng is a pointer)*/
 	string ShowFriendMail(int Friend_number);
 	int NumberOfFriends() const;
+	bool AddLeader(string name, string email);
+	LinkedList<FriendType> show_leaders();
 protected:
-
+	bool check_friend_request(string email);
+	bool check_friend(string email);
+	bool check_leader(string email); // true means there is not such a person
 	string name_;
 	string email_;
 	string password_;
 	int friends_number_;
 	LinkedList<FriendType> FriendList;
 	LinkedList<FriendType> FriendRequests;
+	LinkedList<FriendType> Leaders_to_follow;
 	MessageBox imbox_;
 };
 

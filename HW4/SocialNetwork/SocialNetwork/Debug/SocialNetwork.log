@@ -1,14 +1,2 @@
 ﻿  SocialNetwork.cpp
 c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\defs.h(88): warning C4091: 'typedef ': ignored on left of 'Current_state' when no variable is declared
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\socialnetwork.cpp(66): warning C4101: 'awser': unreferenced local variable
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\socialnetwork.cpp(105): warning C4018: '<': signed/unsigned mismatch
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\socialnetwork.cpp(138): warning C4018: '<': signed/unsigned mismatch
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\socialnetwork.cpp(473): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\socialnetwork.cpp(496): warning C4800: 'Result': forcing value to bool 'true' or 'false' (performance warning)
-  Generating Code...
-  Compiling...
-  main.cpp
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\defs.h(88): warning C4091: 'typedef ': ignored on left of 'Current_state' when no variable is declared
-  Generating Code...
-  SocialNetwork.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\Github\Mamat\HW4\SocialNetwork\Debug\SocialNetwork.exe
-  SocialNetwork.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\Github\Mamat\HW4\SocialNetwork\Debug\SocialNetwork.pdb (Full PDB)

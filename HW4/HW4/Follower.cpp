@@ -83,7 +83,11 @@ bool Follower::ShowFriendList()
 Result Follower::AddFriendRequest(string name, string email)
 {
 	FriendType temp(name, email);
-	return this->FriendRequests.addHead(temp);
+	if ((true == check_friend_request(email)) && (true == check_friend(email)))
+	{
+		return this->FriendRequests.addHead(temp);
+	}
+	return FAILURE;
 }
 
 Result Follower::AcceptFriendRequest(string email)
@@ -95,6 +99,11 @@ Result Follower::AcceptFriendRequest(string email)
 		if (temp->GetEmail() == email)
 		{
 			FriendType newfriend(temp->GetName(), temp->GetEmail());
+			if (false == this->check_friend(email)) 
+			{
+				this->FriendRequests.removeElem();
+				return FAILURE;
+			}
 			this->FriendList.addHead(newfriend);// need to check if already friends
 			this->friends_number_ = this->friends_number_++;
 			this->FriendRequests.removeElem();
@@ -181,6 +190,67 @@ string Follower::ShowFriendMail(int Friend_number)
 int Follower::NumberOfFriends() const
 {
 	return this->friends_number_;
+}
+
+bool Follower::AddLeader(string name, string email)
+{
+	FriendType newLeader(name, email);
+	if (true == this->check_leader(email))
+	{
+		this->Leaders_to_follow.addHead(newLeader);
+	}
+}
+
+LinkedList<FriendType> Follower::show_leaders()
+{
+	return this->Leaders_to_follow;
+}
+
+bool Follower::check_friend_request(string email)
+{
+	if (0 == this->FriendRequests.getSize()) return true;
+	FriendType * temp = this->FriendRequests.getHead();
+	while (temp != NULL)
+	{
+		if (temp->GetEmail() == email)
+		{
+			return false;
+		}
+		this->FriendRequests.getNext();
+		temp = this->FriendRequests.getData();
+	}
+}
+
+bool Follower::check_friend(string email)
+{
+	if (0 == this->FriendList.getSize()) return true;
+	FriendType * temp = this->FriendList.getHead();
+	while (temp != NULL)
+	{
+		if (temp->GetEmail() == email)
+		{
+			return false;
+		}
+		this->FriendList.getNext();
+		temp = this->FriendList.getData();
+	}
+	return true;
+}
+
+bool Follower::check_leader(string email)
+{
+	if (0 == this->Leaders_to_follow.getSize()) return true;
+	FriendType * temp = this->Leaders_to_follow.getHead();
+	while (temp != NULL)
+	{
+		if (temp->GetEmail() == email)
+		{
+			return false;
+		}
+		this->Leaders_to_follow.getNext();
+		temp = this->Leaders_to_follow.getData();
+	}
+	return true;
 }
 
 FriendType::FriendType(string name, string email)
