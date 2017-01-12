@@ -15,7 +15,7 @@ public:
     void Display(int num) const;
     void Read();
 	bool isRead();
-	bool operator==(const string& b) { return true; };
+	//bool operator==(const string& b) { return true; };
 private:
     string source_;
 	string subject_;

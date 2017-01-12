@@ -85,6 +85,6 @@ public:
 		data = Ndata;
 	}
 };
-typedef enum Current_state{ADMIN,FOLOOW,LEAD,OFFLINE};
+typedef enum Current_state_{ADMIN,FOLOOW,LEAD,OFFLINE} Current_state;
 
 #endif

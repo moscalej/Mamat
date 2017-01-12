@@ -1,2 +1,9 @@
 ﻿  SocialNetwork.cpp
-c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\defs.h(88): warning C4091: 'typedef ': ignored on left of 'Current_state' when no variable is declared
+  Message.cpp
+  main.cpp
+  Lists.cpp
+  Leader.cpp
+  Follower.cpp
+  Generating Code...
+  SocialNetwork.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\Github\Mamat\HW4\SocialNetwork\Debug\SocialNetwork.exe
+  SocialNetwork.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\Github\Mamat\HW4\SocialNetwork\Debug\SocialNetwork.pdb (Full PDB)

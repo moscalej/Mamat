@@ -42,11 +42,11 @@ bool Follower::ShowFriendRequests()
 
 	int i = 0;
 	int max = FriendRequests.getSize();
-	bool result;
+	Result result;
 	while (i != max + 1)
 	{
 		cout << SHOW_FRIEND_REQUESTS_SUCCESS << endl;
-		if (false == (result = FriendRequests.getNext()))
+		if (FAILURE == (result = FriendRequests.getNext()))
 		{
 			break;
 		}
@@ -65,11 +65,11 @@ bool Follower::ShowFriendList()
 
 	int i = 0;
 	int max = FriendList.getSize();
-	bool result;
+	Result result;
 	while (i != max + 1)
 	{
 		cout << SHOW_FRIEND_LIST_SUCCESS << endl;
-		if (false == (result = FriendList.getNext()))
+		if (FAILURE == (result = FriendList.getNext()))
 		{
 			break;
 		}
@@ -178,7 +178,7 @@ string Follower::ShowFriendMail(int Friend_number)
 	string gs;
 	FriendType * Momentary_firend = this->FriendList.getHead();
 	if (temp == 0 || Friend_number > temp) return NULL;
-	for (size_t i = 1; i < friends_number_; i++)
+	for (int i = 1; i < friends_number_; i++)
 	{
 		this->FriendList.getNext();
 	}
@@ -198,7 +198,9 @@ bool Follower::AddLeader(string name, string email)
 	if (true == this->check_leader(email))
 	{
 		this->Leaders_to_follow.addHead(newLeader);
+			return true ;
 	}
+	return false;
 }
 
 LinkedList<FriendType> Follower::show_leaders()
@@ -219,6 +221,7 @@ bool Follower::check_friend_request(string email)
 		this->FriendRequests.getNext();
 		temp = this->FriendRequests.getData();
 	}
+	return true;
 }
 
 bool Follower::check_friend(string email)

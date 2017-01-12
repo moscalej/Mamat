@@ -2,11 +2,11 @@
 
 using namespace std;
 // Operator Overload for "=="
-bool operator==(const Message& lhs, const Message& rhs)
+/*bool operator==(const Message& lhs, const Message& rhs)
 {
 	if (lhs == rhs)	return true;
 	else return false;
-}
+}*/
 // Default Constructor
 Message::Message() {};
 // Constructor
