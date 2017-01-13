@@ -28,12 +28,14 @@ class MessageBox
 {
 public:
 	MessageBox();
+	
 	~MessageBox();
 
 	void Add(Message newMessage);
 	int Size();
 	int UnreadSize();
 	void Print();
+	
 	Result ReadMessage(int messageNum);
 private:
 	// To do

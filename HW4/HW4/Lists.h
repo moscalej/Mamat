@@ -8,7 +8,8 @@ using namespace std;
 // This is a template for our Lists. A modifiable list will be provided for each 
 // necessary type (Message List, Follower List, Friend list....etc).
 // Included are the required functions that can be executed on the lists.
-template <class T> class LinkedList
+template <class T> 
+class LinkedList
 {
 private:
 	listElem<T>* head_;
@@ -41,12 +42,16 @@ public:
 template<class T>
 LinkedList<T>::~LinkedList()
 {
-	while (this->size_ > 0)
+	while (NULL != this->head_)
 	{
-		this->currLocation_ = this->head_;
-		this->removeElem();
+		this->currLocation_ = head_;
+		this->head_ = this->head_->next;
+		
+		delete this->currLocation_;
 	}
-	//need to check later
+	
+
+	
 }
 
 
@@ -130,6 +135,7 @@ Result LinkedList<T>::removeElem()
 		listElem<T>* temp = currLocation_;
 		head_ = head_->next;
 		delete temp;
+		temp = NULL;
 		currLocation_ = NULL;
 		size_--;
 		return SUCCESS;
@@ -147,6 +153,7 @@ Result LinkedList<T>::removeElem()
 			temp2->next = NULL;
 			delete temp2;
 			currLocation_ = NULL;
+			temp2 = NULL;
 			size_--;
 			return SUCCESS;
 		}

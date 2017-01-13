@@ -10,9 +10,15 @@ using namespace std;
 
 class SocialNetwork {
 public:
-	SocialNetwork(){}
+	SocialNetwork()
+	{
+
+		follower_user_.~LinkedList();
+		leader_user_.~LinkedList();
+	
+	}
 	SocialNetwork(string name, string password);
-	~SocialNetwork() {} //<su much memory to reaease
+	//<su much memory to reaease
 
 
 	void AdminLogin(string password);

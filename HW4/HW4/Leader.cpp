@@ -11,6 +11,7 @@ Leader::Leader(string name, string email, string password)
 
 Leader::~Leader()
 {
+	this->Followers_of_user.~LinkedList();
 }
 
 Result Leader::AddFollower(string name,string email)

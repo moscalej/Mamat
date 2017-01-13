@@ -33,7 +33,12 @@ private:
 
 class Follower {
 public:
-	Follower() {}
+	Follower() 
+	{
+		FriendList.~LinkedList();
+		FriendRequests.~LinkedList();
+		Leaders_to_follow.~LinkedList();
+	}
 
 	Follower(string name, string email, string password);
 	~Follower() {
@@ -57,6 +62,7 @@ public:
 	Message SendMessage(string email, string subject, string content); ////need to check
 	void addNewMessage(Message newMessage);
 	int NumberUnreadMessage();
+	
 
 	/*this funtion will return the emails from their friend from 1 to the number of friends
 		 if there is an error will return null (sitrng is a pointer)*/

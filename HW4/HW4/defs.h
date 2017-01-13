@@ -2,7 +2,7 @@
 #define _DEFS_H_
 
 // Admin login
-#define ADMIN_LOGIN_SUCCESS "Hi, Administrator. Welcome to "
+#define ADMIN_LOGIN_SUCCESS "Hi, Administrator. Welcome to " << this->name_ 
 #define ADMIN_LOGIN_FAIL "Failed to login as admin"
 
 // Login
@@ -50,7 +50,7 @@
 #define REMOVE_FRIEND_FAIL "Not logged in or no such friend"
 
 // ShowMessageList (On success put this line in a loop. the variable "numMessage" starts from 1)
-#define SHOW_MESSAGE_LIST_SUCCESS curMessage->Display(numMessage); // Use without cout
+#define	SHOW_MESSAGE_LIST_SUCCESS temp->Display(i); // Use without cout
 #define SHOW_MESSAGE_LIST_FAIL "Not logged in"
 
 // ReadMessage

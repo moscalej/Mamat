@@ -51,6 +51,7 @@ bool Follower::ShowFriendRequests()
 			break;
 		}
 		curRequest = FriendRequests.getData();
+		i++;
 	}
 	return true;
 }
@@ -74,6 +75,7 @@ bool Follower::ShowFriendList()
 			break;
 		}
 		curFriend = FriendList.getData();
+		i++;
 	}
 	return true;
 
@@ -172,6 +174,8 @@ int Follower::NumberUnreadMessage()
 	return this->imbox_.UnreadSize();
 }
 
+
+
 string Follower::ShowFriendMail(int Friend_number) 
 {
 	int temp = NumberOfFriends();
@@ -218,7 +222,10 @@ bool Follower::check_friend_request(string email)
 		{
 			return false;
 		}
-		this->FriendRequests.getNext();
+		if (FAILURE == (this->FriendRequests.getNext() ))
+		{
+			break;
+		}
 		temp = this->FriendRequests.getData();
 	}
 	return true;
@@ -234,7 +241,10 @@ bool Follower::check_friend(string email)
 		{
 			return false;
 		}
-		this->FriendList.getNext();
+		if (FAILURE == (this->FriendList.getNext()))
+		{
+			break;
+		}
 		temp = this->FriendList.getData();
 	}
 	return true;
@@ -250,7 +260,10 @@ bool Follower::check_leader(string email)
 		{
 			return false;
 		}
-		this->Leaders_to_follow.getNext();
+		if (FAILURE == (this->Leaders_to_follow.getNext()))
+		{
+			break;
+		}
 		temp = this->Leaders_to_follow.getData();
 	}
 	return true;

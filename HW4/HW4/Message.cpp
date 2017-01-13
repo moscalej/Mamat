@@ -64,16 +64,15 @@ void MessageBox::Print()
 	{
 		return;
 	}
-	temp->Read();
-	for (int i = 1; i < messageListSize; i++)
+	
+	for (int i = 1; i < messageListSize+1; i++)
 	{
 		messageList.getNext();
+		SHOW_MESSAGE_LIST_SUCCESS
 		temp = this->messageList.getData();
 
-		READ_MESSAGE_SUCCESS
-
 	}
-	this->readSize = this->messageListSize;// We have read the entire list.
+	// We have read the entire list.
 
 }
 
