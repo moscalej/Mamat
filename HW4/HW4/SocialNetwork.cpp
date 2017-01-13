@@ -526,6 +526,35 @@ SocialNetwork::SocialNetwork(string name, string password)
 	activeFollower = NULL;
 }
 
+SocialNetwork::~SocialNetwork()
+{
+	Follower * temp_follower;
+	temp_follower = this->follower_user_.getHead();
+	while (temp_follower != NULL)
+	{
+		temp_follower->~Follower();
+		if (FAILURE == this->follower_user_.getNext())
+		{
+			break;
+		}
+		temp_follower = follower_user_.getData();
+	}
+	Leader * temp_Leader;
+	temp_Leader = this->leader_user_.getHead();
+	while (temp_follower != NULL)
+	{
+		temp_Leader->~Leader();
+		
+		if (FAILURE == this->leader_user_.getNext())
+		{
+			break;
+		}
+		temp_Leader = leader_user_.getData();
+	}
+	this->follower_user_.~LinkedList();
+	this->leader_user_.~LinkedList();
+}
+
 
 /*helper funtions*/
 Follower * SocialNetwork::SearchByEmailFollower(string email)
