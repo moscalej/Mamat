@@ -211,6 +211,8 @@ void SocialNetwork::DeleteUser(string email)
 
 
 	User = this->SearchByEmailFollower(email); // to set the iterator to the rigth place and we know is not null from the last part
+	clog << "this follower will be deestroy: " << User->GetEmail() << endl;
+	User->~Follower();
 	this->follower_user_.removeElem();
 	cout << DELETE_USER_SUCCESS << endl;
 	return;
@@ -257,6 +259,8 @@ void SocialNetwork::DeleteUser(string email)
 
 	}
 	User = this->SearchByEmailLeader(email);
+	clog << "this LEADER will be deestroy: " << User->GetEmail() << endl;
+	User->~Follower();
 	this->leader_user_.removeElem();
 	cout << DELETE_USER_SUCCESS << endl;
 	return;
@@ -532,6 +536,7 @@ SocialNetwork::~SocialNetwork()
 	temp_follower = this->follower_user_.getHead();
 	while (temp_follower != NULL)
 	{
+		clog << "this follower will be deestroy: " << temp_follower->GetEmail() << endl;
 		temp_follower->~Follower();
 		if (FAILURE == this->follower_user_.getNext())
 		{
@@ -543,6 +548,7 @@ SocialNetwork::~SocialNetwork()
 	temp_Leader = this->leader_user_.getHead();
 	while (temp_follower != NULL)
 	{
+		clog << "this leader will be destroy: " << temp_Leader->GetEmail() << endl;
 		temp_Leader->~Leader();
 		
 		if (FAILURE == this->leader_user_.getNext())

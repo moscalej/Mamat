@@ -41,7 +41,7 @@ public:
 	}
 
 	Follower(string name, string email, string password);
-	~Follower() {
+	virtual ~Follower() {
 	}
 
     string GetName() const;

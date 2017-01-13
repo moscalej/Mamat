@@ -28,6 +28,7 @@ public:
 	// Destructor
 	virtual ~LinkedList();
 
+
 	
 	Result addHead(T newHead);
 	Result removeElem();
@@ -42,14 +43,16 @@ public:
 template<class T>
 LinkedList<T>::~LinkedList()
 {
+	clog << "this list has :" << this->getSize()<< endl;
 	while (NULL != this->head_)
 	{
 		this->currLocation_ = head_;
 		this->head_ = this->head_->next;
-		
+		clog << "this element(list) will be destroy" << &(this->currLocation_->data) << endl;
 		delete this->currLocation_;
+		
 	}
-	
+	clog << "this list is been destroy:" << this << endl;
 
 	
 }
@@ -68,6 +71,7 @@ T* LinkedList<T>::getHead()
 	{
 		return NULL;
 	}
+	
 	currLocation_ = head_;
 	return &(head_->data);
 }

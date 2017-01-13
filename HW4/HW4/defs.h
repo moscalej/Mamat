@@ -77,6 +77,9 @@ template <class T>
 class listElem {
 public:
 	listElem() {};
+	~listElem() {
+		clog << "this element is been free" << endl;
+	}
 	T data;
 	listElem<T>* next;
 
