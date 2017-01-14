@@ -1,0 +1,107 @@
+CreateFollower Follower1 follower1@technion blabla
+CreateFollower Follower2 follower2@technion blabla
+CreateFollower Follower3 follower3@technion blabla
+CreateFollower Follower4 follower4@technion blabla
+CreateFollower Follower5 follower5@technion blabla
+CreateFollower Follower6 follower6@technion blabla
+CreateFollower Follower7 follower7@technion blabla
+CreateFollower Follower8 follower8@technion blabla
+CreateFollower Follower9 follower9@technion blabla
+CreateFollower Follower10 follower10@technion blabla
+CreateFollower Follower11 follower11@technion blabla
+CreateFollower Follower12 follower12@technion blabla
+CreateFollower Follower13 follower13@technion blabla
+CreateFollower Follower14 follower14@technion blabla
+CreateFollower Follower15 follower15@technion blabla
+CreateFollower Follower16 follower16@technion blabla
+CreateFollower Follower17 follower17@technion blabla
+CreateFollower Follower18 follower18@technion blabla
+CreateFollower Follower19 follower19@technion blabla
+CreateFollower Follower20 follower20@technion blabla
+AdminLogin 1234
+CreateLeader Leader1 leader1@technion bla
+CreateLeader Leader2 leader2@technion bla
+CreateLeader Leader3 leader3@technion bla
+CreateLeader Leader4 leader4@technion bla
+CreateLeader Leader5 leader5@technion bla
+Login follower1@technion blabla
+Follow leader1@technion
+Follow follower11@technion blabla
+Login follower2@technion blabla
+Follow leader1@technion
+Follow leader2@technion
+Login follower3@technion blabla
+Follow leader1@technion
+Follow leader2@technion
+Follow leader3@technion
+Login follower4@technion blabla
+Follow leader1@technion
+Follow leader2@technion
+Follow leader3@technion
+Follow leader4@technion
+Login follower5@technion blabla
+Follow leader1@technion
+Follow leader2@technion
+Follow leader3@technion
+Follow leader4@technion
+Follow leader5@technion
+Login leader5@technion bla
+Follow leader1@technion
+Login leader1@technion bla
+SendMessage
+leader1@technion
+selfsend
+seldsend
+Follow leader1@technion
+BroadcastMessage
+fisrt post from leader 1
+...
+AdminLogin 1234
+DeleteUser follower1@technion
+Login leader1@technion bla
+BroadcastMessage
+second post from leader 1
+...
+BroadcastMessage
+third post from leader 1
+...
+Login leader2@technion bla
+AdminLogin 1234
+DeleteUser leader5@technion
+Login follower5@technion blabla
+Login leader1@technion bla
+ReadMessage 2
+ShowMessageList
+AdminLogin 1234
+DeleteUser leader1@technion
+Login follower1@technion blabla
+Login follower6@technion blabla
+SendFriendRequest follower6@technion
+SendFriendRequest follower2@technion
+SendFriendRequest follower3@technion
+SendFriendRequest follower4@technion
+Login follower2@technion blabla
+SendFriendRequest follower6@technion
+SendFriendRequest follower2@technion
+SendFriendRequest follower6@technion
+Login follower6@technion blabla
+ShowFriendRequests
+Login follower2@technion blabla
+AcceptFriendRequest follower6@technion
+Login follower6@technion blabla
+ShowFriendRequests
+Login follower3@technion blabla
+AcceptFriendRequest follower6@technion
+AdminLogin 1234
+DeleteUser follower6@technion
+Login follower2@technion blabla
+ShowFriendList
+Login follower4@technion blabla
+ShowFriendRequests
+AcceptFriendRequest follower6@technion
+SendMessage
+follower6@technion
+fail
+fail
+Follow follower2@technion
+Exit

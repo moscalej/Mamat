@@ -53,6 +53,7 @@ LinkedList<T>::~LinkedList()
 		this->currLocation_ = head_;
 		this->head_ = this->head_->next;
 		//clog << this->getSize()<<")" << "this element(list) will be destroy: " << &(this->currLocation_->data) << endl;
+		delete this->currLocation_->data;
 		delete this->currLocation_;
 	
 	}
@@ -77,7 +78,7 @@ T* LinkedList<T>::getHead()
 	}
 	
 	currLocation_ = head_;
-	return &(head_->data);
+	return head_->data;
 }
 
 //*******************************************************************
@@ -96,13 +97,14 @@ Result LinkedList<T>::addHead(T newData)
 		listElem<T>* temp = new listElem<T>;
 		head_ = temp;
 		
-
+		T * new_datada = new T;
+		*new_datada = newData;
 		if (head_ == NULL)
 		{
 			delete head_;
 			return FAILURE;
 		}
-		head_->data = newData;
+		head_->data = new_datada;
 		head_->next = NULL;
 		size_++;
 		return SUCCESS;
@@ -112,6 +114,9 @@ Result LinkedList<T>::addHead(T newData)
 
 		listElem<T>* temp = new listElem<T>;
 		//temp = head_;
+		T * new_datada = new T;
+		*new_datada = newData;
+
 		if (temp == NULL)
 		{
 			return FAILURE;
@@ -119,7 +124,7 @@ Result LinkedList<T>::addHead(T newData)
 		//temp = head_;
 		temp->data = head_->data;
 		temp->next = head_->next;
-		head_->data = newData;
+		head_->data = new_datada;
 		head_->next = temp;
 		
 		size_++;
@@ -142,6 +147,7 @@ Result LinkedList<T>::removeElem()
 	{
 		listElem<T>* temp = currLocation_;
 		head_ = head_->next;
+		delete temp->data;
 		delete temp;
 		temp = NULL;
 		currLocation_ = NULL;
@@ -233,7 +239,7 @@ int LinkedList<T>::getSize()
 template <class T>
 T* LinkedList<T>::getData()
 {
-	return &(currLocation_->data);
+	return currLocation_->data;
 }
 
 #endif

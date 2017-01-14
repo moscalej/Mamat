@@ -88,7 +88,7 @@ public:
 			"of the type: " << typeid(*this).name() << endl;
 		count_--;
 	}
-	T data;
+	T * data;
 	listElem<T>* next;
 
 	listElem(T Ndata)

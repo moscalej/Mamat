@@ -10,7 +10,11 @@ using namespace std;
 void SocialNetwork::AdminLogin(string password)
 {
 	if (this->password_ == password) {
-		if (this->user_loged_on_ != OFFLINE) this->Logout();
+		if (this->user_loged_on_ != OFFLINE)
+		{
+			this->activeFollower = NULL;
+			this->activeLeader_ = NULL;
+		}
 		this->user_loged_on_ = ADMIN;
 		cout << ADMIN_LOGIN_SUCCESS << endl;
 		return;
@@ -51,7 +55,8 @@ void SocialNetwork::Login(string email, string password)
 	{
 		if (true == User2->isPassword(password))
 		{
-			if (this->user_loged_on_ != OFFLINE) {
+			if (this->user_loged_on_ != OFFLINE) 
+			{
 				this->activeFollower = NULL;
 				this->activeLeader_ = NULL;
 			}
@@ -94,6 +99,7 @@ void SocialNetwork::Logout()
 
 void SocialNetwork::FindUser(string partialName)
 {
+	
 
 	cout << "Followers:" << endl;
 	// Loop over all followers in network
@@ -208,7 +214,7 @@ void SocialNetwork::DeleteUser(string email)
 				{
 					continue;
 				}
-				TheLEader->RemoveFollower(User->GetEmail());
+				TheLEader->RemoveFollower(email);
 
 			}
 		}
@@ -220,6 +226,8 @@ void SocialNetwork::DeleteUser(string email)
 		clog << "this follower will be deestroy: " << User->GetEmail() << endl;
 		User->~Follower();
 		this->follower_user_.removeElem();
+		
+		
 		cout << DELETE_USER_SUCCESS << endl;
 		return;
 
@@ -267,13 +275,13 @@ void SocialNetwork::DeleteUser(string email)
 			{
 				continue;
 			}
-			TheLEader->RemoveFollower(User->GetEmail());
+			TheLEader->RemoveFollower(email);
 
 		}
 	}
-	User = this->SearchByEmailLeader(email);
-	clog << "this LEADER will be deestroy: " << User->GetEmail() << endl;
-	User->~Follower();
+	User2 = this->SearchByEmailLeader(email);
+	clog << "this LEADER will be deestroy: " << User2->GetEmail() << endl;
+	User2->~Leader();
 	this->leader_user_.removeElem();
 	cout << DELETE_USER_SUCCESS << endl;
 	return;
@@ -322,11 +330,12 @@ void SocialNetwork::BroadcastMessage(string subject, string content)
 
 void SocialNetwork::CreateFollower(string name, string email, string password)
 {
-	if (this->user_loged_on_ == OFFLINE)
-	{
-		cout << CREATE_FOLLOWER_FAIL << endl;
-		return;
-	}
+	//if (this->user_loged_on_ == OFFLINE)
+	//{
+	//	cout << CREATE_FOLLOWER_FAIL << endl;
+	//	return;
+	//}
+
 	Follower newUser(name, email, password);
 	if ((NULL != SearchByEmailFollower(email)) || (NULL != SearchByEmailLeader(email)))
 	{
@@ -400,13 +409,13 @@ void SocialNetwork::SendFriendRequest(string friendEmail)
 
 void SocialNetwork::AcceptFriendRequest(string friendEmail)
 {
-	Follower * newFriend;
+	
 	if ((this->user_loged_on_ == OFFLINE) || (ADMIN == this->user_loged_on_))
 	{
 		cout << ACCEPT_FRIEND_REQUEST_FAIL << endl;
 		return;
 	}
-
+	Follower * newFriend;
 
 	if ((0 == this->follower_user_.getSize()) && (0 == this->leader_user_.getSize())) {
 		cout << ACCEPT_FRIEND_REQUEST_FAIL << endl;
@@ -621,8 +630,9 @@ Leader * SocialNetwork::SearchByEmailLeader(string email)
 			{
 				return NULL;
 			}
+			User = leader_user_.getData();
 		}
-		User = leader_user_.getData();
+		
 
 	
 }
