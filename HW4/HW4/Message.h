@@ -2,8 +2,9 @@
 #define _MESSAGE_H_
 #include <iostream>
 #include <string>
-#include "defs.h"
-#include "Lists.h"
+
+#include "Lists.H"
+
 
 
 using namespace std;

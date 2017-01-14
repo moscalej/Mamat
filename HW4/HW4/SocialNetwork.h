@@ -1,9 +1,7 @@
 #ifndef _SOCIALNETWORK_H
 #define _SOCIALNETWORK_H
 
-#include "defs.H"
-#include "Follower.h"
-#include "Leader.h"
+#include "Leader.H"
 #include <string>
 using namespace std;
 

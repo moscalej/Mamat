@@ -1,0 +1,272 @@
+DEFOULT FOLLOWER HAS BEEN CREATE
+this leader has been createleader@technion
+DEFOULT FOLLOWER HAS BEEN CREATE
+a new alocation has been CREATE, the alocation number is: 1of the type: class listElem<class Leader>
+we start the: ~Leader()
+leader wants to be DESTROY :leader@technion
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen deleteleader@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the: ~Leader()
+leader wants to be DESTROY :leader@technion
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen deleteleader@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this followr has been createfollower@technion
+DEFOULT FOLLOWER HAS BEEN CREATE
+a new alocation has been CREATE, the alocation number is: 1of the type: class listElem<class Follower>
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen deletefollower@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen deletefollower@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this followr has been createfollower2@technion
+DEFOULT FOLLOWER HAS BEEN CREATE
+a new alocation has been CREATE, the alocation number is: 2of the type: class listElem<class Follower>
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen deletefollower2@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen deletefollower2@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this followr has been createfollower3@technion
+DEFOULT FOLLOWER HAS BEEN CREATE
+a new alocation has been CREATE, the alocation number is: 3of the type: class listElem<class Follower>
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen deletefollower3@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen deletefollower3@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this follower will be deestroy: follower3@technion
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen deletefollower3@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+a new alocation has been REMOVE, the alocation number is: 2of the type: class listElem<class Follower>
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen delete
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+a new alocation has been CREATE, the alocation number is: 1of the type: class listElem<class FriendType>
+a new alocation has been CREATE, the alocation number is: 2of the type: class listElem<class FriendType>
+a new alocation has been CREATE, the alocation number is: 3of the type: class listElem<class FriendType>
+a new alocation has been CREATE, the alocation number is: 4of the type: class listElem<class FriendType>
+a new alocation has been CREATE, the alocation number is: 5of the type: class listElem<class FriendType>
+a new alocation has been CREATE, the alocation number is: 6of the type: class listElem<class FriendType>
+a new alocation has been REMOVE, the alocation number is: 5of the type: class listElem<class FriendType>
+a new alocation has been CREATE, the alocation number is: 5of the type: class listElem<class FriendType>
+a new alocation has been REMOVE, the alocation number is: 4of the type: class listElem<class FriendType>
+a new alocation has been CREATE, the alocation number is: 4of the type: class listElem<class FriendType>
+a new alocation has been CREATE, the alocation number is: 5of the type: class listElem<class FriendType>
+a new alocation has been REMOVE, the alocation number is: 4of the type: class listElem<class FriendType>
+a new alocation has been CREATE, the alocation number is: 4of the type: class listElem<class FriendType>
+a new alocation has been REMOVE, the alocation number is: 3of the type: class listElem<class FriendType>
+a new alocation has been CREATE, the alocation number is: 1of the type: class listElem<class Message>
+a new alocation has been REMOVE, the alocation number is: 1of the type: class listElem<class FriendType>
+a new alocation has been REMOVE, the alocation number is: -1of the type: class listElem<class FriendType>
+we start the: ~SocialNetwork()
+this follower will be deestroy: follower2@technion
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen deletefollower2@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this follower will be deestroy: follower@technion
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :1
+a new alocation has been REMOVE, the alocation number is: -3of the type: class listElem<class FriendType>
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :1
+a new alocation has been REMOVE, the alocation number is: 0of the type: class listElem<class Message>
+we start the : ~LinkedList() with tiems :1
+this user has beeen deletefollower@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :1
+a new alocation has been REMOVE, the alocation number is: -5of the type: class listElem<class FriendType>
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :1
+this leader will be destroy: leader@technion
+we start the: ~Leader()
+leader wants to be DESTROY :leader@technion
+we start the : ~LinkedList() with tiems :1
+a new alocation has been REMOVE, the alocation number is: -7of the type: class listElem<class FriendType>
+we start the : ~LinkedList() with tiems :1
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :1
+a new alocation has been REMOVE, the alocation number is: -9of the type: class listElem<class FriendType>
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen deleteleader@technion
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :2
+a new alocation has been REMOVE, the alocation number is: 0of the type: class listElem<class Follower>
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen delete
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+a new alocation has been REMOVE, the alocation number is: -2of the type: class listElem<class Follower>
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :1
+this user has beeen delete
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :1
+a new alocation has been REMOVE, the alocation number is: 0of the type: class listElem<class Leader>
+we start the: ~Leader()
+leader wants to be DESTROY :
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :1
+we start the: ~Follower()
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :0
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+this user has beeen delete
+we start the : :~MessageBox()
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :0
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :1
+we start the : ~LinkedList() with tiems :2

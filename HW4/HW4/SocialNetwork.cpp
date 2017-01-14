@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <string>
-#include "SocialNetwork.h"
+#include "SocialNetwork.H"
 
 using namespace std;
 
