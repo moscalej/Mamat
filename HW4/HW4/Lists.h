@@ -24,6 +24,7 @@ public:
 		head_ = NULL;
 		currLocation_ = NULL;
 		size_ = 0;
+		
 	}
 	// Destructor
 	virtual ~LinkedList();
@@ -36,6 +37,8 @@ public:
 	T* getHead();
 	T* getData();
 	int getSize();
+
+	
 	//bool operator==(const T &a) {};
 };
 
@@ -43,16 +46,17 @@ public:
 template<class T>
 LinkedList<T>::~LinkedList()
 {
-	clog << "this list has :" << this->getSize()<< endl;
+	
+	clog << "we start the : ~LinkedList() with tiems :" << this->getSize()<< endl;
 	while (NULL != this->head_)
 	{
 		this->currLocation_ = head_;
 		this->head_ = this->head_->next;
-		clog << "this element(list) will be destroy" << &(this->currLocation_->data) << endl;
+		//clog << this->getSize()<<")" << "this element(list) will be destroy: " << &(this->currLocation_->data) << endl;
 		delete this->currLocation_;
-		
+	
 	}
-	clog << "this list is been destroy:" << this << endl;
+	
 
 	
 }

@@ -76,9 +76,17 @@ enum Result {FAILURE, SUCCESS};
 template <class T>
 class listElem {
 public:
-	listElem() {};
+	listElem() {
+		count_++;
+		clog << "a new alocation has been CREATE, the alocation number is: " << count_ <<
+			"of the type: "<< typeid(*this).name() <<endl;
+	}
+
 	~listElem() {
-		clog << "this element is been free" << endl;
+		count_--;
+		clog << "a new alocation has been REMOVE, the alocation number is: " << count_ <<
+			"of the type: " << typeid(*this).name() << endl;
+		count_--;
 	}
 	T data;
 	listElem<T>* next;
@@ -87,7 +95,12 @@ public:
 	{
 		data = Ndata;
 	}
+private:
+	static int count_;
 };
+
+template <class T>
+int listElem<T>::count_ = 0;
 typedef enum Current_state_{ADMIN,FOLOOW,LEAD,OFFLINE} Current_state;
 
 #endif

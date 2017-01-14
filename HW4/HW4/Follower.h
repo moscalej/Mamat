@@ -33,15 +33,22 @@ private:
 
 class Follower {
 public:
-	Follower() 
+	Follower()
 	{
-		FriendList.~LinkedList();
-		FriendRequests.~LinkedList();
-		Leaders_to_follow.~LinkedList();
+		this->email_ = "";
+		this->name_ = "";
+		
+
+		clog << "DEFOULT FOLLOWER HAS BEEN CREATE" << endl;
 	}
 
-	Follower(string name, string email, string password);
+	 Follower(string name, string email, string password);
 	virtual ~Follower() {
+		clog << "we start the: ~Follower()" << endl;
+		this->FriendList.~LinkedList();
+		this->FriendRequests.~LinkedList();
+		this->imbox_.~MessageBox();
+		clog << "this user has beeen delete" << email_ << endl;
 	}
 
     string GetName() const;

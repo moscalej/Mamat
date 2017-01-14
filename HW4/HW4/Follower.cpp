@@ -10,6 +10,7 @@ Follower::Follower(string name, string email, string password)
 	email_ = email;
 	password_ = password;
 	friends_number_ = 0;
+	clog << "this followr has been create" << email_ << endl;
 }
 
 string Follower::GetName() const
@@ -178,17 +179,16 @@ int Follower::NumberUnreadMessage()
 
 string Follower::ShowFriendMail(int Friend_number) 
 {
-	int temp = NumberOfFriends();
-	string gs;
+	int temp = this->NumberOfFriends();
 	FriendType * Momentary_firend = this->FriendList.getHead();
 	if (temp == 0 || Friend_number > temp) return NULL;
-	for (int i = 1; i < friends_number_; i++)
+	for (int i = 1; i < Friend_number; i++)
 	{
 		this->FriendList.getNext();
 	}
 	Momentary_firend = this->FriendList.getData();
 
-	return this->email_;
+	return Momentary_firend->GetEmail();
 }
 
 int Follower::NumberOfFriends() const

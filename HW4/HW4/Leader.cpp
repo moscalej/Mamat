@@ -7,10 +7,13 @@ Leader::Leader(string name, string email, string password)
 	this->email_ = email;
 	this->password_ = password;
 	this->name_ = name;
+	clog << "this leader has been create" << email << endl;
 }
 
 Leader::~Leader()
 {
+	clog << "we start the: ~Leader()" << endl;
+	clog << "leader wants to be DESTROY :"<<email_ << endl;
 	this->Followers_of_user.~LinkedList();
 }
 
@@ -24,7 +27,10 @@ Result Leader::AddFollower(string name,string email)
 		{
 			return FAILURE;
 		}
-		this->Followers_of_user.getNext();
+		if (FAILURE == this->Followers_of_user.getNext())
+		{
+			break;
+		}
 		temp = this->Followers_of_user.getData();
 	}
 	this->Followers_of_user.addHead(newFollower);
@@ -41,10 +47,14 @@ Result Leader::RemoveFollower(string email)
 		{
 			this->Followers_of_user.removeElem();
 			return SUCCESS;
+			this->NumberFolloers_--;
 		}
-		this->Followers_of_user.getNext();
+		if (FAILURE == this->Followers_of_user.getNext())
+		{
+			break;
+		}
 		temp = this->Followers_of_user.getData();
-		this->NumberFolloers_--;
+		
 	}
 	return FAILURE;
 }
@@ -54,7 +64,7 @@ int Leader::NumberOfFolowwers() const
 	return this->NumberFolloers_;
 }
 
-LinkedList<FriendType> Leader::SendBrodcast() const
+LinkedList<FriendType> Leader::SendBrodcast()
 {
 	return this->Followers_of_user;
 }

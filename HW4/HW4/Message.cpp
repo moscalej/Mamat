@@ -35,6 +35,7 @@ MessageBox::MessageBox()
 
 MessageBox::~MessageBox()
 {
+	clog << "we start the : :~MessageBox()" << endl;
 	this->messageList.~LinkedList();
 }
 // Adding a new message to our message box

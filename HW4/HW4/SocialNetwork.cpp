@@ -218,15 +218,16 @@ void SocialNetwork::DeleteUser(string email)
 	return;
 
 	}
-	User = this->SearchByEmailLeader(email);
+	Leader * User2;
+	User2 = this->SearchByEmailLeader(email);
 	// there is not such an user
-	if (User == NULL)
+	if (User2 == NULL)
 	{
 		cout << DELETE_USER_FAIL << endl;
 		return;
 	}
 	/*now we know the user is a leader and we search on the lider lybery*/
-	Number_of_friends = User->NumberOfFriends();
+	Number_of_friends = User2->NumberOfFriends();
 	for (int i = 0; i < Number_of_friends; i++)
 	{
 
@@ -532,6 +533,7 @@ SocialNetwork::SocialNetwork(string name, string password)
 
 SocialNetwork::~SocialNetwork()
 {
+	clog << "we start the: ~SocialNetwork()"  << endl;
 	Follower * temp_follower;
 	temp_follower = this->follower_user_.getHead();
 	while (temp_follower != NULL)
