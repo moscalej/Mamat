@@ -64,9 +64,22 @@ int Leader::NumberOfFolowwers() const
 	return this->NumberFolloers_;
 }
 
-LinkedList<FriendType> Leader::SendBrodcast()
+string Leader::mail_of_followerNumber(int number)
 {
-	return this->Followers_of_user;
+
+		if (number <1 || number > this->Followers_of_user.getSize()) return "";
+		FriendType * temp = this->Followers_of_user.getHead();
+		for (int i = 1; i < number; i++)
+		{
+			this->Followers_of_user.getNext();
+		}
+		temp = this->Followers_of_user.getData();
+		return temp->GetEmail();
+
+	
+	
 }
+
+
 
 

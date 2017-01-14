@@ -12,7 +12,8 @@ public:
 	Result AddFollower(string name, string email);
 	Result RemoveFollower(string email);
 	int NumberOfFolowwers() const;
-	LinkedList<FriendType> SendBrodcast();
+	string mail_of_followerNumber(int number);
+	
 	
 private:
 	LinkedList<FriendType> Followers_of_user;

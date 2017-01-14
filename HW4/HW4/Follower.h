@@ -20,6 +20,11 @@ public:
 	FriendType(string name, string email);
 	string GetName() const;
 	string GetEmail() const;
+	void giveName(string name, string email) {
+		this->name_=name;
+		this->email_ = email;
+
+	}
 
 private:
 
@@ -76,7 +81,9 @@ public:
 	string ShowFriendMail(int Friend_number);
 	int NumberOfFriends() const;
 	bool AddLeader(string name, string email);
-	LinkedList<FriendType> show_leaders();
+
+	int number_of_leaders();
+	string show_leaders_email(int number);
 protected:
 	bool check_friend_request(string email);
 	bool check_friend(string email);

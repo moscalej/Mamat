@@ -207,9 +207,22 @@ bool Follower::AddLeader(string name, string email)
 	return false;
 }
 
-LinkedList<FriendType> Follower::show_leaders()
+int Follower::number_of_leaders()
 {
-	return this->Leaders_to_follow;
+	return this->Leaders_to_follow.getSize();
+}
+
+string Follower::show_leaders_email(int number)
+{
+	if (number <1 || number > this->Leaders_to_follow.getSize()) return "";
+	FriendType * temp = this->Leaders_to_follow.getHead();
+	for (int i = 1; i < number; i++)
+	{
+		this->Leaders_to_follow.getNext();
+	}
+	temp = this->Leaders_to_follow.getData();
+	return temp->GetEmail();
+
 }
 
 bool Follower::check_friend_request(string email)

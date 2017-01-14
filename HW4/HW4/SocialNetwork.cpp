@@ -192,30 +192,36 @@ void SocialNetwork::DeleteUser(string email)
 			}
 			UserFriend->RemoveFriend(User->GetEmail());
 		}
-		FriendType * lead;
-		LinkedList<FriendType> leaders = User->show_leaders();
+		
+		User = this->SearchByEmailFollower(email);
+		string email_to_see;
 		Leader * TheLEader;
-		lead = leaders.getHead();
-		for (int i = 0; i < leaders.getSize(); i++)
+		int numberLEADERs = User->number_of_leaders();
+		if (numberLEADERs != 0)
 		{
-			TheLEader = this->SearchByEmailLeader(lead->GetEmail());
-			if (TheLEader == NULL)
+			
+			for (int i = 0; i < numberLEADERs; i++)
 			{
-				continue;
-			}
-			TheLEader->RemoveFollower(User->GetEmail());
+				email_to_see = User->show_leaders_email(i+1);
+				TheLEader = this->SearchByEmailLeader(email_to_see);
+				if (TheLEader == NULL)
+				{
+					continue;
+				}
+				TheLEader->RemoveFollower(User->GetEmail());
 
+			}
 		}
 
 
 
 
-	User = this->SearchByEmailFollower(email); // to set the iterator to the rigth place and we know is not null from the last part
-	clog << "this follower will be deestroy: " << User->GetEmail() << endl;
-	User->~Follower();
-	this->follower_user_.removeElem();
-	cout << DELETE_USER_SUCCESS << endl;
-	return;
+		User = this->SearchByEmailFollower(email); // to set the iterator to the rigth place and we know is not null from the last part
+		clog << "this follower will be deestroy: " << User->GetEmail() << endl;
+		User->~Follower();
+		this->follower_user_.removeElem();
+		cout << DELETE_USER_SUCCESS << endl;
+		return;
 
 	}
 	Leader * User2;
@@ -245,19 +251,25 @@ void SocialNetwork::DeleteUser(string email)
 		}
 		UserFriend->RemoveFriend(User->GetEmail());
 	}
-	FriendType * lead;
-	LinkedList<FriendType> leaders = User->show_leaders();
+	
+	User2 = this->SearchByEmailLeader(email);
+	string email_to_see;
 	Leader * TheLEader;
-	lead = leaders.getHead();
-	for (int i = 0; i < leaders.getSize(); i++)
+	int numberLEADERs = User2->number_of_leaders();
+	if (numberLEADERs != 0)
 	{
-		TheLEader = this->SearchByEmailLeader(lead->GetEmail());
-		if (TheLEader == NULL)
-		{
-			continue;
-		}
-		TheLEader->RemoveFollower(User->GetEmail());
 
+		for (int i = 0; i < numberLEADERs; i++)
+		{
+			email_to_see = User2->show_leaders_email(i + 1);
+			TheLEader = this->SearchByEmailLeader(email_to_see);
+			if (TheLEader == NULL)
+			{
+				continue;
+			}
+			TheLEader->RemoveFollower(User->GetEmail());
+
+		}
 	}
 	User = this->SearchByEmailLeader(email);
 	clog << "this LEADER will be deestroy: " << User->GetEmail() << endl;
@@ -274,18 +286,24 @@ void SocialNetwork::BroadcastMessage(string subject, string content)
 		cout << BROADCAST_MESSAGE_FAIL << endl;
 		return;
 	}
-	LinkedList<FriendType> Followers = this->activeLeader_->SendBrodcast();
-	FriendType * destiny = Followers.getHead();
+	int number_followers = this->activeLeader_->NumberOfFolowwers();
+	if (0== number_followers)
+	{
+		cout << BROADCAST_MESSAGE_FAIL << endl; // need to be check
+		return;
+	}
+	string destiny;
 	Follower * destiny_user;
 	Message newMessae(this->activeLeader_->GetEmail(), subject, content);
-	while (destiny != NULL)
+	for (int i = 0; i < number_followers; i++)
 	{
-		if (NULL != (destiny_user = this->SearchByEmailFollower(destiny->GetEmail())))
+		destiny = this->activeLeader_->mail_of_followerNumber(i + 1);
+		if (NULL != (destiny_user = this->SearchByEmailFollower(destiny)))
 		{
 			destiny_user->addNewMessage(newMessae);
 			
 		}
-		else if (NULL != (destiny_user = this->SearchByEmailLeader(destiny->GetEmail())))
+		else if (NULL != (destiny_user = this->SearchByEmailLeader(destiny)))
 		{
 			destiny_user->addNewMessage(newMessae);
 			
@@ -295,11 +313,7 @@ void SocialNetwork::BroadcastMessage(string subject, string content)
 
 		}
 
-		if (FAILURE == Followers.getNext() )
-		{
-			break;
-		}
-		destiny = Followers.getData();
+
 	}
 
 	cout << BROADCAST_MESSAGE_SUCCESS << endl;
