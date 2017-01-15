@@ -40,6 +40,7 @@ Result Leader::AddFollower(string name,string email)
 
 Result Leader::RemoveFollower(string email)
 {
+	if (this->Followers_of_user.getSize() == 0) return SUCCESS;
 	FriendType * temp = this->Followers_of_user.getHead();
 	while (temp != NULL)
 	{

@@ -9,7 +9,7 @@ Follower::Follower(string name, string email, string password)
 	name_ = name;
 	email_ = email;
 	password_ = password;
-	friends_number_ = 0;
+	
 	clog << "this followr has been create" << email_ << endl;
 }
 
@@ -93,6 +93,14 @@ Result Follower::AddFriendRequest(string name, string email)
 	return FAILURE;
 }
 
+Result Follower::AddFriend(string name, string email)
+{
+	FriendType newfriend(name, email);
+	
+	if (false ==  this->check_friend( email)) return FAILURE;
+	return this->FriendList.addHead(newfriend);
+}
+
 Result Follower::AcceptFriendRequest(string email)
 {
 	if (0 == FriendRequests.getSize()) return FAILURE;
@@ -107,9 +115,36 @@ Result Follower::AcceptFriendRequest(string email)
 				this->FriendRequests.removeElem();
 				return FAILURE;
 			}
-			this->FriendList.addHead(newfriend);// need to check if already friends
-			this->friends_number_ = this->friends_number_++;
+			if (SUCCESS == this->AddFriend(temp->GetName(), temp->GetEmail()))
+			{
+				
+				this->FriendRequests.removeElem();
+				if (FAILURE == (this->removeFriendRequest(email)))
+				{
+					return FAILURE;
+				}
+				return SUCCESS;
+			}
+		}
+
+		temp = FriendRequests.getData();
+	}
+
+}
+
+Result Follower::removeFriendRequest(string email)
+{
+	if (this->FriendRequests.getSize() == 0) return SUCCESS;
+	{
+
+	}
+	FriendType * temp = this->FriendRequests.getHead();
+	while (true)
+	{	
+		if (temp->GetEmail() == email)
+		{
 			this->FriendRequests.removeElem();
+			
 			return SUCCESS;
 		}
 		if (FAILURE == (this->FriendRequests.getNext()))
@@ -117,8 +152,9 @@ Result Follower::AcceptFriendRequest(string email)
 			return FAILURE;
 		}
 		temp = FriendRequests.getData();
-	}
 
+	}
+	return FAILURE;
 }
 
 Result Follower::RemoveFriend(string email)
@@ -129,8 +165,9 @@ Result Follower::RemoveFriend(string email)
 	{
 		if (temp->GetEmail() == email)
 		{
+
 			this->FriendList.removeElem();
-			this->friends_number_ = this->friends_number_ - 1;
+			
 			return SUCCESS;
 		}
 		if (FAILURE == (this->FriendList.getNext()))
@@ -191,9 +228,10 @@ string Follower::ShowFriendMail(int Friend_number)
 	return Momentary_firend->GetEmail();
 }
 
-int Follower::NumberOfFriends() const
+int Follower::NumberOfFriends() 
 {
-	return this->friends_number_;
+
+	return this->FriendList.getSize();;
 }
 
 bool Follower::AddLeader(string name, string email)
@@ -242,6 +280,30 @@ bool Follower::check_friend_request(string email)
 		temp = this->FriendRequests.getData();
 	}
 	return true;
+}
+
+Result Follower::removeLeader(string email)
+{
+	
+
+	if (0 == Leaders_to_follow.getSize()) return FAILURE;
+	FriendType * temp = Leaders_to_follow.getHead();
+	while (true)
+	{
+		if (temp->GetEmail() == email)
+		{
+
+			this->Leaders_to_follow.removeElem();
+
+			return SUCCESS;
+		}
+		if (FAILURE == (this->Leaders_to_follow.getNext()))
+		{
+			return FAILURE;
+		}
+		temp = Leaders_to_follow.getData();
+	}
+	return FAILURE;
 }
 
 bool Follower::check_friend(string email)

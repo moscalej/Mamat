@@ -49,8 +49,8 @@ public:
 	 Follower(string name, string email, string password);
 	virtual ~Follower() {
 		clog << "we start the: ~Follower()" << endl;
-		this->FriendList.~LinkedList();
-		this->FriendRequests.~LinkedList();
+		this->FriendList.listClean();
+		this->FriendRequests.listClean();
 		this->imbox_.~MessageBox();
 		clog << "this user has beeen delete" << email_ << endl;
 	}
@@ -63,7 +63,9 @@ public:
 	bool ShowFriendRequests();
 	bool ShowFriendList();
 	Result AddFriendRequest(string name, string email); // <--- important to check that cant befriend self or already friends
+	Result AddFriend(string name, string email);
 	Result AcceptFriendRequest(string email);
+	Result removeFriendRequest(string email);
 	Result RemoveFriend(string email);
 	int NumFriendRequest();
 
@@ -78,19 +80,21 @@ public:
 	/*this funtion will return the emails from their friend from 1 to the number of friends
 		 if there is an error will return null (sitrng is a pointer)*/
 	string ShowFriendMail(int Friend_number);
-	int NumberOfFriends() const;
+	int NumberOfFriends();
 	bool AddLeader(string name, string email);
 
 	int number_of_leaders();
 	string show_leaders_email(int number);
-protected:
 	bool check_friend_request(string email);
+	Result removeLeader(string email);
+protected:
+	
 	bool check_friend(string email);
 	bool check_leader(string email); // true means there is not such a person
 	string name_;
 	string email_;
 	string password_;
-	int friends_number_;
+	
 	LinkedList<FriendType> FriendList;
 	LinkedList<FriendType> FriendRequests;
 	LinkedList<FriendType> Leaders_to_follow;

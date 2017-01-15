@@ -1,3 +1,4 @@
 ﻿  SocialNetwork.cpp
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw4\hw4\socialnetwork.cpp(169): warning C4101: 'Number_of_friends': unreferenced local variable
   SocialNetwork.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\Github\Mamat\HW4\SocialNetwork\Debug\SocialNetwork.exe
   SocialNetwork.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\Github\Mamat\HW4\SocialNetwork\Debug\SocialNetwork.pdb (Full PDB)

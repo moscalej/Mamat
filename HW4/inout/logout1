@@ -73,14 +73,14 @@ Notifications: 3 unread messages, 0 friend requests.
 Hi, Leader1. Welcome to MamatNet
 Notifications: 3 unread messages, 0 friend requests.
 From: leader1@technion
-Subject: 
-Content: 
+Subject: second post from leader 1
+Content: ...
 1) (Unread) From: leader1@technion
-Subject: 
+Subject: third post from leader 1
 2) From: leader1@technion
-Subject: 
+Subject: second post from leader 1
 3) (Unread) From: leader1@technion
-Subject: 
+Subject: fisrt post from leader 1
 Hi, Administrator. Welcome to MamatNet
 User deleted
 User name or password incorrect
@@ -93,7 +93,6 @@ Request Sent
 Hi, Follower2. Welcome to MamatNet
 Notifications: 3 unread messages, 1 friend requests.
 Request Sent
-Not logged in ,or user does not exist, or cannot befriend self, or already friends
 Not logged in ,or user does not exist, or cannot befriend self, or already friends
 Not logged in ,or user does not exist, or cannot befriend self, or already friends
 Hi, Follower6. Welcome to MamatNet
@@ -112,8 +111,7 @@ User deleted
 Hi, Follower2. Welcome to MamatNet
 Notifications: 3 unread messages, 0 friend requests.
 Hi, Follower4. Welcome to MamatNet
-Notifications: 3 unread messages, 1 friend requests.
-1) Follower6: follower6@technion
+Notifications: 3 unread messages, 0 friend requests.
 Not logged in or no such request
 Email: Subject: Content: Not logged in or no such friend
 Not logged in, or no such leader, or already following
