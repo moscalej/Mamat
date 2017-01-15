@@ -42,7 +42,10 @@ MessageBox::~MessageBox()
 // Here we are adding a COPY of the message.
 void MessageBox::Add(Message newMessage)
 {
-	messageList.addHead(newMessage);
+	
+	Message * message = new Message;
+	*message = newMessage;
+	messageList.addHead(message);
 	messageListSize++;
 }
 

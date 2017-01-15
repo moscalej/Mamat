@@ -85,10 +85,13 @@ bool Follower::ShowFriendList()
 
 Result Follower::AddFriendRequest(string name, string email)
 {
+	
 	FriendType temp(name, email);
 	if ((true == check_friend_request(email)) && (true == check_friend(email)))
 	{
-		return this->FriendRequests.addHead(temp);
+		FriendType * pointerttemp = new FriendType;
+		*pointerttemp = temp;
+		return this->FriendRequests.addHead(pointerttemp);
 	}
 	return FAILURE;
 }
@@ -98,7 +101,9 @@ Result Follower::AddFriend(string name, string email)
 	FriendType newfriend(name, email);
 	
 	if (false ==  this->check_friend( email)) return FAILURE;
-	return this->FriendList.addHead(newfriend);
+	FriendType  *pointerttemp = new FriendType;
+	*pointerttemp = newfriend;
+	return this->FriendList.addHead(pointerttemp);
 }
 
 Result Follower::AcceptFriendRequest(string email)
@@ -237,9 +242,12 @@ int Follower::NumberOfFriends()
 bool Follower::AddLeader(string name, string email)
 {
 	FriendType newLeader(name, email);
+	
 	if (true == this->check_leader(email))
 	{
-		this->Leaders_to_follow.addHead(newLeader);
+		FriendType * Newle = new FriendType;
+		*Newle = newLeader;
+		this->Leaders_to_follow.addHead(Newle);
 			return true ;
 	}
 	return false;
@@ -304,6 +312,13 @@ Result Follower::removeLeader(string email)
 		temp = Leaders_to_follow.getData();
 	}
 	return FAILURE;
+}
+
+void Follower::set_basics(string name, string email, string password)
+{
+	name_ = name;
+	email_ = email;
+	password_ = password;
 }
 
 bool Follower::check_friend(string email)

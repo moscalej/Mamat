@@ -149,12 +149,14 @@ void SocialNetwork::CreateLeader(string name, string email, string password)
 		cout << CREATE_LEADER_FAIL << endl;
 		return;
 	}
-	Leader newleader(name, email, password);
+	Leader * newleader = new Leader;
+	newleader->set_basics(name, email, password);
 	if (SUCCESS == (this->leader_user_.addHead(newleader)))
 	{
 		cout << CREATE_LEADER_SUCCESS << endl;
 		return;
 	}
+	delete newleader;
 	cout << CREATE_LEADER_FAIL << endl;
 }
 
@@ -166,7 +168,7 @@ void SocialNetwork::CreateLeader(string name, string email, string password)
   this search will hapen from the follower list and then from the leaders list*/
 void SocialNetwork::DeleteUser(string email)
 {
-	int Number_of_friends;
+	
 	if (ADMIN != this->user_loged_on_)
 	{
 		cout << DELETE_USER_FAIL << endl;
@@ -283,20 +285,26 @@ void SocialNetwork::CreateFollower(string name, string email, string password)
 	//	return;
 	//}
 
-	Follower newUser(name, email, password);
+
 	if ((NULL != SearchByEmailFollower(email)) || (NULL != SearchByEmailLeader(email)))
 	{
 		cout << CREATE_FOLLOWER_FAIL << endl;
 		return;
 	}
+	
+	Follower * newUser = new Follower;
+	
+	//newUser->set_basics(name, email, password);
+	newUser->set_basics(name, email, password);
 	if (SUCCESS == (this->follower_user_.addHead(newUser)))
 	{
 		cout << CREATE_FOLLOWER_SUCCESS << endl;
-		_CrtDumpMemoryLeaks();
+		
 		return;
 	}
+	delete newUser;
 	cout << CREATE_FOLLOWER_FAIL << endl;
-	_CrtDumpMemoryLeaks();
+	
 }
 
 void SocialNetwork::ShowFriendRequests()
@@ -545,7 +553,7 @@ SocialNetwork::~SocialNetwork()
 	}
 	Leader * temp_Leader;
 	temp_Leader = this->leader_user_.getHead();
-	while (temp_follower != NULL)
+	while ( NULL != temp_Leader)
 	{
 		clog << "this leader will be destroy: " << temp_Leader->GetEmail() << endl;
 		temp_Leader->~Leader();
@@ -556,8 +564,7 @@ SocialNetwork::~SocialNetwork()
 		}
 		temp_Leader = leader_user_.getData();
 	}
-	this->follower_user_.~LinkedList();
-	this->leader_user_.~LinkedList();
+
 }
 
 

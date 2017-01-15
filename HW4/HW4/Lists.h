@@ -31,7 +31,7 @@ public:
 
 
 	
-	Result addHead(T newHead);
+	Result addHead(T * newHead);
 	Result removeElem();
 	Result getNext();
 	T* getHead();
@@ -74,7 +74,7 @@ LinkedList<T>::~LinkedList()
 		delete this->currLocation_;
 	
 	}
-	
+	this->currLocation_ = NULL;
 
 	
 }
@@ -105,23 +105,24 @@ T* LinkedList<T>::getHead()
 //* {SUCCESS,FAILURE}
 //*******************************************************************
 template <class T>
-Result LinkedList<T>::addHead(T newData)
+Result LinkedList<T>::addHead(T * newData)
 {
 	//if (DoesDataExist(newData) == SUCCESS) return FAILURE;// Data already exist in our list!!
 	
 	if (head_ == NULL) // If our list is empty
 	{
 		listElem<T>* temp = new listElem<T>;
-		head_ = temp;
 		
-		T * new_datada = new T;
-		*new_datada = newData;
-		if (head_ == NULL)
+		
+		
+		
+		if (temp == NULL)
 		{
-			delete head_;
+			delete temp;
 			return FAILURE;
 		}
-		head_->data = new_datada;
+		head_ = temp;
+		head_->data = newData;
 		head_->next = NULL;
 		size_++;
 		return SUCCESS;
@@ -131,18 +132,16 @@ Result LinkedList<T>::addHead(T newData)
 
 		listElem<T>* temp = new listElem<T>;
 		//temp = head_;
-		T * new_datada = new T;
-		*new_datada = newData;
+		
 
 		if (temp == NULL)
 		{
 			return FAILURE;
 		}
 		//temp = head_;
-		temp->data = head_->data;
-		temp->next = head_->next;
-		head_->data = new_datada;
-		head_->next = temp;
+		temp->data = newData;
+		temp->next = head_;
+		head_ = temp;
 		
 		size_++;
 		return SUCCESS;

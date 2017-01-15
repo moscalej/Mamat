@@ -33,7 +33,9 @@ Result Leader::AddFollower(string name,string email)
 		}
 		temp = this->Followers_of_user.getData();
 	}
-	this->Followers_of_user.addHead(newFollower);
+	FriendType * Newle = new FriendType;
+	*Newle = newFollower;
+	this->Followers_of_user.addHead(Newle);
 	this->NumberFolloers_++;
 	return SUCCESS;
 }

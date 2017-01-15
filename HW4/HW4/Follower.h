@@ -87,6 +87,8 @@ public:
 	string show_leaders_email(int number);
 	bool check_friend_request(string email);
 	Result removeLeader(string email);
+
+	void set_basics(string name, string email, string password);
 protected:
 	
 	bool check_friend(string email);
