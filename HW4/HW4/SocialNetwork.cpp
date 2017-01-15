@@ -292,9 +292,11 @@ void SocialNetwork::CreateFollower(string name, string email, string password)
 	if (SUCCESS == (this->follower_user_.addHead(newUser)))
 	{
 		cout << CREATE_FOLLOWER_SUCCESS << endl;
+		_CrtDumpMemoryLeaks();
 		return;
 	}
 	cout << CREATE_FOLLOWER_FAIL << endl;
+	_CrtDumpMemoryLeaks();
 }
 
 void SocialNetwork::ShowFriendRequests()
