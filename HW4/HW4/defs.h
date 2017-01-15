@@ -78,20 +78,20 @@ class listElem {
 public:
 	listElem() {
 		count_++;
-		clog << "a new alocation has been CREATE, the alocation number is: " << count_ <<
-			"of the type: "<< typeid(*this).name() <<endl;
+		//clog << "a new alocation has been CREATE, the alocation number is: " << count_ <<
+			//"of the type: "<< typeid(*this).name() <<endl;
 	}
 
 	~listElem() {
 		count_--;
-		clog << "a new alocation has been REMOVE, the alocation number is: " << count_ <<
-			"of the type: " << typeid(*this).name() << endl;
-		count_--;
+	//	clog << "a new alocation has been REMOVE, the alocation number is: " << count_ <<
+		//	"of the type: " << typeid(*this).name() << endl;
+		
 	}
 	T * data;
 	listElem<T>* next;
 
-	listElem(T Ndata)
+	listElem(T * Ndata) //
 	{
 		data = Ndata;
 	}

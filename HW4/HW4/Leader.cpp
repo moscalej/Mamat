@@ -12,9 +12,7 @@ Leader::Leader(string name, string email, string password)
 
 Leader::~Leader()
 {
-	clog << "we start the: ~Leader()" << endl;
-	clog << "leader wants to be DESTROY :"<<email_ << endl;
-	this->Followers_of_user.~LinkedList();
+	
 }
 
 Result Leader::AddFollower(string name,string email)

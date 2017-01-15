@@ -48,11 +48,8 @@ public:
 
 	 Follower(string name, string email, string password);
 	virtual ~Follower() {
-		clog << "we start the: ~Follower()" << endl;
-		this->FriendList.listClean();
-		this->FriendRequests.listClean();
-		this->imbox_.~MessageBox();
-		clog << "this user has beeen delete" << email_ << endl;
+		//this->FriendRequests.~LinkedList();
+		//->FriendList.~LinkedList();
 	}
 
     string GetName() const;

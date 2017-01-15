@@ -27,7 +27,7 @@ public:
 		
 	}
 	// Destructor
-	virtual ~LinkedList();
+	 ~LinkedList();
 
 
 	
@@ -65,14 +65,18 @@ LinkedList<T>::~LinkedList()
 {
 	
 	clog << "we start the : ~LinkedList() with tiems :" << this->getSize()<< endl;
-	while (NULL != this->head_)
+	if (this->head_ != NULL)
 	{
-		this->currLocation_ = head_;
-		this->head_ = this->head_->next;
-		//clog << this->getSize()<<")" << "this element(list) will be destroy: " << &(this->currLocation_->data) << endl;
-		delete this->currLocation_->data;
-		delete this->currLocation_;
-	
+
+		while (NULL != this->head_)
+		{
+			this->currLocation_ = head_;
+			this->head_ = this->head_->next;
+			//clog << this->getSize()<<")" << "this element(list) will be destroy: " << &(this->currLocation_->data) << endl;
+			delete this->currLocation_->data;
+			delete this->currLocation_;
+
+		}
 	}
 	this->currLocation_ = NULL;
 

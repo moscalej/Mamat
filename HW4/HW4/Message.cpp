@@ -35,8 +35,8 @@ MessageBox::MessageBox()
 
 MessageBox::~MessageBox()
 {
-	clog << "we start the : :~MessageBox()" << endl;
-	this->messageList.listClean();
+	//clog << "we start the : :~MessageBox()" << endl;
+	//this->messageList.listClean();
 }
 // Adding a new message to our message box
 // Here we are adding a COPY of the message.
