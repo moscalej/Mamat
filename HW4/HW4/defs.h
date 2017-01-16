@@ -84,6 +84,8 @@ public:
 
 	~listElem() {
 		count_--;
+		//delete this->data;
+		
 	//	clog << "a new alocation has been REMOVE, the alocation number is: " << count_ <<
 		//	"of the type: " << typeid(*this).name() << endl;
 		

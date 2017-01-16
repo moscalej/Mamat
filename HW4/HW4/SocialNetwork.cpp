@@ -29,12 +29,12 @@ we could build a global neutral pointer and cast diferent types wehn we search i
 void SocialNetwork::Login(string email, string password)
 {
 
-	if ((0 == this->follower_user_.getSize()) && (0 == this->leader_user_.getSize())) {
+	if ((0 == this->follower_user_->getSize()) && (0 == this->leader_user_->getSize())) {
 		cout << LOGIN_FAIL << endl;
 		return;
 	}
 	Follower * User = this->SearchByEmailFollower(email);
-	
+
 	if (User != NULL)
 	{
 		if (true == User->isPassword(password))
@@ -57,7 +57,7 @@ void SocialNetwork::Login(string email, string password)
 	{
 		if (true == User2->isPassword(password))
 		{
-			if (this->user_loged_on_ != OFFLINE) 
+			if (this->user_loged_on_ != OFFLINE)
 			{
 				this->activeFollower = NULL;
 				this->activeLeader_ = NULL;
@@ -101,12 +101,12 @@ void SocialNetwork::Logout()
 
 void SocialNetwork::FindUser(string partialName)
 {
-	
+
 
 	cout << "Followers:" << endl;
 	// Loop over all followers in network
-	int number_followers = this->follower_user_.getSize();
-	Follower * curFollower = this->follower_user_.getHead();
+	int number_followers = this->follower_user_->getSize();
+	Follower * curFollower = this->follower_user_->getHead();
 	for (int i = 0;i < number_followers; ++i)
 	{
 
@@ -114,11 +114,11 @@ void SocialNetwork::FindUser(string partialName)
 		{
 			cout << i + 1 << ") " << curFollower->GetName() << ": " << curFollower->GetEmail() << endl;
 		}
-		this->follower_user_.getNext();
-		curFollower = follower_user_.getData();
+		this->follower_user_->getNext();
+		curFollower = follower_user_->getData();
 	}
-	number_followers = this->leader_user_.getSize();
-	Leader * curLeader = this->leader_user_.getData();
+	number_followers = this->leader_user_->getSize();
+	Leader * curLeader = this->leader_user_->getData();
 	cout << "Leaders:" << endl;
 	// Loop over all leaders in network
 	for (int i = 0; i < number_followers; ++i)
@@ -127,8 +127,8 @@ void SocialNetwork::FindUser(string partialName)
 		{
 			cout << i + 1 << ") " << curLeader->GetName() << ": " << curLeader->GetEmail() << endl;
 		}
-		this->follower_user_.getNext();
-		curLeader = this->leader_user_.getData();
+		this->follower_user_->getNext();
+		curLeader = this->leader_user_->getData();
 	}
 }
 
@@ -136,22 +136,22 @@ void SocialNetwork::FindUser(string partialName)
 
 void SocialNetwork::CreateLeader(string name, string email, string password)
 {
-	
+
 	if (this->user_loged_on_ != ADMIN)
 	{
 		cout << CREATE_LEADER_FAIL << endl;
 		return;
 	}
 	Leader * temp;
-	
+
 	if (NULL != (temp = SearchByEmailLeader(email)))
 	{
 		cout << CREATE_LEADER_FAIL << endl;
 		return;
 	}
-	Leader * newleader = new Leader;
-	newleader->set_basics(name, email, password);
-	if (SUCCESS == (this->leader_user_.addHead(newleader)))
+	Leader * newleader = new Leader(name, email, password);
+	
+	if (SUCCESS == (this->leader_user_->addHead(newleader)))
 	{
 		cout << CREATE_LEADER_SUCCESS << endl;
 		return;
@@ -162,59 +162,59 @@ void SocialNetwork::CreateLeader(string name, string email, string password)
 
 
 /*this funtion will search on the Social network for the user  by his email
-  once it found it will go throuw the user friends and reach the emails for each 
+  once it found it will go throuw the user friends and reach the emails for each
   friend will search that friend and remove the user from his friend list after that
   will remove the user from the social network
   this search will hapen from the follower list and then from the leaders list*/
 void SocialNetwork::DeleteUser(string email)
 {
-	
+
 	if (ADMIN != this->user_loged_on_)
 	{
 		cout << DELETE_USER_FAIL << endl;
 		return;
 	}
-	if ((0 == this->follower_user_.getSize()) && (0 == this->leader_user_.getSize())) {
+	if ((0 == this->follower_user_->getSize()) && (0 == this->leader_user_->getSize())) {
 		cout << DELETE_USER_FAIL << endl;
 		return;
 	}
 
 	Follower * UserFriend;
 	//Follower * User = this->SearchByEmailFollower(email);
-	UserFriend = this->follower_user_.getHead();
+	UserFriend = this->follower_user_->getHead();
 	while (UserFriend != NULL)
 	{
 		UserFriend->RemoveFriend(email);
 		UserFriend->removeFriendRequest(email);
 		UserFriend->removeLeader(email);
-		if (FAILURE == follower_user_.getNext())
+		if (FAILURE == follower_user_->getNext())
 		{
 			break;
 		}
-		UserFriend = follower_user_.getData();
+		UserFriend = follower_user_->getData();
 
 	}
 	Leader * LeaderFriend;
-	LeaderFriend = this->leader_user_.getHead();
+	LeaderFriend = this->leader_user_->getHead();
 	while (LeaderFriend != NULL)
 	{
 		LeaderFriend->RemoveFriend(email);
 		LeaderFriend->removeFriendRequest(email);
 		LeaderFriend->removeLeader(email);
 		LeaderFriend->RemoveFollower(email);
-		if (FAILURE == leader_user_.getNext())
+		if (FAILURE == leader_user_->getNext())
 		{
 			break;
 		}
-		LeaderFriend = leader_user_.getData();
+		LeaderFriend = leader_user_->getData();
 	}
 	Follower * User;
 	Leader * User2;
 	if (NULL != (User = this->SearchByEmailFollower(email)))
 	{
 		clog << "this LEADER will be deestroy: " << User->GetEmail() << endl;
-		User->~Follower();
-		this->follower_user_.removeElem();
+		//User->~Follower();
+		this->follower_user_->removeElem();
 		cout << DELETE_USER_SUCCESS << endl;
 		return;
 
@@ -227,8 +227,8 @@ void SocialNetwork::DeleteUser(string email)
 		return;
 	}
 	clog << "this LEADER will be deestroy: " << User2->GetEmail() << endl;
-	User2->~Leader();
-	this->leader_user_.removeElem();
+	//User2->~Leader();
+	this->leader_user_->removeElem();
 	cout << DELETE_USER_SUCCESS << endl;
 	return;
 
@@ -251,24 +251,22 @@ void SocialNetwork::BroadcastMessage(string subject, string content)
 	}
 	string destiny;
 	Follower * destiny_user;
-	Message newMessae(this->activeLeader_->GetEmail(), subject, content);
+
 	for (int i = 0; i < number_followers; i++)
 	{
 		destiny = this->activeLeader_->mail_of_followerNumber(i + 1);
 		if (NULL != (destiny_user = this->SearchByEmailFollower(destiny)))
 		{
-			destiny_user->addNewMessage(newMessae);
-			
+
+			destiny_user->addNewMessage(this->activeFollower->SendMessage(this->activeLeader_->GetEmail(), subject, content));
+
 		}
 		else if (NULL != (destiny_user = this->SearchByEmailLeader(destiny)))
 		{
-			destiny_user->addNewMessage(newMessae);
-			
-		}
-		else
-		{
+			destiny_user->addNewMessage(this->activeFollower->SendMessage(this->activeLeader_->GetEmail(), subject, content));
 
 		}
+		
 
 
 	}
@@ -279,32 +277,28 @@ void SocialNetwork::BroadcastMessage(string subject, string content)
 
 void SocialNetwork::CreateFollower(string name, string email, string password)
 {
-	//if (this->user_loged_on_ == OFFLINE)
-	//{
-	//	cout << CREATE_FOLLOWER_FAIL << endl;
-	//	return;
-	//}
-
+	
 
 	if ((NULL != SearchByEmailFollower(email)) || (NULL != SearchByEmailLeader(email)))
 	{
 		cout << CREATE_FOLLOWER_FAIL << endl;
 		return;
 	}
-	
-	Follower * newUser = new Follower;
-	
+
+	Follower * newUser = new Follower(name, email, password);
+
 	//newUser->set_basics(name, email, password);
-	newUser->set_basics(name, email, password);
-	if (SUCCESS == (this->follower_user_.addHead(newUser)))
+	clog << "and the first one" << (&email) << endl;
+	if (SUCCESS == (this->follower_user_->addHead(newUser)))
 	{
-		cout << CREATE_FOLLOWER_SUCCESS << endl;
 		
+		cout << CREATE_FOLLOWER_SUCCESS << endl;
+
 		return;
 	}
 	delete newUser;
 	cout << CREATE_FOLLOWER_FAIL << endl;
-	
+
 }
 
 void SocialNetwork::ShowFriendRequests()
@@ -319,14 +313,14 @@ void SocialNetwork::ShowFriendRequests()
 
 void SocialNetwork::ShowFriendList()
 {
-	
+
 		if ((this->user_loged_on_ == OFFLINE) || (ADMIN == this->user_loged_on_))
 		{
 			cout << SHOW_FRIEND_LIST_FAIL << endl;
 			return;
 		}
 		this->activeFollower->ShowFriendList();
-	
+
 }
 
 void SocialNetwork::SendFriendRequest(string friendEmail)
@@ -336,21 +330,21 @@ void SocialNetwork::SendFriendRequest(string friendEmail)
 		cout << SEND_FRIEND_REQUEST_FAIL << endl;
 		return;
 	}
-	
-	
-	
+
+
+
 	Follower * User = this->SearchByEmailFollower(friendEmail);
 	if ((User != NULL) && (User->GetEmail() != this->activeFollower->GetEmail()))
 	{
-	
+
 		if (SUCCESS == User->AddFriendRequest((this->activeFollower->GetName()), this->activeFollower->GetEmail()))
-		
+
 		{
-		
+
 			cout << SEND_FRIEND_REQUEST_SUCCESS << endl;
 			return;
 		}
-	
+
 		cout << SEND_FRIEND_REQUEST_FAIL << endl;
 		return;
 	}
@@ -359,7 +353,7 @@ void SocialNetwork::SendFriendRequest(string friendEmail)
 	{
 		if (SUCCESS == User->AddFriendRequest((this->activeFollower->GetName()), this->activeFollower->GetEmail()))
 		{
-		
+
 			cout << SEND_FRIEND_REQUEST_SUCCESS << endl;
 			return;
 		}
@@ -372,7 +366,7 @@ void SocialNetwork::SendFriendRequest(string friendEmail)
 
 void SocialNetwork::AcceptFriendRequest(string friendEmail)
 {
-	
+
 	if ((this->user_loged_on_ == OFFLINE) || (ADMIN == this->user_loged_on_))
 	{
 		cout << ACCEPT_FRIEND_REQUEST_FAIL << endl;
@@ -380,7 +374,7 @@ void SocialNetwork::AcceptFriendRequest(string friendEmail)
 	}
 	Follower * newFriend;
 
-	if ((0 == this->follower_user_.getSize()) && (0 == this->leader_user_.getSize())) {
+	if ((0 == this->follower_user_->getSize()) && (0 == this->leader_user_->getSize())) {
 		cout << ACCEPT_FRIEND_REQUEST_FAIL << endl;
 		return;
 	}
@@ -392,7 +386,7 @@ void SocialNetwork::AcceptFriendRequest(string friendEmail)
 			return;
 		}
 	}
-	
+
 	//newFriend->AddFriendRequest(this->activeFollower->GetName(), this->activeFollower->GetEmail());
 	//newFriend->AcceptFriendRequest(this->activeFollower->GetEmail());
 	if (SUCCESS == (newFriend->AddFriend(this->activeFollower->GetName(), this->activeFollower->GetEmail())))
@@ -415,7 +409,7 @@ void SocialNetwork::RemoveFriend(string friendEmail)
 		cout << REMOVE_FRIEND_FAIL << endl;
 		return;
 	}
-	if ((0 == this->follower_user_.getSize()) && (this->leader_user_.getSize())) {
+	if ((0 == this->follower_user_->getSize()) && (this->leader_user_->getSize())) {
 		cout << REMOVE_FRIEND_FAIL << endl;
 		return;
 	}
@@ -436,10 +430,11 @@ void SocialNetwork::RemoveFriend(string friendEmail)
 		}
 
 
-		
+
 	}
 	cout << REMOVE_FRIEND_FAIL << endl;
 }
+
 void SocialNetwork::ShowMessageList()
 {
 	if (this->user_loged_on_ == ADMIN || this->user_loged_on_ == OFFLINE)
@@ -449,6 +444,7 @@ void SocialNetwork::ShowMessageList()
 	}
 	this->activeFollower->ShowMessages();
 }
+
 void SocialNetwork::ReadMessage(int messageNum)
 {
 	if (this->user_loged_on_ == ADMIN || this->user_loged_on_ == OFFLINE)
@@ -460,6 +456,7 @@ void SocialNetwork::ReadMessage(int messageNum)
 
 
 }
+
 void SocialNetwork::SendMessage(string email, string subject, string content)
 {
 	if (this->user_loged_on_ == ADMIN || this->user_loged_on_ == OFFLINE)
@@ -467,7 +464,7 @@ void SocialNetwork::SendMessage(string email, string subject, string content)
 		cout << SEND_MESSAGE_FAIL << endl;
 		return;
 	}
-	Message new_message(this->activeFollower->GetEmail(), subject, content);
+
 	Follower * temp;
 	if (this->activeFollower->GetEmail() == email)
 	{
@@ -476,18 +473,18 @@ void SocialNetwork::SendMessage(string email, string subject, string content)
 	}
 
 	temp = this->SearchByEmailFollower(email);
-	
+
 	if (NULL != temp)
 	{
-	
-		temp->addNewMessage(new_message);
+
+		temp->addNewMessage(this->activeFollower->SendMessage(this->activeFollower->GetEmail(), subject, content));
 		cout << SEND_MESSAGE_SUCCESS << endl;
 		return;
 	}
 	temp = this->SearchByEmailLeader(email);
 	if (NULL != temp)
 	{
-		temp->addNewMessage(new_message);
+		temp->addNewMessage(this->activeFollower->SendMessage(this->activeFollower->GetEmail(), subject, content));
 		cout << SEND_MESSAGE_SUCCESS << endl;
 		return;
 	}
@@ -497,6 +494,7 @@ void SocialNetwork::SendMessage(string email, string subject, string content)
 
 	}
 }
+
 void SocialNetwork::Follow(string leaderEmail)
 {
 	if ((this->user_loged_on_ == OFFLINE) || (ADMIN == this->user_loged_on_))
@@ -529,29 +527,38 @@ void SocialNetwork::Follow(string leaderEmail)
 
 SocialNetwork::SocialNetwork(string name, string password)
 {
+	
+	
 	name_ = name;
 	password_ = password;
-
 	user_loged_on_ = OFFLINE;
 	activeFollower = NULL;
+	LinkedList<Follower> * follower_user_1 = new LinkedList<Follower>;
+	LinkedList<Leader> * leader_user_1 = new LinkedList<Leader>;
+
+	this->leader_user_ = leader_user_1;
+	this->follower_user_ = follower_user_1;
+
 }
 
 SocialNetwork::~SocialNetwork()
 {
-	//this->follower_user_.~LinkedList();
-	//this->leader_user_.~LinkedList();
 
-}
+		delete this->follower_user_;
+		delete this->leader_user_;
+		this->follower_user_ = NULL;
+		this->leader_user_ = NULL;
 
+	}
 
 /*helper funtions*/
 Follower * SocialNetwork::SearchByEmailFollower(string email)
 {
 
-	if (0 == this->follower_user_.getSize()) {
+	if (0 == this->follower_user_->getSize()) {
 		return NULL;
 	}
-	Follower * User = follower_user_.getHead(); //need to check if this copy a new value or asinge the value to cur request
+	Follower * User = follower_user_->getHead(); //need to check if this copy a new value or asinge the value to cur request
 	Result result;
 	while (true)
 	{
@@ -560,21 +567,21 @@ Follower * SocialNetwork::SearchByEmailFollower(string email)
 			return User;
 		}
 
-		if (FAILURE == (result = follower_user_.getNext()))
+		if (FAILURE == (result = follower_user_->getNext()))
 		{
 			return NULL;
 		}
-		User = follower_user_.getData();
+		User = follower_user_->getData();
 	}
 }
 
 Leader * SocialNetwork::SearchByEmailLeader(string email)
 {
-	
-		if (0 == this->leader_user_.getSize()) {
+
+		if (0 == this->leader_user_->getSize()) {
 			return NULL;
 		}
-		Leader * User = leader_user_.getHead(); //need to check if this copy a new value or asinge the value to cur request
+		Leader * User = leader_user_->getHead(); //need to check if this copy a new value or asinge the value to cur request
 		Result result;
 		while (true)
 		{
@@ -583,13 +590,13 @@ Leader * SocialNetwork::SearchByEmailLeader(string email)
 				return User;
 			}
 
-			if (FAILURE == (result = leader_user_.getNext()))
+			if (FAILURE == (result = leader_user_->getNext()))
 			{
 				return NULL;
 			}
-			User = leader_user_.getData();
+			User = leader_user_->getData();
 		}
-		
 
-	
+
+
 }

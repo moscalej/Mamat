@@ -58,7 +58,7 @@ int main(int argc, char **argv) {
 	std::ifstream input(fopen(argv[1], "r"));
 
 	
-
+	
 
 	while (getline(input, line)) {
 		//getline(input, line);
@@ -170,5 +170,6 @@ int main(int argc, char **argv) {
 	}
 	_CrtDumpMemoryLeaks();
 	return 0;
-
+	
 };
+

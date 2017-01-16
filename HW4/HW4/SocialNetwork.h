@@ -48,9 +48,9 @@ private:
 	Leader * SearchByEmailLeader(string email);
 	string name_;
 	string password_;
-	LinkedList<Follower> follower_user_;
-	LinkedList<Leader> leader_user_;
-	Current_state user_loged_on_;
+	LinkedList<Follower> * follower_user_;
+	LinkedList<Leader> * leader_user_;
+	Current_state  user_loged_on_;
 	Follower * activeFollower;
 	Leader * activeLeader_;
 	

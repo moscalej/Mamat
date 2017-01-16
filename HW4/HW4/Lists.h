@@ -51,8 +51,9 @@ void LinkedList<T>::listClean()
 		this->currLocation_ = head_;
 		this->head_ = this->head_->next;
 		//clog << this->getSize()<<")" << "this element(list) will be destroy: " << &(this->currLocation_->data) << endl;
-		delete this->currLocation_->data;
-		delete this->currLocation_;
+		delete (T*)this->currLocation_->data;
+		delete (listElem<T>*)this->currLocation_;
+		this->currLocation_ = NULL;
 
 	}
 	this->currLocation_ = NULL;
@@ -64,7 +65,7 @@ template<class T>
 LinkedList<T>::~LinkedList()
 {
 	
-	clog << "we start the : ~LinkedList() with tiems :" << this->getSize()<< endl;
+	//clog << "we start the : ~LinkedList() with tiems :" << this->getSize()<< endl;
 	if (this->head_ != NULL)
 	{
 
@@ -73,12 +74,17 @@ LinkedList<T>::~LinkedList()
 			this->currLocation_ = head_;
 			this->head_ = this->head_->next;
 			//clog << this->getSize()<<")" << "this element(list) will be destroy: " << &(this->currLocation_->data) << endl;
-			delete this->currLocation_->data;
-			delete this->currLocation_;
-
+			delete (T*)this->currLocation_->data;
+			delete (listElem<T>*)this->currLocation_;
+			this->size_--;
+		clog << "we start the : ~LinkedList() now we have:" << this->getSize() << endl;
 		}
+		this->currLocation_ = NULL;
+		//clog << "WE FINISH : ~LinkedList() with tiems :" << this->getSize() << endl;
 	}
-	this->currLocation_ = NULL;
+	this->head_ = NULL;
+	
+	
 
 	
 }
@@ -123,6 +129,8 @@ Result LinkedList<T>::addHead(T * newData)
 		if (temp == NULL)
 		{
 			delete temp;
+			delete newData;
+			newData = NULL;
 			return FAILURE;
 		}
 		head_ = temp;
@@ -140,13 +148,14 @@ Result LinkedList<T>::addHead(T * newData)
 
 		if (temp == NULL)
 		{
+
+			delete temp;
 			return FAILURE;
 		}
 		//temp = head_;
 		temp->data = newData;
 		temp->next = head_;
 		head_ = temp;
-		
 		size_++;
 		return SUCCESS;
 	}
@@ -167,10 +176,10 @@ Result LinkedList<T>::removeElem()
 	{
 		listElem<T>* temp = currLocation_;
 		head_ = head_->next;
-		delete temp->data;
-		delete temp;
+		delete (T*)temp->data;
+		delete (listElem<T>*)temp;
 		temp = NULL;
-		currLocation_ = NULL;
+		currLocation_ = head_;
 		size_--;
 		return SUCCESS;
 	}
@@ -185,7 +194,9 @@ Result LinkedList<T>::removeElem()
 		{
 			temp1->next = temp2->next;
 			temp2->next = NULL;
-			delete temp2;
+			
+			delete (T*)temp2->data;
+			delete (listElem<T>*)temp2;
 			currLocation_ = NULL;
 			temp2 = NULL;
 			size_--;
