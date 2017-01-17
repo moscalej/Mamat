@@ -6,7 +6,12 @@
 
 using namespace std;
 
-
+//*******************************************************************
+//* AdminLogin()
+//* Method for an administrator to log into the network
+//* Parameters: string (password)
+//* Void
+//*******************************************************************
 void SocialNetwork::AdminLogin(string password)
 {
 	if (this->password_ == password) {
@@ -23,9 +28,13 @@ void SocialNetwork::AdminLogin(string password)
 }
 
 
+//*******************************************************************
+//* SocialNetwork()
+//* Method for a follower or leader to log into the network
+//* Parameters: string (email), string (password)
+//* Void
+//*******************************************************************
 
-/*we could have use a template funtion for this but only for two kind of elements is not worth it
-we could build a global neutral pointer and cast diferent types wehn we search in diferent lists */
 void SocialNetwork::Login(string email, string password)
 {
 
@@ -74,7 +83,12 @@ void SocialNetwork::Login(string email, string password)
 	cout << LOGIN_FAIL  << endl;
 }
 
-
+//*******************************************************************
+//* Logout()
+//* Method for logging out of the network
+//* Parameters: None.
+//* Void
+//*******************************************************************
 void SocialNetwork::Logout()
 {
 	switch (this->user_loged_on_)
@@ -98,7 +112,12 @@ void SocialNetwork::Logout()
 		cout << LOGOUT_FAIL << endl;
 	}
 }
-
+//*******************************************************************
+//* FindUser()
+//* Method for finding a user on the network.
+//* Parameters: string (partialName)
+//* Void
+//*******************************************************************
 void SocialNetwork::FindUser(string partialName)
 {
 
@@ -133,7 +152,12 @@ void SocialNetwork::FindUser(string partialName)
 }
 
 
-
+//*******************************************************************
+//* CreateLeader()
+//* Method for creating a leader inside the network
+//* Parameters: string (name), string (email), string (password)
+//* Void
+//*******************************************************************
 void SocialNetwork::CreateLeader(string name, string email, string password)
 {
 
@@ -150,7 +174,7 @@ void SocialNetwork::CreateLeader(string name, string email, string password)
 		return;
 	}
 	Leader * newleader = new Leader(name, email, password);
-	
+
 	if (SUCCESS == (this->leader_user_->addHead(newleader)))
 	{
 		cout << CREATE_LEADER_SUCCESS << endl;
@@ -212,7 +236,7 @@ void SocialNetwork::DeleteUser(string email)
 	Leader * User2;
 	if (NULL != (User = this->SearchByEmailFollower(email)))
 	{
-		clog << "this LEADER will be deestroy: " << User->GetEmail() << endl;
+		//clog << "this LEADER will be deestroy: " << User->GetEmail() << endl;
 		//User->~Follower();
 		this->follower_user_->removeElem();
 		cout << DELETE_USER_SUCCESS << endl;
@@ -226,7 +250,7 @@ void SocialNetwork::DeleteUser(string email)
 		cout << DELETE_USER_FAIL << endl;
 		return;
 	}
-	clog << "this LEADER will be deestroy: " << User2->GetEmail() << endl;
+	//clog << "this LEADER will be deestroy: " << User2->GetEmail() << endl;
 	//User2->~Leader();
 	this->leader_user_->removeElem();
 	cout << DELETE_USER_SUCCESS << endl;
@@ -235,6 +259,13 @@ void SocialNetwork::DeleteUser(string email)
 
 
 }
+//*******************************************************************
+//* BroadcastMessage()  (FOR LEADERS ONLY)
+//* Method for broadcasting a message to all of the followers
+//* in the linked list.
+//* Parameters: string (subject), string (content)
+//* Void
+//*******************************************************************
 
 void SocialNetwork::BroadcastMessage(string subject, string content)
 {
@@ -266,7 +297,7 @@ void SocialNetwork::BroadcastMessage(string subject, string content)
 			destiny_user->addNewMessage(this->activeFollower->SendMessage(this->activeLeader_->GetEmail(), subject, content));
 
 		}
-		
+
 
 
 	}
@@ -274,10 +305,15 @@ void SocialNetwork::BroadcastMessage(string subject, string content)
 	cout << BROADCAST_MESSAGE_SUCCESS << endl;
 
 }
-
+//*******************************************************************
+//* CreateFollower()
+//* Method for creating a follower inside the network
+//* Parameters: string (name), string (email), string (password)
+//* Void
+//*******************************************************************
 void SocialNetwork::CreateFollower(string name, string email, string password)
 {
-	
+
 
 	if ((NULL != SearchByEmailFollower(email)) || (NULL != SearchByEmailLeader(email)))
 	{
@@ -288,10 +324,10 @@ void SocialNetwork::CreateFollower(string name, string email, string password)
 	Follower * newUser = new Follower(name, email, password);
 
 	//newUser->set_basics(name, email, password);
-	clog << "and the first one" << (&email) << endl;
+	//clog << "and the first one" << (&email) << endl;
 	if (SUCCESS == (this->follower_user_->addHead(newUser)))
 	{
-		
+
 		cout << CREATE_FOLLOWER_SUCCESS << endl;
 
 		return;
@@ -301,6 +337,12 @@ void SocialNetwork::CreateFollower(string name, string email, string password)
 
 }
 
+//*******************************************************************
+//* ShowFriendRequests()
+//* Method for showing all of a users pending friend requests
+//* Parameters: None
+//* Void
+//*******************************************************************
 void SocialNetwork::ShowFriendRequests()
 {
 	if ((this->user_loged_on_ == OFFLINE) || (ADMIN == this->user_loged_on_))
@@ -322,7 +364,12 @@ void SocialNetwork::ShowFriendList()
 		this->activeFollower->ShowFriendList();
 
 }
-
+//*******************************************************************
+//* ShowFriendList()
+//* Method for showing all of a users current friends
+//* Parameters: None
+//* Void
+//*******************************************************************
 void SocialNetwork::SendFriendRequest(string friendEmail)
 {
 	if ((this->user_loged_on_ == OFFLINE) || (ADMIN == this->user_loged_on_))
@@ -363,6 +410,12 @@ void SocialNetwork::SendFriendRequest(string friendEmail)
 	cout << SEND_FRIEND_REQUEST_FAIL << endl;
 
 }
+//*******************************************************************
+//* SendFriendRequest()
+//* Method for sending a friend request
+//* Parameters: string (friendEmail)
+//* Void
+//*******************************************************************
 
 void SocialNetwork::AcceptFriendRequest(string friendEmail)
 {
@@ -400,6 +453,13 @@ void SocialNetwork::AcceptFriendRequest(string friendEmail)
 	cout << ACCEPT_FRIEND_REQUEST_FAIL << endl;
 
 }
+
+//*******************************************************************
+//* AcceptFriendRequest()
+//* Method for accepting a friend request
+//* Parameters: string (friendEmail)
+//* Void
+//*******************************************************************
 
 /*this will search for remove the friend from the user and also from the "FRIEND friends"*/
 void SocialNetwork::RemoveFriend(string friendEmail)
@@ -456,7 +516,12 @@ void SocialNetwork::ReadMessage(int messageNum)
 
 
 }
-
+//*******************************************************************
+//* ShowMessageList()
+//* Method for showing a users message list
+//* Parameters: None
+//* Void
+//*******************************************************************
 void SocialNetwork::SendMessage(string email, string subject, string content)
 {
 	if (this->user_loged_on_ == ADMIN || this->user_loged_on_ == OFFLINE)
@@ -494,7 +559,12 @@ void SocialNetwork::SendMessage(string email, string subject, string content)
 
 	}
 }
-
+//*******************************************************************
+//* Follow()
+//* Method for a user to 'Follow' a Leader
+//* Parameters: string (leaderEmail)
+//* Void
+//*******************************************************************
 void SocialNetwork::Follow(string leaderEmail)
 {
 	if ((this->user_loged_on_ == OFFLINE) || (ADMIN == this->user_loged_on_))
@@ -527,8 +597,8 @@ void SocialNetwork::Follow(string leaderEmail)
 
 SocialNetwork::SocialNetwork(string name, string password)
 {
-	
-	
+
+
 	name_ = name;
 	password_ = password;
 	user_loged_on_ = OFFLINE;

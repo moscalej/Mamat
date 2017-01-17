@@ -13,7 +13,7 @@ class Message {
 public:
 	~Message() {
 		count1_m--;
-		clog << "total numberM " << count1_m << endl;
+		//clog << "total numberM " << count1_m << endl;
 	}
 	Message();
     Message(string source, string subject, string content);
@@ -34,14 +34,14 @@ class MessageBox
 {
 public:
 	MessageBox();
-	
+
 	~MessageBox();
 
 	void Add(Message * newMessage);
 	int Size();
 	int UnreadSize();
 	void Print();
-	
+
 	Result ReadMessage(int messageNum);
 private:
 	// To do

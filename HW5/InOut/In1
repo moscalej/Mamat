@@ -1,0 +1,8 @@
+VectorSpace_TYPE Polynomials	
+Size 		 5
+SetPolynom	 2,2,0,1
+SetPolynom	 1,0,1
+SetPolynom	 3,2,0,2,1
+SetPolynom	 0,-1
+SetPolynom	 3,-2,-3,0,1
+Print            All

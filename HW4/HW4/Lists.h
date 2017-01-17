@@ -5,10 +5,10 @@
 #include <string>
 #include "defs.H"
 using namespace std;
-// This is a template for our Lists. A modifiable list will be provided for each 
+// This is a template for our Lists. A modifiable list will be provided for each
 // necessary type (Message List, Follower List, Friend list....etc).
 // Included are the required functions that can be executed on the lists.
-template <class T> 
+template <class T>
 class LinkedList
 {
 private:
@@ -24,13 +24,13 @@ public:
 		head_ = NULL;
 		currLocation_ = NULL;
 		size_ = 0;
-		
+
 	}
 	// Destructor
 	 ~LinkedList();
 
 
-	
+
 	Result addHead(T * newHead);
 	Result removeElem();
 	Result getNext();
@@ -38,14 +38,14 @@ public:
 	T* getData();
 	int getSize();
 	void listClean();
-	
+
 	//bool operator==(const T &a) {};
 };
 template<class T>
 void LinkedList<T>::listClean()
 {
 
-	clog << "we start the : ~LinkedList() with tiems :" << this->getSize() << endl;
+	//clog << "we start the : ~LinkedList() with tiems :" << this->getSize() << endl;
 	while (NULL != this->head_)
 	{
 		this->currLocation_ = head_;
@@ -64,7 +64,7 @@ void LinkedList<T>::listClean()
 template<class T>
 LinkedList<T>::~LinkedList()
 {
-	
+
 	//clog << "we start the : ~LinkedList() with tiems :" << this->getSize()<< endl;
 	if (this->head_ != NULL)
 	{
@@ -74,19 +74,20 @@ LinkedList<T>::~LinkedList()
 			this->currLocation_ = head_;
 			this->head_ = this->head_->next;
 			//clog << this->getSize()<<")" << "this element(list) will be destroy: " << &(this->currLocation_->data) << endl;
+			//clog << "we start the : ~LinkedList() now we have:" << this->getSize() << "the type is: " << endl;
 			delete (T*)this->currLocation_->data;
 			delete (listElem<T>*)this->currLocation_;
 			this->size_--;
-		clog << "we start the : ~LinkedList() now we have:" << this->getSize() << endl;
+
 		}
 		this->currLocation_ = NULL;
 		//clog << "WE FINISH : ~LinkedList() with tiems :" << this->getSize() << endl;
 	}
 	this->head_ = NULL;
-	
-	
 
-	
+
+
+
 }
 
 
@@ -103,7 +104,7 @@ T* LinkedList<T>::getHead()
 	{
 		return NULL;
 	}
-	
+
 	currLocation_ = head_;
 	return head_->data;
 }
@@ -118,14 +119,14 @@ template <class T>
 Result LinkedList<T>::addHead(T * newData)
 {
 	//if (DoesDataExist(newData) == SUCCESS) return FAILURE;// Data already exist in our list!!
-	
+
 	if (head_ == NULL) // If our list is empty
 	{
 		listElem<T>* temp = new listElem<T>;
-		
-		
-		
-		
+
+
+
+
 		if (temp == NULL)
 		{
 			delete temp;
@@ -144,7 +145,7 @@ Result LinkedList<T>::addHead(T * newData)
 
 		listElem<T>* temp = new listElem<T>;
 		//temp = head_;
-		
+
 
 		if (temp == NULL)
 		{
@@ -194,7 +195,7 @@ Result LinkedList<T>::removeElem()
 		{
 			temp1->next = temp2->next;
 			temp2->next = NULL;
-			
+
 			delete (T*)temp2->data;
 			delete (listElem<T>*)temp2;
 			currLocation_ = NULL;

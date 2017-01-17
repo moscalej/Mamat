@@ -17,7 +17,7 @@ class FriendType
 public:
 	~FriendType() {
 		count1_fr--;
-		clog << "total numberFr " << count1_fr << endl;
+		//clog << "total numberFr " << count1_fr << endl;
 	}
 	FriendType() {
 		count1_fr++;
@@ -59,7 +59,7 @@ public:
 
 	 Follower(string name, string email, string password);
 	virtual ~Follower() {
-		
+		//clog << this->GetEmail() << "destroy" << endl;
 		delete this->FriendList;
 		delete this->FriendRequests;
 		delete this->Leaders_to_follow;
@@ -69,7 +69,7 @@ public:
 		this->Leaders_to_follow = NULL;
 		this->imbox_ = NULL;
 		count_4--;
-		 clog << "total numberF " << count_4 << endl;
+		// clog << "total numberF " << count_4 << endl;
 	}
 
     string GetName() const;

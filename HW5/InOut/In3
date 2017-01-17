@@ -1,0 +1,17 @@
+VectorSpace_TYPE CoupleComplex	
+Size 		 3
+SetVector        1st
+SetCoordinate	 10,1
+SetCoordinate	 0,0
+SetVector        2nd
+SetCoordinate	 1,1
+SetCoordinate	 2,2
+SetVector        3rd
+SetCoordinate	 -1,2
+SetCoordinate	 -4,5
+Print            All
+InnerProduct    1,0
+InnerProduct    0,1
+InnerProduct    2,2
+SquaredNorm     1
+SquaredNorm     2
