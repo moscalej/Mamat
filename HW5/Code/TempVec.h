@@ -14,22 +14,11 @@ class TempVec {
 public:
 	//Default Constructor
 	TempVec();
-	//TempVec(const TempVec& a);
-
-	// COverload "="
-	/*TempVec& operator=(const TempVec& a)
-	{
-	if (this != &a)
-	{
-	delete[] this->coordinates_ ;
-	copy(a);
-	}
-	return (*this);
-	}*/
+	
 	TempVec& operator=(const T& rhs)
 	{
-		TempVec<T, size> temp;
-		temp.coordinates_[index_] = rhs;
+		this->SetCoordinate(rhs);
+
 		return *this;
 	}
 	// Constructor for 3D coordinates
@@ -45,7 +34,7 @@ public:
 	TempVec operator-(const TempVec& rhs);
 	TempVec operator*(T rhs);
 	TempVec operator[](T rhs);
-	//TempVec operator=(T rhs);
+	
 	friend TempVec operator* (const T lhs, const TempVec& rhs) // Allows left side multiplication.
 	{
 		TempVec<T, size> temp;
@@ -108,13 +97,6 @@ TempVec<T, size>::TempVec(int x, int y, int z)
 	this->coordinates_[2] = z;
 }
 
-// Copy Constructor
-/*
-template <class T, int size>
-TempVec<T, size>::TempVec(const TempVec& a)
-{
-copy(a);
-}*/
 
 //***********************************************************************
 //* Operator overload for addition ("+")
@@ -126,7 +108,7 @@ TempVec<T, size> TempVec<T, size>::operator+(const TempVec<T, size>& rhs)
 	int i = 0;
 	while (i < size)
 	{
-		temp.coordinates_[i] = coordinates_[i] + rhs.coordinates_[i];
+		temp.p_coordinates_[i] = coordinates_[i] + rhs.coordinates_[i];
 		i++;
 	}
 	return temp;
@@ -142,7 +124,7 @@ TempVec<T, size> TempVec<T, size>::operator-(const TempVec<T, size>& rhs)
 	int i = 0;
 	while (i < size)
 	{
-		temp.coordinates_[i] = coordinates_[i] - rhs.coordinates_[i];
+		temp.p_coordinates_[i] = coordinates_[i] - rhs.coordinates_[i];
 		i++;
 	}
 	return temp;
@@ -158,7 +140,8 @@ TempVec<T, size> TempVec<T, size>::operator*(const TempVec<T, size>& rhs)
 	int i = 0;
 	while (i < size)
 	{
-		temp.coordinates_[i] = coordinates_[i] * rhs.coordinates_[i];
+		temp.p_coordinates_[i] = coordinates_[i] * rhs.coordinates_[i];
+		
 		i++;
 	}
 	return temp;
@@ -174,7 +157,7 @@ TempVec<T, size> TempVec<T, size>::operator*(T rhs)
 	int i = 0;
 	while (i < size)
 	{
-		temp.coordinates_[i] = coordinates_[i] * rhs;
+		temp.p_coordinates_[i] = coordinates_[i] * rhs;
 		i++;
 	}
 	return temp;
@@ -186,8 +169,8 @@ TempVec<T, size> TempVec<T, size>::operator*(T rhs)
 template <class T, int size>
 TempVec<T, size> TempVec<T, size>::operator[](T rhs)
 {
+	
 	this->index_ = rhs;
-
 	return *this;
 }
 
@@ -221,23 +204,23 @@ Result TempVec<T, size>::SetCoordinate(int num)
 	try
 	{
 		if (index_ > 2) throw "Error TempVec. Illegal index";
-		//if (index_ == size) index_ = 0; // Back to the beginning of the vector
+		
 		if (index_ == 0)
 		{
-			coordinates_[0] = num;
-			index_++;
+			this->p_coordinates_[0] = num;
+			
 			return SUCCESS;
 		}
 		if (index_ == 1)
 		{
-			coordinates_[1] = num;
-			index_++;
+			this->p_coordinates_[1] = num;
+		
 			return SUCCESS;
 		}
 		if (index_ == 2)
 		{
-			coordinates_[2] = num;
-			index_++;
+			this->p_coordinates_[2] = num;
+			
 			return SUCCESS;
 		}
 	}
@@ -305,6 +288,7 @@ void TempVec<T, size>::print()
 int InnerProduct(TempVec<int, 3> vec1, TempVec<int, 3> vec2)
 {
 	TempVec<int, 3> temp = vec1*vec2;
+	
 	int theSum = 0;
 	for (int i = 0; i < 3; i++) {
 
@@ -338,9 +322,11 @@ int SqNorm(TempVec<int, 3> vec1)
 //***********************************************************************
 int SqDistance(TempVec<int, 3> vec1, TempVec<int, 3> vec2)
 {
-	TempVec<int, 3> temp = vec1 - vec2;
+	//TempVec<int, 3> temp = vec1 - vec2;
 
-	return SqNorm(temp);
+	//int j = SqNorm(temp);
+
+	return SqNorm(vec1 - vec2);
 }
 
 
