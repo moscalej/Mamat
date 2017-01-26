@@ -151,7 +151,12 @@
     <ClInclude Include="..\..\Code\TempVec.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Code\complex.cpp" />
+    <ClCompile Include="..\..\Code\main.cpp" />
     <ClCompile Include="..\..\Code\main1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
