@@ -1,11 +1,15 @@
 #ifndef _COMPLEX_H
 #define _COMPLEX_H
 
+#include "TempVec.h"
 #include <iostream>
 #include <string>
 
 
-class complex  {
+
+class complex  
+{
+
 public:
 	complex()
 	{
@@ -24,15 +28,12 @@ public:
 	complex operator*(const int& rhs) const;
 	complex operator-(const complex& rhs) const;
 
-	complex conj(const complex z);
 
-
-	friend ostream & operator<<(ostream & os, const complex & rsh);
-
-	//complex operator*(T rhs);
-	//complex operator[](T rhs);
-
-
+	//friend funtions that can manipulate the complex
+	friend complex conj(const complex z);
+	friend complex InnerProduct(const TempVec<complex, 2>, const TempVec<complex, 2>) ;
+	friend std::ostream& operator<<(std::ostream & os, const complex & rsh);
+	friend complex operator*(const int lhs_constant , const complex rhs_vector);
 
 
  protected:

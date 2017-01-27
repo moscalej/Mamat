@@ -1,3 +1,5 @@
+
+
 #include "complex.h"
 
 using namespace std;
@@ -53,7 +55,7 @@ complex complex::operator-(const complex & rhs) const
 	return temp;
 }
 
-complex complex::conj(const complex z)
+complex conj(const complex z)
 {
 	complex temp;
 	temp.im_ = -1 * z.imag();
@@ -61,7 +63,19 @@ complex complex::conj(const complex z)
 	return complex();
 }
 
-ostream & operator<<(ostream & os, const complex & rsh)
+complex InnerProduct( TempVec<complex, 2> vec1,  TempVec<complex, 2> vec2)
+{
+	TempVec<complex, 2> temp ;
+	complex sum;
+	temp[0] = conj(vec2.GetCoordinate(0));
+	temp[1] = conj(vec2.GetCoordinate(1));
+	temp = temp * vec1;
+	sum = temp.GetCoordinate(0) + temp.GetCoordinate(1);
+	return sum;
+}
+
+
+std::ostream & operator<<(std::ostream & os, const complex & rsh) 
 {
 	string temp;
 	if (rsh.real()==0)
@@ -91,3 +105,26 @@ ostream & operator<<(ostream & os, const complex & rsh)
 	}
 	return os << temp << endl;
 }
+
+complex operator*(const int lhs,const complex rhs)
+{
+	complex temp;
+	temp.re_ = rhs.re_ * lhs;
+	temp.im_ = rhs.im_ * lhs;
+	return temp;
+}
+
+
+
+complex SqNorm(TempVec<complex, 2> vec1)
+{
+	return  InnerProduct(vec1, vec1);
+}
+
+
+complex SqDistance(TempVec<complex, 2> vec1, TempVec<complex, 2> vec2) 
+{
+
+	return InnerProduct(vec1-vec2, vec1-vec2);
+ }
+ 

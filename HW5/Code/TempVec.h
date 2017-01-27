@@ -14,7 +14,8 @@ class TempVec {
 
 public:
 	//Default Constructor
-	TempVec();
+	TempVec() {};
+	//TempVec(complex x, complex z);
 	
 	TempVec& operator=(const T& rhs)
 	{
@@ -40,7 +41,7 @@ public:
 	}
 
 	TempVec operator*(T rhs);
-	TempVec operator[](T rhs);
+	TempVec operator[](int rhs);
 	
 	friend TempVec operator* (const T lhs, const TempVec& rhs) // Allows left side multiplication (LSM).
 	{								// The LSM is accomplished with the help of our right-sided
@@ -53,17 +54,25 @@ public:
 		}
 		return temp;
 	}
+	
 
 
 	//Setting values.
 	Result SetVector(char* Nth);
-	Result SetCoordinate(int num);
+	Result SetCoordinate(T num);
 	T GetCoordinate(int num);
 
 	//Vector Math
-	friend T InnerProduct(TempVec u, TempVec v);
-	friend T SqNorm(TempVec u);
-	friend T SqDistance(TempVec u);
+	//***********************************************************************
+	//* InnerProduct()
+	//* Exterior function for getting the Inner Product of two vectors
+	//* Parameters: TempVec vec1, TempVec vec2
+	//* Returns int
+	//***********************************************************************
+	friend int InnerProd(const TempVec<int,3>, const TempVec<int, 3>) ;
+	
+	//friend T SqNorm(TempVec u);
+	//friend T SqDistance(TempVec u);
 
 	// Member methods
 	void print() const
@@ -86,6 +95,7 @@ public:
 		cout << ")" ;
 	}
 protected:
+	
 	int count_;// To count how many vectors we have created.
 	int index_;
 	T coordinates_[size];
@@ -93,6 +103,7 @@ protected:
 };
 
 // Default Constructor with exception handling
+/*
 template <class T, int size>
 TempVec<T, size>::TempVec()
 {
@@ -112,6 +123,19 @@ TempVec<T, size>::TempVec()
 	}
 }
 
+*/
+/*
+template<class T, int size>
+inline TempVec<T, size>::TempVec(complex x, complex z)
+{
+	this->coordinates_[0] = x;
+	this->coordinates_[1] = z;
+	this->index_ = 0;
+	this->count_ = 0;
+
+
+}
+*/
 // Constructor...
 template <class T, int size>
 TempVec<T, size>::TempVec(int x, int y, int z)
@@ -203,7 +227,7 @@ TempVec<T, size> TempVec<T, size>::operator*(T rhs)
 //* Operator overload for access ("[]") rhs = T
 //***********************************************************************
 template <class T, int size>
-TempVec<T, size> TempVec<T, size>::operator[](T rhs)
+TempVec<T, size> TempVec<T, size>::operator[](int rhs)
 {
 	
 	this->index_ = rhs;
@@ -235,7 +259,7 @@ Result TempVec<T, size>::SetVector(char* Nth)
 //* Returns VOID
 //***********************************************************************
 template <class T, int size>
-Result TempVec<T, size>::SetCoordinate(int num)
+Result TempVec<T, size>::SetCoordinate(T num)
 {
 	try
 	{
@@ -314,24 +338,20 @@ void TempVec<T, size>::print() const
 	cout << ")" << endl;
 }*/
 
-
 //***********************************************************************
 //* InnerProduct()
 //* Exterior function for getting the Inner Product of two vectors
 //* Parameters: TempVec vec1, TempVec vec2
 //* Returns int
 //***********************************************************************
-int InnerProduct(TempVec<int, 3> vec1, TempVec<int, 3> vec2)
+int InnerProd(TempVec<int, 3> vect1, TempVec<int, 3> vect2)
 {
-	TempVec<int, 3> temp = vec1*vec2;
-	
-	int theSum = 0;
-	for (int i = 0; i < 3; i++) {
-
-		theSum += temp.GetCoordinate(i);
-	}
-	return theSum;
+	TempVec<int, 3> temp;
+	temp = vect1 * vect2;
+	int sum = temp.coordinates_[0] + temp.coordinates_[1] + temp.coordinates_[2];
+	return sum;
 }
+
 
 //***********************************************************************
 //* SqNorm()
