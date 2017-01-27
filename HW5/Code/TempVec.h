@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+
 enum Result { FAILURE, SUCCESS };
 
 using namespace std;
@@ -28,20 +29,26 @@ public:
 	virtual ~TempVec() { }
 
 
-	// Operator Overloaders '+', '*' , '-' , '='
+	// Operator Overloaders '+', '*' , '-' , '=', '<<', '[]'
 	TempVec operator+(const TempVec& rhs);
 	TempVec operator*(const TempVec& rhs);
 	TempVec operator-(const TempVec& rhs);
+	friend std::ostream& operator<<(std::ostream& lhs, const TempVec<T,size>& rhs)
+	{
+		rhs.print();
+		return lhs;
+	}
+
 	TempVec operator*(T rhs);
 	TempVec operator[](T rhs);
 	
-	friend TempVec operator* (const T lhs, const TempVec& rhs) // Allows left side multiplication.
-	{
-		TempVec<T, size> temp;
+	friend TempVec operator* (const T lhs, const TempVec& rhs) // Allows left side multiplication (LSM).
+	{								// The LSM is accomplished with the help of our right-sided
+		TempVec<T, size> temp;		// multiplication (RSM) overload.
 		int i = 0;
 		while (i < size)
 		{
-			temp.coordinates_[i] = rhs.coordinates_[i] * lhs;
+			temp.coordinates_[i] = rhs.coordinates_[i] * lhs; // right
 			i++;
 		}
 		return temp;
@@ -54,11 +61,30 @@ public:
 	T GetCoordinate(int num);
 
 	//Vector Math
-	friend int InnerProduct(TempVec u, TempVec v);
-	friend int SqNorm(TempVec u);
-	friend int SqDistance(TempVec u);
+	friend T InnerProduct(TempVec u, TempVec v);
+	friend T SqNorm(TempVec u);
+	friend T SqDistance(TempVec u);
 
-	void print();
+	// Member methods
+	void print() const
+	{
+		int i = 0;
+		cout << "v is " << "(";
+		while (i < size)
+		{
+			if (i == size - 1)
+			{
+				cout << coordinates_[i];
+				i++;
+			}
+			else
+			{
+				cout << coordinates_[i] << ",";
+				i++;
+			}
+		}
+		cout << ")" ;
+	}
 protected:
 	int count_;// To count how many vectors we have created.
 	int index_;
@@ -146,6 +172,16 @@ TempVec<T, size> TempVec<T, size>::operator*(const TempVec<T, size>& rhs)
 	}
 	return temp;
 }
+
+/*
+//***********************************************************************
+//* Operator overload for printing ("<<")
+//***********************************************************************
+template <class T, int size>
+void TempVec<T, size>::operator<<(const TempVec<T, size>& rhs)
+{
+	rhs.print();
+}*/
 
 //***********************************************************************
 //* Operator overload for multiplication ("*") rhs = T, lhs = TempVec
@@ -250,6 +286,7 @@ T TempVec<T, size>::GetCoordinate(int num)
 	return coordinates_[num];
 }
 
+/*
 //***********************************************************************
 //* print()
 //* Method for printing 
@@ -257,7 +294,7 @@ T TempVec<T, size>::GetCoordinate(int num)
 //* Returns VOID
 //***********************************************************************
 template <class T, int size>
-void TempVec<T, size>::print()
+void TempVec<T, size>::print() const
 {
 	int i = 0;
 	cout << "v is " << "(";
@@ -266,7 +303,6 @@ void TempVec<T, size>::print()
 		if (i == size - 1)
 		{
 			cout << coordinates_[i];
-			//cout << "," << endl;
 			i++;
 		}
 		else
@@ -276,7 +312,7 @@ void TempVec<T, size>::print()
 		}
 	}
 	cout << ")" << endl;
-}
+}*/
 
 
 //***********************************************************************
