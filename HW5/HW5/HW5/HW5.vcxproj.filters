@@ -26,10 +26,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Code\main1.cpp">
+    <ClCompile Include="..\..\Code\complex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code\complex.cpp">
+    <ClCompile Include="..\..\Code\polynom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

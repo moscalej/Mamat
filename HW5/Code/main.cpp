@@ -1,9 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#define _CRTDBG_MAP_ALLOC
+
+
+
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
 #include "polynom.h"
 #include "complex.h"
 #include "TempVec.h"
+
+
+#ifdef _DEBUG
+#ifndef DBG_NEW
+#define DBG_NEW new ( _NORMAL_BLOCK , __FILE__ , __LINE__ )
+#define new DBG_NEW
+#endif
+#endif  // _DEBUG
+
+
 using namespace std;
 
 const int MAXLINE = 256;
@@ -12,7 +27,8 @@ typedef enum {NONE, poly, integer3, complex2} VectorSpaceType;
 typedef TempVec<int,3> Integer3;
 typedef TempVec<complex,2> Complex2;
 int main() {
-  
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
   int size=0;
   VectorSpaceType type = NONE;
   Integer3* int3_list=NULL;
@@ -218,5 +234,6 @@ int main() {
   if(polynom_list) delete[] polynom_list ;
   if(int3_list) delete[] int3_list;
   if(complex2_list) delete[] complex2_list;
+  _CrtDumpMemoryLeaks();
   return 0;
 }

@@ -15,8 +15,13 @@ class polynom  {
   // Copy Constructor
   polynom(const polynom &poly)
   {
-	  coefs_ = new int(*poly.coefs_);
 	  n_ = poly.n_;
+	  this->coefs_ = new int[poly.n_];
+	  for (int i = 0; i < n_; i++)
+	  {
+		  coefs_[i] = poly.coefs_[i];
+	  }
+	  
   }
 
   // Destructor
@@ -31,8 +36,10 @@ class polynom  {
 	  if (this != &rhs)
 	  {
 		  n_ = rhs.n_;
-		  if (coefs_) delete[] coefs_;
-		  coefs_ = new int(*rhs.coefs_);
+		  for (int i = 0; i < n_; i++)
+		  {
+			  this->coefs_[i] = rhs.coefs_[i];
+		  }
 	  }
 	  return *this;
   }
@@ -40,7 +47,7 @@ class polynom  {
   polynom operator*(const polynom& rhs) const;
   polynom operator*(const int& rhs) const;
   polynom operator-(const polynom& rhs) const;
-  polynom operator[](const int rhs);
+  int& operator[](const int rhs);
   friend std::ostream& operator<<(std::ostream & os, const polynom & rhs);
   friend polynom operator*(const int lhs_constant, const polynom rhs_vector);
 
@@ -72,7 +79,7 @@ class polynom  {
   // Calculations
   friend int InnerProduct(polynom poly1, polynom poly2);
   friend int SqNorm(polynom poly1);
-  int SqDistance(polynom poly1, polynom poly2);
+  friend int SqDistance(polynom poly1, polynom poly2);
 
  protected:
   int n_;

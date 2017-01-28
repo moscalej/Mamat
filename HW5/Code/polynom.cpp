@@ -5,11 +5,13 @@ using namespace std;
 //Constructor??
 polynom::polynom(int n_, int* coefs_)
 {
-	
+	int * new_coef = new int[n_];
+
 	for (int i = 0; i < n_; i++)
 	{
-		this->SetNum(coefs_[i]);
+		new_coef[i] = coefs_[i];
 	}
+	this->coefs_ = new_coef;
 }
 
 //***********************************************************************
@@ -50,6 +52,8 @@ void polynom::SetNum(int num)
 	this->coefs_[this->n_] = num ;
 	this->n_++;
 }
+
+
 
 //***********************************************************************
 //* MultiplyPolynoms( )
@@ -239,7 +243,7 @@ polynom polynom::operator-(const polynom & rhs) const
 //***********************************************************************
 //* Operator overload for brackets "[]"
 //***********************************************************************
-polynom polynom::operator[](const int rhs)
+int& polynom::operator[](const int rhs)
 {
 	return this->coefs_[rhs];
 }
@@ -250,6 +254,16 @@ std::ostream& operator<<(std::ostream & os, const polynom & rhs)
 {
 	rhs.print();
 	return os;
+}
+
+
+
+polynom operator*(const int lhs_constant, const polynom rhs_vector)
+{
+	polynom temp;
+	temp = rhs_vector * lhs_constant;
+
+	return temp;
 }
 
 //***********************************************************************
@@ -289,9 +303,10 @@ int SqNorm(polynom poly1)
 //* Parameters: polynom poly1, polynom poly2
 //* Returns int
 //***********************************************************************
+
 int SqDistance(polynom poly1, polynom poly2)
 {
-	return sqrt(SqNorm(poly1 - poly2));
+	return SqNorm(poly1 - poly2);
 }
 
 
