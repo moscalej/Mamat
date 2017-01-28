@@ -60,7 +60,7 @@ complex conj(const complex z)
 	complex temp;
 	temp.im_ = -1 * z.imag();
 	temp.re_ = z.real();
-	return complex();
+	return temp;
 }
 
 
@@ -125,8 +125,8 @@ complex InnerProduct(TempVec<complex, 2> vect1, TempVec<complex, 2> vect2)
 	TempVec<complex, 2> temp;
 	temp[0] = conj(vect2[0]);
 	temp[1] = conj(vect2[1]);
-	temp = temp + vect1;
-	complex sum = temp.coordinates_[0] + temp.coordinates_[1] + temp.coordinates_[2];
+	temp = temp * vect1;
+	complex sum = temp.coordinates_[0] + temp.coordinates_[1] ;
 	return sum;
 }
 

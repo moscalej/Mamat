@@ -85,6 +85,7 @@ int main()
 	Complex2 vectr3 = newcomplex_vect1 * newcomplex_vect2 ;
 	Complex2 vectr4 =  newcomplex_vect1 * com2;
 	Complex2 vectr5 = com3 * newcomplex_vect1 * com2;
+	complex iner = InnerProduct(newcomplex_vect1, newcomplex_vect1);
 	
 	delete[] int3_list;
 
