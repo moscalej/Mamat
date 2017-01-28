@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <cstring>
 #include"TempVec.h"
-//#include "polynom.h"
+#include "polynom.h"
 #include "complex.h"
 
 
@@ -74,20 +74,45 @@ int main()
 	cout << vector3 << endl;
 	cout << vector4 << endl;
 
+	Complex2* complex2_list = NULL;
+
+	complex2_list = new Complex2[2];
 
 	Complex2 newcomplex_vect1, newcomplex_vect2;
 	complex com1(2, 4), com2(4,5), com3(6,12), com4(-6,-7);
-	newcomplex_vect1[0] = com1;
-	newcomplex_vect1[1] = com2;
-	newcomplex_vect2[0] = com3;
-	newcomplex_vect2[1] = com4;
+	complex2_list[0][0] = com1;
+	complex2_list[0][1] = com2;
+	complex2_list[1][0] = com3;
+	complex2_list[1][1] = com4;
 
-	Complex2 vectr3 = newcomplex_vect1 * newcomplex_vect2 ;
-	Complex2 vectr4 =  newcomplex_vect1 * com2;
-	Complex2 vectr5 = com3 * newcomplex_vect1 * com2;
-	complex iner = InnerProduct(newcomplex_vect1, newcomplex_vect1);
+	cout << complex2_list[0] << "  complex #1" << endl;
+	cout << complex2_list[1] << "  complex #2" << endl;
+
+
+	Complex2 vectr3 = complex2_list[0] * complex2_list[1];
+	Complex2 vectr4 = complex2_list[0] * com2;
+	Complex2 vectr5 = com3 * complex2_list[0] * com2;
+	complex iner = InnerProduct(complex2_list[0], complex2_list[0]);
 	
+	cout << vectr3 << " is 3" << vectr4 << " is 4" << vectr5 << " is 5" << endl;
+	cout << "Inner Product is " << iner << endl;
+
+	polynom* polynom_list = NULL;
+	polynom_list = new polynom[2];
+	int coefs1[4] = { 3,2,1,1 };
+	int coefs2[3] = { 2,1,1 };
+	polynom p1(3, coefs1);
+	polynom p2(2, coefs2);
+	polynom_list[0] = p1;
+	polynom_list[1] = p2;
+	cout << polynom_list[0] << "polynomial #1" << endl;
+	cout << polynom_list[1] << "polynomial #2" << endl;
+	cout << "Inner Product of Poly is " << InnerProduct(polynom_list[0], polynom_list[1]) << endl;
+
+
+
 	delete[] int3_list;
+	delete[] complex2_list;
 
 	_CrtDumpMemoryLeaks();
 	return 0;
