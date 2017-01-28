@@ -5,13 +5,13 @@ using namespace std;
 //Constructor??
 polynom::polynom(int n_, int* coefs_)
 {
-	int * new_coef = new int[n_];
-
-	for (int i = 0; i < n_; i++)
+	this->coefs_  = new int[n_+1];
+	this->n_ = n_;
+	for (int i = 0; i < n_+1; i++)
 	{
-		new_coef[i] = coefs_[i];
+		this->coefs_[i] = coefs_[i];
 	}
-	this->coefs_ = new_coef;
+	
 }
 
 //***********************************************************************
@@ -63,21 +63,21 @@ void polynom::SetNum(int num)
 //***********************************************************************
 int* MultiplyPolynoms(int* A, int* B, int m, int n)
 {
-	int *prod = new int[m + n - 1];
+	int *prod = new int[m + n + 1];
 
 	// Initialize the polynomial
-	for (int i = 0; i < m + n - 1; i++)
+	for (int i = 0; i < m + n +1; i++)
 	{
 		prod[i] = 0;
 	}
 
 	// Multiply two polynomials term by term
 
-	for (int i = 0; i<m; i++)
+	for (int i = 0; i<=m; i++)
 	{
 		// Multiply the current term of first polynomial
 		// with every term of second polynomial.
-		for (int j = 0; j<n; j++)
+		for (int j = 0; j<=n; j++)
 			prod[i + j] += A[i] * B[j];
 	}
 
@@ -102,11 +102,17 @@ int* IntegratePolynom(int* A, int m)
 	}
 	for (int i = 0; i < m; i++)
 	{
-		integral_temp[i] = A[i] / (m + 1 - i);
+		integral_temp[i] = A[i] / ( 1 +i);
 	}
 	integral_temp[m] = 1;
 
 	return integral_temp;
+}
+
+polynom::polynom()
+{
+	this->n_ = 0;
+	this->coefs_ = NULL;
 }
 
 //***********************************************************************
@@ -168,15 +174,14 @@ polynom polynom::operator*(const polynom & rhs) const
 	int i = this->n_;
 	int j = rhs.n_;
 	
-	polynom* temp = new polynom(Order1+Order2,0);
-	int* productPoly = MultiplyPolynoms(Coefs1, Coefs2, Order1, Order2);
-
-	for (int i = 0; i < Order1 + Order2; i++)
-	{
-		temp->coefs_[i] = productPoly[i];
-	}
 	
-	return *temp;
+	int* productPoly = MultiplyPolynoms(Coefs1, Coefs2, Order1, Order2); //alocates new memory 1
+
+	polynom temp((this->n_ + rhs.n_), productPoly); //alocates memory2
+
+	delete[] productPoly; // release the memory 1
+	
+	return temp;//relese memory 2
 }
 
 //***********************************************************************
@@ -186,7 +191,7 @@ polynom polynom::operator*(const int & rhs) const
 {
 	polynom temp;
 	
-	for (int i = 0; i < this->n_; i++)
+	for (int i = 0; i < this->n_+1; i++)
 	{
 		temp.coefs_[i] = temp.coefs_[i] * rhs;
 	}
@@ -282,6 +287,8 @@ int InnerProduct(polynom poly1, polynom poly2)
 	{
 		innerProduct_is += integral[i];
 	}
+	delete[] product;
+	delete[] integral;
 
 	return innerProduct_is;
 }

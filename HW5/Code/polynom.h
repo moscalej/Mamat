@@ -10,33 +10,52 @@ using namespace std;
 
 class polynom  {
  public:
-	 polynom(int n = 0, int* coefs = NULL);
-  //polynom(int n_, int* coefs_);
+  polynom();
+  polynom(int n_, int* coefs_);
+
+
   // Copy Constructor
   polynom(const polynom &poly)
   {
 	  n_ = poly.n_;
-	  this->coefs_ = new int[poly.n_];
-	  for (int i = 0; i < n_; i++)
+	  if (poly.coefs_ == NULL)
 	  {
-		  coefs_[i] = poly.coefs_[i];
+		  this->coefs_ = NULL;
 	  }
-	  
+	  else
+	  {
+		  this->coefs_ = new int[(poly.n_) + 1];
+		  for (int i = 0; i < n_ + 1; i++)
+		  {
+			  coefs_[i] = poly.coefs_[i];
+
+		  }
+	  }
   }
 
   // Destructor
   ~polynom()
   {
-	  delete[] coefs_;
+	  if (this->coefs_ != NULL)
+	  delete[] this->coefs_;
+
+	  this->coefs_ = NULL;
   }
 
   // Operator Overloaders '+', '*' , '-' , '='
   polynom& operator=(const polynom& rhs)
   {
 	  if (this != &rhs)
+
 	  {
-		  n_ = rhs.n_;
-		  for (int i = 0; i < n_; i++)
+		  if (this->coefs_ != NULL)
+		  {
+			  delete[] this->coefs_;
+			  this->coefs_ = NULL;
+		  }
+		  this->coefs_ = new int[(rhs.n_) + 1];
+		  this->n_ = rhs.n_;
+		  for (int i = 0; i < n_+1; i++)
 		  {
 			  this->coefs_[i] = rhs.coefs_[i];
 		  }
@@ -49,31 +68,89 @@ class polynom  {
   polynom operator-(const polynom& rhs) const;
   int& operator[](const int rhs);
   friend std::ostream& operator<<(std::ostream & os, const polynom & rhs);
-  friend polynom operator*(const int lhs_constant, const polynom rhs_vector);
+  friend polynom operator*(const int lhs, const polynom& rhs)
+  {
+	  
+	  polynom temp;		
+	  int i = 0;
+	  while (i < rhs.n_)
+	  {
+		  temp.coefs_[i] = rhs.coefs_[i] * lhs; // right
+		  i++;
+	  }
+	  return temp;
+  }
 
   // Methods
   int GetOrder();
   int* GetCoefs();
   void SetNum(int num);
-  //int* MultiplyPolynoms(int* A, int* B, int m, int n);
+  friend int* MultiplyPolynoms(int* A, int* B, int m, int n); // this funtion alocates memory !!!!
   void print() const
   {
-	  int i = 0;
-	  cout << "v is " << "(";
-	  while (i < n_)
+	  int i = n_;
+	
+	  while (i >= 0)
 	  {
-		  if (i == n_ - 1)
+		  if (i == n_)
 		  {
-			  cout << coefs_[i];
-			  i++;
+			  if (i == 1)
+			  {
+				  cout << coefs_[i] << "x";
+				  i--;
+				  continue;
+			  }
+			  if (i == 0)
+			  {
+				  cout << coefs_[0];				  
+				  i--;
+				  break;
+			  }
+			  else
+			  {
+				  cout << coefs_[i] << "x^" << i;
+				  i--;
+				  continue;
+			  }
+		  }
+		  if (coefs_[i] == 0)
+		  {
+			  i--;
+			  continue;
+		  }
+		  if (i == 0)
+		  {
+			  if (coefs_[0] < 0) cout << coefs_[0];
+			  else cout << "+" << coefs_[0];
+			  i--;
+			  break;
 		  }
 		  else
 		  {
-			  cout << coefs_[i] << "+";
-			  i++;
+			  
+			  if (i == 1)
+			  {
+				  if (coefs_[i] < 0)
+				  {
+					  cout << coefs_[i] << "x";
+					  i--;
+					  continue;
+				  }
+				  else
+				  {
+					  cout << "+" << coefs_[i] << "x";
+				  }
+			  }
+			  else if (coefs_[i] < 0)
+			  {
+				  cout << coefs_[i];
+			  }
+			  else cout << "+" << coefs_[i];
+				  cout << "x^" << i ;
+			  i--;
+			  continue;
 		  }
 	  }
-	  cout << endl;
   }
 
   // Calculations

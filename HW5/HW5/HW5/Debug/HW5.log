@@ -1,3 +1,7 @@
 ﻿  polynom.cpp
+  main.cpp
+c:\users\kareen\desktop\homework\sofware systems\github\mamat\hw5\code\main.cpp(88): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  complex.cpp
+  Generating Code...
   HW5.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\Github\Mamat\HW5\HW5\Debug\HW5.exe
   HW5.vcxproj -> C:\Users\Kareen\Desktop\HomeWork\Sofware Systems\Github\Mamat\HW5\HW5\Debug\HW5.pdb (Full PDB)
