@@ -1,6 +1,8 @@
-
+#include "TempVec.h"
 
 #include "complex.h"
+
+#include <string>
 
 using namespace std;
 
@@ -77,7 +79,7 @@ std::ostream & operator<<(std::ostream & os, const complex & rsh)
 		}
 		else
 		{
-			temp = rsh.imag();
+			temp = to_string(rsh.imag());
 		}
 
 	}
@@ -85,14 +87,14 @@ std::ostream & operator<<(std::ostream & os, const complex & rsh)
 	{
 		if (rsh.imag() == 0)
 		{
-			temp = rsh.real();
+			temp = to_string(rsh.real());
 		}
 		else
 		{
-			temp = rsh.real() + " " + rsh.imag();
+			temp = to_string(rsh.real())  + "+i" + to_string(rsh.imag());
 		}
 	}
-	return os << temp << endl;
+	return os << temp ;
 }
 
 complex operator*(const int lhs,const complex rhs)
