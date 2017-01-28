@@ -151,6 +151,12 @@ int SqNorm(TempVec<int, 3> vec1)
 	return theSum;
 }
 
+complex SqNorm(TempVec<complex, 2> vec1)
+{
+	
+	return InnerProduct(vec1, vec1);
+}
+
 //***********************************************************************
 //* SqDistance()
 //* Exterior function for getting the distance between two vectors
@@ -164,36 +170,10 @@ int SqDistance(TempVec<int, 3> vec1, TempVec<int, 3> vec2)
 	return SqNorm(vec1 - vec2);
 }
 
-
-
-
-
-
-
-
-
-/*/
-complex InnerProduct(TempVec<complex, 2> vec1, TempVec<complex, 2> vec2)
+complex SqDistance(TempVec<complex, 2> vec1, TempVec<complex, 2> vec2)
 {
-	TempVec<complex, 2> temp;
-	complex sum;
-	temp[0] = conj(vec2.GetCoordinate(0));
-	temp[1] = conj(vec2.GetCoordinate(1));
-	temp = temp * vec1;
-	sum = temp.GetCoordinate(0) + temp.GetCoordinate(1);
-	return sum;
-}
 
-/*
-complex SqNorm(TempVec<complex, 2> vec1)
-{
-	return  InnerProduct(vec1, vec1);
+	return SqNorm(vec1 - vec2);
 }
 
 
-complex SqDistance(TempVec<complex, 2> vec1, TempVec<complex, 2> vec2) 
-{
-
-	return InnerProduct(vec1-vec2, vec1-vec2);
- }
- */
