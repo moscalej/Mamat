@@ -17,7 +17,7 @@ public:
 	TempVec() {};
 	//TempVec(complex x, complex z);
 	
-	TempVec& operator=(const T& rhs)
+	TempVec& operator=(const T rhs)
 	{
 		this->SetCoordinate(rhs);
 
@@ -34,15 +34,14 @@ public:
 	TempVec operator+(const TempVec& rhs);
 	TempVec operator*(const TempVec& rhs);
 	TempVec operator-(const TempVec& rhs);
-	friend std::ostream& operator<<(std::ostream& lhs, const TempVec<T,size>& rhs)
+	friend std::ostream& operator<<(std::ostream& lhs, const TempVec<T,size>& rhs) /// <----need to be review
 	{
 		rhs.print();
 		return lhs;
 	}
-
 	TempVec operator*(T rhs);
-	TempVec operator[](int rhs);
-	
+	//TempVec operator*(int rhs);
+	T& operator[](int rhs);
 	friend TempVec operator* (const T lhs, const TempVec& rhs) // Allows left side multiplication (LSM).
 	{								// The LSM is accomplished with the help of our right-sided
 		TempVec<T, size> temp;		// multiplication (RSM) overload.
@@ -54,27 +53,35 @@ public:
 		}
 		return temp;
 	}
-	
-
+	/*friend TempVec operator* (const int lhs, const TempVec& rhs) // Allows left side multiplication (LSM).
+	{								// The LSM is accomplished with the help of our right-sided
+		TempVec<T, size> temp;		// multiplication (RSM) overload.
+		int i = 0;
+		while (i < size)
+		{
+			temp.coordinates_[i] = rhs.coordinates_[i] * lhs; // right
+			i++;
+		}
+		return temp;
+	}
+	*/
 
 	//Setting values.
 	Result SetVector(char* Nth);
 	Result SetCoordinate(T num);
 	T GetCoordinate(int num);
 
-	//Vector Math
+	
 	//***********************************************************************
 	//* InnerProduct()
 	//* Exterior function for getting the Inner Product of two vectors
 	//* Parameters: TempVec vec1, TempVec vec2
 	//* Returns int
 	//***********************************************************************
-	friend int InnerProd(const TempVec<int,3>, const TempVec<int, 3>) ;
-	
-	//friend T SqNorm(TempVec u);
-	//friend T SqDistance(TempVec u);
+	friend T InnerProduct(TempVec<T, size> , TempVec<T, size>) ;
+	friend T SqDistance(TempVec<T, size> , TempVec<T, size> );
+	friend T SqNorm(TempVec<T, size> );
 
-	// Member methods
 	void print() const
 	{
 		int i = 0;
@@ -96,10 +103,10 @@ public:
 	}
 protected:
 	
-	int count_;// To count how many vectors we have created.
+	int count_;
 	int index_;
 	T coordinates_[size];
-	T* p_coordinates_ = coordinates_;
+	//T* p_coordinates_ = coordinates_;
 };
 
 // Default Constructor with exception handling
@@ -158,7 +165,7 @@ TempVec<T, size> TempVec<T, size>::operator+(const TempVec<T, size>& rhs)
 	int i = 0;
 	while (i < size)
 	{
-		temp.p_coordinates_[i] = coordinates_[i] + rhs.coordinates_[i];
+		temp.coordinates_[i] = coordinates_[i] + rhs.coordinates_[i];
 		i++;
 	}
 	return temp;
@@ -174,7 +181,7 @@ TempVec<T, size> TempVec<T, size>::operator-(const TempVec<T, size>& rhs)
 	int i = 0;
 	while (i < size)
 	{
-		temp.p_coordinates_[i] = coordinates_[i] - rhs.coordinates_[i];
+		temp.coordinates_[i] = coordinates_[i] - rhs.coordinates_[i];
 		i++;
 	}
 	return temp;
@@ -190,7 +197,7 @@ TempVec<T, size> TempVec<T, size>::operator*(const TempVec<T, size>& rhs)
 	int i = 0;
 	while (i < size)
 	{
-		temp.p_coordinates_[i] = coordinates_[i] * rhs.coordinates_[i];
+		temp.coordinates_[i] = coordinates_[i] * rhs.coordinates_[i];
 		
 		i++;
 	}
@@ -217,21 +224,24 @@ TempVec<T, size> TempVec<T, size>::operator*(T rhs)
 	int i = 0;
 	while (i < size)
 	{
-		temp.p_coordinates_[i] = coordinates_[i] * rhs;
+		temp.coordinates_[i] = coordinates_[i] * rhs;
 		i++;
 	}
 	return temp;
 }
 
+
+
+
 //***********************************************************************
 //* Operator overload for access ("[]") rhs = T
 //***********************************************************************
 template <class T, int size>
-TempVec<T, size> TempVec<T, size>::operator[](int rhs)
+T& TempVec<T, size>::operator[](int rhs)
 {
 	
-	this->index_ = rhs;
-	return *this;
+	//this->index_ = rhs;
+	return this->coordinates_[rhs] ;
 }
 
 
@@ -267,19 +277,19 @@ Result TempVec<T, size>::SetCoordinate(T num)
 		
 		if (index_ == 0)
 		{
-			this->p_coordinates_[0] = num;
+			this->coordinates_[0] = num;
 			
 			return SUCCESS;
 		}
 		if (index_ == 1)
 		{
-			this->p_coordinates_[1] = num;
+			this->coordinates_[1] = num;
 		
 			return SUCCESS;
 		}
 		if (index_ == 2)
 		{
-			this->p_coordinates_[2] = num;
+			this->coordinates_[2] = num;
 			
 			return SUCCESS;
 		}
@@ -338,52 +348,6 @@ void TempVec<T, size>::print() const
 	cout << ")" << endl;
 }*/
 
-//***********************************************************************
-//* InnerProduct()
-//* Exterior function for getting the Inner Product of two vectors
-//* Parameters: TempVec vec1, TempVec vec2
-//* Returns int
-//***********************************************************************
-int InnerProd(TempVec<int, 3> vect1, TempVec<int, 3> vect2)
-{
-	TempVec<int, 3> temp;
-	temp = vect1 * vect2;
-	int sum = temp.coordinates_[0] + temp.coordinates_[1] + temp.coordinates_[2];
-	return sum;
-}
-
-
-//***********************************************************************
-//* SqNorm()
-//* Exterior function for getting the norma squared (||u||^2) of a vector
-//* Parameters: TempVec vec1
-//* Returns int
-//***********************************************************************
-int SqNorm(TempVec<int, 3> vec1)
-{
-	TempVec<int, 3> temp = vec1*vec1;
-	int theSum = 0;
-	for (int i = 0; i < 3; i++) {
-
-		theSum += temp.GetCoordinate(i);
-	}
-	return theSum;
-}
-
-//***********************************************************************
-//* SqDistance()
-//* Exterior function for getting the distance between two vectors
-//* Parameters: TempVec vec1 TempVec vec2
-//* Returns int
-//***********************************************************************
-int SqDistance(TempVec<int, 3> vec1, TempVec<int, 3> vec2)
-{
-	//TempVec<int, 3> temp = vec1 - vec2;
-
-	//int j = SqNorm(temp);
-
-	return SqNorm(vec1 - vec2);
-}
 
 
 #endif

@@ -4,9 +4,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include"TempVec.h"
 //#include "polynom.h"
 #include "complex.h"
-#include "TempVec.h"
+
 
 #ifdef _DEBUG
 #ifndef DBG_NEW
@@ -24,9 +25,10 @@ typedef TempVec<int, 3> Integer3;
 
 typedef TempVec<complex, 2> Complex2;
 
-void main()
+int main()
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	
 	Integer3* int3_list = new Integer3[3];
 	Integer3 vector1(1, 1, 1);
 	Integer3 vector2(2, 2, 2);
@@ -71,10 +73,21 @@ void main()
 	cout << vector2 << endl;
 	cout << vector3 << endl;
 	cout << vector4 << endl;
-	
+
+
+	Complex2 newcomplex_vect1, newcomplex_vect2;
+	complex com1(2, 4), com2(4,5), com3(6,12), com4(-6,-7);
+	newcomplex_vect1[0] = com1;
+	newcomplex_vect1[1] = com2;
+	newcomplex_vect2[0] = com3;
+	newcomplex_vect2[1] = com4;
+
+	Complex2 vectr3 = newcomplex_vect1 * newcomplex_vect2 ;
+	Complex2 vectr4 =  newcomplex_vect1 * com2;
+	Complex2 vectr5 = com3 * newcomplex_vect1 * com2;
 	
 	delete[] int3_list;
 
 	_CrtDumpMemoryLeaks();
-	return;
+	return 0;
 };

@@ -31,7 +31,7 @@ public:
 
 	//friend funtions that can manipulate the complex
 	friend complex conj(const complex z);
-	friend complex InnerProduct(const TempVec<complex, 2>, const TempVec<complex, 2>) ;
+	//friend complex InnerProduct( TempVec<complex, 2>,  TempVec<complex, 2>) ;
 	friend std::ostream& operator<<(std::ostream & os, const complex & rsh);
 	friend complex operator*(const int lhs_constant , const complex rhs_vector);
 
@@ -41,5 +41,7 @@ public:
   int im_;
 };
 
-
+//complex SqNorm(TempVec<complex, 2> );
+//complex SqDistance(TempVec<complex, 2> , TempVec<complex, 2> );
+//complex InnerProduct(TempVec<complex, 2>, TempVec<complex, 2>);
 #endif
