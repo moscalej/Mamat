@@ -17,6 +17,11 @@ public:
 		im_ = 0;
 	}
 	complex(int real, int imaginary);
+	complex(int real)
+	{ 
+		this->re_ = real;
+		this->im_ = 0;
+	}
 	~complex() {};
 	//view funtions
 	int real() const;

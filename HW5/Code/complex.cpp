@@ -79,7 +79,15 @@ std::ostream & operator<<(std::ostream & os, const complex & rsh)
 		}
 		else
 		{
-			temp = to_string(rsh.imag())+"i";
+			if (rsh.imag() == 1)
+			{
+				temp = "i";
+			}
+			else if (rsh.imag() == -1)
+			{
+				temp = "-i";
+			}
+			else temp = "i" + to_string(rsh.imag());
 		}
 
 	}
@@ -89,9 +97,21 @@ std::ostream & operator<<(std::ostream & os, const complex & rsh)
 		{
 			temp = to_string(rsh.real());
 		}
+		else if (rsh.imag() == 1)
+		{
+			temp = to_string(rsh.real()) + "+i";
+		}
+		else if (rsh.imag() == -1)
+		{
+			temp = to_string(rsh.real()) + "-i";
+		}
+		else if (rsh.imag() < -1)
+		{
+			temp = to_string(rsh.real()) + to_string(rsh.imag()) + "i";
+		}
 		else
 		{
-			temp = to_string(rsh.real())   + to_string(rsh.imag() )+ "+i";
+			temp = to_string(rsh.real()) + "+" + to_string(rsh.imag()) + "i";
 		}
 	}
 	return os << temp ;

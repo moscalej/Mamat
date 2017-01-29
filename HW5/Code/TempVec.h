@@ -53,18 +53,6 @@ public:
 		}
 		return temp;
 	}
-	/*friend TempVec operator* (const int lhs, const TempVec& rhs) // Allows left side multiplication (LSM).
-	{								// The LSM is accomplished with the help of our right-sided
-		TempVec<T, size> temp;		// multiplication (RSM) overload.
-		int i = 0;
-		while (i < size)
-		{
-			temp.coordinates_[i] = rhs.coordinates_[i] * lhs; // right
-			i++;
-		}
-		return temp;
-	}
-	*/
 
 	//Setting values.
 	Result SetVector(char* Nth);
@@ -81,11 +69,17 @@ public:
 	friend T InnerProduct(TempVec<T, size> , TempVec<T, size>) ;
 	friend T SqDistance(TempVec<T, size> , TempVec<T, size> );
 	friend T SqNorm(TempVec<T, size> );
-
+	
+	//***********************************************************************
+	//* print()
+	//* Method for printing
+	//* Parameters: const
+	//* Returns VOID
+	//***********************************************************************
 	void print() const
 	{
 		int i = 0;
-		cout << "v is " << "(";
+		cout << "(";
 		while (i < size)
 		{
 			if (i == size - 1)
@@ -131,19 +125,8 @@ TempVec<T, size>::TempVec()
 }
 
 */
-/*
-template<class T, int size>
-inline TempVec<T, size>::TempVec(complex x, complex z)
-{
-	this->coordinates_[0] = x;
-	this->coordinates_[1] = z;
-	this->index_ = 0;
-	this->count_ = 0;
 
-
-}
-*/
-// Constructor...
+// Constructor... (DOON'T NEED. Was used for early stage testing)
 template <class T, int size>
 TempVec<T, size>::TempVec(int x, int y, int z)
 {
@@ -204,15 +187,6 @@ TempVec<T, size> TempVec<T, size>::operator*(const TempVec<T, size>& rhs)
 	return temp;
 }
 
-/*
-//***********************************************************************
-//* Operator overload for printing ("<<")
-//***********************************************************************
-template <class T, int size>
-void TempVec<T, size>::operator<<(const TempVec<T, size>& rhs)
-{
-	rhs.print();
-}*/
 
 //***********************************************************************
 //* Operator overload for multiplication ("*") rhs = T, lhs = TempVec
@@ -230,23 +204,34 @@ TempVec<T, size> TempVec<T, size>::operator*(T rhs)
 	return temp;
 }
 
-
-
-
 //***********************************************************************
 //* Operator overload for access ("[]") rhs = T
 //***********************************************************************
 template <class T, int size>
 T& TempVec<T, size>::operator[](int rhs)
 {
-	
+	try {
+		if (rhs > 2 && sizeof(T) == sizeof(int)) throw "Error TempVec. Illegal index";
+		if (rhs > 1 && sizeof(T) == sizeof(complex)) throw 2;
+		
+	}
+	catch (const char* errMessage) {
+		cout << errMessage << endl;
+		
+		rhs = rhs - 1; // bringing the index back in bounds.
+		//return NULL;//this->coordinates_[rhs];
+	}
+	catch (const int num) {
+		cout << "Error TempVec. Illegal index" << endl;
+
+		rhs = num; // dumping tthe out of bounds values in the extra template array spot;
+	}
 	//this->index_ = rhs;
 	return this->coordinates_[rhs] ;
 }
 
-
 //***********************************************************************
-//* SetVector()
+//* SetVector() DON'T NEED
 //* Method for initializing a vector
 //* Parameters: string Nth
 //* Returns VOID
@@ -263,7 +248,7 @@ Result TempVec<T, size>::SetVector(char* Nth)
 }
 
 //***********************************************************************
-//* SetCoordinate() PROBABLY DON'T NEED
+//* SetCoordinate() 
 //* Method for initializing a vectors coordinates
 //* Parameters: string Nth
 //* Returns VOID
@@ -278,7 +263,7 @@ Result TempVec<T, size>::SetCoordinate(T num)
 		if (index_ == 0)
 		{
 			this->coordinates_[0] = num;
-			
+			index_++;
 			return SUCCESS;
 		}
 		if (index_ == 1)
@@ -319,35 +304,5 @@ T TempVec<T, size>::GetCoordinate(int num)
 	}
 	return coordinates_[num];
 }
-
-/*
-//***********************************************************************
-//* print()
-//* Method for printing 
-//* Parameters: None
-//* Returns VOID
-//***********************************************************************
-template <class T, int size>
-void TempVec<T, size>::print() const
-{
-	int i = 0;
-	cout << "v is " << "(";
-	while (i < size)
-	{
-		if (i == size - 1)
-		{
-			cout << coordinates_[i];
-			i++;
-		}
-		else
-		{
-			cout << coordinates_[i] << ",";
-			i++;
-		}
-	}
-	cout << ")" << endl;
-}*/
-
-
 
 #endif
