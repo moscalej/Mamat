@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#grep -o '^[^#]*' $1
+mkdir $1;
+cp -a ./$2/. $1
+for file in ./"$1"
+do
+grep -v "[//]" $file"
+#sed -i '/[^//]/d' "$file"
+done 
